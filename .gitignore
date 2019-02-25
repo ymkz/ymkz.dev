@@ -9,11 +9,7 @@
 /coverage
 
 # app
-.expo/*
-*.jks
-*.p12
-*.key
-*.mobileprovision
+.next
 
 # misc
 .DS_Store

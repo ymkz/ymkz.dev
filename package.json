@@ -1,16 +1,59 @@
 {
-  "name": "ymkz.now.sh",
-  "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
   "license": "MIT",
+  "version": "0.0.0",
+  "main": "package.json",
+  "name": "ymkz.now.sh",
+  "homepage": "https://ymkz.now.sh",
+  "description": "A example now-serverless application with next.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "typecheck": "tsc",
+    "lint": "eslint --ext .js,.ts,.tsx .",
+    "lazy": "run-p typecheck lint"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.7",
+    "@emotion/styled": "^10.0.7",
     "next": "^8.0.3",
     "react": "^16.8.3",
     "react-dom": "^16.8.3"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.5.2",
+    "@commitlint/config-conventional": "^7.5.0",
+    "@types/next": "^8.0.1",
+    "@types/react": "^16.8.4",
+    "@types/react-dom": "^16.8.2",
+    "@typescript-eslint/eslint-plugin": "^1.4.1",
+    "@typescript-eslint/parser": "^1.4.1",
+    "@zeit/next-typescript": "^1.1.1",
+    "babel-plugin-emotion": "^10.0.7",
+    "eslint": "^5.14.1",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-plugin-compat": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react-hooks": "^1.2.0",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-unicorn": "^7.1.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.16.4",
+    "typescript": "^3.3.3333"
+  },
+  "author": {
+    "name": "ymkz",
+    "email": "ymkzly@gmail.com",
+    "url": "https://github.com/ymkz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ymkz/ymkz.now.sh"
+  },
+  "bugs": {
+    "url": "https://github.com/ymkz/ymkz.now.sh/issues"
   }
 }
