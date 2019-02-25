@@ -5,7 +5,7 @@
   "main": "package.json",
   "name": "ymkz.now.sh",
   "homepage": "https://ymkz.now.sh",
-  "description": "A example now-serverless application with next.js",
+  "description": "A serverless example application with next.js for now.sh",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
