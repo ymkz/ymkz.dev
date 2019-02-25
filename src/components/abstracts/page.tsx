@@ -7,10 +7,10 @@ interface Props {
 
 function Page({ children }: Props) {
   return (
-    <>
+    <React.Fragment>
       <Header />
       {children}
-    </>
+    </React.Fragment>
   )
 }
 
