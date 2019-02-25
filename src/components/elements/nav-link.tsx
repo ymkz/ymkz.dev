@@ -8,6 +8,8 @@ interface Props {
 }
 
 const Anchor = styled.a`
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: bold;
   text-decoration-line: none;
   &:hover {
     cursor: pointer;

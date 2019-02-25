@@ -6,7 +6,7 @@ export default class extends Document {
     return (
       <html lang="ja">
         <Head>
-          <meta name="theme-color" content="#2e3440" />
+          <meta name="theme-color" content="#eceff4" />
           <meta
             name="description"
             content="A serverless example application with next.js for now.sh"
@@ -14,6 +14,10 @@ export default class extends Document {
           <meta
             name="viewport"
             content="width=device-width,initial-scale=1,minimum-scale=1,shrink-to-fit=no"
+          />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,900"
           />
         </Head>
         <body>

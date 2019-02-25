@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import App, { Container } from 'next/app'
+import GlobalStyle from '../components/abstracts/global-style'
 
 export default class extends App {
   render() {
@@ -10,6 +11,7 @@ export default class extends App {
         <Head>
           <title>YMKZ.NOW.SH</title>
         </Head>
+        <GlobalStyle />
         <Component {...pageProps} />
       </Container>
     )

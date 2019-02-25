@@ -1,4 +1,5 @@
 {
+  "emmet.excludeLanguages": ["markdown", "typescriptreact"],
   "editor.formatOnSave": true,
   "editor.rulers": [100],
   "eslint.enable": true,
