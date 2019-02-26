@@ -4175,6 +4175,13 @@ next-server@8.0.3:
     send "0.16.1"
     url "0.11.0"
 
+next-size@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/next-size/-/next-size-2.0.2.tgz#aa574ac5f17c0cf6f143fdfd9506f4c75d64bbf9"
+  integrity sha512-EF/5qTBkHOyRYa7WV+W5NUTWC1+6wvGtbPeEpZyRIAv1eRL7gxxyMNz5os6LWytziBN4iNN10rouG9zlEbU5LQ==
+  dependencies:
+    chalk "^2.4.1"
+
 next@8.0.3:
   version "8.0.3"
   resolved "https://registry.yarnpkg.com/next/-/next-8.0.3.tgz#7f27172e9441aacb21b04aaaaa663af43aceea3b"
