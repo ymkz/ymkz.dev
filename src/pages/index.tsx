@@ -28,11 +28,21 @@ const H2 = styled.h2`
   margin: 0.5rem 0 0 0;
 `
 
+const BR = styled.br`
+  @media (min-width: 768px) {
+    display: none;
+  }
+`
+
 function Home() {
   return (
     <Page>
       <Container>
-        <H1>Hi, I&apos;m ymkz</H1>
+        <H1>
+          Hi, <BR />
+          I&apos;m <BR />
+          ymkz
+        </H1>
         <H2>―Play games, seriously</H2>
       </Container>
     </Page>
