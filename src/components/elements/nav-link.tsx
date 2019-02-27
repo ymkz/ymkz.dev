@@ -26,7 +26,7 @@ const Anchor = styled.a`
 
 function NavLink({ href, pathname, children }: Props) {
   return (
-    <Link href={href}>
+    <Link href={href} prefetch>
       <Anchor active={pathname === href} root={href === '/'}>
         {children}
       </Anchor>
