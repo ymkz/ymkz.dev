@@ -56,10 +56,15 @@ const Textarea = styled.textarea`
 
 function Contact() {
   const [form, input] = useFormState()
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    console.log(form)
+  }
+
   return (
     <SectionContainer>
       <SectionTitle>Contact</SectionTitle>
-      <form onSubmit={() => console.log(form)}>
+      <form onSubmit={handleSubmit}>
         <Field>
           <Label htmlFor="name">Name</Label>
           <Input {...input.text('name')} id="name" placeholder="John Doe" required />
@@ -78,7 +83,7 @@ function Contact() {
             required
           />
         </Field>
-        <SubmitButton>Submit</SubmitButton>
+        <SubmitButton disabled>Submit</SubmitButton>
       </form>
     </SectionContainer>
   )
