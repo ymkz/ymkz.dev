@@ -6,7 +6,6 @@ const globalStyle = css`
     font-family: YuGothicM;
     src: local('Yu Gothic Medium');
   }
-
   *,
   *::before,
   *::after {

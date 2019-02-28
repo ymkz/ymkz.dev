@@ -10,9 +10,9 @@ function Profile() {
       <Text>I&apos;m Kazuya Yamashita a.k.a ymkz.</Text>
       <Text>Work as a Frontend engineer nearby UI/UX engineering.</Text>
       <Text>
-        Majored in computer science, studying Human-Computer Interaction with face/eye-tracking.
+        Major in computer science, studying Human-Computer Interaction with face/eye-tracking.
       </Text>
-      <Text>22y/o, based in Matsue, I like padding, building UI and FPS Game.</Text>
+      <Text>22y/o, based in Matsue, I like padding, building UI, Sci-Fi and FPS Game.</Text>
     </SectionContainer>
   )
 }
