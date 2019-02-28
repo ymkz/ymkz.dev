@@ -2,6 +2,11 @@ import React from 'react'
 import { css, Global } from '@emotion/core'
 
 const globalStyle = css`
+  @font-face {
+    font-family: YuGothicM;
+    src: local('Yu Gothic Medium');
+  }
+
   *,
   *::before,
   *::after {
@@ -18,6 +23,8 @@ const globalStyle = css`
   body {
     background-color: #eceff4;
     color: #2e3440;
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', '游ゴシック Medium', YuGothic,
+      YuGothicM, 'Hiragino Kaku Gothic ProN', メイリオ, Meiryo, sans-serif;
     margin: 0;
     -webkit-overflow-scrolling: touch;
   }

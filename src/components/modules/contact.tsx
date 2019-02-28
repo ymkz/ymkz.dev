@@ -9,10 +9,10 @@ const Field = styled.div`
   display: flex;
   flex-flow: column;
   padding: 4px 0;
-  &:first-child {
+  &:first-of-type {
     padding-top: 0;
   }
-  &:last-child {
+  &:last-of-type {
     padding-bottom: 0;
   }
 `

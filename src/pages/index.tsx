@@ -20,12 +20,18 @@ const H1 = styled.h1`
   font-weight: 900;
   line-height: 1;
   margin: 0;
+  @media (max-width: 768px) {
+    font-size: 6rem;
+  }
 `
 
 const H2 = styled.h2`
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 300;
   margin: 0.5rem 0 0 0;
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+  }
 `
 
 const BR = styled.br`
