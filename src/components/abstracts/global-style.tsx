@@ -27,6 +27,32 @@ const globalStyle = css`
     margin: 0;
     -webkit-overflow-scrolling: touch;
   }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  dl,
+  pre,
+  table {
+    margin: 0;
+  }
+  a,
+  area,
+  button,
+  [role='button'],
+  input:not([type='range']),
+  label,
+  select,
+  summary,
+  textarea {
+    touch-action: manipulation;
+    -ms-touch-action: manipulation;
+  }
 `
 
 function GlobalStyle() {
