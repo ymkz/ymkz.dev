@@ -11,10 +11,11 @@ import ProductImage from '../elements/product-image'
 function Cancelectures() {
   return (
     <ProductContainer>
-      <ProductTitle>Cancelectures</ProductTitle>
+      <ProductTitle id="cancelectures">Cancelectures</ProductTitle>
       <ProductSubtitle>A canceled rectures list viewer for Shimane Univ</ProductSubtitle>
       <ProductDescription>
         Cancelecturesは島根大学の休講情報を手軽に確認するためのアプリケーションです。
+        <br />
         休講情報は大学のサイトから見ることができますが、深いネストをたどる必要があり、またデザインもただの表というものだったので、ワンクリックで確認できるようになれば便利なのにという思いからGoogle
         Chromeの拡張機能として開発されました。
         その後ReactNativeというものに出会い、よりモダンな実装でスマートフォンのアプリという形で実装してみたいと思い、
