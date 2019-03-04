@@ -6,6 +6,7 @@ import ProductDescription from '../elements/product-description'
 import ProductSupply from '../elements/product-supply'
 import ProductLink from '../elements/product-link'
 import ProductImage from '../elements/product-image'
+import Sentence from '../elements/sentence'
 
 function Portfolio() {
   return (
@@ -13,11 +14,14 @@ function Portfolio() {
       <ProductTitle id="portfolio">Portfolio</ProductTitle>
       <ProductSubtitle>The portfolio site about ymkz</ProductSubtitle>
       <ProductDescription>
-        このサイトであるPortfolioは自分についてや作ってきたものをまとめるために作成しました。
-        <br />
-        Reactを用いたSPAとして構築され、TypeScriptで開発しています。またCSS in
-        JSを用いてスタイルの管理を簡便かつ管理しやすいように意識しています。ホスティングはNetlifyで、PRを作成したらDeploy
-        Previewsで確認し、masterにマージすることでデプロイされるという構成です。
+        <Sentence>
+          このサイトであるPortfolioは自分についてや作ってきたものをまとめるために作成しました。
+        </Sentence>
+        <Sentence>
+          Reactを用いたSPAとして構築され、TypeScriptで開発しています。またCSS in
+          JSを用いてスタイルの管理を簡便かつ管理しやすいように意識しています。ホスティングはNetlifyで、PRを作成したらDeploy
+          Previewsで確認し、masterにマージすることでデプロイされるという構成です。
+        </Sentence>
       </ProductDescription>
       <ProductSupply>
         <ProductLink href="https://ymkz.now.sh">Website - Portfolio</ProductLink>

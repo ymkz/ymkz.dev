@@ -7,6 +7,7 @@ import ProductDescription from '../elements/product-description'
 import ProductSupply from '../elements/product-supply'
 import ProductLink from '../elements/product-link'
 import ProductImage from '../elements/product-image'
+import Sentence from '../elements/sentence'
 
 function Cancelectures() {
   return (
@@ -14,12 +15,15 @@ function Cancelectures() {
       <ProductTitle id="cancelectures">Cancelectures</ProductTitle>
       <ProductSubtitle>A canceled rectures list viewer for Shimane Univ</ProductSubtitle>
       <ProductDescription>
-        Cancelecturesは島根大学の休講情報を手軽に確認するためのアプリケーションです。
-        <br />
-        休講情報は大学のサイトから見ることができますが、深いネストをたどる必要があり、またデザインもただの表というものだったので、ワンクリックで確認できるようになれば便利なのにという思いからGoogle
-        Chromeの拡張機能として開発されました。
-        その後ReactNativeというものに出会い、よりモダンな実装でスマートフォンのアプリという形で実装してみたいと思い、
-        React Nativeを用いたアプリ版Cancelecturesを開発しました。
+        <Sentence>
+          Cancelecturesは島根大学の休講情報を手軽に確認するためのアプリケーションです。
+        </Sentence>
+        <Sentence>
+          休講情報は大学のサイトから見ることができますが、深いネストをたどる必要があり、またデザインもただの表というものだったので、ワンクリックで確認できるようになれば便利なのにという思いからGoogle
+          Chromeの拡張機能として開発されました。
+          その後ReactNativeというものに出会い、よりモダンな実装でスマートフォンのアプリという形で実装してみたいと思い、
+          React Nativeを用いたアプリ版Cancelecturesを開発しました。
+        </Sentence>
       </ProductDescription>
       <ProductSupply>
         <ProductLink href="https://github.com/ymkz/cancelectures">

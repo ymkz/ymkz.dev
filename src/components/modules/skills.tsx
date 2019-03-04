@@ -2,23 +2,23 @@ import React from 'react'
 import Row from '../abstracts/row'
 import SectionContainer from '../abstracts/section-container'
 import SectionTitle from '../elements/section-title'
-import Text from '../elements/text'
+import TextItem from '../elements/text-item'
 
 function Skills() {
   return (
     <SectionContainer>
       <SectionTitle>Skills</SectionTitle>
       <Row space={24}>
-        <Text>HTML5</Text>
-        <Text>CSS3</Text>
-        <Text>ES2018</Text>
-        <Text>Node.js</Text>
-        <Text>TypeScript</Text>
-        <Text>React</Text>
-        <Text>React Native</Text>
-        <Text>Redux</Text>
-        <Text>Webpack</Text>
-        <Text>Git</Text>
+        <TextItem>HTML5</TextItem>
+        <TextItem>CSS3</TextItem>
+        <TextItem>ES2018</TextItem>
+        <TextItem>Node.js</TextItem>
+        <TextItem>TypeScript</TextItem>
+        <TextItem>React</TextItem>
+        <TextItem>React Native</TextItem>
+        <TextItem>Redux</TextItem>
+        <TextItem>Webpack</TextItem>
+        <TextItem>Git</TextItem>
       </Row>
     </SectionContainer>
   )

@@ -2,18 +2,18 @@ import React from 'react'
 import Row from '../abstracts/row'
 import SectionContainer from '../abstracts/section-container'
 import SectionTitle from '../elements/section-title'
-import Text from '../elements/text'
+import TextItem from '../elements/text-item'
 
 function Games() {
   return (
     <SectionContainer>
       <SectionTitle>Games</SectionTitle>
       <Row space={24}>
-        <Text>PLAYERUNKNOWN&apos;S BATTLEGROUNDS</Text>
-        <Text>Overwatch</Text>
-        <Text>Battlefield V</Text>
-        <Text>Apex Legends</Text>
-        <Text>Counter-Strike: Global Offensive</Text>
+        <TextItem>PLAYERUNKNOWN&apos;S BATTLEGROUNDS</TextItem>
+        <TextItem>Overwatch</TextItem>
+        <TextItem>Battlefield V</TextItem>
+        <TextItem>Apex Legends</TextItem>
+        <TextItem>Counter-Strike: Global Offensive</TextItem>
       </Row>
     </SectionContainer>
   )

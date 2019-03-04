@@ -8,7 +8,7 @@ interface Props {
 
 const List = styled.li`
   &:not(:last-child) {
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
   }
 `
 
