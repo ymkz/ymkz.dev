@@ -5,7 +5,7 @@ const ProductTitle = styled.h1`
   font-size: 3.6rem;
   font-weight: 900;
   @media (max-width: 768px) {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
   }
 `
 
