@@ -18,8 +18,8 @@
     "@emotion/core": "10.0.7",
     "@emotion/styled": "10.0.7",
     "next": "8.0.3",
-    "react": "16.8.3",
-    "react-dom": "16.8.3",
+    "react": "16.8.4",
+    "react-dom": "16.8.4",
     "react-use-form-state": "0.7.0"
   },
   "devDependencies": {
