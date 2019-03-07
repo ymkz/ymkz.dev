@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import colors from '../../colors'
+import colors from '../../constants/colors'
 
 const SubmitButton = styled.button`
   background-color: #d8dee9;

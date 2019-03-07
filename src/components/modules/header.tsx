@@ -3,7 +3,8 @@ import { withRouter, WithRouterProps } from 'next/router'
 import styled from '@emotion/styled'
 import Row from '../abstracts/row'
 import NavLink from '../elements/nav-link'
-import colors from '../../colors'
+import colors from '../../constants/colors'
+import query from '../../constants/media-query'
 
 const Container = styled.header`
   align-items: center;
@@ -16,7 +17,7 @@ const Container = styled.header`
   left: 0;
   top: 0;
   width: 100%;
-  @media (max-width: 768px) {
+  @media ${query.mobile} {
     padding: 0 16px;
   }
 `
