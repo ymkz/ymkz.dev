@@ -15,6 +15,7 @@
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "plugins": [{ "name": "typescript-styled-plugin" }],
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,
