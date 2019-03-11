@@ -4949,10 +4949,10 @@ react-is@^16.3.2, react-is@^16.8.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.3.tgz#4ad8b029c2a718fc0cfc746c8d4e1b7221e5387d"
   integrity sha512-Y4rC1ZJmsxxkkPuMLwvKvlL1Zfpbcu+Bf4ZigkHup3v9EfdYhAlWAaVyA19olXq2o2mGn0w+dFKvk3pVVlYcIA==
 
-react-use-form-state@0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/react-use-form-state/-/react-use-form-state-0.7.0.tgz#122acae8287f01929b1001ac626c854a05ea21b3"
-  integrity sha512-aF1ycG+3lVcFjPC/2k3vjPUFeqAq4EupvxAlOQKMjjM35+ZPN1H7WwjG+Fr5EspQv3qs5nN5nojuW3jC/UEVSg==
+react-use-form-state@0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/react-use-form-state/-/react-use-form-state-0.8.0.tgz#5c0900e9312e07415deae7b32c8195f3019f70bc"
+  integrity sha512-whp9GV+YiYLfr4po7MIR69Oklj7EYjtqikbsmuoK03y3+MHrlj71PwwxanZW6kgbcfKk0ARTZtjz8+Xt5kF2/A==
 
 react@16.8.4:
   version "16.8.4"
