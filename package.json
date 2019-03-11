@@ -15,8 +15,8 @@
     "lazy": "run-p typecheck lint"
   },
   "dependencies": {
-    "@emotion/core": "10.0.7",
-    "@emotion/styled": "10.0.7",
+    "@emotion/core": "10.0.9",
+    "@emotion/styled": "10.0.9",
     "next": "8.0.3",
     "react": "16.8.4",
     "react-dom": "16.8.4",
@@ -31,7 +31,7 @@
     "@typescript-eslint/eslint-plugin": "1.4.2",
     "@typescript-eslint/parser": "1.4.2",
     "@zeit/next-typescript": "1.1.1",
-    "babel-plugin-emotion": "10.0.7",
+    "babel-plugin-emotion": "10.0.9",
     "eslint": "5.15.1",
     "eslint-config-prettier": "4.1.0",
     "eslint-plugin-compat": "2.7.0",
