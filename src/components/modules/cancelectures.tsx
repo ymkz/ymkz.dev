@@ -13,7 +13,7 @@ function Cancelectures() {
   return (
     <ProductContainer>
       <ProductTitle id="cancelectures">Cancelectures</ProductTitle>
-      <ProductSubtitle>A canceled rectures list viewer for Shimane Univ</ProductSubtitle>
+      <ProductSubtitle>A canceled lectures list viewer for Shimane University</ProductSubtitle>
       <ProductDescription>
         <Sentence>
           Cancelecturesは島根大学の休講情報を手軽に確認するためのアプリケーションです。
