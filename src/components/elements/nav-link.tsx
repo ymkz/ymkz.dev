@@ -3,13 +3,13 @@ import Link from 'next/link'
 import Router from 'next/router'
 import styled from '@emotion/styled'
 
-interface Props {
+type Props = {
   href: string
   pathname: string | undefined
   children: React.ReactNode
 }
 
-interface AnchorProps {
+type AnchorProps = {
   root: boolean
   active: boolean
 }

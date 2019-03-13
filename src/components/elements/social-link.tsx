@@ -1,6 +1,6 @@
 import React from 'react'
 
-interface Props {
+type Props = {
   href: string
   src: string
   alt: string
