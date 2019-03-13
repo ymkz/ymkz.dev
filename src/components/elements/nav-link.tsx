@@ -23,6 +23,9 @@ const Anchor = styled.a`
     cursor: pointer;
     text-decoration-line: underline;
   }
+  &:focus {
+    /* focus style need */
+  }
 `
 
 function NavLink({ href, pathname, children }: Props) {
@@ -31,6 +34,7 @@ function NavLink({ href, pathname, children }: Props) {
   return (
     <Link href={href}>
       <Anchor
+        tabIndex={0}
         active={pathname === href}
         root={href === '/'}
         onFocus={prefetch}
