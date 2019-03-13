@@ -10,8 +10,10 @@ const SubmitButton = styled.button`
   margin: 1rem 0 0 0;
   padding: 10px 16px;
   :disabled {
-    background-color: ${colors.nord5};
+    /* background-color: ${colors.nord5}; */
     color: ${colors.nord3};
+    cursor: not-allowed;
+    opacity: 0.5;
   }
 `
 
