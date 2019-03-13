@@ -7,7 +7,7 @@ interface Props {
 }
 
 const Main = styled.main`
-  margin: 64px auto 0;
+  margin: 0 auto;
   max-width: 768px;
   min-height: calc(100vh - 64px);
   padding: 0 16px;

@@ -13,7 +13,7 @@ const Container = styled.header`
   height: 64px;
   justify-content: space-between;
   padding: 0 48px;
-  position: fixed;
+  position: sticky;
   left: 0;
   top: 0;
   width: 100%;
