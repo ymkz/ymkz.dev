@@ -3,7 +3,6 @@
   "alias": "ymkz",
   "name": "ymkz.now.sh",
   "builds": [{ "src": "next.config.js", "use": "@now/next" }],
-  "github": {
-    "silent": true
-  }
+  "github": { "silent": true },
+  "regions": ["hnd1"]
 }
