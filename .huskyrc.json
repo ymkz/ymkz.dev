@@ -1,6 +1,9 @@
 {
   "hooks": {
     "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-    "pre-commit": "yarn run lazy"
+    "pre-commit": "yarn run lazy",
+    "post-checkout": "yarnhook",
+    "post-rewrite": "yarnhook",
+    "post-merge": "yarnhook"
   }
 }
