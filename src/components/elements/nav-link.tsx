@@ -24,7 +24,8 @@ const Anchor = styled.a`
     text-decoration-line: underline;
   }
   &:focus {
-    /* focus style need */
+    outline: 0;
+    text-decoration-line: underline;
   }
 `
 

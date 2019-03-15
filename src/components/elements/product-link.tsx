@@ -18,6 +18,10 @@ const Anchor = styled.a`
   &:hover {
     text-decoration-line: underline;
   }
+  &:focus {
+    outline: 0;
+    text-decoration-line: underline;
+  }
 `
 
 function ProductLink({ href, children }: Props) {
