@@ -1,5 +1,6 @@
 import React from 'react'
 import { css, Global } from '@emotion/core'
+import colors from '../../constants/colors'
 
 const globalStyle = css`
   @font-face {
@@ -20,8 +21,8 @@ const globalStyle = css`
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
   body {
-    background-color: #eceff4;
-    color: #2e3440;
+    background-color: ${colors.nord6};
+    color: ${colors.nord0};
     font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', '游ゴシック Medium', YuGothic,
       YuGothicM, 'Hiragino Kaku Gothic ProN', メイリオ, Meiryo, sans-serif;
     margin: 0;

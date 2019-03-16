@@ -4,6 +4,7 @@ import { useFormState } from 'react-use-form-state'
 import SectionContainer from '../abstracts/section-container'
 import SectionTitle from '../elements/section-title'
 import SubmitButton from '../elements/submit-button'
+import colors from '../../constants/colors'
 
 const Field = styled.div`
   display: flex;
@@ -22,10 +23,10 @@ const Label = styled.label`
 `
 
 const Input = styled.input`
-  background-color: #d8dee9;
+  background-color: ${colors.nord4};
   border: 0;
   border-radius: 4px;
-  color: #2e3440;
+  color: ${colors.nord0};
   font-size: 1rem;
   margin: 0;
   padding: 8px;
@@ -33,15 +34,16 @@ const Input = styled.input`
     outline: none;
   }
   &::placeholder {
-    color: #e5e9f0;
+    color: ${colors.nord3};
+    opacity: 0.5;
   }
 `
 
 const Textarea = styled.textarea`
-  background-color: #d8dee9;
+  background-color: ${colors.nord4};
   border: 0;
   border-radius: 4px;
-  color: #2e3440;
+  color: ${colors.nord0};
   font-size: 1rem;
   margin: 0;
   padding: 8px;
@@ -50,7 +52,8 @@ const Textarea = styled.textarea`
     outline: none;
   }
   &::placeholder {
-    color: #e5e9f0;
+    color: ${colors.nord3};
+    opacity: 0.5;
   }
 `
 
