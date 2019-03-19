@@ -31,13 +31,15 @@ const Anchor = styled.a`
 
 function NavLink({ href, pathname, children }: Props) {
   const prefetch = () => Router.prefetch(href)
+  const active = href === pathname
+  const root = href === '/'
 
   return (
     <Link href={href}>
       <Anchor
-        tabIndex={0}
-        active={pathname === href}
-        root={href === '/'}
+        tabIndex={active ? -1 : 0}
+        active={active}
+        root={root}
         onFocus={prefetch}
         onMouseOver={prefetch}
       >
