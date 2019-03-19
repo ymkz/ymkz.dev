@@ -11,8 +11,8 @@ function Games() {
       <Row space={24}>
         <TextItem>PLAYERUNKNOWN&apos;S BATTLEGROUNDS</TextItem>
         <TextItem>Overwatch</TextItem>
+        <TextItem>Battlefield 4</TextItem>
         <TextItem>Battlefield V</TextItem>
-        <TextItem>Apex Legends</TextItem>
         <TextItem>Counter-Strike: Global Offensive</TextItem>
       </Row>
     </SectionContainer>

@@ -10,6 +10,10 @@ const Button = styled.button`
   font-size: 1rem;
   margin-top: 1rem;
   padding: 10px 16px;
+  &:focus {
+    box-shadow: inset 0 1px 2px ${colors.nord5}, 0 0 0 4px ${colors.nord5};
+    outline: 0;
+  }
   &:disabled {
     color: ${colors.nord3};
     cursor: not-allowed;

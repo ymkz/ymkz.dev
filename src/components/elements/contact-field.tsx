@@ -29,6 +29,7 @@ const Input = styled.input`
   margin: 0;
   padding: 8px;
   &:focus {
+    box-shadow: inset 0 1px 2px ${colors.nord5}, 0 0 0 4px ${colors.nord5};
     outline: none;
   }
   &::placeholder {
@@ -47,6 +48,7 @@ const Textarea = styled.textarea`
   padding: 8px;
   resize: vertical;
   &:focus {
+    box-shadow: inset 0 1px 2px ${colors.nord5}, 0 0 0 4px ${colors.nord5};
     outline: none;
   }
   &::placeholder {
