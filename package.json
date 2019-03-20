@@ -61,5 +61,12 @@
   },
   "bugs": {
     "url": "https://github.com/ymkz/ymkz.now.sh/issues"
-  }
+  },
+  "keywords": [
+    "serverless",
+    "nextjs",
+    "react",
+    "portfolio",
+    "single-page-application"
+  ]
 }
