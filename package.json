@@ -28,7 +28,7 @@
     "@commitlint/config-conventional": "7.5.0",
     "@types/next": "8.0.3",
     "@types/react": "16.8.8",
-    "@types/react-dom": "16.8.2",
+    "@types/react-dom": "16.8.3",
     "@typescript-eslint/eslint-plugin": "1.5.0",
     "@typescript-eslint/parser": "1.5.0",
     "@zeit/next-typescript": "1.1.1",
