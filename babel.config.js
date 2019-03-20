@@ -3,10 +3,9 @@ module.exports = function(api) {
 
   const presets = [
     ['next/babel', { 'preset-env': { targets: { esmodules: true }, useBuiltIns: 'usage' } }],
+    ['@emotion/babel-preset-css-prop'],
     ['@zeit/next-typescript/babel']
   ]
 
-  const plugins = [['emotion'], ['optimize-react']]
-
-  return { presets, plugins }
+  return { presets }
 }
