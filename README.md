@@ -13,7 +13,7 @@
   <a href="https://github.com/ymkz/ymkz.now.sh">
     <img src="https://flat.badgen.net/github/status/ymkz/ymkz.now.sh">
   </a>
-  <a href="https://github.com/ymkz/ymkz.now.sh">
+  <a href="https://github.com/ymkz/ymkz.now.sh/issues?q=is%3Aissue+is%3Aopen+label%3Aweekly-digest">
     <img src="https://flat.badgen.net/github/label-issues/ymkz/ymkz.now.sh/weekly-digest">
   </a>
   <a href="https://github.com/Microsoft/TypeScript">
