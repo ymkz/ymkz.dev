@@ -8,10 +8,7 @@
 </div>
 <p align="center">
   <a href="https://zeit.co/dashboard/project/ymkz.now.sh">
-    <img src="https://flat.badgen.net/badge/%E2%96%B2/$%20now%20ymkz%2Fymkz.now.sh/000000" />
-  </a>
-  <a href="https://github.com/ymkz/ymkz.now.sh">
-    <img src="https://flat.badgen.net/github/status/ymkz/ymkz.now.sh">
+    <img src="https://flat.badgen.net/badge/deploy/%E2%96%B2%20now/000000" />
   </a>
   <a href="https://github.com/ymkz/ymkz.now.sh/issues?q=is%3Aissue+is%3Aopen+label%3Aweekly-digest">
     <img src="https://flat.badgen.net/github/label-issues/ymkz/ymkz.now.sh/weekly-digest">
