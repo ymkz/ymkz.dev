@@ -14,16 +14,16 @@
     <img src="https://flat.badgen.net/github/label-issues/ymkz/ymkz.now.sh/weekly-digest">
   </a>
   <a href="https://github.com/Microsoft/TypeScript">
-    <img src="https://flat.badgen.net/badge/powered%20by/TypeScript/017acd">
+    <img src="https://flat.badgen.net/badge/language/TypeScript/017acd">
   </a>
   <a href="https://eslint.org">
-    <img src="https://flat.badgen.net/badge/lint%20with/eslint/4b32c3">
+    <img src="https://flat.badgen.net/badge/linter/eslint/4b32c3">
   </a>
   <a href="https://prettier.io">
-    <img src="https://flat.badgen.net/badge/format%20with/prettier/ff69b4">
+    <img src="https://flat.badgen.net/badge/formatter/prettier/ff69b4">
   </a>
   <a href="https://emotion.sh">
-    <img src="https://flat.badgen.net/badge/styled%20with/emotion/d36ac2">
+    <img src="https://flat.badgen.net/badge/styling/emotion/d36ac2">
   </a>
   <a href="https://renovateapp.com">
     <img src="https://flat.badgen.net/badge/renovate/enabled/green">
