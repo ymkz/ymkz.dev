@@ -54,6 +54,11 @@ const globalStyle = css`
     touch-action: manipulation;
     -ms-touch-action: manipulation;
   }
+  input,
+  textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
 `
 
 function GlobalStyle() {

@@ -39,6 +39,8 @@ const Input = styled.input`
   margin: 0;
   padding: 8px;
   &:focus {
+    border: ${({ error }: ErrorProps) =>
+      error ? '1px solid rgba(191, 97, 106, 0.85)' : `1px solid ${colors.nord6}`};
     box-shadow: ${({ error }: ErrorProps) =>
       error ? '0 0 0 0.2rem rgba(191, 97, 106, 0.25)' : `0 0 0 0.2rem ${colors.nord5}`};
     outline: none;
@@ -60,6 +62,8 @@ const Textarea = styled.textarea`
   padding: 8px;
   resize: vertical;
   &:focus {
+    border: ${({ error }: ErrorProps) =>
+      error ? '1px solid rgba(191, 97, 106, 0.85)' : `1px solid ${colors.nord6}`};
     box-shadow: ${({ error }: ErrorProps) =>
       error ? '0 0 0 0.2rem rgba(191, 97, 106, 0.25)' : `0 0 0 0.2rem ${colors.nord5}`};
     outline: none;
