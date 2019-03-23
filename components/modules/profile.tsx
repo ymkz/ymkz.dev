@@ -12,7 +12,7 @@ function Profile() {
       <Sentence>
         Major in computer science, studying Human-Computer Interaction with face/eye-tracking.
       </Sentence>
-      <Sentence>22y/o, based in Matsue, I like padding, building UI, Sci-Fi and FPS Game.</Sentence>
+      <Sentence>23y/o, based in Matsue, I like padding, building UI, Sci-Fi and FPS Game.</Sentence>
     </SectionContainer>
   )
 }
