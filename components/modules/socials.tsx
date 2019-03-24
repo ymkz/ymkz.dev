@@ -6,7 +6,7 @@ import SocialLink from '../elements/social-link'
 
 function Socials() {
   return (
-    <SectionContainer>
+    <SectionContainer id="socials">
       <SectionTitle>Socials</SectionTitle>
       <Row space={24}>
         <SocialLink

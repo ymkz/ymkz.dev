@@ -11,8 +11,8 @@ import Sentence from '../elements/sentence'
 
 function Narosirase() {
   return (
-    <ProductContainer>
-      <ProductTitle id="narosirase">Narosirase</ProductTitle>
+    <ProductContainer id="narosirase">
+      <ProductTitle>Narosirase</ProductTitle>
       <ProductSubtitle>A web-novel reader for Syosetuka-ni-Narou</ProductSubtitle>
       <ProductDescription>
         <Sentence>

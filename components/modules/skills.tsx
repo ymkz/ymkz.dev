@@ -6,7 +6,7 @@ import TextItem from '../elements/text-item'
 
 function Skills() {
   return (
-    <SectionContainer>
+    <SectionContainer id="skills">
       <SectionTitle>Skills</SectionTitle>
       <Row space={24}>
         <TextItem>HTML5</TextItem>

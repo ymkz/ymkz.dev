@@ -11,8 +11,8 @@ import Sentence from '../elements/sentence'
 
 function Cancelectures() {
   return (
-    <ProductContainer>
-      <ProductTitle id="cancelectures">Cancelectures</ProductTitle>
+    <ProductContainer id="cancelectures">
+      <ProductTitle>Cancelectures</ProductTitle>
       <ProductSubtitle>A canceled lectures list viewer for Shimane University</ProductSubtitle>
       <ProductDescription>
         <Sentence>

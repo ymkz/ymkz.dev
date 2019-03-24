@@ -5,7 +5,7 @@ import Sentence from '../elements/sentence'
 
 function Profile() {
   return (
-    <SectionContainer>
+    <SectionContainer id="profile">
       <SectionTitle>Profile</SectionTitle>
       <Sentence>I&apos;m Kazuya Yamashita a.k.a ymkz.</Sentence>
       <Sentence>Work as a Frontend engineer nearby UI/UX engineering.</Sentence>

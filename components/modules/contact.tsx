@@ -37,7 +37,7 @@ function Contact() {
   })
 
   return (
-    <SectionContainer>
+    <SectionContainer id="contact">
       <SectionTitle>Contact</SectionTitle>
       <FormikProvider value={formik}>
         <form onSubmit={formik.handleSubmit}>

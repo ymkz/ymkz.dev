@@ -10,8 +10,8 @@ import Sentence from '../elements/sentence'
 
 function Portfolio() {
   return (
-    <ProductContainer>
-      <ProductTitle id="portfolio">Portfolio</ProductTitle>
+    <ProductContainer id="portfolio">
+      <ProductTitle>Portfolio</ProductTitle>
       <ProductSubtitle>The portfolio site about ymkz</ProductSubtitle>
       <ProductDescription>
         <Sentence>

@@ -6,7 +6,7 @@ import TextItem from '../elements/text-item'
 
 function Games() {
   return (
-    <SectionContainer>
+    <SectionContainer id="games">
       <SectionTitle>Games</SectionTitle>
       <Row space={24}>
         <TextItem>PLAYERUNKNOWN&apos;S BATTLEGROUNDS</TextItem>
