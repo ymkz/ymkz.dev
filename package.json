@@ -21,6 +21,7 @@
     "next": "8.0.3",
     "react": "16.8.5",
     "react-dom": "16.8.5",
+    "use-intersection": "^0.1.0",
     "yup": "0.27.0"
   },
   "devDependencies": {
