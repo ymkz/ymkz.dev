@@ -3,6 +3,7 @@ import Head from 'next/head'
 import App, { Container } from 'next/app'
 import GlobalStyle from '../components/abstracts/global-style'
 import Page from '../components/abstracts/page'
+import pkg from '../package.json'
 
 export default class extends App {
   render() {
@@ -10,7 +11,7 @@ export default class extends App {
     return (
       <Container>
         <Head>
-          <title>YMKZ.NOW.SH</title>
+          <title>{pkg.name}</title>
         </Head>
         <GlobalStyle />
         <Page>
