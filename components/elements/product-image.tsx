@@ -3,6 +3,8 @@ import { useIntersection } from 'use-intersection'
 import styled from '@emotion/styled'
 import colors from '../../constants/colors'
 
+type Props = React.ImgHTMLAttributes<HTMLImageElement>
+
 const ImageContainer = styled.div`
   height: 256px;
 `
@@ -19,7 +21,7 @@ const Image = styled.img`
   height: 256px;
 `
 
-const ProductImage: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = props => {
+function ProductImage(props: Props) {
   const target = React.useRef<HTMLDivElement>(null)
   const intersected = useIntersection(target, { once: true })
 

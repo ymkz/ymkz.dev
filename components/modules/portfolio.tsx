@@ -29,7 +29,7 @@ function Portfolio() {
           Repository - GitHub(ymkz/ymkz.now.sh)
         </ProductLink>
       </ProductSupply>
-      <ProductImage src="/static/images/portfolio_1.jpg" alt="" height={256} />
+      <ProductImage src="/static/images/portfolio_1.jpg" height={256} />
     </ProductContainer>
   )
 }

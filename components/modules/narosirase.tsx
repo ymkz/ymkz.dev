@@ -31,8 +31,8 @@ function Narosirase() {
         </ProductLink>
       </ProductSupply>
       <Row space={16}>
-        <ProductImage src="/static/images/narosirase_1.jpg" alt="" height={256} />
-        <ProductImage src="/static/images/narosirase_2.jpg" alt="" height={256} />
+        <ProductImage src="/static/images/narosirase_1.jpg" height={256} />
+        <ProductImage src="/static/images/narosirase_2.jpg" height={256} />
       </Row>
     </ProductContainer>
   )
