@@ -9,7 +9,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
     "typecheck": "tsc",
     "lint": "eslint --ext .js,.ts,.tsx .",
     "lazy": "run-p typecheck lint"
