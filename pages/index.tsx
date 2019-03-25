@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import Page from '../components/abstracts/page'
 import query from '../constants/media-query'
 
 const Container = styled.div`
@@ -44,7 +43,7 @@ const BR = styled.br`
 
 function Home() {
   return (
-    <Page>
+    <React.Fragment>
       <Container>
         <H1>
           Hi, <BR />
@@ -53,7 +52,7 @@ function Home() {
         </H1>
         <H2>―Play games, seriously</H2>
       </Container>
-    </Page>
+    </React.Fragment>
   )
 }
 
