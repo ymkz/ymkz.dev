@@ -1,12 +1,13 @@
 import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
+import Manifest from '../components/abstracts/manifest'
 
 export default class extends Document {
   render() {
     return (
       <html lang="ja">
         <Head>
-          <meta name="theme-color" content="#eceff4" />
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta
             name="description"
             content="A serverless example application with next.js for now.sh"
@@ -19,26 +20,7 @@ export default class extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,900"
           />
-          <link rel="icon" type="image/png" sizes="72x72" href="/static/assets/icon_72x72.png" />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="144x144"
-            href="/static/assets/icon_144x144.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="192x192"
-            href="/static/assets/icon_192x192.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="512x512"
-            href="/static/assets/icon_512x512.png"
-          />
-          <link rel="manifest" href="/static/manifest.json" />
+          <Manifest />
         </Head>
         <body>
           <noscript>You need to enable JavaScript to run this app.</noscript>
