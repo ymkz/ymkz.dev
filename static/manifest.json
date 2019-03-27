@@ -8,22 +8,12 @@
   "start_url": "/",
   "icons": [
     {
-      "src": "assets/icon_72x72.png",
-      "sizes": "72x72",
+      "src": "assets/icon-196x196.png",
+      "sizes": "196x196",
       "type": "image/png"
     },
     {
-      "src": "assets/icon_144x144.png",
-      "sizes": "144x144",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/icon_192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/icon_512x512.png",
+      "src": "assets/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
