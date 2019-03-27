@@ -1,11 +1,15 @@
 import styled from '@emotion/styled'
 
-const Row = styled.div`
+type RowProps = {
+  space?: number
+}
+
+const Row = styled.div<RowProps>`
   align-items: center;
   display: flex;
   flex-flow: row wrap;
   & > *:not(:last-child) {
-    margin-right: ${({ space }: { space?: number }) => (space ? space : 0)}px;
+    margin-right: ${({ space }) => (space ? space : 0)}px;
   }
 `
 

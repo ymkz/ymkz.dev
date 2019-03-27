@@ -29,19 +29,19 @@ const Label = styled.label`
   text-transform: capitalize;
 `
 
-const Input = styled.input`
+const Input = styled.input<ErrorProps>`
   background-color: ${colors.nord4};
-  border: ${({ error }: ErrorProps) => (error ? '1px solid rgba(191, 97, 106, 0.85)' : 0)};
+  border: ${({ error }) => (error ? '1px solid rgba(191, 97, 106, 0.85)' : 0)};
   border-radius: 4px;
-  box-shadow: ${({ error }: ErrorProps) => error && '0 0 0 0.2rem rgba(191, 97, 106, 0.25)'};
+  box-shadow: ${({ error }) => error && '0 0 0 0.2rem rgba(191, 97, 106, 0.25)'};
   color: ${colors.nord0};
   font-size: 1rem;
   margin: 0;
   padding: 8px;
   &:focus {
-    border: ${({ error }: ErrorProps) =>
+    border: ${({ error }) =>
       error ? '1px solid rgba(191, 97, 106, 0.85)' : `1px solid ${colors.nord6}`};
-    box-shadow: ${({ error }: ErrorProps) =>
+    box-shadow: ${({ error }) =>
       error ? '0 0 0 0.2rem rgba(191, 97, 106, 0.25)' : `0 0 0 0.2rem ${colors.nord5}`};
     outline: none;
   }
@@ -51,20 +51,20 @@ const Input = styled.input`
   }
 `
 
-const Textarea = styled.textarea`
+const Textarea = styled.textarea<ErrorProps>`
   background-color: ${colors.nord4};
-  border: ${({ error }: ErrorProps) => (error ? '1px solid rgba(191, 97, 106, 0.85)' : 0)};
+  border: ${({ error }) => (error ? '1px solid rgba(191, 97, 106, 0.85)' : 0)};
   border-radius: 4px;
-  box-shadow: ${({ error }: ErrorProps) => error && '0 0 0 0.2rem rgba(191, 97, 106, 0.25)'};
+  box-shadow: ${({ error }) => error && '0 0 0 0.2rem rgba(191, 97, 106, 0.25)'};
   color: ${colors.nord0};
   font-size: 1rem;
   margin: 0;
   padding: 8px;
   resize: vertical;
   &:focus {
-    border: ${({ error }: ErrorProps) =>
+    border: ${({ error }) =>
       error ? '1px solid rgba(191, 97, 106, 0.85)' : `1px solid ${colors.nord6}`};
-    box-shadow: ${({ error }: ErrorProps) =>
+    box-shadow: ${({ error }) =>
       error ? '0 0 0 0.2rem rgba(191, 97, 106, 0.25)' : `0 0 0 0.2rem ${colors.nord5}`};
     outline: none;
   }

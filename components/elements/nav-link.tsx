@@ -14,10 +14,10 @@ type AnchorProps = {
   active: boolean
 }
 
-const Anchor = styled.a`
+const Anchor = styled.a<AnchorProps>`
   font-family: 'Nunito Sans', sans-serif;
-  font-weight: ${({ active, root }: AnchorProps) => (active || root ? '900' : '300')};
-  pointer-events: ${({ active }: AnchorProps) => active && 'none'};
+  font-weight: ${({ active, root }) => (active || root ? '900' : '300')};
+  pointer-events: ${({ active }) => active && 'none'};
   text-decoration-line: none;
   &:hover {
     cursor: pointer;
