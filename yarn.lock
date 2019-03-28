@@ -1376,7 +1376,7 @@
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.1.tgz#5c85d662f76fa1d34575766c5dcd6615abcd30d8"
   integrity sha512-FZdkNBDqBRHKQ2MEbSC17xnPFOhZxeJ2YGSfr2BKf3sujG49Qe3bB+rGCwQfIaA7WHnGeGkSijX4FuBCdrzW/g==
 
-"@ymkz/webappgen-cli@^0.1.0":
+"@ymkz/webappgen-cli@0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@ymkz/webappgen-cli/-/webappgen-cli-0.1.0.tgz#cfc98312cb1d10dc45ecd355c1ebb595ee904fa2"
   integrity sha512-gccSU0c2Cd8TEMGpgLx7xdcYAy6gDXPiWdfkGL79o3RgoRzr8TVkbrM7AHyDba/3bE0iik+zj1pxUgX+vaD03Q==
