@@ -1,7 +1,7 @@
 <div align="center">
   <img src="static/images/logo_icon_dark.svg" width="150px">
   <h1 align="center">ymkz.now.sh</h1>
-  <sup align="center">A serverless example application with next.js for now.sh</sup>
+  <sup align="center">The portfolio site about ymkz</sup>
   <br />
   <br />
   <br />

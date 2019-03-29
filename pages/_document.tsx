@@ -1,7 +1,6 @@
 import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 import Manifest from '../components/abstracts/manifest'
-import pkg from '../package.json'
 
 export default class extends Document {
   render() {
@@ -9,7 +8,7 @@ export default class extends Document {
       <html lang="ja">
         <Head>
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-          <meta name="description" content={pkg.description} />
+          <meta name="description" content="The portfolio site about ymkz" />
           <meta
             name="viewport"
             content="width=device-width,initial-scale=1,minimum-scale=1,shrink-to-fit=no"
