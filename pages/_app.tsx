@@ -15,7 +15,9 @@ export default class extends App {
             <title>ymkz</title>
           </Head>
           <Page>
-            <Component {...pageProps} />
+            <React.StrictMode>
+              <Component {...pageProps} />
+            </React.StrictMode>
           </Page>
         </Container>
       </React.Fragment>
