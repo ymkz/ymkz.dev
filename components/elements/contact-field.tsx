@@ -35,9 +35,9 @@ const Input = styled.input<ErrorProps>`
   border-radius: 4px;
   box-shadow: ${({ error }) => error && '0 0 0 0.2rem rgba(191, 97, 106, 0.25)'};
   color: ${colors.nord0};
-  font-size: 1rem;
+  height: 36px;
   margin: 0;
-  padding: 8px;
+  padding: 0 8px;
   &:focus {
     border: ${({ error }) =>
       error ? '1px solid rgba(191, 97, 106, 0.85)' : `1px solid ${colors.nord6}`};
@@ -57,8 +57,8 @@ const Textarea = styled.textarea<ErrorProps>`
   border-radius: 4px;
   box-shadow: ${({ error }) => error && '0 0 0 0.2rem rgba(191, 97, 106, 0.25)'};
   color: ${colors.nord0};
-  font-size: 1rem;
   margin: 0;
+  min-height: 192px;
   padding: 8px;
   resize: vertical;
   &:focus {

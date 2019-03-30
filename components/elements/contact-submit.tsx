@@ -7,7 +7,6 @@ const Button = styled.button`
   border: 0;
   border-radius: 4px;
   color: ${colors.nord0};
-  font-size: 1rem;
   margin-top: 1rem;
   padding: 10px 16px;
   &:focus {

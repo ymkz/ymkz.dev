@@ -43,7 +43,7 @@ function Contact() {
         <form onSubmit={formik.handleSubmit}>
           <ContactField name="name" type="text" placeholder="John Doe" />
           <ContactField name="email" type="email" placeholder="john.doe@example.com" />
-          <ContactField name="message" type="textarea" placeholder="Your message here" rows={8} />
+          <ContactField name="message" type="textarea" placeholder="Your message here" />
           <ContactSubmit disabled={formik.isSubmitting || !formik.isValid} />
         </form>
       </FormikProvider>

@@ -59,6 +59,13 @@ const globalStyle = css`
     -webkit-appearance: none;
     -moz-appearance: none;
   }
+  button,
+  input,
+  select,
+  textarea {
+    font-family: inherit;
+    font-size: 100%;
+  }
 `
 
 function GlobalStyle() {
