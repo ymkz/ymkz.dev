@@ -1,11 +1,11 @@
 {
   "name": "ymkz.now.sh",
   "short_name": "ymkz.now.sh",
+  "description": "The portfolio site about ymkz",
   "theme_color": "#eceff4",
   "background_color": "#eceff4",
   "display": "standalone",
-  "Scope": "/",
-  "start_url": "/",
+  "start_url": "/?utm_source=web_app_manifest",
   "icons": [
     {
       "src": "icon-196x196.png",
@@ -17,6 +17,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "splash_pages": null
+  ]
 }
