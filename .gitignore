@@ -9,7 +9,7 @@
 /coverage
 
 # app
-build
+.next
 
 # misc
 .DS_Store
