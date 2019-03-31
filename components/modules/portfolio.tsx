@@ -24,9 +24,9 @@ function Portfolio() {
         </Sentence>
       </ProductDescription>
       <ProductSupply>
-        <ProductLink href="https://ymkz.now.sh">Website - Portfolio</ProductLink>
-        <ProductLink href="https://github.com/ymkz/ymkz.now.sh">
-          Repository - GitHub(ymkz/ymkz.now.sh)
+        <ProductLink href="https://site.ymkz.now.sh">Website - Portfolio</ProductLink>
+        <ProductLink href="https://github.com/ymkz/site.ymkz.now.sh">
+          Repository - GitHub(ymkz/site.ymkz.now.sh)
         </ProductLink>
       </ProductSupply>
       <ProductImage src="/static/images/portfolio_1.jpg" height={256} />
