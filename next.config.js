@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-const withSize = require('next-size')
-const withTypescript = require('@zeit/next-typescript')
+const size = require('next-size')
+const typescript = require('@zeit/next-typescript')
+const withPlugins = require('next-compose-plugins')
 
-module.exports = withSize(
-  withTypescript({
-    target: 'serverless'
-  })
-)
+module.exports = withPlugins([[size], [typescript]], {
+  target: 'serverless',
+  webpack: config => config
+})
