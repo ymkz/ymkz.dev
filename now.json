@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "site",
+  "name": "site.ymkz.now.sh",
   "alias": "site.ymkz.now.sh",
   "github": { "silent": true },
   "builds": [{ "src": "next.config.js", "use": "@now/next" }],
