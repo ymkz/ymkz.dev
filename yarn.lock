@@ -3175,10 +3175,10 @@ for-in@^1.0.2:
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
   integrity sha1-gQaNKVqBQuwKxybG4iAMMPttXoA=
 
-formik@2.0.1-alpha.1:
-  version "2.0.1-alpha.1"
-  resolved "https://registry.yarnpkg.com/formik/-/formik-2.0.1-alpha.1.tgz#87828e5d94cf48fd8e965f177dfdcd4a59da4f6a"
-  integrity sha512-33QRool7oupFUirY3oo6rweLGltwMB0I/0I6IpntvFu8FEwpF+fh3pqV2GcFr1G2Isqcc5dxOzNJMwe6tN8KLg==
+formik@2.0.1-alpha.2:
+  version "2.0.1-alpha.2"
+  resolved "https://registry.yarnpkg.com/formik/-/formik-2.0.1-alpha.2.tgz#6751741d7ae2532b2a8ab683d074b52d9e4e3173"
+  integrity sha512-B6gDeIpAb1lQ6ytsCsK/UkvhCN7NGU4DW4aP/W280m2Fx2urk5FwotX3+xAsg9YpKLEHRBoesdpgyHJLDKhHKg==
   dependencies:
     deepmerge "^2.1.1"
     hoist-non-react-statics "^3.2.1"
