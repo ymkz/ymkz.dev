@@ -85,11 +85,11 @@ function ContactField(props: Props) {
     <Field>
       <Label htmlFor={props.name}>{props.name}</Label>
       {props.type === 'textarea' ? (
-        <Textarea error={!!meta.touch && !!meta.error} {...field} {...props} />
+        <Textarea error={!!meta.touched && !!meta.error} {...field} {...props} />
       ) : (
-        <Input error={!!meta.touch && !!meta.error} {...field} {...props} />
+        <Input error={!!meta.touched && !!meta.error} {...field} {...props} />
       )}
-      {meta.touch && meta.error && <Error>{meta.error}</Error>}
+      {meta.touched && meta.error && <Error>{meta.error}</Error>}
     </Field>
   )
 }
