@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 import Row from '../abstracts/row'
 import NavLink from '../elements/nav-link'
 import colors from '../../constants/colors'
-import query from '../../constants/media-query'
+import breakpoints from '../../constants/breakpoints'
 
 const Container = styled.header`
   align-items: center;
@@ -17,7 +17,7 @@ const Container = styled.header`
   left: 0;
   top: 0;
   width: 100%;
-  @media ${query.mobile} {
+  @media ${breakpoints.mobile} {
     padding: 0 16px;
   }
 `
