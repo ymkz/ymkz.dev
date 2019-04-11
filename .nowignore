@@ -1,7 +1,5 @@
-.gitignore
-.git
-.cache
-.vscode
 node_modules
+.vscode
+.cache
 .next
-docs
+.git
