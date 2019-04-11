@@ -40,8 +40,14 @@ function Cancelectures() {
         </ProductLink>
       </ProductSupply>
       <Row space={16}>
-        <ProductImage src="/static/images/cancelectures_native_1.jpg" height={256} />
-        <ProductImage src="/static/images/cancelectures_native_2.jpg" height={256} />
+        <ProductImage
+          src={require('../../static/images/cancelectures_native_1.jpg?webp')}
+          height={256}
+        />
+        <ProductImage
+          src={require('../../static/images/cancelectures_native_2.jpg?webp')}
+          height={256}
+        />
       </Row>
     </ProductContainer>
   )

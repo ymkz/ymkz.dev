@@ -26,7 +26,12 @@ function Header({ router }: WithRouterProps) {
   return (
     <Container>
       <Row space={8}>
-        <img src="/static/images/logo_icon_dark.svg" alt="logo icon" width={32} height={32} />
+        <img
+          src={require('../../static/images/logo_icon_dark.svg?inline')}
+          alt="logo icon"
+          width={32}
+          height={32}
+        />
         <NavLink href="/" pathname={router && router.pathname}>
           ymkz
         </NavLink>
