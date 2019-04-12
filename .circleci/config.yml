@@ -1,0 +1,59 @@
+version: 2.1
+executors:
+  default:
+    working_directory: ~/app
+    docker:
+      - image: circleci/node:11
+        environment:
+          HUSKY_SKIP_INSTALL: true
+commands:
+  restore_dependencies:
+    steps:
+      - restore_cache:
+          name: Restore node_modules
+          key: app-deps-{{ checksum "yarn.lock" }}
+  save_dependencies:
+    steps:
+      - save_cache:
+          name: Cache node_modules
+          key: app-deps-{{ checksum "yarn.lock" }}
+          paths: ~/app/node_modules
+jobs:
+  setup:
+    executor: default
+    steps:
+      - checkout
+      - restore_dependencies
+      - run:
+          name: Install dependencies
+          command: yarn install
+      - save_dependencies
+  check:
+    executor: default
+    steps:
+      - checkout
+      - restore_dependencies
+      - run:
+          name: Run Lint
+          command: yarn run lint
+      - run:
+          name: Run Typecheck
+          command: yarn run typecheck
+  build:
+    executor: default
+    steps:
+      - checkout
+      - restore_dependencies
+      - run:
+          name: Run Build
+          command: yarn run build
+workflows:
+  work:
+    jobs:
+      - setup
+      - check:
+          requires:
+            - setup
+      - build:
+          requires:
+            - setup
