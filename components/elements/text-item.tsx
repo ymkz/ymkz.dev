@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 
-const Text = styled.div`
+const TextItem = styled.div`
   line-height: 2;
 `
 
-export default Text
+export default TextItem
