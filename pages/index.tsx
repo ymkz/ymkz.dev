@@ -10,7 +10,7 @@ const Container = styled.div`
   padding-bottom: 64px;
   @media ${breakpoints.mobile} {
     justify-content: flex-start;
-    padding-top: 32px;
+    padding-bottom: 0;
   }
 `
 
