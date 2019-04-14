@@ -41,11 +41,11 @@ function Cancelectures() {
       </ProductSupply>
       <Row space={16}>
         <ProductImage
-          src={require('../../static/images/cancelectures_native_1.jpg?webp')}
+          src={require('../../static/images/cancelectures_native_1.jpg?inline')}
           height={256}
         />
         <ProductImage
-          src={require('../../static/images/cancelectures_native_2.jpg?webp')}
+          src={require('../../static/images/cancelectures_native_2.jpg?inline')}
           height={256}
         />
       </Row>

@@ -31,8 +31,8 @@ function Narosirase() {
         </ProductLink>
       </ProductSupply>
       <Row space={16}>
-        <ProductImage src={require('../../static/images/narosirase_1.jpg?webp')} height={256} />
-        <ProductImage src={require('../../static/images/narosirase_2.jpg?webp')} height={256} />
+        <ProductImage src={require('../../static/images/narosirase_1.jpg?inline')} height={256} />
+        <ProductImage src={require('../../static/images/narosirase_2.jpg?inline')} height={256} />
       </Row>
     </ProductContainer>
   )
