@@ -1,8 +1,8 @@
 module.exports = function(api) {
-  api.cache.using(() => process.env.NODE_ENV)
+  api.cache(true)
 
   const presets = [
-    ['next/babel', { 'preset-env': { targets: { esmodules: true }, useBuiltIns: 'usage' } }],
+    ['next/babel', { 'preset-env': { useBuiltIns: 'usage' } }],
     ['@emotion/babel-preset-css-prop'],
     ['@zeit/next-typescript/babel']
   ]
