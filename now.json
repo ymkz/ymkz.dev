@@ -2,7 +2,13 @@
   "version": 2,
   "name": "ymkz.now.sh",
   "alias": "ymkz.now.sh",
-  "github": { "silent": true },
-  "builds": [{ "src": "next.config.js", "use": "@now/next" }],
-  "regions": ["hnd1"]
+  "regions": ["hnd1"],
+  "github": {
+    "silent": true
+  },
+  "builds": [
+    { "src": "next.config.js", "use": "@now/next" },
+    { "src": "functions/integration-test.js", "use": "@now/node" }
+  ],
+  "routes": [{ "src": "/tests/(.*)", "dest": "/functions/integration-test.js" }]
 }
