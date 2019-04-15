@@ -8,7 +8,11 @@
   },
   "builds": [
     { "src": "next.config.js", "use": "@now/next" },
+    { "src": "tests/index.html", "use": "@now/static" },
     { "src": "tests/integration.js", "use": "@now/node" }
   ],
-  "routes": [{ "src": "/tests/(.+)", "dest": "/tests/integration.js" }]
+  "routes": [
+    { "src": "/tests", "dest": "/tests/index.html" },
+    { "src": "/tests/(.+)", "dest": "/tests/integration.js" }
+  ]
 }

@@ -9,10 +9,7 @@ export default class extends Document {
         <Head>
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta name="description" content="The portfolio site about ymkz" />
-          <meta
-            name="viewport"
-            content="width=device-width,initial-scale=1,minimum-scale=1,shrink-to-fit=no"
-          />
+          <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,900"
