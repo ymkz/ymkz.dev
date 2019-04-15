@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "name": "www.ymkz.now.sh",
-  "alias": "www.ymkz.now.sh",
+  "name": "ymkz.now.sh",
+  "alias": "ymkz.now.sh",
   "github": { "silent": true },
   "builds": [{ "src": "next.config.js", "use": "@now/next" }],
   "regions": ["hnd1"]

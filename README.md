@@ -1,13 +1,13 @@
 <div align="center">
   <img src="static/images/logo_icon_dark.svg" width="150px">
-  <h1 align="center">www.ymkz.now.sh</h1>
+  <h1 align="center">ymkz.now.sh</h1>
   <sup align="center">The portfolio site about ymkz</sup>
   <br />
   <br />
   <br />
 </div>
 <p align="center">
-  <a href="https://zeit.co/dashboard/project/www.ymkz.now.sh">
+  <a href="https://zeit.co/dashboard/project/ymkz.now.sh">
     <img src="https://flat.badgen.net/badge/deploy/now%20%E2%96%B2/000000" />
   </a>
   <a href="https://github.com/Microsoft/TypeScript">
