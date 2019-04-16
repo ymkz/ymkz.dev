@@ -47,17 +47,6 @@ jobs:
       - run:
           name: Run Build
           command: yarn run build
-  test:
-    executor: default
-    steps:
-      - checkout
-      - restore_dependencies
-      - run:
-          name: Run now-pipeline to prune deploy
-          command: yarn now-pipeline-prune
-      - run:
-          name: Run now-pipeline to deploy
-          command: yarn now-pipeline
 workflows:
   work:
     jobs:
@@ -66,8 +55,5 @@ workflows:
           requires:
             - setup
       - build:
-          requires:
-            - setup
-      - test:
           requires:
             - setup
