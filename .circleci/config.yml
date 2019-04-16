@@ -54,10 +54,10 @@ jobs:
       - restore_dependencies
       - run:
           name: Run now-pipeline to prune deploy
-          command: now-pipeline-prune
+          command: yarn now-pipeline-prune
       - run:
           name: Run now-pipeline to deploy
-          command: now-pipeline
+          command: yarn now-pipeline
 workflows:
   work:
     jobs:
