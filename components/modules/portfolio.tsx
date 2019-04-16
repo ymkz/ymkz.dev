@@ -18,13 +18,12 @@ function Portfolio() {
           このサイトであるPortfolioは自分についてや作ってきたものをまとめるために作成しました。
         </Sentence>
         <Sentence>
-          Reactを用いたSPAとして構築され、TypeScriptで開発しています。またCSS in
-          JSを用いてスタイルの管理を簡便かつ管理しやすいように意識しています。ホスティングはNetlifyで、PRを作成したらDeploy
-          Previewsで確認し、masterにマージすることでデプロイされるという構成です。
+          TypeScriptで記述したNext.js/Reactを用いて作成し、now.shにデプロイしています。serverlessモードでビルドしており、Now
+          Lambdas上のEdge-cacheからserver-side-renderingしています。
         </Sentence>
       </ProductDescription>
       <ProductSupply>
-        <ProductLink href="https://ymkz.now.sh">Website - Portfolio</ProductLink>
+        <ProductLink href="https://ymkz.now.sh">Website - ymkz.now.sh</ProductLink>
         <ProductLink href="https://github.com/ymkz/ymkz.now.sh">
           Repository - GitHub(ymkz/ymkz.now.sh)
         </ProductLink>
