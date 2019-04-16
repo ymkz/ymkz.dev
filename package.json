@@ -12,7 +12,6 @@
     "typecheck": "tsc",
     "lint": "eslint --ext .js,.ts,.tsx .",
     "webapp": "webappgen --file static/images/logo_icon_dark.svg",
-    "test": "percy exec -- node tests/index.js",
     "lazy": "run-p typecheck lint build"
   },
   "dependencies": {

@@ -41,12 +41,14 @@ function Cancelectures() {
       </ProductSupply>
       <Row space={16}>
         <ProductImage
-          src={require('../../static/images/cancelectures_native_1.jpg?inline')}
           height={256}
+          src={require('../../static/images/cancelectures_native_1.jpg?webp')}
+          onError={e => (e.currentTarget.src = '/static/images/cancelectures_native_1.jpg')}
         />
         <ProductImage
-          src={require('../../static/images/cancelectures_native_2.jpg?inline')}
           height={256}
+          src={require('../../static/images/cancelectures_native_2.jpg?webp')}
+          onError={e => (e.currentTarget.src = '/static/images/cancelectures_native_2.jpg')}
         />
       </Row>
     </ProductContainer>
