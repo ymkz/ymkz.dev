@@ -18,8 +18,8 @@ function Portfolio() {
           このサイトであるPortfolioは自分についてや作ってきたものをまとめるために作成しました。
         </Sentence>
         <Sentence>
-          TypeScriptで記述したNext.js/Reactを用いて作成し、now.shにデプロイしています。serverlessモードでビルドしており、Now
-          Lambdas上のEdge-cacheからserver-side-renderingしています。
+          TypeScriptで記述したNext.js/Reactを用いて作成し、now.shにデプロイしています。Serverlessモードでビルドしており、Now
+          Lambdas上のEdge-CacheからServer Side Renderingしています。
         </Sentence>
       </ProductDescription>
       <ProductSupply>
