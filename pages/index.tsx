@@ -3,14 +3,16 @@ import styled from '@emotion/styled'
 import breakpoints from '../constants/breakpoints'
 
 const Container = styled.div`
-  flex-flow: column;
-  display: flex;
-  height: calc(100vh - 64px);
-  justify-content: center;
-  padding-bottom: 64px;
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
   @media ${breakpoints.mobile} {
-    justify-content: flex-start;
-    padding-bottom: 0;
+    left: auto;
+    position: static;
+    top: auto;
+    transform: none;
   }
 `
 
@@ -28,9 +30,10 @@ const H1 = styled.h1`
 const H2 = styled.h2`
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 300;
-  margin: 0.5rem 0 0 0;
+  margin-top: 0.5rem;
   @media ${breakpoints.mobile} {
     font-size: 1.4rem;
+    margin-top: 1rem;
   }
 `
 
