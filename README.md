@@ -7,6 +7,9 @@
   <br />
 </div>
 <p align="center">
+  <a href="https://circleci.com/gh/ymkz/workflows/ymkz.now.sh">
+    <img src="https://flat.badgen.net/circleci/github/ymkz/ymkz.now.sh">
+  </a>
   <a href="https://zeit.co/dashboard/project/ymkz.now.sh">
     <img src="https://flat.badgen.net/badge/deploy/now%20%E2%96%B2/000000" />
   </a>
