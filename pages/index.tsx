@@ -1,4 +1,5 @@
 import React from 'react'
+import Head from 'next/head'
 import styled from '@emotion/styled'
 import breakpoints from '../constants/breakpoints'
 
@@ -42,6 +43,9 @@ const H2 = styled.h2`
 function Home() {
   return (
     <React.Fragment>
+      <Head>
+        <title>Home - ymkz</title>
+      </Head>
       <Container>
         <H1>Hi, I&apos;m ymkz</H1>
         <H2>―Play games, seriously</H2>
