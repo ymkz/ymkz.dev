@@ -11,7 +11,6 @@ const Container = styled.div`
   width: fit-content;
   @media ${breakpoints.mobile} {
     left: auto;
-    overflow: hidden;
     position: static;
     top: auto;
     transform: none;
