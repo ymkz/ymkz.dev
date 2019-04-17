@@ -1,10 +1,10 @@
 import React from 'react'
 import * as yup from 'yup'
 import { FormikProvider, useFormik } from 'formik'
-import SectionContainer from '../abstracts/section-container'
-import SectionTitle from '../elements/section-title'
-import ContactField from '../elements/contact-field'
-import ContactSubmit from '../elements/contact-submit'
+import SectionContainer from 'components/abstracts/section-container'
+import SectionTitle from 'components/elements/section-title'
+import ContactField from 'components/elements/contact-field'
+import ContactSubmit from 'components/elements/contact-submit'
 
 type Values = {
   name: string

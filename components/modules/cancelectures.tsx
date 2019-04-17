@@ -1,13 +1,13 @@
 import React from 'react'
-import Row from '../abstracts/row'
-import ProductContainer from '../abstracts/product-container'
-import ProductTitle from '../elements/product-title'
-import ProductSubtitle from '../elements/product-subtitle'
-import ProductDescription from '../elements/product-description'
-import ProductSupply from '../elements/product-supply'
-import ProductLink from '../elements/product-link'
-import ProductImage from '../elements/product-image'
-import Sentence from '../elements/sentence'
+import Row from 'components/abstracts/row'
+import ProductContainer from 'components/abstracts/product-container'
+import ProductTitle from 'components/elements/product-title'
+import ProductSubtitle from 'components/elements/product-subtitle'
+import ProductDescription from 'components/elements/product-description'
+import ProductSupply from 'components/elements/product-supply'
+import ProductLink from 'components/elements/product-link'
+import ProductImage from 'components/elements/product-image'
+import Sentence from 'components/elements/sentence'
 
 function Cancelectures() {
   return (
@@ -42,12 +42,12 @@ function Cancelectures() {
       <Row space={16}>
         <ProductImage
           height={256}
-          src={require('../../static/images/cancelectures_native_1.jpg?webp')}
+          src={require('static/images/cancelectures_native_1.jpg?webp')}
           onError={e => (e.currentTarget.src = '/static/images/cancelectures_native_1.jpg')}
         />
         <ProductImage
           height={256}
-          src={require('../../static/images/cancelectures_native_2.jpg?webp')}
+          src={require('static/images/cancelectures_native_2.jpg?webp')}
           onError={e => (e.currentTarget.src = '/static/images/cancelectures_native_2.jpg')}
         />
       </Row>

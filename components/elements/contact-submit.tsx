@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import colors from '../../constants/colors'
+import colors from 'constants/colors'
 
 const Button = styled.button`
   background-color: ${colors.nord4};

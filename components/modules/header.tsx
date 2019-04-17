@@ -1,10 +1,10 @@
 import React from 'react'
 import { withRouter, WithRouterProps } from 'next/router'
 import styled from '@emotion/styled'
-import Row from '../abstracts/row'
-import NavLink from '../elements/nav-link'
-import colors from '../../constants/colors'
-import breakpoints from '../../constants/breakpoints'
+import Row from 'components/abstracts/row'
+import NavLink from 'components/elements/nav-link'
+import colors from 'constants/colors'
+import breakpoints from 'constants/breakpoints'
 
 const Container = styled.header`
   align-items: center;
@@ -27,7 +27,7 @@ function Header({ router }: WithRouterProps) {
     <Container>
       <Row space={8}>
         <img
-          src={require('../../static/images/logo_icon_dark.svg?inline')}
+          src={require('static/images/logo_icon_dark.svg?inline')}
           alt="logo icon"
           width={32}
           height={32}

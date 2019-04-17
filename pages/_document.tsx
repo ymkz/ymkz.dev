@@ -1,6 +1,6 @@
 import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
-import Manifest from '../components/abstracts/manifest'
+import Manifest from 'components/abstracts/manifest'
 
 export default class extends Document {
   render() {

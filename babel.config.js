@@ -7,5 +7,18 @@ module.exports = function(api) {
     ['@zeit/next-typescript/babel']
   ]
 
-  return { presets }
+  const plugins = [
+    [
+      'module-resolver',
+      {
+        alias: {
+          components: './components',
+          constants: './constants',
+          static: './static'
+        }
+      }
+    ]
+  ]
+
+  return { presets, plugins }
 }
