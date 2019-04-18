@@ -1,7 +1,12 @@
-node_modules
 .circleci
 .github
 .vscode
 .cache
 .next
 .git
+.commitlintrc.json
+.huskyrc.json
+.editorconfig
+node_modules
+benchmark
+README.md
