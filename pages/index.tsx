@@ -32,9 +32,11 @@ const H1 = styled.h1`
 const H2 = styled.h2`
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 300;
+  margin-left: 6px;
   margin-top: 0.5rem;
   @media ${breakpoints.mobile} {
     font-size: 1.4rem;
+    margin-left: 0;
     margin-top: 1rem;
   }
 `
