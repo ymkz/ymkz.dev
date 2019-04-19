@@ -17,6 +17,16 @@ export default class extends Document {
         </Head>
         <body>
           <noscript>You need to enable JavaScript to run this app.</noscript>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                (() => {
+                  const theme = localStorage.getItem('theme')
+                  document.documentElement.setAttribute('theme', theme || 'light')
+                })()
+              `
+            }}
+          />
           <Main />
           <NextScript />
         </body>

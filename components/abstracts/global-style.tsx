@@ -1,8 +1,37 @@
 import React from 'react'
 import { css, Global } from '@emotion/core'
-import colors from 'constants/colors'
 
-const globalStyle = css`
+const styles = css`
+  :root {
+    --base-text: #2e3440;
+    --base-background: #eceff4;
+    --input-background: #d8dee9;
+    --input-border: #eceff4;
+    --input-shadow: #e5e9f0;
+    --input-placeholder-text: #4c566a;
+    --input-error-text: #bf616a;
+    --input-error-border: rgba(191, 97, 106, 0.85);
+    --input-error-shadow: rgba(191, 97, 106, 0.25);
+    --button-background: #d8dee9;
+    --button-shadow: #e5e9f0;
+    --button-disable-text: #4c566a;
+    --image-border: #d8dee9;
+  }
+  :root[theme='dark'] {
+    --base-text: #eceff4;
+    --base-background: #2e3440;
+    --input-background: #3b4252;
+    --input-border: #4c566a;
+    --input-shadow: #434c5e;
+    --input-placeholder-text: #4c566a;
+    --input-error-text: #bf616a;
+    --input-error-border: rgba(191, 97, 106, 0.85);
+    --input-error-shadow: rgba(191, 97, 106, 0.25);
+    --button-background: #3b4252;
+    --button-shadow: #434c5e;
+    --button-disable-text: #4c566a;
+    --image-border: #d8dee9;
+  }
   @font-face {
     font-family: YuGothicM;
     src: local('Yu Gothic Medium');
@@ -21,8 +50,8 @@ const globalStyle = css`
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
   body {
-    background-color: ${colors.nord6};
-    color: ${colors.nord0};
+    background-color: var(--base-background);
+    color: var(--base-text);
     font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', '游ゴシック Medium', YuGothic,
       YuGothicM, 'Hiragino Kaku Gothic ProN', メイリオ, Meiryo, sans-serif;
     margin: 0;
@@ -69,7 +98,7 @@ const globalStyle = css`
 `
 
 function GlobalStyle() {
-  return <Global styles={globalStyle} />
+  return <Global styles={styles} />
 }
 
 export default GlobalStyle

@@ -10,19 +10,16 @@ function Socials() {
       <SectionTitle>Socials</SectionTitle>
       <Row space={24}>
         <SocialLink
-          src={require('static/images/icons/github.svg?inline')}
           href="https://github.com/ymkz"
-          alt="Link to GitHub"
+          svg={require('static/images/icons/github.svg?include')}
         />
         <SocialLink
-          src={require('static/images/icons/twitter.svg?inline')}
           href="https://twitter.com/ymkzly"
-          alt="Link to Twitter"
+          svg={require('static/images/icons/twitter.svg?include')}
         />
         <SocialLink
-          src={require('static/images/icons/facebook.svg?inline')}
           href="https://facebook.com/ymkzly"
-          alt="Link to Facebook"
+          svg={require('static/images/icons/facebook.svg?include')}
         />
       </Row>
     </SectionContainer>

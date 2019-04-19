@@ -1,27 +1,31 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import colors from 'constants/colors'
 
 type Props = {
   href: string
-  src: string
-  alt: string
+  svg: string
 }
 
 const Container = styled.a`
   height: 44px;
   width: 44px;
   &:focus {
-    border-bottom: 1px solid ${colors.nord0};
+    border-bottom: 1px solid var(--base-text);
     outline: 0;
+  }
+  & > svg {
+    fill: var(--base-text);
   }
 `
 
-function SocialLink({ href, src, alt }: Props) {
+function SocialLink({ href, svg }: Props) {
   return (
-    <Container href={href} rel="noopener noreferrer" target="_blank">
-      <img src={src} alt={alt} width={44} height={44} />
-    </Container>
+    <Container
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      dangerouslySetInnerHTML={{ __html: svg }}
+    />
   )
 }
 

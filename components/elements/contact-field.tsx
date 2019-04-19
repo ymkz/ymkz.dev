@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { useField } from 'formik'
-import colors from 'constants/colors'
 
 type Props = React.InputHTMLAttributes<HTMLInputElement> &
   React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
@@ -30,52 +29,52 @@ const Label = styled.label`
 `
 
 const Input = styled.input<ErrorProps>`
-  background-color: ${colors.nord4};
-  border: ${({ error }) => (error ? '1px solid rgba(191, 97, 106, 0.85)' : 0)};
+  background-color: var(--input-background);
+  border: ${({ error }) => (error ? '1px solid var(--input-error-border)' : 0)};
   border-radius: 4px;
-  box-shadow: ${({ error }) => error && '0 0 0 0.2rem rgba(191, 97, 106, 0.25)'};
-  color: ${colors.nord0};
+  box-shadow: ${({ error }) => error && '0 0 0 0.2rem var(--input-error-shadow)'};
+  color: var(--base-text);
   height: 36px;
   margin: 0;
   padding: 0 8px;
   &:focus {
     border: ${({ error }) =>
-      error ? '1px solid rgba(191, 97, 106, 0.85)' : `1px solid ${colors.nord6}`};
+      error ? '1px solid var(--input-error-border)' : '1px solid var(--input-border)'};
     box-shadow: ${({ error }) =>
-      error ? '0 0 0 0.2rem rgba(191, 97, 106, 0.25)' : `0 0 0 0.2rem ${colors.nord5}`};
+      error ? '0 0 0 0.2rem var(--input-error-shadow)' : '0 0 0 0.2rem var(--input-shadow)'};
     outline: none;
   }
   &::placeholder {
-    color: ${colors.nord3};
+    color: var(--input-placeholder-text);
     opacity: 0.5;
   }
 `
 
 const Textarea = styled.textarea<ErrorProps>`
-  background-color: ${colors.nord4};
-  border: ${({ error }) => (error ? '1px solid rgba(191, 97, 106, 0.85)' : 0)};
+  background-color: var(--input-background);
+  border: ${({ error }) => (error ? '1px solid var(--input-error-border)' : 0)};
   border-radius: 4px;
-  box-shadow: ${({ error }) => error && '0 0 0 0.2rem rgba(191, 97, 106, 0.25)'};
-  color: ${colors.nord0};
+  box-shadow: ${({ error }) => error && '0 0 0 0.2rem var(--input-error-shadow)'};
+  color: var(--base-text);
   margin: 0;
   min-height: 192px;
   padding: 8px;
   resize: vertical;
   &:focus {
     border: ${({ error }) =>
-      error ? '1px solid rgba(191, 97, 106, 0.85)' : `1px solid ${colors.nord6}`};
+      error ? '1px solid var(--input-error-border)' : '1px solid var(--input-border)'};
     box-shadow: ${({ error }) =>
-      error ? '0 0 0 0.2rem rgba(191, 97, 106, 0.25)' : `0 0 0 0.2rem ${colors.nord5}`};
+      error ? '0 0 0 0.2rem var(--input-error-shadow)' : '0 0 0 0.2rem var(--input-shadow)'};
     outline: none;
   }
   &::placeholder {
-    color: ${colors.nord3};
+    color: var(--input-placeholder-text);
     opacity: 0.5;
   }
 `
 
 const Error = styled.div`
-  color: ${colors.nord11};
+  color: var(--input-error-text);
   margin-top: 4px;
 `
 

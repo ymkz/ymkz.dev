@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import colors from 'constants/colors'
 
 type Props = {
   href: string
@@ -14,7 +13,7 @@ const List = styled.li`
 `
 
 const Anchor = styled.a`
-  color: ${colors.nord0};
+  color: var(--base-text);
   text-decoration-line: none;
   &:hover {
     text-decoration-line: underline;

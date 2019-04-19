@@ -1,14 +1,14 @@
 import React from 'react'
 import { withRouter, WithRouterProps } from 'next/router'
 import styled from '@emotion/styled'
+import breakpoints from 'constants/breakpoints'
 import Row from 'components/abstracts/row'
 import NavLink from 'components/elements/nav-link'
-import colors from 'constants/colors'
-import breakpoints from 'constants/breakpoints'
+import LogoIcon from 'components/elements/logo-icon'
 
 const Container = styled.header`
   align-items: center;
-  background-color: ${colors.nord6};
+  background-color: var(--base-background);
   display: flex;
   height: 64px;
   justify-content: space-between;
@@ -23,15 +23,21 @@ const Container = styled.header`
 `
 
 function Header({ router }: WithRouterProps) {
+  const [theme, setTheme] = React.useState(document.documentElement.getAttribute(
+    'theme'
+  ) as NonNullable<'light' | 'dark'>)
+
+  const handleClick = () => {
+    const theme = document.documentElement.getAttribute('theme') as NonNullable<'light' | 'dark'>
+    document.documentElement.setAttribute('theme', theme === 'light' ? 'dark' : 'light')
+    localStorage.setItem('theme', theme === 'light' ? 'dark' : 'light')
+    setTheme(theme === 'light' ? 'dark' : 'light')
+  }
+
   return (
     <Container>
       <Row space={8}>
-        <img
-          src={require('static/images/logo_icon_dark.svg?inline')}
-          alt="logo icon"
-          width={32}
-          height={32}
-        />
+        <LogoIcon theme={theme} onClick={handleClick} />
         <NavLink href="/" pathname={router && router.pathname}>
           ymkz
         </NavLink>

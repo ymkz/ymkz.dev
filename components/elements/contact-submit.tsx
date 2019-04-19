@@ -1,20 +1,20 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import colors from 'constants/colors'
 
 const Button = styled.button`
-  background-color: ${colors.nord4};
+  background-color: var(--button-background);
   border: 0;
   border-radius: 4px;
-  color: ${colors.nord0};
+  color: var(--base-text);
+  cursor: pointer;
   margin-top: 1rem;
   padding: 10px 16px;
   &:focus {
-    box-shadow: inset 0 1px 2px ${colors.nord5}, 0 0 0 4px ${colors.nord5};
+    box-shadow: inset 0 1px 2px var(--button-shadow), 0 0 0 4px var(--button-shadow);
     outline: 0;
   }
   &:disabled {
-    color: ${colors.nord3};
+    color: var(--button-disable-text);
     cursor: not-allowed;
     opacity: 0.5;
   }

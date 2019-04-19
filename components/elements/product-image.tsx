@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import colors from 'constants/colors'
 
 type Props = React.ImgHTMLAttributes<HTMLImageElement>
 
@@ -9,7 +8,7 @@ const ImageContainer = styled.div`
 `
 
 const Image = styled.img`
-  border: 1px solid ${colors.nord4};
+  border: 1px solid var(--image-border);
   height: 256px;
 `
 
