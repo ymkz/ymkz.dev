@@ -23,21 +23,10 @@ const Container = styled.header`
 `
 
 function Header({ router }: WithRouterProps) {
-  const [theme, setTheme] = React.useState(document.documentElement.getAttribute(
-    'theme'
-  ) as NonNullable<'light' | 'dark'>)
-
-  const handleClick = () => {
-    const theme = document.documentElement.getAttribute('theme') as NonNullable<'light' | 'dark'>
-    document.documentElement.setAttribute('theme', theme === 'light' ? 'dark' : 'light')
-    localStorage.setItem('theme', theme === 'light' ? 'dark' : 'light')
-    setTheme(theme === 'light' ? 'dark' : 'light')
-  }
-
   return (
     <Container>
       <Row space={8}>
-        <LogoIcon theme={theme} onClick={handleClick} />
+        <LogoIcon />
         <NavLink href="/" pathname={router && router.pathname}>
           ymkz
         </NavLink>

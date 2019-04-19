@@ -1,10 +1,6 @@
 import React from 'react'
 
-type Props = React.SVGAttributes<HTMLOrSVGElement> & {
-  theme: 'light' | 'dark'
-}
-
-function LogoIcon({ theme, ...props }: Props) {
+function LogoIcon(props: React.SVGAttributes<HTMLOrSVGElement>) {
   return (
     <svg viewBox="0 0 1024 1024" width="32px" height="32px" {...props}>
       <defs>
@@ -17,10 +13,10 @@ function LogoIcon({ theme, ...props }: Props) {
           id="prefix__b"
         />
       </defs>
-      {/* <use xlinkHref="#prefix__a" fill="#4c566a" /> */}
-      {/* <use xlinkHref="#prefix__b" fill="#2e3440" /> */}
-      <use xlinkHref="#prefix__a" fill={theme === 'light' ? '#4c566a' : '#d8dee9'} />
-      <use xlinkHref="#prefix__b" fill={theme === 'light' ? '#2e3440' : '#eceff4'} />
+      <use xlinkHref="#prefix__a" fill="#4c566a" />
+      <use xlinkHref="#prefix__b" fill="#2e3440" />
+      {/* <use xlinkHref="#prefix__a" fill={theme === 'light' ? '#4c566a' : '#d8dee9'} /> */}
+      {/* <use xlinkHref="#prefix__b" fill={theme === 'light' ? '#2e3440' : '#eceff4'} /> */}
     </svg>
   )
 }
