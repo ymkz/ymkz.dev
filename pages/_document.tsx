@@ -17,7 +17,7 @@ export default class extends Document {
         </Head>
         <body>
           <noscript>You need to enable JavaScript to run this app.</noscript>
-          {/* <script
+          <script
             dangerouslySetInnerHTML={{
               __html: `
                 (() => {
@@ -26,7 +26,7 @@ export default class extends Document {
                 })()
               `
             }}
-          /> */}
+          />
           <Main />
           <NextScript />
         </body>
