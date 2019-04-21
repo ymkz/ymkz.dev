@@ -2,6 +2,14 @@ import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 import Manifest from 'components/abstracts/manifest'
 
+const injectscript = `
+(() => {
+  const theme = localStorage.getItem('theme') || 'light'
+  document.documentElement.setAttribute('theme', theme)
+  localStorage.setItem('theme', theme)
+})()
+`
+
 export default class extends Document {
   render() {
     return (
@@ -17,16 +25,7 @@ export default class extends Document {
         </Head>
         <body>
           <noscript>You need to enable JavaScript to run this app.</noscript>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                (() => {
-                  const theme = localStorage.getItem('theme')
-                  document.documentElement.setAttribute('theme', theme || 'light')
-                })()
-              `
-            }}
-          />
+          <script dangerouslySetInnerHTML={{ __html: injectscript }} />
           <Main />
           <NextScript />
         </body>
