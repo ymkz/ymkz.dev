@@ -7,7 +7,6 @@ type Props = {
 }
 
 const Container = styled.a`
-  height: 44px;
   width: 44px;
   &:focus {
     border-bottom: 1px solid var(--base-text);
