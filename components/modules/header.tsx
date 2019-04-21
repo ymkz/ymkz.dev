@@ -1,5 +1,6 @@
 import React from 'react'
-import { withRouter, WithRouterProps } from 'next/router'
+// @ts-ignore
+import { useRouter } from 'next/router'
 import styled from '@emotion/styled'
 import breakpoints from 'constants/breakpoints'
 import Row from 'components/abstracts/row'
@@ -22,7 +23,8 @@ const Container = styled.header`
   }
 `
 
-function Header({ router }: WithRouterProps) {
+function Header() {
+  const router = useRouter()
   return (
     <Container>
       <Row space={8}>
@@ -43,4 +45,4 @@ function Header({ router }: WithRouterProps) {
   )
 }
 
-export default withRouter(Header)
+export default Header

@@ -8,19 +8,17 @@ export default class extends App {
   render() {
     const { Component, pageProps } = this.props
     return (
-      <React.Fragment>
+      <React.StrictMode>
         <GlobalStyle />
         <Container>
           <Head>
             <title>ymkz</title>
           </Head>
           <Page>
-            <React.StrictMode>
-              <Component {...pageProps} />
-            </React.StrictMode>
+            <Component {...pageProps} />
           </Page>
         </Container>
-      </React.Fragment>
+      </React.StrictMode>
     )
   }
 }
