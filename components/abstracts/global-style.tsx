@@ -5,6 +5,8 @@ const styles = css`
   :root {
     --base-text: #2e3440;
     --base-background: #eceff4;
+    --logo-fill-front: #4c566a;
+    --logo-fill-back: #2e3440;
     --input-background: #d8dee9;
     --input-border: #eceff4;
     --input-shadow: #e5e9f0;
@@ -17,9 +19,11 @@ const styles = css`
     --button-disable-text: #4c566a;
     --image-border: #d8dee9;
   }
-  /* :root[theme='dark'] {
+  :root[theme='dark'] {
     --base-text: #eceff4;
     --base-background: #2e3440;
+    --logo-fill-front: #d8dee9;
+    --logo-fill-back: #eceff4;
     --input-background: #3b4252;
     --input-border: #4c566a;
     --input-shadow: #434c5e;
@@ -31,7 +35,7 @@ const styles = css`
     --button-shadow: #434c5e;
     --button-disable-text: #4c566a;
     --image-border: #d8dee9;
-  } */
+  }
   @font-face {
     font-family: YuGothicM;
     src: local('Yu Gothic Medium');

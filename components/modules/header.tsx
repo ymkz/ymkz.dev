@@ -25,10 +25,15 @@ const Container = styled.header`
 
 function Header() {
   const router = useRouter()
+  const switchTheme = () => {
+    const theme = localStorage.getItem('theme') || 'light'
+    document.documentElement.setAttribute('theme', theme === 'light' ? 'dark' : 'light')
+    localStorage.setItem('theme', theme === 'light' ? 'dark' : 'light')
+  }
   return (
     <Container>
       <Row space={8}>
-        <LogoIcon />
+        <LogoIcon onClick={switchTheme} />
         <NavLink href="/" pathname={router && router.pathname}>
           ymkz
         </NavLink>
