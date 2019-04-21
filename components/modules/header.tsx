@@ -26,9 +26,10 @@ const Container = styled.header`
 function Header() {
   const router = useRouter()
   const switchTheme = () => {
-    const theme = localStorage.getItem('theme') || 'light'
-    document.documentElement.setAttribute('theme', theme === 'light' ? 'dark' : 'light')
-    localStorage.setItem('theme', theme === 'light' ? 'dark' : 'light')
+    const prevTheme = localStorage.getItem('theme') || 'light'
+    const nextTheme = prevTheme === 'light' ? 'dark' : 'light'
+    document.documentElement.setAttribute('theme', nextTheme)
+    localStorage.setItem('theme', nextTheme)
   }
   return (
     <Container>

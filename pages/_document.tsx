@@ -4,9 +4,9 @@ import Manifest from 'components/abstracts/manifest'
 
 const injectscript = `
 (() => {
-  const theme = localStorage.getItem('theme') || 'light'
-  document.documentElement.setAttribute('theme', theme)
-  localStorage.setItem('theme', theme)
+  const initialTheme = localStorage.getItem('theme') || 'light'
+  document.documentElement.setAttribute('theme', initialTheme)
+  localStorage.setItem('theme', initialTheme)
 })()
 `
 
