@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-type Props = {
-  href: string
+type Props = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
   svg: string
 }
 
@@ -17,13 +16,13 @@ const Container = styled.a`
   }
 `
 
-function SocialLink({ href, svg }: Props) {
+function SocialLink({ svg, ...props }: Props) {
   return (
     <Container
-      href={href}
       target="_blank"
       rel="noopener noreferrer"
       dangerouslySetInnerHTML={{ __html: svg }}
+      {...props}
     />
   )
 }
