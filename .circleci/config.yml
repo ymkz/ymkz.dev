@@ -6,7 +6,7 @@ executors:
       - image: circleci/node:11
         environment:
           HUSKY_SKIP_INSTALL: true
-  default:
+  browser:
     working_directory: ~/app
     docker:
       - image: circleci/node:11-browsers
@@ -54,7 +54,7 @@ jobs:
           name: Run build
           command: yarn run build
   test:
-    executor: default
+    executor: browser
     steps:
       - checkout
       - restore_dependencies
