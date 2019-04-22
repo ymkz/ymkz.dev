@@ -34,10 +34,10 @@ jobs:
       - checkout
       - restore_dependencies
       - run:
-          name: Run Lint
+          name: Run lint
           command: yarn run lint
       - run:
-          name: Run Typecheck
+          name: Run typecheck
           command: yarn run typecheck
   build:
     executor: default
@@ -45,8 +45,16 @@ jobs:
       - checkout
       - restore_dependencies
       - run:
-          name: Run Build
+          name: Run build
           command: yarn run build
+  test:
+    executor: default
+    steps:
+      - checkout
+      - restore_dependencies
+      - run:
+          name: Run integration test
+          command: yarn run ci
 workflows:
   work:
     jobs:
@@ -55,5 +63,8 @@ workflows:
           requires:
             - setup
       - build:
+          requires:
+            - setup
+      - test:
           requires:
             - setup
