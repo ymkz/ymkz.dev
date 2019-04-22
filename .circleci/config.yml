@@ -6,6 +6,12 @@ executors:
       - image: circleci/node:11
         environment:
           HUSKY_SKIP_INSTALL: true
+  default:
+    working_directory: ~/app
+    docker:
+      - image: circleci/node:11-browsers
+        environment:
+          HUSKY_SKIP_INSTALL: true
 commands:
   restore_dependencies:
     steps:
