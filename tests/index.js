@@ -8,7 +8,10 @@
   const url = `http://localhost:3000`
 
   // Setup browser
-  const browser = await puppeteer.launch({ headless: true })
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
+  })
   const page = await browser.newPage()
   page.setViewport({ width: 1920, height: 1080 })
 
