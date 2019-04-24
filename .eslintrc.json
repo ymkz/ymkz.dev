@@ -14,6 +14,7 @@
   "plugins": [
     "react",
     "compat",
+    "import",
     "unicorn",
     "security",
     "prettier",
@@ -22,6 +23,9 @@
   ],
   "extends": [
     "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
     "plugin:react/recommended",
     "plugin:compat/recommended",
     "plugin:unicorn/recommended",
@@ -33,7 +37,6 @@
     "prettier/react"
   ],
   "rules": {
-    "no-console": "off",
     "prefer-const": "error",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
@@ -43,6 +46,12 @@
     "@typescript-eslint/explicit-member-accessibility": "off"
   },
   "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {}
+    },
     "react": {
       "version": "detect"
     }
