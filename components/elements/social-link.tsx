@@ -7,6 +7,7 @@ type Props = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
 
 const Container = styled.a`
   width: 44px;
+  border-bottom: 1px solid transparent;
   &:focus {
     border-bottom: 1px solid var(--base-text);
     outline: 0;
