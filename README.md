@@ -8,25 +8,28 @@
 </div>
 <p align="center">
   <a href="https://circleci.com/gh/ymkz/workflows/ymkz.now.sh">
-    <img src="https://flat.badgen.net/circleci/github/ymkz/ymkz.now.sh">
+    <img src="https://badgen.net/circleci/github/ymkz/ymkz.now.sh?icon=circleci">
   </a>
   <a href="https://zeit.co/ymkz/ymkz.now.sh">
-    <img src="https://flat.badgen.net/badge/deploy/now%20%E2%96%B2/000000" />
+    <img src="https://badgen.net/badge/deploy/now%20%E2%96%B2/000000" />
   </a>
   <a href="https://github.com/Microsoft/TypeScript">
-    <img src="https://flat.badgen.net/badge/language/TypeScript/017acd">
+    <img src="https://badgen.net/badge/language/TypeScript/017acd">
   </a>
   <a href="https://eslint.org">
-    <img src="https://flat.badgen.net/badge/linter/eslint/4b32c3">
+    <img src="https://badgen.net/badge/linter/eslint/4b32c3">
   </a>
   <a href="https://prettier.io">
-    <img src="https://flat.badgen.net/badge/formatter/prettier/ff69b4">
+    <img src="https://badgen.net/badge/formatter/prettier/ff69b4">
   </a>
   <a href="https://emotion.sh">
-    <img src="https://flat.badgen.net/badge/styling/emotion/d36ac2">
+    <img src="https://badgen.net/badge/styling/emotion/d36ac2">
+  </a>
+  <a href="https://percy.io/ymkz/ymkz.now.sh">
+    <img src="https://percy.io/static/images/percy-badge.svg">
   </a>
   <a href="https://renovateapp.com">
-    <img src="https://flat.badgen.net/badge/renovate/enabled/green">
+    <img src="https://badgen.net/badge/renovate/enabled/green">
   </a>
   <br />
   <br />
