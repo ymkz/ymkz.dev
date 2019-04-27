@@ -4693,6 +4693,13 @@ figures@^2.0.0:
   dependencies:
     escape-string-regexp "^1.0.5"
 
+figures@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/figures/-/figures-3.0.0.tgz#756275c964646163cc6f9197c7a0295dbfd04de9"
+  integrity sha512-HKri+WoWoUgr83pehn/SIgLOMZ9nAWC6dcGj26RY2R4F50u4+RTUz0RCrUlOV3nKRAICW1UGzyb+kcX2qK1S/g==
+  dependencies:
+    escape-string-regexp "^1.0.5"
+
 file-entry-cache@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/file-entry-cache/-/file-entry-cache-5.0.1.tgz#ca0f6efa6dd3d561333fb14515065c2fafdf439c"
@@ -5710,7 +5717,7 @@ imagemin@^5.3.1:
     pify "^2.3.0"
     replace-ext "^1.0.0"
 
-imagemin@^6.0.0:
+imagemin@^6.1.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/imagemin/-/imagemin-6.1.0.tgz#62508b465728fea36c03cdc07d915fe2d8cf9e13"
   integrity sha512-8ryJBL1CN5uSHpiBMX0rJw79C9F9aJqMnjGnrd/1CafegpNuA81RBAAru/jQQEOWlOJJlpRnlcVFF6wq+Ist0A==
@@ -7260,17 +7267,17 @@ next-compose-plugins@2.1.1:
   resolved "https://registry.yarnpkg.com/next-compose-plugins/-/next-compose-plugins-2.1.1.tgz#7da0a3ce0c8ce267b5cb4164d2fb6e4aaf61bf86"
   integrity sha512-4yLtmGjnBlzuYdL66+c/zi8ljl24sK9jtP31UsTG1ZAAHj+ybWfEG/S+HMwK+pD2fNmJ4xQyr4xOubzExcS+Lg==
 
-next-optimized-images@2.4.1:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/next-optimized-images/-/next-optimized-images-2.4.1.tgz#0e9e170e293730f88674e8f934a60fbb440889e0"
-  integrity sha512-Y4VszkBYj4WKyc/ARe4RhinRC2IJfQ2FG5uifi21+ULj1s/7scp06wd2+Ul8HLWUj/GAdkeM7gmMdBtgXXG1IA==
+next-optimized-images@2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/next-optimized-images/-/next-optimized-images-2.5.0.tgz#515f1fa564f4318fb2c4093ef54a5aacc472ed07"
+  integrity sha512-iWU2RqmXGB7AJxnM1kQiNhnfqlyqaEAdRozxbRbPf7qWigqv7ABtx6LGppy5mQ8EAfKjeyF6nul7DQ4UDDctWA==
   dependencies:
-    chalk "^2.4.1"
-    figures "^2.0.0"
+    chalk "^2.4.2"
+    figures "^3.0.0"
     file-loader "^3.0.1"
-    imagemin "^6.0.0"
+    imagemin "^6.1.0"
     img-loader "^3.0.1"
-    raw-loader "^1.0.0"
+    raw-loader "^2.0.0"
     url-loader "^1.1.2"
 
 next-server@8.1.0:
@@ -8464,10 +8471,10 @@ raw-body@2.3.3:
     iconv-lite "0.4.23"
     unpipe "1.0.0"
 
-raw-loader@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/raw-loader/-/raw-loader-1.0.0.tgz#3f9889e73dadbda9a424bce79809b4133ad46405"
-  integrity sha512-Uqy5AqELpytJTRxYT4fhltcKPj0TyaEpzJDcGz7DFJi+pQOOi3GjR/DOdxTkTsF+NzhnldIoG6TORaBlInUuqA==
+raw-loader@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/raw-loader/-/raw-loader-2.0.0.tgz#e2813d9e1e3f80d1bbade5ad082e809679e20c26"
+  integrity sha512-kZnO5MoIyrojfrPWqrhFNLZemIAX8edMOCp++yC5RKxzFB3m92DqKNhKlU6+FvpOhWtvyh3jOaD7J6/9tpdIKg==
   dependencies:
     loader-utils "^1.1.0"
     schema-utils "^1.0.0"
