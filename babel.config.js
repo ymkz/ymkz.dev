@@ -15,7 +15,8 @@ module.exports = function(api) {
           components: './components',
           constants: './constants',
           static: './static'
-        }
+        },
+        extensions: ['.js', '.ts', '.tsx']
       }
     ]
   ]
