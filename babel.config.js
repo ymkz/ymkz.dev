@@ -14,6 +14,7 @@ module.exports = function(api) {
         alias: {
           components: './components',
           constants: './constants',
+          pages: './pages',
           static: './static'
         },
         extensions: ['.js', '.ts', '.tsx']
