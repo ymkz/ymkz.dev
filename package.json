@@ -54,7 +54,6 @@
     "imagemin-mozjpeg": "8.0.0",
     "imagemin-optipng": "6.0.0",
     "imagemin-svgo": "7.0.0",
-    "next-build-id": "2.0.1",
     "next-compose-plugins": "2.2.0",
     "next-optimized-images": "2.5.0",
     "next-size": "2.0.2",
