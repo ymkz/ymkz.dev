@@ -3,8 +3,8 @@
   "license": "MIT",
   "version": "0.0.0",
   "main": "package.json",
-  "name": "ymkz.now.sh",
-  "homepage": "https://ymkz.now.sh",
+  "name": "ymkz.io",
+  "homepage": "https://ymkz.io",
   "description": "The portfolio site about ymkz",
   "scripts": {
     "dev": "next dev",
@@ -73,10 +73,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ymkz/ymkz.now.sh"
+    "url": "https://github.com/ymkz/ymkz.io"
   },
   "bugs": {
-    "url": "https://github.com/ymkz/ymkz.now.sh/issues"
+    "url": "https://github.com/ymkz/ymkz.io/issues"
   },
   "keywords": [
     "serverless",
