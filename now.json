@@ -20,10 +20,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/$1",
-      "headers": {
-        "cache-control": "s-maxage=31536000, maxage=0, stale-while-revalidate"
-      }
+      "headers": { "cache-control": "s-maxage=31536000, maxage=0, stale-while-revalidate" }
     }
   ]
 }
