@@ -3,6 +3,27 @@
   "name": "ymkz.io",
   "alias": "ymkz.io",
   "regions": ["hnd1"],
-  "github": { "silent": true },
-  "builds": [{ "src": "next.config.js", "use": "@now/next" }]
+  "github": {
+    "silent": true
+  },
+  "builds": [
+    {
+      "src": "next.config.js",
+      "use": "@now/next"
+    }
+  ],
+  "routes": [
+    {
+      "continue": true,
+      "src": "/_next/static/(?:[^/]+/pages|chunks|runtime)/.+",
+      "headers": { "cache-control": "immutable,max-age=31536000" }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1",
+      "headers": {
+        "cache-control": "s-maxage=31536000, maxage=0, stale-while-revalidate"
+      }
+    }
+  ]
 }
