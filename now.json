@@ -16,11 +16,11 @@
     {
       "continue": true,
       "src": "/_next/static/(?:[^/]+/pages|chunks|runtime)/.+",
-      "headers": { "cache-control": "immutable,max-age=31536000" }
+      "headers": { "cache-control": "immutable, max-age=31536000" }
     },
     {
-      "src": "/(.*)",
-      "headers": { "cache-control": "s-maxage=31536000, maxage=0, stale-while-revalidate" }
+      "src": "(/|/about|/work)",
+      "headers": { "cache-control": "s-maxage=31536000, maxage=1, stale-while-revalidate" }
     }
   ]
 }
