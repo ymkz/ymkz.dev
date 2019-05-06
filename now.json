@@ -19,7 +19,7 @@
       "headers": { "cache-control": "immutable, max-age=31536000" }
     },
     {
-      "src": "(/|/about|/work)",
+      "src": "/(.*)",
       "headers": { "cache-control": "s-maxage=31536000, maxage=1, stale-while-revalidate" }
     }
   ]
