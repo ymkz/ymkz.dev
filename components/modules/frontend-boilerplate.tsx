@@ -13,7 +13,7 @@ function Portfolio() {
       <ProductTitle>frontend-boilerplate</ProductTitle>
       <ProductSubtitle>A boilerplate for frontend development</ProductSubtitle>
       <ProductDescription>
-        <Sentence>Frontendのモダンなスタックで構成されたBoilerplateです</Sentence>
+        <Sentence>Frontendのモダンなスタックで構成されたBoilerplateです。</Sentence>
         <Sentence>
           既存のBoilerplateを用いずに自分なりのBoilerplateをゼロベースで作成しています。TypeScriptで記述し、ビルドはwebpack、React+Reduxな開発環境です。Reduxはredux-observableを用いて非同期処理まわりをepicにまとめています。
         </Sentence>
