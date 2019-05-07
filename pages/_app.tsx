@@ -1,3 +1,4 @@
+import '@egoist/snackbar/dist/snackbar.css'
 import React from 'react'
 import Head from 'next/head'
 import App, { Container } from 'next/app'

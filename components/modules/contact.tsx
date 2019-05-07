@@ -1,6 +1,8 @@
 import React from 'react'
 import * as yup from 'yup'
 import { FormikProvider, useFormik } from 'formik'
+// @ts-ignore : remove this line if types fields fixed
+import { createSnackbar } from '@egoist/snackbar'
 import SectionContainer from 'components/abstracts/section-container'
 import SectionTitle from 'components/elements/section-title'
 import ContactField from 'components/elements/contact-field'
@@ -30,7 +32,17 @@ function Contact() {
         headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
         body: JSON.stringify(values)
       }
-      await fetch(endpoint, request)
+      try {
+        await fetch(endpoint, request)
+        createSnackbar('Thank you for contact!', {
+          position: 'right',
+          timeout: 4000
+        })
+      } catch (error) {
+        createSnackbar('An error occurred when sending.', {
+          position: 'right'
+        })
+      }
       helpers.setSubmitting(false)
       helpers.resetForm()
     }
