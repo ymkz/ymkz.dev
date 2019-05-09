@@ -19,7 +19,7 @@ export default class extends Document {
           <meta name="description" content="The portfolio site about ymkz" />
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,900"
+            href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,900&font-display=swap"
           />
           <Manifest />
         </Head>
