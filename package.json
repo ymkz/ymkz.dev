@@ -19,7 +19,7 @@
   "dependencies": {
     "@egoist/snackbar": "1.2.0",
     "@emotion/core": "10.0.10",
-    "@emotion/styled": "10.0.10",
+    "@emotion/styled": "10.0.11",
     "formik": "2.0.1-alpha.2",
     "next": "8.1.0",
     "react": "16.8.6",
