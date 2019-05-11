@@ -14,7 +14,7 @@
     "lazy": "run-p typecheck lint build",
     "test": "percy exec -- node tests/index.js",
     "ci": "start-test dev http://localhost:3000 test",
-    "webapp": "webappgen --file static/images/logo_icon_dark.svg"
+    "webapp": "webappgen --file static/images/icons/logo.svg"
   },
   "dependencies": {
     "@egoist/snackbar": "1.2.0",
