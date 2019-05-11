@@ -1,4 +1,5 @@
 import React from 'react'
+import Row from 'components/abstracts/row'
 import ProductContainer from 'components/abstracts/product-container'
 import ProductTitle from 'components/elements/product-title'
 import ProductSubtitle from 'components/elements/product-subtitle'
@@ -28,11 +29,18 @@ function Portfolio() {
           Repository - GitHub(ymkz/ymkz.io)
         </ProductLink>
       </ProductSupply>
-      <ProductImage
-        height={256}
-        src={require('static/images/portfolio_1.jpg?webp')}
-        onError={e => (e.currentTarget.src = '/static/images/portfolio_1.jpg')}
-      />
+      <Row space={16}>
+        <ProductImage
+          height={256}
+          src={require('static/images/portfolio-1.jpg?webp')}
+          onError={e => (e.currentTarget.src = '/static/images/portfolio-1.jpg')}
+        />
+        <ProductImage
+          height={256}
+          src={require('static/images/portfolio-2.jpg?webp')}
+          onError={e => (e.currentTarget.src = '/static/images/portfolio-2.jpg')}
+        />
+      </Row>
     </ProductContainer>
   )
 }
