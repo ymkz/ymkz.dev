@@ -13,7 +13,7 @@
     args: ['--no-sandbox', '--disable-setuid-sandbox']
   })
   const page = await browser.newPage()
-  page.setViewport({ width: 1920, height: 1080 })
+  await page.setViewport({ width: 1920, height: 1080 })
 
   // Test index page
   await page.goto(url)
