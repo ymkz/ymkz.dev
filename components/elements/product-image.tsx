@@ -23,8 +23,9 @@ type ProductImageProps = {
 const Container = styled.div<ProductImageProps>`
   background-image: ${({ image }) => `url("${image.placeholder}")`};
   background-size: cover;
-  height: ${({ image }) => image.height}px;
-  width: ${({ image }) => image.width}px;
+  border: 1px solid var(--image-border);
+  height: ${({ image }) => image.height + 2}px;
+  width: ${({ image }) => image.width + 2}px;
 `
 
 function ProductImage({ image }: ProductImageProps) {

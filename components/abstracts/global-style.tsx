@@ -34,7 +34,7 @@ const styles = css`
     --button-background: #3b4252;
     --button-shadow: #434c5e;
     --button-disable-text: #4c566a;
-    --image-border: #d8dee9;
+    --image-border: #434c5e;
   }
   @font-face {
     font-family: YuGothicM;
