@@ -30,16 +30,8 @@ function Portfolio() {
         </ProductLink>
       </ProductSupply>
       <Row space={16}>
-        <ProductImage
-          height={256}
-          src={require('static/images/portfolio-1.jpg?webp')}
-          onError={e => (e.currentTarget.src = '/static/images/portfolio-1.jpg')}
-        />
-        <ProductImage
-          height={256}
-          src={require('static/images/portfolio-2.jpg?webp')}
-          onError={e => (e.currentTarget.src = '/static/images/portfolio-2.jpg')}
-        />
+        <ProductImage image={require('static/images/portfolio-1.jpg?resize')} />
+        <ProductImage image={require('static/images/portfolio-2.jpg?resize')} />
       </Row>
     </ProductContainer>
   )

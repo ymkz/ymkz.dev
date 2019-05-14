@@ -6,7 +6,14 @@ const optimize = require('next-optimized-images')
 const typescript = require('@zeit/next-typescript')
 const withPlugins = require('next-compose-plugins')
 
-module.exports = withPlugins([[size], [css], [optimize], [typescript]], {
+const optimizeOptions = {
+  responsive: {
+    placeholder: true,
+    sizes: [128, 256, 512]
+  }
+}
+
+module.exports = withPlugins([[size], [css], [optimize, optimizeOptions], [typescript]], {
   target: 'serverless',
   webpack: config => config
 })

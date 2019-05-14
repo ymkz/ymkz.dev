@@ -31,16 +31,8 @@ function Narosirase() {
         </ProductLink>
       </ProductSupply>
       <Row space={16}>
-        <ProductImage
-          height={256}
-          src={require('static/images/narosirase-1.jpg?webp')}
-          onError={e => (e.currentTarget.src = '/static/images/narosirase-1.jpg')}
-        />
-        <ProductImage
-          height={256}
-          src={require('static/images/narosirase-2.jpg?webp')}
-          onError={e => (e.currentTarget.src = '/static/images/narosirase-2.jpg')}
-        />
+        <ProductImage image={require('static/images/narosirase-1.jpg?resize')} />
+        <ProductImage image={require('static/images/narosirase-2.jpg?resize')} />
       </Row>
     </ProductContainer>
   )

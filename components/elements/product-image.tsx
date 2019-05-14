@@ -1,22 +1,37 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-type Props = React.ImgHTMLAttributes<HTMLImageElement>
+type ResizedImage = {
+  height: number
+  width: number
+  path: string
+}
 
-const ImageContainer = styled.div`
-  height: 256px;
+type Image = {
+  height: number
+  width: number
+  images: ResizedImage[]
+  placeholder: string
+  src: string
+  srcSet: string
+}
+
+type ProductImageProps = {
+  image: Image
+}
+
+const Container = styled.div<ProductImageProps>`
+  background-image: ${({ image }) => `url("${image.placeholder}")`};
+  background-size: cover;
+  height: ${({ image }) => image.height}px;
+  width: ${({ image }) => image.width}px;
 `
 
-const Image = styled.img`
-  border: 1px solid var(--image-border);
-  height: 256px;
-`
-
-function ProductImage(props: Props) {
+function ProductImage({ image }: ProductImageProps) {
   return (
-    <ImageContainer>
-      <Image alt="" {...props} />
-    </ImageContainer>
+    <Container image={image}>
+      <img height={image.height} width={image.width} src={image.src} srcSet={image.srcSet} />
+    </Container>
   )
 }
 
