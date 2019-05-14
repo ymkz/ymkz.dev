@@ -30,7 +30,7 @@ const Container = styled.div<ProductImageProps>`
 function ProductImage({ image }: ProductImageProps) {
   return (
     <Container image={image}>
-      <img height={image.height} width={image.width} src={image.src} srcSet={image.srcSet} />
+      <img alt="" height={image.height} width={image.width} src={image.src} srcSet={image.srcSet} />
     </Container>
   )
 }
