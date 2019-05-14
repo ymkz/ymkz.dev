@@ -8,7 +8,7 @@ type Props = {
 
 const List = styled.li`
   &:not(:last-child) {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
 `
 
