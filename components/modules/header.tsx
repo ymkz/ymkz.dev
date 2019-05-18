@@ -24,7 +24,7 @@ const Container = styled.header`
 `
 
 function Header() {
-  const router = useRouter()
+  const { pathname } = useRouter()
   const switchTheme = () => {
     const prevTheme = localStorage.getItem('theme') || 'light'
     const nextTheme = prevTheme === 'light' ? 'dark' : 'light'
@@ -35,15 +35,15 @@ function Header() {
     <Container>
       <Row space={8}>
         <LogoIcon onClick={switchTheme} />
-        <NavLink href="/" pathname={router && router.pathname}>
+        <NavLink href="/" pathname={pathname}>
           ymkz
         </NavLink>
       </Row>
       <Row space={16}>
-        <NavLink href="/about" pathname={router && router.pathname}>
+        <NavLink href="/about" pathname={pathname}>
           about
         </NavLink>
-        <NavLink href="/work" pathname={router && router.pathname}>
+        <NavLink href="/work" pathname={pathname}>
           work
         </NavLink>
       </Row>
