@@ -2,8 +2,8 @@ import '@egoist/snackbar/dist/snackbar.css'
 import React from 'react'
 import Head from 'next/head'
 import App, { Container } from 'next/app'
-import GlobalStyle from 'components/abstracts/global-style'
-import Page from 'components/abstracts/page'
+import GlobalStyle from '~/components/abstracts/global-style'
+import Page from '~/components/abstracts/page'
 
 export default class extends App {
   render() {

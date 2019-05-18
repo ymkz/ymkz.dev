@@ -3,10 +3,10 @@ import * as yup from 'yup'
 import { FormikProvider, useFormik } from 'formik'
 // @ts-ignore : remove this line if types fields fixed
 import { createSnackbar } from '@egoist/snackbar'
-import SectionContainer from 'components/abstracts/section-container'
-import SectionTitle from 'components/elements/section-title'
-import ContactField from 'components/elements/contact-field'
-import ContactSubmit from 'components/elements/contact-submit'
+import SectionContainer from '~/components/abstracts/section-container'
+import SectionTitle from '~/components/elements/section-title'
+import ContactField from '~/components/elements/contact-field'
+import ContactSubmit from '~/components/elements/contact-submit'
 
 type Values = {
   name: string

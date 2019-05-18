@@ -1,8 +1,8 @@
 import React from 'react'
-import Row from 'components/abstracts/row'
-import SectionContainer from 'components/abstracts/section-container'
-import SectionTitle from 'components/elements/section-title'
-import TextItem from 'components/elements/text-item'
+import Row from '~/components/abstracts/row'
+import SectionContainer from '~/components/abstracts/section-container'
+import SectionTitle from '~/components/elements/section-title'
+import TextItem from '~/components/elements/text-item'
 
 function Skills() {
   return (

@@ -1,7 +1,7 @@
 import React from 'react'
-import SectionContainer from 'components/abstracts/section-container'
-import SectionTitle from 'components/elements/section-title'
-import Sentence from 'components/elements/sentence'
+import SectionContainer from '~/components/abstracts/section-container'
+import SectionTitle from '~/components/elements/section-title'
+import Sentence from '~/components/elements/sentence'
 
 function Profile() {
   return (

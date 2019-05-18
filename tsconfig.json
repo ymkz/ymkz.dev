@@ -16,12 +16,7 @@
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "paths": {
-      "components*": ["components*"],
-      "constants*": ["constants*"],
-      "pages*": ["pages*"],
-      "static*": ["static*"]
-    },
+    "paths": { "~/*": ["./*"] },
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,

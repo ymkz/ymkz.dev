@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { throttle } from 'throttle-debounce'
-import Header from 'components/modules/header'
+import Header from '~/components/modules/header'
 
 type Props = {
   children: React.ReactNode

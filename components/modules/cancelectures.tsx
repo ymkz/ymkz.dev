@@ -1,13 +1,13 @@
 import React from 'react'
-import Row from 'components/abstracts/row'
-import ProductContainer from 'components/abstracts/product-container'
-import ProductTitle from 'components/elements/product-title'
-import ProductSubtitle from 'components/elements/product-subtitle'
-import ProductDescription from 'components/elements/product-description'
-import ProductSupply from 'components/elements/product-supply'
-import ProductLink from 'components/elements/product-link'
-import ProductImage from 'components/elements/product-image'
-import Sentence from 'components/elements/sentence'
+import Row from '~/components/abstracts/row'
+import ProductContainer from '~/components/abstracts/product-container'
+import ProductTitle from '~/components/elements/product-title'
+import ProductSubtitle from '~/components/elements/product-subtitle'
+import ProductDescription from '~/components/elements/product-description'
+import ProductSupply from '~/components/elements/product-supply'
+import ProductLink from '~/components/elements/product-link'
+import ProductImage from '~/components/elements/product-image'
+import Sentence from '~/components/elements/sentence'
 
 function Cancelectures() {
   return (
@@ -40,8 +40,8 @@ function Cancelectures() {
         </ProductLink>
       </ProductSupply>
       <Row space={16}>
-        <ProductImage image={require('static/images/cancelectures-native-1.jpg?resize')} />
-        <ProductImage image={require('static/images/cancelectures-native-2.jpg?resize')} />
+        <ProductImage image={require('~/static/images/cancelectures-native-1.jpg?resize')} />
+        <ProductImage image={require('~/static/images/cancelectures-native-2.jpg?resize')} />
       </Row>
     </ProductContainer>
   )

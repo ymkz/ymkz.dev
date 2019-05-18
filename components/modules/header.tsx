@@ -2,10 +2,10 @@ import React from 'react'
 // @ts-ignore
 import { useRouter } from 'next/router'
 import styled from '@emotion/styled'
-import breakpoints from 'constants/breakpoints'
-import Row from 'components/abstracts/row'
-import NavLink from 'components/elements/nav-link'
-import LogoIcon from 'components/elements/logo-icon'
+import breakpoints from '~/constants/breakpoints'
+import Row from '~/components/abstracts/row'
+import NavLink from '~/components/elements/nav-link'
+import LogoIcon from '~/components/elements/logo-icon'
 
 const Container = styled.header`
   align-items: center;
