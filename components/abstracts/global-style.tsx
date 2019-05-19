@@ -37,6 +37,7 @@ const styles = css`
     --image-border: #434c5e;
   }
   @font-face {
+    font-display: swap;
     font-family: YuGothicM;
     src: local('Yu Gothic Medium');
   }
