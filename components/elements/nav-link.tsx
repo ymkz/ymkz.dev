@@ -30,7 +30,7 @@ const Anchor = styled.a<AnchorProps>`
 `
 
 function NavLink({ href, pathname, children }: Props) {
-  const prefetch = () => Router.prefetch(href)
+  const prefetch = async () => await Router.prefetch(href)
   const active = href === pathname
   const root = href === '/'
 
