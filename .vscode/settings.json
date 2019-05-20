@@ -19,10 +19,20 @@
     "**/yarn.lock": true,
     "**/package-lock.json": true
   },
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": false
+  },
+  "[typescript]": {
+    "editor.formatOnSave": false
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": false
+  },
   "[markdown]": {
     "editor.wordWrap": "on",
-    "editor.quickSuggestions": false,
-    "editor.formatOnSave": true,
-    "editor.formatOnType": true
+    "editor.quickSuggestions": false
   }
 }
