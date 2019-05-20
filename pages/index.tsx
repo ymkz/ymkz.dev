@@ -49,7 +49,7 @@ function Home() {
       </Head>
       <Container>
         <H1>Hi, I&apos;m ymkz</H1>
-        <H2>―Play games, seriously</H2>
+        <H2>―Play games, seriously with fun.</H2>
       </Container>
     </React.Fragment>
   )
