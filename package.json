@@ -12,8 +12,8 @@
     "typecheck": "tsc",
     "lint": "eslint --ext .js,.ts,.tsx .",
     "lazy": "run-p typecheck lint build",
-    "test": "percy exec -- node tests/index.js",
-    "ci": "start-test dev http://localhost:3000 test",
+    "browser": "percy exec -- node tests/index.js",
+    "test": "start-test dev http://localhost:3000 browser",
     "webapp": "webappgen --file static/images/icons/logo.svg"
   },
   "dependencies": {
