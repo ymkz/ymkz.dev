@@ -1,6 +1,5 @@
 import React from 'react'
-import * as yup from 'yup'
-import { FormikProvider, useFormik, FormikHelpers } from 'formik'
+import { useFormState } from 'react-use-form-state'
 // @ts-ignore : remove this line if types fields fixed
 import { createSnackbar } from '@egoist/snackbar'
 import SectionContainer from '~/components/abstracts/section-container'
@@ -15,45 +14,35 @@ type ContactValues = {
 }
 
 function Contact() {
-  const formikbag = useFormik<ContactValues>({
-    initialValues: { name: '', email: '', message: '' },
-    validationSchema: yup.object().shape({
-      name: yup.string().required('Please enter a input'),
-      email: yup
-        .string()
-        .email('Please enter a valid email address')
-        .required('Please enter a input'),
-      message: yup.string().required('Please enter a input')
-    }),
-    onSubmit: async (values: ContactValues, helpers: FormikHelpers<ContactValues>) => {
-      const endpoint = 'https://usebasin.com/f/81603850904d.json'
-      const request = {
-        method: 'POST',
-        headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
-        body: JSON.stringify(values)
-      }
-      try {
-        await fetch(endpoint, request)
-        createSnackbar('Thank you for contact!', { position: 'right', timeout: 4000 })
-      } catch (error) {
-        createSnackbar('An error occurred when sending.', { position: 'right' })
-      }
-      helpers.setSubmitting(false)
-      helpers.resetForm()
+  const [form, { text, email, textarea }] = useFormState<ContactValues>(null, { withIds: true })
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+
+    const endpoint = 'https://usebasin.com/f/81603850904d.json'
+    const request = {
+      method: 'POST',
+      headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify(form.values)
     }
-  })
+    try {
+      await fetch(endpoint, request)
+      createSnackbar('Thank you for contact!', { position: 'right', timeout: 4000 })
+    } catch (error) {
+      createSnackbar('An error occurred when sending.', { position: 'right' })
+    }
+
+    form.clear()
+  }
 
   return (
     <SectionContainer id="contact">
       <SectionTitle>Contact</SectionTitle>
-      <FormikProvider value={formikbag}>
-        <form onSubmit={formikbag.handleSubmit}>
-          <ContactField name="name" type="text" placeholder="John Doe" />
-          <ContactField name="email" type="email" placeholder="john.doe@example.com" />
-          <ContactField name="message" type="textarea" placeholder="Your message here" />
-          <ContactSubmit disabled={formikbag.isSubmitting || !formikbag.isValid} />
-        </form>
-      </FormikProvider>
+      <form onSubmit={handleSubmit}>
+        <ContactField required placeholder="John Doe" {...text('name')} />
+        <ContactField required placeholder="john.doe@example.com" {...email('email')} />
+        <ContactField required placeholder="Your message here" rows={8} {...textarea('message')} />
+        <ContactSubmit type="submit">Submit</ContactSubmit>
+      </form>
     </SectionContainer>
   )
 }
