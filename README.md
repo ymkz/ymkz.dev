@@ -11,10 +11,10 @@
     <img src="https://flat.badgen.net/circleci/github/ymkz/ymkz.io?icon=circleci">
   </a>
   <a href="https://zeit.co/ymkz/ymkz.io">
-    <img src="https://flat.badgen.net/badge/deploy/now%20%E2%96%B2/000000" />
+    <img src="https://flat.badgen.net/badge/%E2%96%B2%20deploy/now/000000" />
   </a>
   <a href="https://github.com/Microsoft/TypeScript">
-    <img src="https://flat.badgen.net/badge/language/TypeScript/017acd">
+    <img src="https://flat.badgen.net/badge/language/TypeScript/017acd?icon=typescript">
   </a>
   <a href="https://eslint.org">
     <img src="https://flat.badgen.net/badge/linter/eslint/4b32c3">
@@ -29,7 +29,7 @@
     <img src="https://flat.badgen.net/badge/visual testing/percy/9e66bf">
   </a>
   <a href="https://renovateapp.com">
-    <img src="https://flat.badgen.net/badge/renovate/enabled/green">
+    <img src="https://flat.badgen.net/badge/deps/dependabot/green?icon=dependabot">
   </a>
   <br />
   <br />
