@@ -24,15 +24,6 @@ commands:
       - save_cache:
           key: app-deps-{{ checksum "yarn.lock" }}
           paths: ~/app/node_modules
-  persist-workspace:
-    steps:
-      - persist_to_workspace:
-          root: .
-          paths: .
-  attach-workspace:
-    steps:
-      - attach_workspace:
-          at: .
 jobs:
   setup:
     executor: default
@@ -43,32 +34,35 @@ jobs:
           name: Install dependencies
           command: yarn install
       - save-dependencies
-      - persist-workspace
   check-linter:
     executor: default
     steps:
-      - attach-workspace
+      - checkout
+      - restore-dependencies
       - run:
           name: Run lint
           command: yarn lint
   check-types:
     executor: default
     steps:
-      - attach-workspace
+      - checkout
+      - restore-dependencies
       - run:
           name: Run typecheck
           command: yarn typecheck
-  run-e2e-test:
+  run-integration-test:
     executor: browser
     steps:
-      - attach-workspace
+      - checkout
+      - restore-dependencies
       - run:
           name: Run integration test
-          command: yarn test
+          command: yarn test:integration
   build:
     executor: default
     steps:
-      - attach-workspace
+      - checkout
+      - restore-dependencies
       - run:
           name: Run build
           command: yarn build
@@ -82,7 +76,7 @@ workflows:
       - check-types:
           requires:
             - setup
-      - run-e2e-test:
+      - run-integration-test:
           requires:
             - setup
       - build:
@@ -90,4 +84,4 @@ workflows:
             - setup
             - check-linter
             - check-types
-            - run-e2e-test
+            - run-integration-test

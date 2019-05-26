@@ -12,8 +12,8 @@
     "typecheck": "tsc",
     "lint": "eslint --ext .js,.ts,.tsx .",
     "lazy": "run-p typecheck lint build",
-    "browser": "percy exec -- node tests/index.js",
-    "test": "start-test dev http://localhost:3000 browser",
+    "test:browser": "percy exec -- node tests/index.js",
+    "test:integration": "start-test dev http://localhost:3000 test:browser",
     "webapp": "webappgen --file static/images/icons/logo.svg"
   },
   "dependencies": {
@@ -33,6 +33,7 @@
     "@emotion/babel-preset-css-prop": "10.0.9",
     "@percy/puppeteer": "1.0.8",
     "@types/next": "8.0.5",
+    "@types/puppeteer": "1.12.4",
     "@types/react": "16.8.18",
     "@types/react-dom": "16.8.4",
     "@types/throttle-debounce": "1.1.1",
@@ -56,6 +57,7 @@
     "imagemin-mozjpeg": "8.0.0",
     "imagemin-optipng": "6.0.0",
     "imagemin-svgo": "7.0.0",
+    "make-dir": "3.0.0",
     "next-compose-plugins": "2.2.0",
     "next-optimized-images": "2.5.0",
     "next-size": "2.0.2",
