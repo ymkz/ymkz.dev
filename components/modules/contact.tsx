@@ -24,6 +24,7 @@ function Contact() {
       headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
       body: JSON.stringify(form.values)
     }
+
     try {
       await fetch(endpoint, request)
       createSnackbar('Thank you for contact!', { position: 'right', timeout: 4000 })
