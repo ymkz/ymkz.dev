@@ -1,6 +1,0 @@
-{
-  "automerge": true,
-  "extends": ["config:base"],
-  "labels": ["renovate"],
-  "major": { "automerge": false }
-}
