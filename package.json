@@ -55,7 +55,7 @@
     "eslint-plugin-unicorn": "8.0.2",
     "husky": "2.3.0",
     "imagemin-mozjpeg": "8.0.0",
-    "imagemin-optipng": "6.0.0",
+    "imagemin-optipng": "7.0.0",
     "imagemin-svgo": "7.0.0",
     "make-dir": "3.0.0",
     "next-compose-plugins": "2.2.0",
