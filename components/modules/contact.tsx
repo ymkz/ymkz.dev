@@ -1,6 +1,5 @@
 import React from 'react'
 import { useFormState } from 'react-use-form-state'
-// @ts-ignore : remove this line if types fields fixed
 import { createSnackbar } from '@egoist/snackbar'
 import SectionContainer from '~/components/abstracts/section-container'
 import SectionTitle from '~/components/elements/section-title'

@@ -5,7 +5,6 @@ import Router from 'next/router'
 import App, { Container } from 'next/app'
 // @ts-ignore
 import withGA from 'next-ga'
-// @ts-ignore : remove this line if types fields fixed
 import { createSnackbar } from '@egoist/snackbar'
 import GlobalStyle from '~/components/abstracts/global-style'
 import Page from '~/components/abstracts/page'
@@ -20,7 +19,6 @@ export default withGA('UA-140852595-1', Router)(
           actions: [
             {
               text: 'CONFIRM',
-              // @ts-ignore
               callback(_, snackbar) {
                 snackbar.destroy()
                 localStorage.setItem('ga', 'yes')
