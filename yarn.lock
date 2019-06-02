@@ -974,10 +974,10 @@
   dependencies:
     find-up "^2.1.0"
 
-"@egoist/snackbar@1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@egoist/snackbar/-/snackbar-1.2.1.tgz#1dc9f4227addb038d2dbeb0b08da8a0ca756cdc5"
-  integrity sha512-s0JpojDd/YlzgppQrQW44d10uijrdU929BfF4Vg8tg1O1wZ2+SgXaCS/lB9U8cClHc0tiSnI0KUD0SVdeoDGbQ==
+"@egoist/snackbar@1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@egoist/snackbar/-/snackbar-1.2.2.tgz#ad0ecb9f49bdd179fe36a3fa87173fec9b8d6a74"
+  integrity sha512-03fLZubSswI90cNqDdszWhYJqrJeNtN9qNOWBwJdKDMvjdnATejGusvnt+J30kG7ZfjMD6/BxXW0f6hPEIsMzg==
 
 "@emotion/babel-plugin-jsx-pragmatic@^0.1.2":
   version "0.1.2"

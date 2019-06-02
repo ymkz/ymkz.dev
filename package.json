@@ -17,7 +17,7 @@
     "webapp": "webappgen --file static/images/icons/logo.svg"
   },
   "dependencies": {
-    "@egoist/snackbar": "1.2.1",
+    "@egoist/snackbar": "1.2.2",
     "@emotion/core": "10.0.10",
     "@emotion/styled": "10.0.11",
     "next": "8.1.0",
