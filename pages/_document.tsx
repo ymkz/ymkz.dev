@@ -1,5 +1,7 @@
 import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
+// @ts-ignore
+import ServiceWorker from 'next-workbox/service-worker'
 import Manifest from '~/components/abstracts/manifest'
 
 const injectscript = `
@@ -28,6 +30,11 @@ export default class extends Document {
           <script dangerouslySetInnerHTML={{ __html: injectscript }} />
           <Main />
           <NextScript />
+          <ServiceWorker
+            scope="/"
+            src="/sw.js"
+            unregister={process.env.NODE_ENV !== 'production'}
+          />
         </body>
       </html>
     )
