@@ -1,6 +1,5 @@
 import '@egoist/snackbar/dist/snackbar.css'
 import React from 'react'
-import Head from 'next/head'
 import Router from 'next/router'
 import App, { Container } from 'next/app'
 import analytics from '~/helpers/analytics'
@@ -16,16 +15,12 @@ export default class extends App {
   }
 
   render() {
-    const { Component, pageProps } = this.props
     return (
       <React.StrictMode>
         <GlobalStyle />
         <Container>
-          <Head>
-            <title>ymkz</title>
-          </Head>
           <Page>
-            <Component {...pageProps} />
+            <this.props.Component {...this.props.pageProps} />
           </Page>
         </Container>
       </React.StrictMode>
