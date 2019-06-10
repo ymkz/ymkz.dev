@@ -7771,10 +7771,10 @@ react-ssr-prepass@1.0.2:
   dependencies:
     object-is "^1.0.1"
 
-react-use-form-state@0.10.3:
-  version "0.10.3"
-  resolved "https://registry.yarnpkg.com/react-use-form-state/-/react-use-form-state-0.10.3.tgz#d7bcf441a007e186bf6185a16552a061e59df1d1"
-  integrity sha512-/v8ESPhvxy6cdOmxFNOw+uTVMM9cN+vX/hXXAe5kod/xylr6YxBRz7pVmYM+fxY3BY6CGIFmFM4nTRvFjFwxjQ==
+react-use-form-state@0.10.4:
+  version "0.10.4"
+  resolved "https://registry.yarnpkg.com/react-use-form-state/-/react-use-form-state-0.10.4.tgz#87fa68939fc0d951c89aaf8ea74ef76e78c92313"
+  integrity sha512-PaYuUocwSQDc3gDoT7SQ83Rtk9A/OSDKLRDe0buMQx1KHhJo4MH/M5dSDvFXGGl0VAg8Y2+uLs1Q8v3q3ZIv+Q==
 
 react@16.8.6:
   version "16.8.6"
