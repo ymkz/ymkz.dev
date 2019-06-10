@@ -52,7 +52,7 @@
     "eslint-plugin-react": "7.13.0",
     "eslint-plugin-react-hooks": "1.6.0",
     "eslint-plugin-security": "1.4.0",
-    "eslint-plugin-unicorn": "9.0.0",
+    "eslint-plugin-unicorn": "9.1.0",
     "husky": "2.4.0",
     "imagemin-mozjpeg": "8.0.0",
     "imagemin-optipng": "7.0.0",
