@@ -36,7 +36,6 @@
     "@types/puppeteer": "1.12.4",
     "@types/react": "16.8.19",
     "@types/react-dom": "16.8.4",
-    "@types/throttle-debounce": "1.1.1",
     "@typescript-eslint/eslint-plugin": "1.10.2",
     "@typescript-eslint/parser": "1.10.2",
     "@ymkz/webappgen-cli": "0.1.0",
