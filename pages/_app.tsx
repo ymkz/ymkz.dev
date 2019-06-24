@@ -8,10 +8,12 @@ import Page from '~/components/abstracts/page'
 
 export default class extends App {
   componentDidMount() {
-    analytics.requestAuthorization()
-    analytics.initialize()
-    analytics.pageview(location.pathname)
-    Router.onRouteChangeComplete = analytics.pageview
+    if (process.env.NODE_ENV === 'production') {
+      analytics.requestAuthorization()
+      analytics.initialize()
+      analytics.pageview(location.pathname)
+      Router.onRouteChangeComplete = analytics.pageview
+    }
   }
 
   render() {

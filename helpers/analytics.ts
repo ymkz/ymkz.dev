@@ -20,7 +20,7 @@ export default {
     }
   },
   initialize: () => {
-    ReactGA.initialize('UA-140852595-1', { debug: process.env.NODE_ENV !== 'production' })
+    ReactGA.initialize('UA-140852595-1')
   },
   pageview: (pathname: string) => {
     ReactGA.set({ page: pathname })
