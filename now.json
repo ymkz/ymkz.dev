@@ -14,12 +14,24 @@
   ],
   "routes": [
     {
+      "src": "^/service-worker.js$",
+      "dest": "/_next/static/service-worker.js",
+      "headers": {
+        "cache-control": "public, max-age=43200, immutable",
+        "Service-Worker-Allowed": "/"
+      }
+    },
+    {
       "src": "/_next/static/(?:[^/]+/pages|chunks|runtime|images)/.+",
-      "headers": { "cache-control": "immutable, max-age=31536000" }
+      "headers": {
+        "cache-control": "immutable, max-age=31536000"
+      }
     },
     {
       "src": "/static/(.*)",
-      "headers": { "cache-control": "immutable, max-age=31536000" }
+      "headers": {
+        "cache-control": "immutable, max-age=31536000"
+      }
     }
   ]
 }
