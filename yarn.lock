@@ -6661,10 +6661,10 @@ next-offline@4.0.2:
     webpack "^4.19.1"
     workbox-webpack-plugin "^4.3.1"
 
-next-optimized-images@2.5.2:
-  version "2.5.2"
-  resolved "https://registry.yarnpkg.com/next-optimized-images/-/next-optimized-images-2.5.2.tgz#c13c972abd09b917ef45e88a32203cca866d19eb"
-  integrity sha512-XY0A6wClHRF0nuoBxcc5PqImLALjpCfWQJdpYs/ObbPJz6oLupOCRIh6gIXmSiAN9dB6pDG3dDxCBeLwwNUC8w==
+next-optimized-images@2.5.3:
+  version "2.5.3"
+  resolved "https://registry.yarnpkg.com/next-optimized-images/-/next-optimized-images-2.5.3.tgz#40b8f0f98917742e3262d5b4ffac68ee09cfee30"
+  integrity sha512-eyTGBluzqZVZCqq5/+B+CoKWZJ8+ooIj7b4Z7jvQ38vVBOfZy4MeIh4oHrnk3KD4HM9qU/xDKBZuV6sgXSusdw==
   dependencies:
     chalk "^2.4.2"
     figures "^3.0.0"
