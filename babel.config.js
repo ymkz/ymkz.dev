@@ -2,7 +2,7 @@ module.exports = function(api) {
   api.cache(true)
 
   const presets = [
-    ['next/babel', { 'preset-env': { useBuiltIns: 'usage' } }],
+    ['next/babel', { 'preset-env': { useBuiltIns: 'usage', targets: { esmodules: true } } }],
     ['@emotion/babel-preset-css-prop', { labelFormat: '[dirname]-[filename]-[local]' }],
     ['@zeit/next-typescript/babel']
   ]
