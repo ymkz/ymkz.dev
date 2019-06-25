@@ -1,0 +1,11 @@
+{
+  "name": "ymkz.io",
+  "short_name": "ymkz.io",
+  "description": "The portfolio site about ymkz",
+  "theme_color": "#eceff4",
+  "background_color": "#eceff4",
+  "display": "standalone",
+  "Scope": "/",
+  "start_url": "/",
+  "splash_pages": null
+}
