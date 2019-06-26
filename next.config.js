@@ -16,6 +16,8 @@ const optimizeOptions = {
 
 const offlineOptions = {
   workboxOpts: {
+    clientsClaim: true,
+    skipWaiting: true,
     swDest: 'static/service-worker.js'
   }
 }
