@@ -30,7 +30,7 @@
     "@babel/core": "7.4.5",
     "@commitlint/cli": "8.0.0",
     "@commitlint/config-conventional": "8.0.0",
-    "@emotion/babel-preset-css-prop": "10.0.9",
+    "@emotion/babel-preset-css-prop": "10.0.14",
     "@percy/puppeteer": "1.0.8",
     "@types/next": "8.0.5",
     "@types/puppeteer": "1.12.4",
