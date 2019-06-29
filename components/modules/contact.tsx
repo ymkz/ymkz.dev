@@ -17,15 +17,15 @@ function Contact() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
-    const endpoint = 'https://usebasin.com/f/81603850904d.json'
-    const request = {
+    const input: RequestInfo = 'https://usebasin.com/f/81603850904d.json'
+    const init: RequestInit = {
       method: 'POST',
       headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
       body: JSON.stringify(form.values)
     }
 
     try {
-      await fetch(endpoint, request)
+      await fetch(input, init)
       createSnackbar('Thank you for contact!', { position: 'right', timeout: 4000 })
     } catch (error) {
       createSnackbar('An error occurred when sending.', { position: 'right' })
