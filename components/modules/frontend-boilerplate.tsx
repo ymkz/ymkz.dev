@@ -1,13 +1,13 @@
 import React from 'react'
-import ProductContainer from '~/components/abstracts/product-container'
-import ProductTitle from '~/components/elements/product-title'
-import ProductSubtitle from '~/components/elements/product-subtitle'
-import ProductDescription from '~/components/elements/product-description'
-import ProductSupply from '~/components/elements/product-supply'
-import ProductLink from '~/components/elements/product-link'
-import Sentence from '~/components/elements/sentence'
+import { ProductContainer } from '~/components/abstracts/product-container'
+import { ProductTitle } from '~/components/elements/product-title'
+import { ProductSubtitle } from '~/components/elements/product-subtitle'
+import { ProductDescription } from '~/components/elements/product-description'
+import { ProductSupply } from '~/components/elements/product-supply'
+import { ProductLink } from '~/components/elements/product-link'
+import { Sentence } from '~/components/elements/sentence'
 
-function Portfolio() {
+export function FrontendBoilerplate() {
   return (
     <ProductContainer id="frontend-boilerplate">
       <ProductTitle>frontend-boilerplate</ProductTitle>
@@ -29,5 +29,3 @@ function Portfolio() {
     </ProductContainer>
   )
 }
-
-export default Portfolio

@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import styled from '@emotion/styled'
 
-type Props = {
+type NavLinkProps = {
   href: string
   pathname: string | undefined
   children: React.ReactNode
@@ -28,10 +28,9 @@ const Anchor = styled.a<AnchorProps>`
   }
 `
 
-function NavLink({ href, pathname, children }: Props) {
+export function NavLink({ href, pathname, children }: NavLinkProps) {
   const active = href === pathname
   const root = href === '/'
-
   return (
     <Link href={href}>
       <Anchor active={active} root={root} tabIndex={active ? -1 : 0}>
@@ -40,5 +39,3 @@ function NavLink({ href, pathname, children }: Props) {
     </Link>
   )
 }
-
-export default NavLink

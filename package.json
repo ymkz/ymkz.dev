@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "typecheck": "tsc",
+    "typecheck": "tsc --noEmit",
     "lint": "eslint --ext .js,.ts,.tsx .",
     "lazy": "run-p typecheck lint build",
     "test:browser": "percy exec -- node tests/index.js",

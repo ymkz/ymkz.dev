@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Manifest() {
+export function Manifest() {
   return (
     <React.Fragment>
       <meta name="theme-color" content="#eceff4" />
@@ -17,5 +17,3 @@ function Manifest() {
     </React.Fragment>
   )
 }
-
-export default Manifest

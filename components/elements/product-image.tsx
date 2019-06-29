@@ -28,12 +28,10 @@ const Container = styled.div<ProductImageProps>`
   width: ${({ image }) => image.width + 2}px;
 `
 
-function ProductImage({ image }: ProductImageProps) {
+export function ProductImage({ image }: ProductImageProps) {
   return (
     <Container image={image}>
       <img alt="" height={image.height} width={image.width} src={image.src} srcSet={image.srcSet} />
     </Container>
   )
 }
-
-export default ProductImage

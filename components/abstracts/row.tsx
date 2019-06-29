@@ -4,7 +4,7 @@ type RowProps = {
   space?: number
 }
 
-const Row = styled.div<RowProps>`
+export const Row = styled.div<RowProps>`
   align-items: center;
   display: flex;
   flex-flow: row wrap;
@@ -12,5 +12,3 @@ const Row = styled.div<RowProps>`
     margin-right: ${({ space }) => (space ? space : 0)}px;
   }
 `
-
-export default Row

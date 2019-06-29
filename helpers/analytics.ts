@@ -1,7 +1,7 @@
 import ReactGA from 'react-ga'
 import { createSnackbar } from '@egoist/snackbar'
 
-export default {
+export const analytics = {
   requestAuthorization: () => {
     const isGoogleAnalyticsEnabled = localStorage.getItem('isGoogleAnalyticsEnabled')
     if (!isGoogleAnalyticsEnabled || isGoogleAnalyticsEnabled === 'no') {

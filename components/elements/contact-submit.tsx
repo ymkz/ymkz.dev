@@ -20,14 +20,12 @@ const Button = styled.button`
   }
 `
 
-type Props = React.ButtonHTMLAttributes<HTMLButtonElement>
+type ContactSubmitProps = React.ButtonHTMLAttributes<HTMLButtonElement>
 
-function ContactSubmit({ disabled }: Props) {
+export function ContactSubmit({ disabled }: ContactSubmitProps) {
   return (
     <Button type="submit" disabled={disabled}>
       Submit
     </Button>
   )
 }
-
-export default ContactSubmit

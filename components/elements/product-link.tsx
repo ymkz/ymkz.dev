@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-type Props = {
+type ProductLinkProps = {
   href: string
   children: React.ReactNode
 }
@@ -24,7 +24,7 @@ const Anchor = styled.a`
   }
 `
 
-function ProductLink({ href, children }: Props) {
+export function ProductLink({ href, children }: ProductLinkProps) {
   return (
     <List>
       <Anchor href={href} rel="noopener noreferrer" target="_blank">
@@ -33,5 +33,3 @@ function ProductLink({ href, children }: Props) {
     </List>
   )
 }
-
-export default ProductLink

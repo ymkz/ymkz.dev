@@ -1,9 +1,9 @@
 import React from 'react'
-import SectionContainer from '~/components/abstracts/section-container'
-import SectionTitle from '~/components/elements/section-title'
-import Sentence from '~/components/elements/sentence'
+import { SectionContainer } from '~/components/abstracts/section-container'
+import { SectionTitle } from '~/components/elements/section-title'
+import { Sentence } from '~/components/elements/sentence'
 
-function Profile() {
+export function Profile() {
   return (
     <SectionContainer id="profile">
       <SectionTitle>Profile</SectionTitle>
@@ -16,5 +16,3 @@ function Profile() {
     </SectionContainer>
   )
 }
-
-export default Profile

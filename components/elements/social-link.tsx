@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-type Props = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+type SocialLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
   svg: string
 }
 
@@ -17,7 +17,7 @@ const Container = styled.a`
   }
 `
 
-function SocialLink({ svg, ...props }: Props) {
+export function SocialLink({ svg, ...props }: SocialLinkProps) {
   return (
     <Container
       target="_blank"
@@ -27,5 +27,3 @@ function SocialLink({ svg, ...props }: Props) {
     />
   )
 }
-
-export default SocialLink

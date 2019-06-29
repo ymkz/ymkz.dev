@@ -102,8 +102,6 @@ const styles = css`
   }
 `
 
-function GlobalStyle() {
+export function GlobalStyle() {
   return <Global styles={styles} />
 }
-
-export default GlobalStyle

@@ -1,15 +1,15 @@
 import React from 'react'
-import Row from '~/components/abstracts/row'
-import ProductContainer from '~/components/abstracts/product-container'
-import ProductTitle from '~/components/elements/product-title'
-import ProductSubtitle from '~/components/elements/product-subtitle'
-import ProductDescription from '~/components/elements/product-description'
-import ProductSupply from '~/components/elements/product-supply'
-import ProductLink from '~/components/elements/product-link'
-import ProductImage from '~/components/elements/product-image'
-import Sentence from '~/components/elements/sentence'
+import { Row } from '~/components/abstracts/row'
+import { ProductContainer } from '~/components/abstracts/product-container'
+import { ProductTitle } from '~/components/elements/product-title'
+import { ProductSubtitle } from '~/components/elements/product-subtitle'
+import { ProductDescription } from '~/components/elements/product-description'
+import { ProductSupply } from '~/components/elements/product-supply'
+import { ProductLink } from '~/components/elements/product-link'
+import { ProductImage } from '~/components/elements/product-image'
+import { Sentence } from '~/components/elements/sentence'
 
-function Narosirase() {
+export function Narosirase() {
   return (
     <ProductContainer id="narosirase">
       <ProductTitle>Narosirase</ProductTitle>
@@ -37,5 +37,3 @@ function Narosirase() {
     </ProductContainer>
   )
 }
-
-export default Narosirase

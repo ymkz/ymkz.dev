@@ -2,9 +2,9 @@ import '@egoist/snackbar/dist/snackbar.css'
 import React from 'react'
 import Router from 'next/router'
 import App, { Container } from 'next/app'
-import analytics from '~/helpers/analytics'
-import GlobalStyle from '~/components/abstracts/global-style'
-import Page from '~/components/abstracts/page'
+import { GlobalStyle } from '~/components/abstracts/global-style'
+import { Page } from '~/components/abstracts/page'
+import { analytics } from '~/helpers/analytics'
 
 export default class extends App {
   componentDidMount() {

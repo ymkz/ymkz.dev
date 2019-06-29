@@ -10,7 +10,7 @@ const SVG = styled.svg`
   right: 16px;
 `
 
-function CircleText() {
+export function CircleText() {
   return (
     <SVG height="96" width="96" viewBox="-90, -90, 180, 180">
       <defs>
@@ -23,5 +23,3 @@ function CircleText() {
     </SVG>
   )
 }
-
-export default CircleText

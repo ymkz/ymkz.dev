@@ -1,6 +1,6 @@
 import React from 'react'
 
-function LogoIcon(props: React.SVGAttributes<HTMLOrSVGElement>) {
+export function LogoIcon(props: React.SVGAttributes<HTMLOrSVGElement>) {
   return (
     <svg viewBox="0 0 1024 1024" width="32px" height="32px" {...props}>
       <defs>
@@ -18,5 +18,3 @@ function LogoIcon(props: React.SVGAttributes<HTMLOrSVGElement>) {
     </svg>
   )
 }
-
-export default LogoIcon

@@ -1,10 +1,10 @@
 import React from 'react'
-import Row from '~/components/abstracts/row'
-import SectionContainer from '~/components/abstracts/section-container'
-import SectionTitle from '~/components/elements/section-title'
-import SocialLink from '~/components/elements/social-link'
+import { Row } from '~/components/abstracts/row'
+import { SectionContainer } from '~/components/abstracts/section-container'
+import { SectionTitle } from '~/components/elements/section-title'
+import { SocialLink } from '~/components/elements/social-link'
 
-function Socials() {
+export function Socials() {
   return (
     <SectionContainer id="socials">
       <SectionTitle>Socials</SectionTitle>
@@ -28,5 +28,3 @@ function Socials() {
     </SectionContainer>
   )
 }
-
-export default Socials

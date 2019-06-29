@@ -56,10 +56,10 @@ const Textarea = styled.textarea`
   }
 `
 
-type FieldProps = React.InputHTMLAttributes<HTMLInputElement> &
+type ContactFieldProps = React.InputHTMLAttributes<HTMLInputElement> &
   React.TextareaHTMLAttributes<HTMLTextAreaElement>
 
-function ContactField(props: FieldProps) {
+export function ContactField(props: ContactFieldProps) {
   return (
     <Container>
       <Label htmlFor={props.id}>{props.name}</Label>
@@ -67,5 +67,3 @@ function ContactField(props: FieldProps) {
     </Container>
   )
 }
-
-export default ContactField

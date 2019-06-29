@@ -1,10 +1,10 @@
 import React from 'react'
 import { useFormState } from 'react-use-form-state'
 import { createSnackbar } from '@egoist/snackbar'
-import SectionContainer from '~/components/abstracts/section-container'
-import SectionTitle from '~/components/elements/section-title'
-import ContactField from '~/components/elements/contact-field'
-import ContactSubmit from '~/components/elements/contact-submit'
+import { SectionContainer } from '~/components/abstracts/section-container'
+import { SectionTitle } from '~/components/elements/section-title'
+import { ContactField } from '~/components/elements/contact-field'
+import { ContactSubmit } from '~/components/elements/contact-submit'
 
 type ContactValues = {
   name: string
@@ -12,7 +12,7 @@ type ContactValues = {
   message: string
 }
 
-function Contact() {
+export function Contact() {
   const [form, { text, email, textarea }] = useFormState<ContactValues>(null, { withIds: true })
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -46,5 +46,3 @@ function Contact() {
     </SectionContainer>
   )
 }
-
-export default Contact

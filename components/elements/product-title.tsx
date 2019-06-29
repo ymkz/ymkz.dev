@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
-import breakpoints from '~/constants/breakpoints'
+import { breakpoints } from '~/constants/breakpoints'
 
-const ProductTitle = styled.h1`
+export const ProductTitle = styled.h1`
   font-family: 'Nunito Sans', sans-serif;
   font-size: 3.6rem;
   font-weight: 900;
@@ -10,5 +10,3 @@ const ProductTitle = styled.h1`
     font-size: 2.8rem;
   }
 `
-
-export default ProductTitle

@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import Header from '~/components/modules/header'
+import { Header } from '~/components/modules/header'
 
-type Props = {
+type PageProps = {
   children: React.ReactNode
 }
 
@@ -13,7 +13,7 @@ const Main = styled.main`
   padding: 0 16px;
 `
 
-function Page({ children }: Props) {
+export function Page({ children }: PageProps) {
   return (
     <React.Fragment>
       <Header />
@@ -21,5 +21,3 @@ function Page({ children }: Props) {
     </React.Fragment>
   )
 }
-
-export default Page
