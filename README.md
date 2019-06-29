@@ -11,13 +11,13 @@
     <img src="https://flat.badgen.net/circleci/github/ymkz/ymkz.io?icon=circleci">
   </a>
   <a href="https://app.dependabot.com/accounts/ymkz/repos/172352878">
-    <img src="https://flat.badgen.net/badge/deps/dependabot/green?icon=dependabot">
+    <img src="https://flat.badgen.net/badge/deps/dependabot/0366d6?icon=dependabot">
   </a>
   <a href="https://github.com/Microsoft/TypeScript">
     <img src="https://flat.badgen.net/badge/language/TypeScript/017acd?icon=typescript">
   </a>
   <a href="https://zeit.co/ymkz/ymkz.io">
-    <img src="https://flat.badgen.net/badge/%E2%96%B2%20deploy/now/000000" />
+    <img src="https://flat.badgen.net/badge/deploy/now/000000?icon=now" />
   </a>
   <a href="https://eslint.org">
     <img src="https://flat.badgen.net/badge/linter/eslint/4b32c3">
@@ -29,8 +29,44 @@
     <img src="https://flat.badgen.net/badge/styling/emotion/d36ac2">
   </a>
   <a href="https://percy.io/ymkz/ymkz.io">
-    <img src="https://flat.badgen.net/badge/visual testing/percy/9e66bf">
+    <img src="https://flat.badgen.net/badge/visual%20testing/percy/9e66bf">
+  </a>
+  <a href="https://percy.io/ymkz/ymkz.io">
+    <img src="https://flat.badgen.net/badge/_/chrome/ffd600?icon=chrome&label">
+  </a>
+  <a href="https://percy.io/ymkz/ymkz.io">
+    <img src="https://flat.badgen.net/badge/_/firefox/ff5722/?icon=firefox&label">
+  </a>
+  <a href="https://twitter.com/ymkzly">
+    <img 
+      src="https://flat.badgen.net/twitter/follow/ymkzly" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+    />
   </a>
   <br />
   <br />
 </p>
+
+## Install
+
+```sh
+yarn install
+```
+
+## Usage
+
+```sh
+yarn dev
+```
+
+## Author
+
+👤 **ymkz**
+
+- Twitter: [@ymkzly](https://twitter.com/ymkzly)
+- Github: [@ymkz](https://github.com/ymkz)
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
