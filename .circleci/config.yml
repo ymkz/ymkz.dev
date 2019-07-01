@@ -5,13 +5,13 @@ executors:
     docker:
       - image: circleci/node:11
         environment:
-          HUSKY_SKIP_INSTALL: true
+          HUSKY_SKIP_INSTALL: 'true'
   browser:
     working_directory: ~/app
     docker:
       - image: circleci/node:11-browsers
         environment:
-          HUSKY_SKIP_INSTALL: true
+          HUSKY_SKIP_INSTALL: 'true'
 commands:
   restore-dependencies:
     steps:
@@ -23,7 +23,8 @@ commands:
     steps:
       - save_cache:
           key: app-deps-{{ checksum "yarn.lock" }}
-          paths: ~/app/node_modules
+          paths:
+            - ~/app/node_modules
 jobs:
   setup:
     executor: default
