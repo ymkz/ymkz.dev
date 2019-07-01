@@ -10,7 +10,7 @@ const withPlugins = require('next-compose-plugins')
 const optimizeOptions = {
   responsive: {
     placeholder: true,
-    sizes: [150, 300]
+    sizes: [128, 256, 384]
   }
 }
 
@@ -23,7 +23,6 @@ const offlineOptions = {
 }
 
 const nextConfigs = {
-  target: 'serverless',
   webpack: config => config
 }
 

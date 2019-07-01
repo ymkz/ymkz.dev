@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row } from '~/components/abstracts/row'
+import { BaseRow } from '~/components/abstracts/base-row'
 import { SectionContainer } from '~/components/abstracts/section-container'
 import { SectionTitle } from '~/components/elements/section-title'
 import { SocialLink } from '~/components/elements/social-link'
@@ -8,7 +8,7 @@ export function Socials() {
   return (
     <SectionContainer id="socials">
       <SectionTitle>Socials</SectionTitle>
-      <Row space={24}>
+      <BaseRow space={24}>
         <SocialLink
           href="https://github.com/ymkz"
           aria-label="Link to GitHub"
@@ -24,7 +24,7 @@ export function Socials() {
           aria-label="Link to Facebook"
           svg={require('~/static/images/icons/facebook.svg?include')}
         />
-      </Row>
+      </BaseRow>
     </SectionContainer>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row } from '~/components/abstracts/row'
+import { BaseRow } from '~/components/abstracts/base-row'
 import { ProductContainer } from '~/components/abstracts/product-container'
 import { ProductTitle } from '~/components/elements/product-title'
 import { ProductSubtitle } from '~/components/elements/product-subtitle'
@@ -39,10 +39,10 @@ export function Cancelectures() {
           Expo - @ymkz/cancelectures
         </ProductLink>
       </ProductSupply>
-      <Row space={16}>
+      <BaseRow space={16}>
         <ProductImage image={require('~/static/images/cancelectures-native-1.jpg?resize')} />
         <ProductImage image={require('~/static/images/cancelectures-native-2.jpg?resize')} />
-      </Row>
+      </BaseRow>
     </ProductContainer>
   )
 }

@@ -5,11 +5,11 @@ import { Narosirase } from '~/components/modules/narosirase'
 import { Cancelectures } from '~/components/modules/cancelectures'
 import { FrontendBoilerplate } from '~/components/modules/frontend-boilerplate'
 
-function Work() {
+export default function Work() {
   return (
     <React.Fragment>
       <Head>
-        <title>Work - ymkz</title>
+        <title>Work | ymkz.io</title>
       </Head>
       <Portfolio />
       <Narosirase />
@@ -18,5 +18,3 @@ function Work() {
     </React.Fragment>
   )
 }
-
-export default Work

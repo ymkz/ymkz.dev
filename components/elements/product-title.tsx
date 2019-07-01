@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { breakpoints } from '~/constants/breakpoints'
+import { breakpoints } from '~/helpers/constants'
 
 export const ProductTitle = styled.h1`
   font-family: 'Nunito Sans', sans-serif;

@@ -6,11 +6,11 @@ import { Games } from '~/components/modules/games'
 import { Socials } from '~/components/modules/socials'
 import { Contact } from '~/components/modules/contact'
 
-function About() {
+export default function About() {
   return (
     <React.Fragment>
       <Head>
-        <title>About - ymkz</title>
+        <title>About | ymkz.io</title>
       </Head>
       <Profile />
       <Skills />
@@ -20,5 +20,3 @@ function About() {
     </React.Fragment>
   )
 }
-
-export default About

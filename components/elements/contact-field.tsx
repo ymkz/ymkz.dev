@@ -1,6 +1,18 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
+type ContactFieldProps = React.InputHTMLAttributes<HTMLInputElement> &
+  React.TextareaHTMLAttributes<HTMLTextAreaElement>
+
+export function ContactField(props: ContactFieldProps) {
+  return (
+    <Container>
+      <Label htmlFor={props.id}>{props.name}</Label>
+      {props.type ? <Input {...props} /> : <Textarea {...props} />}
+    </Container>
+  )
+}
+
 const Container = styled.div`
   display: flex;
   flex-flow: column;
@@ -55,15 +67,3 @@ const Textarea = styled.textarea`
     opacity: 0.5;
   }
 `
-
-type ContactFieldProps = React.InputHTMLAttributes<HTMLInputElement> &
-  React.TextareaHTMLAttributes<HTMLTextAreaElement>
-
-export function ContactField(props: ContactFieldProps) {
-  return (
-    <Container>
-      <Label htmlFor={props.id}>{props.name}</Label>
-      {props.type ? <Input {...props} /> : <Textarea {...props} />}
-    </Container>
-  )
-}

@@ -8,6 +8,19 @@ type NavLinkProps = {
   children: React.ReactNode
 }
 
+export function NavLink({ href, pathname, children }: NavLinkProps) {
+  const active = href === pathname
+  const root = href === '/'
+
+  return (
+    <Link href={href}>
+      <Anchor active={active} root={root} tabIndex={active ? -1 : 0}>
+        {children}
+      </Anchor>
+    </Link>
+  )
+}
+
 type AnchorProps = {
   root: boolean
   active: boolean
@@ -27,15 +40,3 @@ const Anchor = styled.a<AnchorProps>`
     text-decoration-line: underline;
   }
 `
-
-export function NavLink({ href, pathname, children }: NavLinkProps) {
-  const active = href === pathname
-  const root = href === '/'
-  return (
-    <Link href={href}>
-      <Anchor active={active} root={root} tabIndex={active ? -1 : 0}>
-        {children}
-      </Anchor>
-    </Link>
-  )
-}

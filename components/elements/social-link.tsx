@@ -5,6 +5,17 @@ type SocialLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
   svg: string
 }
 
+export function SocialLink({ svg, ...props }: SocialLinkProps) {
+  return (
+    <Container
+      target="_blank"
+      rel="noopener noreferrer"
+      dangerouslySetInnerHTML={{ __html: svg }}
+      {...props}
+    />
+  )
+}
+
 const Container = styled.a`
   width: 44px;
   border-bottom: 1px solid transparent;
@@ -16,14 +27,3 @@ const Container = styled.a`
     fill: var(--base-text);
   }
 `
-
-export function SocialLink({ svg, ...props }: SocialLinkProps) {
-  return (
-    <Container
-      target="_blank"
-      rel="noopener noreferrer"
-      dangerouslySetInnerHTML={{ __html: svg }}
-      {...props}
-    />
-  )
-}

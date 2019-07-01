@@ -2,8 +2,8 @@ import '@egoist/snackbar/dist/snackbar.css'
 import React from 'react'
 import Router from 'next/router'
 import App, { Container } from 'next/app'
+import { AppContainer } from '~/components/abstracts/app-container'
 import { GlobalStyle } from '~/components/abstracts/global-style'
-import { Page } from '~/components/abstracts/page'
 import { analytics } from '~/helpers/analytics'
 
 export default class extends App {
@@ -21,9 +21,9 @@ export default class extends App {
       <React.StrictMode>
         <GlobalStyle />
         <Container>
-          <Page>
+          <AppContainer>
             <this.props.Component {...this.props.pageProps} />
-          </Page>
+          </AppContainer>
         </Container>
       </React.StrictMode>
     )

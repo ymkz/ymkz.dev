@@ -1,10 +1,10 @@
 import styled from '@emotion/styled'
 
-type RowProps = {
+type BaseRowProps = {
   space?: number
 }
 
-export const Row = styled.div<RowProps>`
+export const BaseRow = styled.div<BaseRowProps>`
   align-items: center;
   display: flex;
   flex-flow: row wrap;

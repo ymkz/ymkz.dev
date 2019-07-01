@@ -1,6 +1,16 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
+type ContactSubmitProps = React.ButtonHTMLAttributes<HTMLButtonElement>
+
+export function ContactSubmit({ disabled }: ContactSubmitProps) {
+  return (
+    <Button type="submit" disabled={disabled}>
+      Submit
+    </Button>
+  )
+}
+
 const Button = styled.button`
   background-color: var(--button-background);
   border: 0;
@@ -19,13 +29,3 @@ const Button = styled.button`
     opacity: 0.5;
   }
 `
-
-type ContactSubmitProps = React.ButtonHTMLAttributes<HTMLButtonElement>
-
-export function ContactSubmit({ disabled }: ContactSubmitProps) {
-  return (
-    <Button type="submit" disabled={disabled}>
-      Submit
-    </Button>
-  )
-}

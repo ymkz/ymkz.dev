@@ -36,11 +36,6 @@ const styles = css`
     --button-disable-text: #4c566a;
     --image-border: #434c5e;
   }
-  @font-face {
-    font-display: swap;
-    font-family: YuGothicM;
-    src: local('Yu Gothic Medium');
-  }
   *,
   *::before,
   *::after {
@@ -49,16 +44,12 @@ const styles = css`
   html {
     scroll-behavior: smooth;
     text-rendering: optimizeLegibility;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    -ms-overflow-style: scrollbar;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
   body {
     background-color: var(--base-background);
     color: var(--base-text);
     font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', '游ゴシック Medium', YuGothic,
-      YuGothicM, 'Hiragino Kaku Gothic ProN', メイリオ, Meiryo, sans-serif;
+      'Hiragino Kaku Gothic ProN', メイリオ, Meiryo, sans-serif;
     margin: 0;
     -webkit-overflow-scrolling: touch;
   }

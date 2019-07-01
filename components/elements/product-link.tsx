@@ -6,6 +6,16 @@ type ProductLinkProps = {
   children: React.ReactNode
 }
 
+export function ProductLink({ href, children }: ProductLinkProps) {
+  return (
+    <List>
+      <Anchor href={href} rel="noopener noreferrer" target="_blank">
+        {children}
+      </Anchor>
+    </List>
+  )
+}
+
 const List = styled.li`
   &:not(:last-child) {
     margin-bottom: 1rem;
@@ -23,13 +33,3 @@ const Anchor = styled.a`
     text-decoration-line: underline;
   }
 `
-
-export function ProductLink({ href, children }: ProductLinkProps) {
-  return (
-    <List>
-      <Anchor href={href} rel="noopener noreferrer" target="_blank">
-        {children}
-      </Anchor>
-    </List>
-  )
-}
