@@ -19,8 +19,12 @@ export function Portfolio() {
           このサイトであるPortfolioは自分についてや作ってきたものをまとめるために作成しました。
         </Sentence>
         <Sentence>
-          TypeScriptで記述したNext.js/Reactを用いて作成し、now.shにデプロイしています。Serverlessモードでビルドしており、Now
-          Lambdas上のEdge-CacheからServer Side Renderingしています。
+          TypeScriptで記述したNext.js/Reactを用いて作成し、now.shにデプロイしています。Next.jsのexportモードでビルドしており、Now
+          Lambdas上のEdge-Cacheから静的なファイルとして配信しています。
+        </Sentence>
+        <Sentence>
+          next-offlineを用いたService
+          Workerの導入や、next-optimized-imagesによる画像サイズの最適化などウェブサイトのパフォーマンスを意識したつくりになっています。
         </Sentence>
       </ProductDescription>
       <ProductSupply>
