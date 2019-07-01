@@ -18,7 +18,18 @@ const offlineOptions = {
   workboxOpts: {
     clientsClaim: true,
     skipWaiting: true,
-    swDest: 'static/service-worker.js'
+    swDest: 'static/service-worker.js',
+    runtimeCaching: [
+      {
+        urlPattern: /^https:\/\/fonts\.googleapis\.com/,
+        handler: 'NetworkFirst',
+        options: {
+          cacheName: 'google-fonts',
+          cacheableResponse: { statuses: [0, 200] },
+          expiration: { maxAgeSeconds: 60 * 60 * 24 * 365 }
+        }
+      }
+    ]
   }
 }
 
