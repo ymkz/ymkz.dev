@@ -50,7 +50,6 @@
     >
   </a>
   <a href="https://emotion.sh">
-    <img src="https://flat.badgen.net/badge/styling/emotion/d36ac2">
     <img
       src="https://flat.badgen.net/badge/styling/emotion/d36ac2"
       target="_blank"
