@@ -17,7 +17,7 @@
     "lazy": "run-p typecheck lint build",
     "test:browser": "percy exec -- node tests/index.js",
     "test:integration": "start-test dev http://localhost:3000 test:browser",
-    "webapp": "webappgen -i template/icon.svg -t template/manifest.json",
+    "webapp": "webappgen -i templates/icon.svg -t templates/manifest.json",
     "now-dev": "yarn dev",
     "now-build": "yarn build"
   },
