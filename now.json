@@ -6,6 +6,9 @@
   "github": {
     "silent": true
   },
+  "env": {
+    "GOOGLE_ANALYTICS_ID": "@google-analytics-id"
+  },
   "builds": [
     {
       "src": "package.json",
