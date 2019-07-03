@@ -4,6 +4,7 @@ const size = require('next-size')
 const webpack = require('webpack')
 const css = require('@zeit/next-css')
 const offline = require('next-offline')
+const dotenv = require('dotenv-webpack')
 const optimize = require('next-optimized-images')
 const typescript = require('@zeit/next-typescript')
 const withPlugins = require('next-compose-plugins')
@@ -40,6 +41,7 @@ const nextConfigs = {
 
     config.plugins = [
       ...config.plugins,
+      new dotenv({ systemvars: true }),
       new webpack.EnvironmentPlugin({ BUILD_ID: JSON.stringify(options.buildId) })
     ]
 

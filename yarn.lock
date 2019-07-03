@@ -3589,6 +3589,25 @@ dot-prop@^3.0.0:
   dependencies:
     is-obj "^1.0.0"
 
+dotenv-defaults@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/dotenv-defaults/-/dotenv-defaults-1.0.2.tgz#441cf5f067653fca4bbdce9dd3b803f6f84c585d"
+  integrity sha512-iXFvHtXl/hZPiFj++1hBg4lbKwGM+t/GlvELDnRtOFdjXyWP7mubkVr+eZGWG62kdsbulXAef6v/j6kiWc/xGA==
+  dependencies:
+    dotenv "^6.2.0"
+
+dotenv-webpack@1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/dotenv-webpack/-/dotenv-webpack-1.7.0.tgz#4384d8c57ee6f405c296278c14a9f9167856d3a1"
+  integrity sha512-wwNtOBW/6gLQSkb8p43y0Wts970A3xtNiG/mpwj9MLUhtPCQG6i+/DSXXoNN7fbPCU/vQ7JjwGmgOeGZSSZnsw==
+  dependencies:
+    dotenv-defaults "^1.0.2"
+
+dotenv@^6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-6.2.0.tgz#941c0410535d942c8becf28d3f357dbd9d476064"
+  integrity sha512-HygQCKUBSFl8wKQZBSemMywRWcEDNidvNbjGVyZu3nbZ8qq9ubiPoGLMdRDpfSrpkkm9BXYFkpKxxFX38o/76w==
+
 download@^6.2.2:
   version "6.2.5"
   resolved "https://registry.yarnpkg.com/download/-/download-6.2.5.tgz#acd6a542e4cd0bb42ca70cfc98c9e43b07039714"
@@ -7062,6 +7081,11 @@ parse-asn1@^5.0.0:
     pbkdf2 "^3.0.3"
     safe-buffer "^5.1.1"
 
+parse-dotenv@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/parse-dotenv/-/parse-dotenv-2.0.1.tgz#65709d8a13b8060391130cd8ffa47394416596ea"
+  integrity sha512-fZ+Llm/5UafyVDQ9cRAUiOHqpeZaK2vH2cwTQkvkAi4UR4Ekj5XsAIlT0g92UKLpG3qp31SZQCqQnJGduKE7KA==
+
 parse-json@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/parse-json/-/parse-json-2.2.0.tgz#f480f40434ef80741f8469099f8dea18f55a4dc9"
@@ -8938,6 +8962,15 @@ svgo@^1.0.5:
     stable "^0.1.8"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
+
+sync-dotenv@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/sync-dotenv/-/sync-dotenv-2.2.0.tgz#bdb853185582005d6769bb762d6ff8da62b057da"
+  integrity sha512-H8qjUjxNT30xURkKSnN0xPhGpZbO0WZcN86/Nq0OQjg3AWvelT0PIRJ8DqggeeJAep6aDnDWBncZXyQZD+96tQ==
+  dependencies:
+    globby "^9.2.0"
+    meow "5.0.0"
+    parse-dotenv "2.0.1"
 
 table@^5.2.3:
   version "5.4.1"
