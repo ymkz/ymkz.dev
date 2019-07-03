@@ -7,7 +7,7 @@
   "homepage": "https://ymkz.io",
   "description": "The portfolio site about ymkz",
   "engines": {
-    "node": ">=10.16.0"
+    "node": ">=10"
   },
   "scripts": {
     "dev": "next dev",
