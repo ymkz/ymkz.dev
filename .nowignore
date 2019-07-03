@@ -4,6 +4,7 @@
 .next
 .vscode
 benchmark
+dist
 node_modules
 templates
 tests

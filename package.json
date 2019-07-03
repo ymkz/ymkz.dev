@@ -20,7 +20,6 @@
     "webapp": "webappgen -i templates/icon.svg -t templates/manifest.json",
     "syncdotenv": "sync-dotenv",
     "precommit": "run-p syncdotenv typecheck lint build",
-    "now-dev": "yarn dev",
     "now-build": "yarn build"
   },
   "dependencies": {
