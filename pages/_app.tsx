@@ -8,6 +8,8 @@ import { analytics } from '~/helpers/analytics'
 
 export default class extends App {
   componentDidMount() {
+    // eslint-disable-next-line no-console
+    console.log(`BUILD ID: ${process.env.BUILD_ID}`)
     if (process.env.NODE_ENV === 'production') {
       analytics.requestAuthorization()
       analytics.initialize()

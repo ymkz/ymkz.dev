@@ -14,10 +14,12 @@
     "build": "next build && next export -o dist",
     "typecheck": "tsc --noEmit",
     "lint": "eslint --ext .js,.ts,.tsx .",
-    "lazy": "run-p typecheck lint build",
+    "lazy": "run-p typecheck lint",
     "test:browser": "percy exec -- node tests/index.js",
     "test:integration": "start-test dev http://localhost:3000 test:browser",
     "webapp": "webappgen -i templates/icon.svg -t templates/manifest.json",
+    "syncdotenv": "sync-dotenv",
+    "precommit": "run-p syncdotenv typecheck lint build",
     "now-dev": "yarn dev",
     "now-build": "yarn build"
   },
@@ -47,6 +49,7 @@
     "@zeit/next-css": "1.0.1",
     "@zeit/next-typescript": "1.1.1",
     "babel-plugin-module-resolver": "3.2.0",
+    "dotenv-webpack": "1.7.0",
     "eslint": "5.16.0",
     "eslint-config-prettier": "6.0.0",
     "eslint-import-resolver-babel-module": "5.1.0",
@@ -72,6 +75,7 @@
     "responsive-loader": "1.2.0",
     "sharp": "0.22.1",
     "start-server-and-test": "1.9.1",
+    "sync-dotenv": "2.2.0",
     "typescript": "3.5.2",
     "webpack": "4.35.2",
     "yarnhook": "0.4.1"
@@ -96,7 +100,7 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "yarn lazy",
+      "pre-commit": "yarn precommit",
       "post-checkout": "yarnhook",
       "post-rewrite": "yarnhook",
       "post-merge": "yarnhook"

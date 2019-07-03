@@ -20,7 +20,12 @@ export const analytics = {
     }
   },
   initialize: () => {
-    ReactGA.initialize('UA-140852595-1')
+    if (process.env.GOOGLE_ANALYTICS_ID) {
+      ReactGA.initialize(process.env.GOOGLE_ANALYTICS_ID)
+    } else {
+      // eslint-disable-next-line no-console
+      console.error('An Error was happened at Google Analytics Initilize.')
+    }
   },
   pageview: (pathname: string) => {
     ReactGA.set({ page: pathname })
