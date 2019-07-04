@@ -23,7 +23,7 @@ const offlineOptions = {
     runtimeCaching: [
       {
         urlPattern: /^https:\/\/fonts\.googleapis\.com/,
-        handler: 'cacheFirst',
+        handler: 'StaleWhileRevalidate',
         options: {
           cacheName: 'google-fonts',
           cacheableResponse: { statuses: [0, 200] },
