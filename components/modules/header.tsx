@@ -1,5 +1,4 @@
 import React from 'react'
-// @ts-ignore
 import { useRouter } from 'next/router'
 import styled from '@emotion/styled'
 import { BaseRow } from '~/components/abstracts/base-row'
