@@ -8,8 +8,8 @@
   },
   "builds": [
     {
-      "src": "package.json",
-      "use": "@now/static-build"
+      "src": "next.config.js",
+      "use": "@now/next"
     }
   ],
   "routes": [

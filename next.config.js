@@ -33,6 +33,7 @@ const offlineOptions = {
 }
 
 const nextConfigs = {
+  target: 'serverless',
   webpack: (config, options) => {
     config.plugins = config.plugins || []
 
