@@ -11,14 +11,15 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export -o dist",
     "typecheck": "tsc --noEmit",
     "lint": "eslint --ext .js,.ts,.tsx .",
     "lazy": "run-p typecheck lint",
     "test:browser": "percy exec -- node tests/index.js",
     "test:integration": "start-test dev http://localhost:3000 test:browser",
     "webapp": "webappgen -i templates/icon.svg -t templates/manifest.json",
-    "precommit": "run-p typecheck lint build"
+    "precommit": "run-p typecheck lint build",
+    "now-build": "yarn build"
   },
   "dependencies": {
     "@egoist/snackbar": "1.4.0",
