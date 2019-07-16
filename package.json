@@ -34,7 +34,7 @@
   "devDependencies": {
     "@babel/core": "7.5.4",
     "@commitlint/cli": "8.0.0",
-    "@commitlint/config-conventional": "8.0.0",
+    "@commitlint/config-conventional": "8.1.0",
     "@emotion/babel-preset-css-prop": "10.0.14",
     "@percy/puppeteer": "1.0.8",
     "@types/puppeteer": "1.12.4",
