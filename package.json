@@ -39,7 +39,7 @@
     "@percy/puppeteer": "1.0.8",
     "@types/puppeteer": "1.12.4",
     "@types/react": "16.8.23",
-    "@types/react-dom": "16.8.4",
+    "@types/react-dom": "16.8.5",
     "@typescript-eslint/eslint-plugin": "1.13.0",
     "@typescript-eslint/parser": "1.13.0",
     "@ymkz/webappgen-cli": "1.0.1",
