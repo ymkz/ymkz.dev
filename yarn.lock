@@ -1516,10 +1516,10 @@
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
   integrity sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==
 
-"@ymkz/webappgen-cli@1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@ymkz/webappgen-cli/-/webappgen-cli-1.0.1.tgz#4d35e52408a17b89660bfb31878b6859ec351e0f"
-  integrity sha512-KkG12o8NL3YBUWUx/YBxs43xJfrEIM3ypLFkn2Av+VL6VD+OEazi/hBo4YiPmJWo1jXJMff7jFWLdtvlzXQt2Q==
+"@ymkz/webappgen-cli@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@ymkz/webappgen-cli/-/webappgen-cli-1.0.2.tgz#f6518d3d753523e8f907c4abf9f456b567814c2a"
+  integrity sha512-Yw07ymH46GU+r1VfDLKMWWdjM7mdR7xO9kMjkUy05FMkwqCkZ/mkhuw0y3/9Ettx61IWUsDCcGIIEyH/O85KYw==
   dependencies:
     arg "^4.1.0"
     eslint "^5.16.0"
