@@ -22,7 +22,7 @@
     "now-build": "yarn build"
   },
   "dependencies": {
-    "@egoist/snackbar": "1.4.0",
+    "@egoist/snackbar": "1.5.0",
     "@emotion/core": "10.0.14",
     "@emotion/styled": "10.0.14",
     "next": "9.0.2",
