@@ -1,7 +1,7 @@
 import React from 'react'
 import { css, Global } from '@emotion/core'
 
-export function GlobalStyle() {
+export const GlobalStyle = () => {
   return (
     <Global
       styles={css`
@@ -21,6 +21,8 @@ export function GlobalStyle() {
           --button-shadow: #e5e9f0;
           --button-disable-text: #4c566a;
           --image-border: #d8dee9;
+          --scrollbar-background: #e5e9f0;
+          --scrollbar-thumb: #d8dee9;
         }
         :root[theme='dark'] {
           --base-text: #eceff4;
@@ -38,6 +40,8 @@ export function GlobalStyle() {
           --button-shadow: #434c5e;
           --button-disable-text: #4c566a;
           --image-border: #434c5e;
+          --scrollbar-background: #3b4252;
+          --scrollbar-thumb: #4c566a;
         }
         *,
         *::before,
@@ -54,7 +58,18 @@ export function GlobalStyle() {
           font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', '游ゴシック Medium',
             YuGothic, 'Hiragino Kaku Gothic ProN', メイリオ, Meiryo, sans-serif;
           margin: 0;
+          overflow-y: scroll;
+          user-select: none;
           -webkit-overflow-scrolling: touch;
+          &::-webkit-scrollbar {
+            width: 8px;
+          }
+          &::-webkit-scrollbar-track {
+            background-color: var(--scrollbar-background);
+          }
+          &::-webkit-scrollbar-thumb {
+            background-color: var(--scrollbar-thumb);
+          }
         }
         h1,
         h2,
@@ -64,8 +79,6 @@ export function GlobalStyle() {
         }
         a,
         button,
-        [role='button'],
-        input:not([type='range']),
         label,
         textarea {
           touch-action: manipulation;

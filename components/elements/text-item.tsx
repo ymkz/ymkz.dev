@@ -1,5 +1,14 @@
-import styled from '@emotion/styled'
+import React from 'react'
+import { css } from '@emotion/core'
 
-export const TextItem = styled.div`
-  line-height: 2;
-`
+export const TextItem: React.FC = ({ children }) => {
+  return (
+    <span
+      css={css`
+        line-height: 2;
+      `}
+    >
+      {children}
+    </span>
+  )
+}

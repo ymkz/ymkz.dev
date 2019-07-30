@@ -1,15 +1,15 @@
-<div align="center">
-  <img src="templates/icon.svg" width="150px">
-  <h1 align="center">ymkz.io</h1>
-  <sup align="center">The portfolio site about ymkz</sup>
+<div>
+  <img align="left" src="templates/icon.svg" width="40px">
+  <h1>ymkz.co</h1>
+  <sup>ymkz's portfolio site</sup>
   <br />
   <br />
   <br />
 </div>
-<p align="center">
-  <a href="https://circleci.com/gh/ymkz/workflows/ymkz.io">
+<p>
+  <a href="https://circleci.com/gh/ymkz/workflows/ymkz.co">
     <img
-      src="https://flat.badgen.net/circleci/github/ymkz/ymkz.io?icon=circleci"
+      src="https://flat.badgen.net/circleci/github/ymkz/ymkz.co?icon=circleci"
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -28,7 +28,7 @@
       rel="noopener noreferrer"
     >
   </a>
-  <a href="https://zeit.co/ymkz/ymkz.io">
+  <a href="https://zeit.co/ymkz/ymkz.co">
     <img
       src="https://flat.badgen.net/badge/deploy/now/000000?icon=now"
       target="_blank"
@@ -56,21 +56,21 @@
       rel="noopener noreferrer"
     >
   </a>
-  <a href="https://percy.io/ymkz/ymkz.io">
+  <a href="https://percy.io/ymkz/ymkz.co">
     <img
       src="https://flat.badgen.net/badge/visual%20testing/percy/9e66bf"
       target="_blank"
       rel="noopener noreferrer"
     >
   </a>
-  <a href="https://percy.io/ymkz/ymkz.io">
+  <a href="https://percy.io/ymkz/ymkz.co">
     <img
       src="https://flat.badgen.net/badge/_/chrome/ffd600?icon=chrome&label"
       target="_blank"
       rel="noopener noreferrer"
     >
   </a>
-  <a href="https://percy.io/ymkz/ymkz.io">
+  <a href="https://percy.io/ymkz/ymkz.co">
     <img
       src="https://flat.badgen.net/badge/_/firefox/ff5722/?icon=firefox&label"
       target="_blank"

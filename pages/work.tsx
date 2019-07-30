@@ -7,11 +7,11 @@ import { FrontendBoilerplate } from '~/components/modules/frontend-boilerplate'
 import { Toodoo } from '~/components/modules/toodoo'
 import { Json2String } from '~/components/modules/json2string'
 
-export default function Work() {
+const Work = () => {
   return (
     <React.Fragment>
       <Head>
-        <title>Work | ymkz.io</title>
+        <title>Work | ymkz</title>
       </Head>
       <Portfolio />
       <Narosirase />
@@ -22,3 +22,5 @@ export default function Work() {
     </React.Fragment>
   )
 }
+
+export default Work

@@ -1,8 +1,18 @@
+export type Theme = 'light' | 'dark'
+
+export function getTheme(): Theme {
+  return (document.documentElement.getAttribute('theme') as Theme) || 'light'
+}
+
+export function setTheme(theme: Theme) {
+  document.documentElement.setAttribute('theme', theme)
+  localStorage.setItem('theme', theme)
+}
+
 export function switchTheme() {
-  const prevTheme = localStorage.getItem('theme') || 'light'
-  const nextTheme = prevTheme === 'light' ? 'dark' : 'light'
-  document.documentElement.setAttribute('theme', nextTheme)
-  localStorage.setItem('theme', nextTheme)
+  const prevTheme: Theme = (localStorage.getItem('theme') as Theme) || 'light'
+  const nextTheme: Theme = prevTheme === 'light' ? 'dark' : 'light'
+  setTheme(nextTheme)
 }
 
 export const injectscript = `

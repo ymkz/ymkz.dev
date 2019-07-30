@@ -1,42 +1,43 @@
 import React from 'react'
-import { BaseRow } from '~/components/abstracts/base-row'
-import { ProductContainer } from '~/components/abstracts/product-container'
-import { ProductTitle } from '~/components/elements/product-title'
-import { ProductSubtitle } from '~/components/elements/product-subtitle'
+import { SectionContainer } from '~/components/abstracts/section-container'
+import { FlexRow } from '~/components/elements/flex-row'
+import { SectionTitle } from '~/components/elements/section-title'
 import { ProductDescription } from '~/components/elements/product-description'
-import { ProductSupply } from '~/components/elements/product-supply'
-import { ProductLink } from '~/components/elements/product-link'
 import { ProductImage } from '~/components/elements/product-image'
+import { ProductLink } from '~/components/elements/product-link'
+import { ProductStory } from '~/components/elements/product-story'
+import { ProductSupply } from '~/components/elements/product-supply'
 import { Sentence } from '~/components/elements/sentence'
+import portfolio1 from '~/static/images/portfolio-1.jpg?resize'
+import portfolio2 from '~/static/images/portfolio-2.jpg?resize'
 
-export function Portfolio() {
+export const Portfolio = () => {
   return (
-    <ProductContainer id="portfolio">
-      <ProductTitle>Portfolio</ProductTitle>
-      <ProductSubtitle>The portfolio site about ymkz</ProductSubtitle>
-      <ProductDescription>
+    <SectionContainer id="portfolio">
+      <SectionTitle>Portfolio</SectionTitle>
+      <ProductDescription>ymkz&apos;s portfolio site</ProductDescription>
+      <ProductStory>
         <Sentence>
           このサイトであるPortfolioは自分についてや作ってきたものをまとめるために作成しました。
         </Sentence>
         <Sentence>
-          TypeScriptで記述したNext.js/Reactを用いて作成し、now.shにデプロイしています。Next.jsのexportモードでビルドしており、Now
-          Lambdas上のEdge-Cacheから静的なファイルとして配信しています。
+          TypeScriptで記述したNext.js/Reactを用いて作成し、Next.jsのSSRモードでビルドしてnow.shからデプロイしています。
         </Sentence>
         <Sentence>
           next-offlineを用いたService
-          Workerの導入や、next-optimized-imagesによる画像サイズの最適化などウェブサイトのパフォーマンスを意識したつくりになっています。
+          Workerの導入や、next-optimized-imagesによる画像サイズの最適化などウェブサイトのパフォーマンスを意識して開発を行いました。
         </Sentence>
-      </ProductDescription>
+      </ProductStory>
       <ProductSupply>
-        <ProductLink href="https://ymkz.io">Website - ymkz.io</ProductLink>
-        <ProductLink href="https://github.com/ymkz/ymkz.io">
-          Repository - GitHub(ymkz/ymkz.io)
+        <ProductLink href="https://ymkz.co">Website - ymkz.co</ProductLink>
+        <ProductLink href="https://github.com/ymkz/ymkz.co">
+          Repository - GitHub(ymkz/ymkz.co)
         </ProductLink>
       </ProductSupply>
-      <BaseRow space={16}>
-        <ProductImage image={require('~/static/images/portfolio-1.jpg?resize')} />
-        <ProductImage image={require('~/static/images/portfolio-2.jpg?resize')} />
-      </BaseRow>
-    </ProductContainer>
+      <FlexRow space={16}>
+        <ProductImage {...portfolio1} />
+        <ProductImage {...portfolio2} />
+      </FlexRow>
+    </SectionContainer>
   )
 }

@@ -3,7 +3,7 @@ import { SectionContainer } from '~/components/abstracts/section-container'
 import { SectionTitle } from '~/components/elements/section-title'
 import { Sentence } from '~/components/elements/sentence'
 
-export function Profile() {
+export const Profile = () => {
   return (
     <SectionContainer id="profile">
       <SectionTitle>Profile</SectionTitle>

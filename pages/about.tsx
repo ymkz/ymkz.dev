@@ -1,22 +1,24 @@
 import React from 'react'
 import Head from 'next/head'
 import { Profile } from '~/components/modules/profile'
-import { Skills } from '~/components/modules/skills'
-import { Games } from '~/components/modules/games'
-import { Socials } from '~/components/modules/socials'
+import { Skill } from '~/components/modules/skill'
+import { Game } from '~/components/modules/game'
+import { Social } from '~/components/modules/social'
 import { Contact } from '~/components/modules/contact'
 
-export default function About() {
+const About = () => {
   return (
     <React.Fragment>
       <Head>
-        <title>About | ymkz.io</title>
+        <title>About | ymkz</title>
       </Head>
       <Profile />
-      <Skills />
-      <Games />
-      <Socials />
+      <Skill />
+      <Game />
+      <Social />
       <Contact />
     </React.Fragment>
   )
 }
+
+export default About

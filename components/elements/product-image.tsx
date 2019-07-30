@@ -1,33 +1,18 @@
 import React from 'react'
-import styled from '@emotion/styled'
+import { css } from '@emotion/core'
 
-type ProductImageProps = {
-  image: {
-    height: number
-    width: number
-    images: {
-      height: number
-      width: number
-      path: string
-    }[]
-    placeholder: string
-    src: string
-    srcSet: string
-  }
-}
-
-export function ProductImage({ image }: ProductImageProps) {
+export const ProductImage: React.FC<OptimizeImage> = props => {
   return (
-    <Container image={image}>
-      <img alt="" height={image.height} width={image.width} src={image.src} srcSet={image.srcSet} />
-    </Container>
+    <div
+      css={css`
+        background-image: url(${props.placeholder});
+        background-size: cover;
+        border: 1px solid var(--image-border);
+        height: ${props.height + 2}px;
+        width: ${props.width + 2}px;
+      `}
+    >
+      <img height={props.height} width={props.width} src={props.src} srcSet={props.srcSet} alt="" />
+    </div>
   )
 }
-
-const Container = styled.div<ProductImageProps>`
-  background-image: ${({ image }) => `url(${image.placeholder})`};
-  background-size: cover;
-  border: 1px solid var(--image-border);
-  height: ${({ image }) => image.height + 2}px;
-  width: ${({ image }) => image.width + 2}px;
-`

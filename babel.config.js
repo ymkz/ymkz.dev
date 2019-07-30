@@ -1,13 +1,14 @@
-module.exports = function(api) {
+module.exports = api => {
   api.cache(true)
 
-  const configs = {
-    'preset-env': { corejs: 3, targets: { esmodules: true }, useBuiltIns: 'usage' }
+  return {
+    presets: [
+      [
+        'next/babel',
+        { 'preset-env': { corejs: 3, targets: { esmodules: true }, useBuiltIns: 'usage' } }
+      ],
+      ['@emotion/babel-preset-css-prop', { labelFormat: '[dirname]__[filename]__[local]' }]
+    ],
+    plugins: [['module-resolver', { alias: { '~': '.' }, extensions: ['.js', '.ts', '.tsx'] }]]
   }
-
-  const presets = [['next/babel', { ...configs }], ['@emotion/babel-preset-css-prop']]
-
-  const plugins = [['module-resolver', { alias: { '~': '.' }, extensions: ['.js', '.ts', '.tsx'] }]]
-
-  return { presets, plugins }
 }

@@ -1,20 +1,24 @@
 import React from 'react'
-import { BaseRow } from '~/components/abstracts/base-row'
-import { ProductContainer } from '~/components/abstracts/product-container'
-import { ProductTitle } from '~/components/elements/product-title'
-import { ProductSubtitle } from '~/components/elements/product-subtitle'
+import { SectionContainer } from '~/components/abstracts/section-container'
+import { FlexRow } from '~/components/elements/flex-row'
+import { SectionTitle } from '~/components/elements/section-title'
 import { ProductDescription } from '~/components/elements/product-description'
-import { ProductSupply } from '~/components/elements/product-supply'
-import { ProductLink } from '~/components/elements/product-link'
 import { ProductImage } from '~/components/elements/product-image'
+import { ProductLink } from '~/components/elements/product-link'
+import { ProductStory } from '~/components/elements/product-story'
+import { ProductSupply } from '~/components/elements/product-supply'
 import { Sentence } from '~/components/elements/sentence'
+import cancelecturesNative1 from '~/static/images/cancelectures-native-1.jpg?resize'
+import cancelecturesNative2 from '~/static/images/cancelectures-native-2.jpg?resize'
 
-export function Cancelectures() {
+export const Cancelectures = () => {
   return (
-    <ProductContainer id="cancelectures">
-      <ProductTitle>Cancelectures</ProductTitle>
-      <ProductSubtitle>A canceled lectures list viewer for Shimane University</ProductSubtitle>
+    <SectionContainer id="cancelectures">
+      <SectionTitle>Cancelectures</SectionTitle>
       <ProductDescription>
+        A canceled lectures list viewer for Shimane University
+      </ProductDescription>
+      <ProductStory>
         <Sentence>
           Cancelecturesは島根大学の休講情報を手軽に確認するためのアプリケーションです。
         </Sentence>
@@ -24,7 +28,7 @@ export function Cancelectures() {
           その後ReactNativeというものに出会い、よりモダンな実装でスマートフォンのアプリという形で実装してみたいと思い、
           React Nativeを用いたアプリ版Cancelecturesを開発しました。
         </Sentence>
-      </ProductDescription>
+      </ProductStory>
       <ProductSupply>
         <ProductLink href="https://github.com/ymkz/cancelectures">
           Repository - GitHub(ymkz/cancelectures)
@@ -39,10 +43,10 @@ export function Cancelectures() {
           Expo - @ymkz/cancelectures
         </ProductLink>
       </ProductSupply>
-      <BaseRow space={16}>
-        <ProductImage image={require('~/static/images/cancelectures-native-1.jpg?resize')} />
-        <ProductImage image={require('~/static/images/cancelectures-native-2.jpg?resize')} />
-      </BaseRow>
-    </ProductContainer>
+      <FlexRow space={16}>
+        <ProductImage {...cancelecturesNative1} />
+        <ProductImage {...cancelecturesNative2} />
+      </FlexRow>
+    </SectionContainer>
   )
 }

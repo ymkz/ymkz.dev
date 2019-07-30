@@ -3,10 +3,9 @@ import styled from '@emotion/styled'
 
 type ProductLinkProps = {
   href: string
-  children: React.ReactNode
 }
 
-export function ProductLink({ href, children }: ProductLinkProps) {
+export const ProductLink: React.FC<ProductLinkProps> = ({ children, href }) => {
   return (
     <List>
       <Anchor href={href} rel="noopener noreferrer" target="_blank">

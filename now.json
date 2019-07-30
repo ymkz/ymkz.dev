@@ -1,30 +1,24 @@
 {
   "version": 2,
-  "name": "ymkz.io",
-  "alias": "ymkz.io",
+  "name": "ymkz.co",
+  "alias": "ymkz.co",
   "regions": ["hnd1"],
   "github": {
     "silent": true
   },
   "builds": [
     {
-      "src": "package.json",
-      "use": "@now/static-build"
+      "src": "next.config.js",
+      "use": "@now/next"
     }
   ],
   "routes": [
     {
-      "src": "/service-worker.js$",
+      "src": "^/service-worker.js$",
       "dest": "/_next/static/service-worker.js",
       "headers": {
         "cache-control": "public, max-age=43200, immutable",
         "Service-Worker-Allowed": "/"
-      }
-    },
-    {
-      "src": "/static/(.*)",
-      "headers": {
-        "cache-control": "max-age=31536000, immutable"
       }
     }
   ]

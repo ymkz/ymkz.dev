@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 type ContactFieldProps = React.InputHTMLAttributes<HTMLInputElement> &
   React.TextareaHTMLAttributes<HTMLTextAreaElement>
 
-export function ContactField(props: ContactFieldProps) {
+export const ContactField: React.FC<ContactFieldProps> = props => {
   return (
     <Container>
       <Label htmlFor={props.id}>{props.name}</Label>

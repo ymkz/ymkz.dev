@@ -1,23 +1,23 @@
 import React from 'react'
-import { ProductContainer } from '~/components/abstracts/product-container'
-import { ProductTitle } from '~/components/elements/product-title'
-import { ProductSubtitle } from '~/components/elements/product-subtitle'
+import { SectionContainer } from '~/components/abstracts/section-container'
+import { SectionTitle } from '~/components/elements/section-title'
 import { ProductDescription } from '~/components/elements/product-description'
-import { ProductSupply } from '~/components/elements/product-supply'
 import { ProductLink } from '~/components/elements/product-link'
+import { ProductStory } from '~/components/elements/product-story'
+import { ProductSupply } from '~/components/elements/product-supply'
 import { Sentence } from '~/components/elements/sentence'
 
-export function FrontendBoilerplate() {
+export const FrontendBoilerplate = () => {
   return (
-    <ProductContainer id="frontend-boilerplate">
-      <ProductTitle>frontend-boilerplate</ProductTitle>
-      <ProductSubtitle>A boilerplate for frontend development</ProductSubtitle>
-      <ProductDescription>
+    <SectionContainer id="frontend-boilerplate">
+      <SectionTitle>frontend-boilerplate</SectionTitle>
+      <ProductDescription>A boilerplate for frontend development</ProductDescription>
+      <ProductStory>
         <Sentence>Frontendのモダンなスタックで構成されたBoilerplateです。</Sentence>
         <Sentence>
           既存のBoilerplateを用いずに自分なりのBoilerplateをゼロベースで作成しています。TypeScriptで記述し、ビルドはwebpack、React+Reduxな開発環境です。Reduxはredux-observableを用いて非同期処理まわりをepicにまとめています。
         </Sentence>
-      </ProductDescription>
+      </ProductStory>
       <ProductSupply>
         <ProductLink href="https://frontend-boilerplate.now.sh">
           Website - frontend-boilerplate
@@ -26,6 +26,6 @@ export function FrontendBoilerplate() {
           Repository - GitHub(ymkz/frontend-boilerplate)
         </ProductLink>
       </ProductSupply>
-    </ProductContainer>
+    </SectionContainer>
   )
 }

@@ -1,20 +1,22 @@
 import React from 'react'
-import { BaseRow } from '~/components/abstracts/base-row'
-import { ProductContainer } from '~/components/abstracts/product-container'
-import { ProductTitle } from '~/components/elements/product-title'
-import { ProductSubtitle } from '~/components/elements/product-subtitle'
+import { SectionContainer } from '~/components/abstracts/section-container'
+import { FlexRow } from '~/components/elements/flex-row'
+import { SectionTitle } from '~/components/elements/section-title'
 import { ProductDescription } from '~/components/elements/product-description'
-import { ProductSupply } from '~/components/elements/product-supply'
-import { ProductLink } from '~/components/elements/product-link'
 import { ProductImage } from '~/components/elements/product-image'
+import { ProductLink } from '~/components/elements/product-link'
+import { ProductStory } from '~/components/elements/product-story'
+import { ProductSupply } from '~/components/elements/product-supply'
 import { Sentence } from '~/components/elements/sentence'
+import narosirase1 from '~/static/images/narosirase-1.jpg?resize'
+import narosirase2 from '~/static/images/narosirase-2.jpg?resize'
 
-export function Narosirase() {
+export const Narosirase = () => {
   return (
-    <ProductContainer id="narosirase">
-      <ProductTitle>Narosirase</ProductTitle>
-      <ProductSubtitle>A web-novel reader for Syosetuka-ni-Narou</ProductSubtitle>
-      <ProductDescription>
+    <SectionContainer id="narosirase">
+      <SectionTitle>Narosirase</SectionTitle>
+      <ProductDescription>A web-novel reader for Syosetuka-ni-Narou</ProductDescription>
+      <ProductStory>
         <Sentence>
           Narosiraseは『小説家になろう』というWeb小説投稿サイトの小説の更新を追跡するためのアプリです。
         </Sentence>
@@ -24,16 +26,16 @@ export function Narosirase() {
           これからもよりよいUXを探して機能追加や改修をしていきたいと思っています。
           本家様のテキストダウンロードに関するポリシーの変更に伴い、アプリケーションの公開を停止しています。
         </Sentence>
-      </ProductDescription>
+      </ProductStory>
       <ProductSupply>
         <ProductLink href="https://github.com/ymkz/narosirase">
           Repository - GitHub(ymkz/narosirase)
         </ProductLink>
       </ProductSupply>
-      <BaseRow space={16}>
-        <ProductImage image={require('~/static/images/narosirase-1.jpg?resize')} />
-        <ProductImage image={require('~/static/images/narosirase-2.jpg?resize')} />
-      </BaseRow>
-    </ProductContainer>
+      <FlexRow space={16}>
+        <ProductImage {...narosirase1} />
+        <ProductImage {...narosirase2} />
+      </FlexRow>
+    </SectionContainer>
   )
 }

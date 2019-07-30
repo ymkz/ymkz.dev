@@ -1,78 +1,72 @@
 {
   "private": true,
   "license": "MIT",
-  "version": "0.0.0",
-  "main": "package.json",
-  "name": "ymkz.io",
-  "homepage": "https://ymkz.io",
-  "description": "The portfolio site about ymkz",
+  "version": "2.0.0",
+  "main": "next.config.js",
+  "name": "ymkz.co",
+  "homepage": "https://ymkz.co",
+  "description": "ymkz's portfolio site",
   "engines": {
     "node": ">=10"
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export -o dist",
+    "build": "next build",
+    "start": "next start",
     "typecheck": "tsc --noEmit",
     "lint": "eslint --ext .js,.ts,.tsx .",
-    "lazy": "run-p typecheck lint",
     "test:browser": "percy exec -- node tests/index.js",
     "test:integration": "start-test dev http://localhost:3000 test:browser",
     "webapp": "webappgen -i templates/icon.svg -t templates/manifest.json",
-    "precommit": "run-p typecheck lint build",
-    "now-build": "yarn build"
+    "lazy": "run-p typecheck lint"
   },
   "dependencies": {
-    "@egoist/snackbar": "1.5.0",
-    "@emotion/core": "10.0.14",
-    "@emotion/styled": "10.0.14",
-    "next": "9.0.2",
-    "react": "16.8.6",
-    "react-dom": "16.8.6",
-    "react-ga": "2.6.0",
-    "react-use-form-state": "0.10.4"
+    "@egoist/snackbar": "^1.5.0",
+    "@emotion/core": "^10.0.14",
+    "@emotion/styled": "^10.0.14",
+    "next": "^9.0.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-use-form-state": "^0.10.4"
   },
   "devDependencies": {
-    "@babel/core": "7.5.5",
-    "@commitlint/cli": "8.1.0",
-    "@commitlint/config-conventional": "8.1.0",
-    "@emotion/babel-preset-css-prop": "10.0.14",
-    "@percy/puppeteer": "1.0.8",
-    "@types/puppeteer": "1.19.0",
-    "@types/react": "16.8.23",
-    "@types/react-dom": "16.8.5",
-    "@typescript-eslint/eslint-plugin": "1.13.0",
-    "@typescript-eslint/parser": "1.13.0",
-    "@ymkz/webappgen-cli": "1.0.2",
-    "@zeit/next-css": "1.0.1",
-    "babel-plugin-module-resolver": "3.2.0",
-    "core-js": "3.1.4",
-    "eslint": "6.1.0",
-    "eslint-config-prettier": "6.0.0",
-    "eslint-import-resolver-babel-module": "5.1.0",
-    "eslint-plugin-import": "2.18.2",
-    "eslint-plugin-prettier": "3.1.0",
-    "eslint-plugin-react": "7.14.3",
-    "eslint-plugin-react-hooks": "1.6.1",
-    "eslint-plugin-security": "1.4.0",
-    "eslint-plugin-unicorn": "10.0.0",
-    "husky": "3.0.1",
-    "imagemin-mozjpeg": "8.0.0",
-    "imagemin-optipng": "7.0.0",
-    "imagemin-svgo": "7.0.0",
-    "make-dir": "3.0.0",
-    "next-compose-plugins": "2.2.0",
-    "next-offline": "4.0.2",
-    "next-optimized-images": "2.5.3",
-    "npm-run-all": "4.1.5",
-    "prettier": "1.18.2",
-    "prop-types": "15.7.2",
-    "puppeteer": "1.19.0",
-    "responsive-loader": "1.2.0",
-    "sharp": "0.22.1",
-    "start-server-and-test": "1.9.1",
-    "typescript": "3.5.3",
-    "webpack": "4.38.0",
-    "yarnhook": "0.4.1"
+    "@babel/core": "^7.5.5",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "@emotion/babel-preset-css-prop": "^10.0.14",
+    "@percy/puppeteer": "^1.0.8",
+    "@types/react": "^16.8.23",
+    "@types/react-dom": "^16.8.5",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "@ymkz/webappgen-cli": "^1.0.2",
+    "@zeit/next-css": "^1.0.1",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "core-js": "^3.1.4",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-import-resolver-babel-module": "^5.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.6.1",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-unicorn": "^10.0.0",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-optipng": "^7.0.0",
+    "imagemin-svgo": "^7.0.0",
+    "make-dir": "^3.0.0",
+    "next-compose-plugins": "^2.2.0",
+    "next-offline": "^4.0.2",
+    "next-optimized-images": "^2.5.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.18.2",
+    "puppeteer": "^1.19.0",
+    "responsive-loader": "^1.2.0",
+    "sharp": "^0.23.0",
+    "start-server-and-test": "^1.9.1",
+    "typescript": "^3.5.3",
+    "webpack": "^4.38.0"
   },
   "author": {
     "name": "ymkz",
@@ -81,23 +75,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ymkz/ymkz.io"
+    "url": "https://github.com/ymkz/ymkz.co"
   },
   "bugs": {
-    "url": "https://github.com/ymkz/ymkz.io/issues"
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "yarn precommit",
-      "post-checkout": "yarnhook",
-      "post-rewrite": "yarnhook",
-      "post-merge": "yarnhook"
-    }
+    "url": "https://github.com/ymkz/ymkz.co/issues"
   }
 }

@@ -9,7 +9,6 @@
   const baseUrl = 'http://localhost:3000'
   const screenshotsDir = await makeDir('tests/screenshots')
 
-  // @ts-ignore
   async function screenshot(page, name) {
     if (__CI__) {
       await percySnapshot(page, name)
@@ -18,23 +17,17 @@
     }
   }
 
-  // Setup browser
-  const browser = await puppeteer.launch({
-    headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
-  })
+  const option = { headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] }
+  const browser = await puppeteer.launch(option)
   const page = await browser.newPage()
   await page.setViewport({ width: 1920, height: 1080 })
 
-  // Test index page
   await page.goto(baseUrl)
   await screenshot(page, 'index')
 
-  // Test /about page
   await page.goto(`${baseUrl}/about`)
   await screenshot(page, 'about')
 
-  // Test /work page
   await page.goto(`${baseUrl}/work`)
   await screenshot(page, 'work')
 

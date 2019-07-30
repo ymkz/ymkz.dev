@@ -1,9 +1,9 @@
 {
   "root": true,
   "env": {
+    "browser": true,
     "es6": true,
-    "node": true,
-    "browser": true
+    "node": true
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -35,7 +35,6 @@
     "prettier/react"
   ],
   "rules": {
-    "no-console": ["error", { "allow": ["info", "warn", "error"] }],
     "prefer-const": "error",
     "react/prop-types": "off",
     "react-hooks/rules-of-hooks": "error",

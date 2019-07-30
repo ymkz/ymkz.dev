@@ -11,13 +11,12 @@
     { "language": "typescript", "autoFix": true },
     { "language": "typescriptreact", "autoFix": true }
   ],
-  "files.autoSave": "off",
   "markdown.preview.breaks": true,
   "search.exclude": {
+    "**/.next": true,
+    "**/public": true,
     "**/node_modules": true,
-    "**/bower_components": true,
-    "**/yarn.lock": true,
-    "**/package-lock.json": true
+    "**/bower_components": true
   },
   "[javascript]": {
     "editor.formatOnSave": false

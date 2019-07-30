@@ -1,51 +1,91 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-const webpack = require('webpack')
-const css = require('@zeit/next-css')
-const offline = require('next-offline')
 const optimize = require('next-optimized-images')
-const withPlugins = require('next-compose-plugins')
+const compose = require('next-compose-plugins')
+const offline = require('next-offline')
+const css = require('@zeit/next-css')
 
-const optimizeOptions = {
-  responsive: {
-    placeholder: true,
-    sizes: [128, 256, 384]
-  }
-}
-
-const offlineOptions = {
+const offlineOption = {
   workboxOpts: {
     clientsClaim: true,
     skipWaiting: true,
     swDest: 'static/service-worker.js',
     runtimeCaching: [
       {
-        urlPattern: /^https:\/\/fonts\.googleapis\.com/,
-        handler: 'StaleWhileRevalidate',
+        urlPattern: /^https:\/\/fonts\.(?:googleapis|gstatic)\.com\/.*/i,
+        handler: 'CacheFirst',
         options: {
           cacheName: 'google-fonts',
-          cacheableResponse: { statuses: [0, 200] },
-          expiration: { maxAgeSeconds: 60 * 60 * 24 * 365 }
+          expiration: {
+            maxEntries: 4,
+            maxAgeSeconds: 365 * 24 * 60 * 60
+          }
+        }
+      },
+      {
+        urlPattern: /\.(?:otf|ttc|ttf|woff|woff2|font.css)$/i,
+        handler: 'StaleWhileRevalidate',
+        options: {
+          cacheName: 'static-font-assets',
+          expiration: {
+            maxEntries: 4,
+            maxAgeSeconds: 7 * 24 * 60 * 60
+          }
+        }
+      },
+      {
+        urlPattern: /\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i,
+        handler: 'StaleWhileRevalidate',
+        options: {
+          cacheName: 'static-image-assets',
+          expiration: {
+            maxEntries: 64,
+            maxAgeSeconds: 24 * 60 * 60
+          }
+        }
+      },
+      {
+        urlPattern: /\.(?:js)$/i,
+        handler: 'StaleWhileRevalidate',
+        options: {
+          cacheName: 'static-js-assets',
+          expiration: {
+            maxEntries: 16,
+            maxAgeSeconds: 24 * 60 * 60
+          }
+        }
+      },
+      {
+        urlPattern: /\.(?:css|less)$/i,
+        handler: 'StaleWhileRevalidate',
+        options: {
+          cacheName: 'static-style-assets',
+          expiration: {
+            maxEntries: 16,
+            maxAgeSeconds: 24 * 60 * 60
+          }
+        }
+      },
+      {
+        urlPattern: /.*/i,
+        handler: 'StaleWhileRevalidate',
+        options: {
+          cacheName: 'others',
+          expiration: {
+            maxEntries: 16,
+            maxAgeSeconds: 24 * 60 * 60
+          }
         }
       }
     ]
   }
 }
 
-const nextConfigs = {
-  webpack: (config, options) => {
-    config.plugins = config.plugins || []
-
-    config.plugins = [
-      ...config.plugins,
-      new webpack.EnvironmentPlugin({ BUILD_ID: JSON.stringify(options.buildId) })
-    ]
-
-    return config
+const optimizeOption = {
+  responsive: {
+    placeholder: true,
+    sizes: [128, 256, 384]
   }
 }
 
-module.exports = withPlugins(
-  [[css], [optimize, optimizeOptions], [offline, offlineOptions]],
-  nextConfigs
-)
+module.exports = compose([[css], [offline, offlineOption], [optimize, optimizeOption]])

@@ -1,37 +1,31 @@
 import React from 'react'
 import { useFormState } from 'react-use-form-state'
-import { createSnackbar } from '@egoist/snackbar'
 import { SectionContainer } from '~/components/abstracts/section-container'
-import { SectionTitle } from '~/components/elements/section-title'
 import { ContactField } from '~/components/elements/contact-field'
 import { ContactSubmit } from '~/components/elements/contact-submit'
+import { SectionTitle } from '~/components/elements/section-title'
+import { snackbar } from '~/helpers/snackbar'
 
-type ContactValues = {
-  name: string
-  email: string
-  message: string
-}
+export const Contact = () => {
+  const [{ values, clear }, { text, email, textarea }] = useFormState<ContactValues>(null, {
+    withIds: true
+  })
 
-export function Contact() {
-  const [form, { text, email, textarea }] = useFormState<ContactValues>(null, { withIds: true })
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
+    const body = JSON.stringify(values)
+    const headers = { 'Content-Type': 'application/json' }
     const input: RequestInfo = 'https://usebasin.com/f/81603850904d.json'
-    const init: RequestInit = {
-      method: 'POST',
-      headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
-      body: JSON.stringify(form.values)
-    }
+    const init: RequestInit = { method: 'POST', headers, body }
 
     try {
       await fetch(input, init)
-      createSnackbar('Thank you for contact!', { position: 'right', timeout: 4000 })
+      snackbar('Thank you for contact!')
+      clear()
     } catch (error) {
-      createSnackbar('An error occurred when sending.', { position: 'right' })
+      snackbar('An error occurred when sending.', true)
     }
-
-    form.clear()
   }
 
   return (
@@ -41,7 +35,7 @@ export function Contact() {
         <ContactField required placeholder="John Doe" {...text('name')} />
         <ContactField required placeholder="john.doe@example.com" {...email('email')} />
         <ContactField required placeholder="Your message here" rows={8} {...textarea('message')} />
-        <ContactSubmit type="submit">Submit</ContactSubmit>
+        <ContactSubmit type="submit" />
       </form>
     </SectionContainer>
   )
