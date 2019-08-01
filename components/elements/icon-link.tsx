@@ -15,6 +15,7 @@ export const IconLink: React.FC<IconLinkProps> = ({ href, src }) => {
       rel="noopener noreferrer"
       css={css`
         border-bottom: 1px solid transparent;
+        color: var(--base-text);
         height: 40px;
         width: 40px;
         &:focus {
