@@ -2,14 +2,15 @@ import React from 'react'
 import styled from '@emotion/styled'
 
 type IconLinkProps = {
+  label?: string
   href: string
   src: string
 }
 
-export const IconLink: React.FC<IconLinkProps> = ({ href, src }) => {
+export const IconLink: React.FC<IconLinkProps> = ({ label, href, src }) => {
   return (
     <Container
-      aria-label=""
+      aria-label={label}
       dangerouslySetInnerHTML={{ __html: src }}
       href={href}
       rel="noopener noreferrer"
