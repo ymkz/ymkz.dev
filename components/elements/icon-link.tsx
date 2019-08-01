@@ -9,6 +9,7 @@ type IconLinkProps = {
 export const IconLink: React.FC<IconLinkProps> = ({ href, src }) => {
   return (
     <Container
+      aria-label=""
       dangerouslySetInnerHTML={{ __html: src }}
       href={href}
       rel="noopener noreferrer"
