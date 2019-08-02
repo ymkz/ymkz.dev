@@ -7,7 +7,7 @@
 
   const __CI__ = process.env.CI
   const baseUrl = 'http://localhost:3000'
-  const screenshotsDir = await makeDir('tests/screenshots')
+  const screenshotsDir = await makeDir('tests/__screenshots__')
 
   async function screenshot(page, name) {
     if (__CI__) {
