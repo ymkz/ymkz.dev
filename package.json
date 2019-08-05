@@ -21,7 +21,7 @@
     "lazy": "run-p typecheck lint"
   },
   "dependencies": {
-    "@egoist/snackbar": "^1.5.0",
+    "@egoist/snackbar": "^1.5.1",
     "@emotion/core": "^10.0.14",
     "@emotion/styled": "^10.0.14",
     "next": "^9.0.3",

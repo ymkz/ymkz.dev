@@ -929,10 +929,10 @@
   dependencies:
     find-up "^4.0.0"
 
-"@egoist/snackbar@^1.5.0":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@egoist/snackbar/-/snackbar-1.5.0.tgz#518ccff69414970d441369a754e3a360b99cde88"
-  integrity sha512-L5DD2sFLw7dqPQww3rrZ7KlZx0EKaOhDdlnzGwrh/zIKHfKjsZhjx1gdG82yipMuxiB4u/jbLYozJc0ilUYAgQ==
+"@egoist/snackbar@^1.5.1":
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/@egoist/snackbar/-/snackbar-1.5.1.tgz#cc25118c01d4e92c63d108c29bc06c7d601877e8"
+  integrity sha512-hIbfxDw54noQhguFkCpyHTO2hZ7mDmovN/1rrMzGmtNEucEq0AMr5PBh5JukBl4wcDa8FVs6lILOMLgp0WHUZQ==
 
 "@emotion/babel-plugin-jsx-pragmatic@^0.1.3":
   version "0.1.3"
