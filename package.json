@@ -23,7 +23,7 @@
   "dependencies": {
     "@egoist/snackbar": "^1.5.1",
     "@emotion/core": "^10.0.15",
-    "@emotion/styled": "^10.0.14",
+    "@emotion/styled": "^10.0.15",
     "next": "^9.0.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
