@@ -27,7 +27,7 @@
     "next": "^9.0.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-use-form-state": "^0.10.4"
+    "react-use-form-state": "^0.11.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
