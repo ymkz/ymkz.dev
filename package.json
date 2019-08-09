@@ -25,7 +25,7 @@
     "@emotion/core": "^10.0.15",
     "@emotion/styled": "^10.0.15",
     "next": "^9.0.3",
-    "react": "^16.8.6",
+    "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-use-form-state": "^0.11.0"
   },
