@@ -3,13 +3,11 @@
 type Breakpoints = {
   mobile: string
   tablet: string
-  desktop: string
 }
 
 const breakpoints: Breakpoints = {
-  mobile: '576px',
-  tablet: '768px',
-  desktop: '1200px'
+  mobile: '560px',
+  tablet: '690px'
 }
 
 function mediaMinWidth(minWidth: string): string {
