@@ -17,8 +17,7 @@
     "lint": "eslint --ext .js,.ts,.tsx .",
     "test:browser": "percy exec -- node tests/index.js",
     "test:integration": "start-test dev http://localhost:3000 test:browser",
-    "webapp": "webappgen -i templates/icon.svg -t templates/manifest.json",
-    "lazy": "run-p typecheck lint"
+    "webapp": "webappgen -i templates/icon.svg -t templates/manifest.json"
   },
   "dependencies": {
     "@egoist/snackbar": "^1.5.1",
@@ -30,6 +29,7 @@
     "react-use-form-state": "^0.11.0"
   },
   "devDependencies": {
+    "@arkweid/lefthook": "^0.6.3",
     "@babel/core": "^7.5.5",
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
@@ -52,7 +52,6 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "eslint-plugin-security": "^1.4.0",
     "eslint-plugin-unicorn": "^10.0.0",
-    "husky": "^3.0.3",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-optipng": "^7.0.0",
     "imagemin-svgo": "^7.0.0",
