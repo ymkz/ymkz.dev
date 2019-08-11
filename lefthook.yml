@@ -1,5 +1,4 @@
 commit-msg:
-  piped: true
   commands:
     commitlint: commitlint -E HUSKY_GIT_PARAMS
 pre-commit:
