@@ -5,13 +5,13 @@ executors:
     docker:
       - image: circleci/node:11
         environment:
-          HUSKY_SKIP_INSTALL: 1
+          LEFTHOOK: '0'
   browser:
     working_directory: ~/app
     docker:
       - image: circleci/node:11-browsers
         environment:
-          HUSKY_SKIP_INSTALL: 1
+          LEFTHOOK: '0'
 commands:
   restore-dependencies:
     steps:
@@ -59,7 +59,7 @@ jobs:
       - run:
           name: Run integration test
           command: yarn test:integration
-  build:
+  dry-run-build:
     executor: default
     steps:
       - checkout
@@ -80,7 +80,7 @@ workflows:
       - run-integration-test:
           requires:
             - setup
-      - build:
+      - dry-run-build:
           requires:
             - setup
             - check-linter

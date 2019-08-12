@@ -1,21 +1,25 @@
 commit-msg:
   commands:
-    commitlint: commitlint -E HUSKY_GIT_PARAMS
+    check-commit-msg:
+      run: commitlint -e
 pre-commit:
   parallel: true
   commands:
-    typecheck:
+    check-types:
       run: yarn typecheck
-    lint:
+    check-linter:
       run: yarn lint
     dry-run-build:
       run: yarn build
 post-checkout:
   commands:
-    run: yarnhook
+    yarn-install:
+      run: yarnhook
 post-rewrite:
   commands:
-    run: yarnhook
+    yarn-install:
+      run: yarnhook
 post-merge:
   commands:
-    run: yarnhook
+    yarn-install:
+      run: yarnhook
