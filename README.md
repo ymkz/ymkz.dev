@@ -1,11 +1,10 @@
 <div>
-  <img align="left" src="templates/icon.svg" width="40px">
+  <img align="left" src="templates/icon.svg" width="38px">
   <h1>ymkz.co</h1>
-  <sup>ymkz's portfolio site</sup>
-  <br />
-  <br />
-  <br />
 </div>
+
+> ymkz's portfolio site
+
 <p>
   <a href="https://circleci.com/gh/ymkz/workflows/ymkz.co">
     <img
@@ -84,8 +83,6 @@
       rel="noopener noreferrer"
     />
   </a>
-  <br />
-  <br />
 </p>
 
 ## Install
