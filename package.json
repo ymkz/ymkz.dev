@@ -35,6 +35,7 @@
     "@commitlint/config-conventional": "^8.1.0",
     "@emotion/babel-preset-css-prop": "^10.0.14",
     "@percy/puppeteer": "^1.0.8",
+    "@types/node": "^12.7.1",
     "@types/react": "^16.9.1",
     "@types/react-dom": "^16.8.5",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
