@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
+const analyzer = require('@next/bundle-analyzer')({ enabled: process.env.ANALYZER === 'true' })
 const optimize = require('next-optimized-images')
 const compose = require('next-compose-plugins')
 const offline = require('next-offline')
@@ -88,4 +89,4 @@ const optimizeOption = {
   }
 }
 
-module.exports = compose([[css], [offline, offlineOption], [optimize, optimizeOption]])
+module.exports = compose([[analyzer], [css], [offline, offlineOption], [optimize, optimizeOption]])
