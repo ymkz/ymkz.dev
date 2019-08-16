@@ -38,7 +38,7 @@
     "@next/bundle-analyzer": "9.0.3",
     "@percy/puppeteer": "1.0.8",
     "@types/node": "12.7.2",
-    "@types/react": "16.9.1",
+    "@types/react": "16.9.2",
     "@types/react-dom": "16.8.5",
     "@typescript-eslint/eslint-plugin": "1.13.0",
     "@typescript-eslint/parser": "1.13.0",
