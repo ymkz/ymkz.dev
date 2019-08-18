@@ -41,6 +41,13 @@
       rel="noopener noreferrer"
     >
   </a>
+  <a href="https://stylelint.io/">
+    <img
+      src="https://flat.badgen.net/badge/linter/stylelint/263238"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+  </a>
   <a href="https://prettier.io">
     <img
       src="https://flat.badgen.net/badge/formatter/prettier/ff69b4"
@@ -97,6 +104,12 @@ yarn install
 yarn dev
 ```
 
+## Test
+
+```sh
+yarn test:integration
+```
+
 ## Author
 
 👤 **ymkz**
@@ -107,3 +120,12 @@ yarn dev
 ## Show your support
 
 Give a ⭐️ if this project helped you!
+
+## License
+
+Copyright © 2019 [ymkz](https://github.com/ymkz).
+
+---
+
+_Icon made by [Freepik](https://www.flaticon.com/authors/freepik) from www.flaticon.com_  
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
