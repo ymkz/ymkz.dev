@@ -11,7 +11,7 @@ const Work = () => {
   return (
     <React.Fragment>
       <Head>
-        <title>Work | ymkz</title>
+        <title>Work | ymkz.co</title>
       </Head>
       <Portfolio />
       <Narosirase />

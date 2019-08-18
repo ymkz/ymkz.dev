@@ -10,7 +10,7 @@ const About = () => {
   return (
     <React.Fragment>
       <Head>
-        <title>About | ymkz</title>
+        <title>About | ymkz.co</title>
       </Head>
       <Profile />
       <Skill />
