@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable @typescript-eslint/no-var-requires, @typescript-eslint/no-misused-promises */
 
 !(async () => {
   const path = require('path')
