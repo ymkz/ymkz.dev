@@ -7,8 +7,10 @@ pre-commit:
   commands:
     check-types:
       run: yarn typecheck
-    check-linter:
-      run: yarn lint
+    check-eslint:
+      run: yarn lint:js
+    check-stylelint:
+      run: yarn lint:css
     dry-run-build:
       run: yarn build
 post-checkout:
