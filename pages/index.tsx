@@ -13,22 +13,22 @@ const Home = () => {
         css={css`
           width: min-content;
           ${up('mobile')} {
-            left: 50%;
             position: fixed;
             top: 50%;
-            transform: translate(-50%, -50%);
+            left: 50%;
             width: fit-content;
+            transform: translate(-50%, -50%);
           }
         `}
       >
         <h1
           css={css`
-            background-color: var(--base-background);
-            color: var(--base-text);
             font-family: 'Nunito Sans', sans-serif;
             font-size: 6.6rem;
             font-weight: 900;
             line-height: 1;
+            color: var(--base-text);
+            background-color: var(--base-background);
             ${up('mobile')} {
               font-size: 7.7rem;
             }
@@ -38,13 +38,13 @@ const Home = () => {
         </h1>
         <h2
           css={css`
+            margin-top: 1rem;
             font-family: 'Nunito Sans', sans-serif;
             font-size: 1.4rem;
             font-weight: 300;
-            margin-top: 1rem;
             ${up('mobile')} {
-              margin-top: 0.5rem;
               width: fit-content;
+              margin-top: 0.5rem;
             }
           `}
         >

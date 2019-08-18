@@ -20,17 +20,17 @@ export const IconLink: React.FC<IconLinkProps> = ({ label, href, src }) => {
 }
 
 const Container = styled.a`
-  border-bottom: 1px solid transparent;
-  color: var(--base-text);
-  height: 40px;
   width: 40px;
+  height: 40px;
+  color: var(--base-text);
+  border-bottom: 1px solid transparent;
   &:focus {
     border-bottom: 1px solid var(--base-text);
     outline: 0;
   }
   & > svg {
+    width: 40px;
     height: 40px;
     stroke: var(--base-text);
-    width: 40px;
   }
 `

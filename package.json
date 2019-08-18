@@ -16,6 +16,7 @@
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "lint": "eslint --ext .js,.ts,.tsx .",
+    "lint:css": "stylelint '**/*.{js,ts,tsx}'",
     "test:browser": "percy exec -- node tests/index.js",
     "test:integration": "start-test dev http://localhost:3000 test:browser",
     "webapp": "webappgen -i templates/icon.svg -t templates/manifest.json"
@@ -68,6 +69,10 @@
     "responsive-loader": "1.2.0",
     "sharp": "0.23.0",
     "start-server-and-test": "1.10.0",
+    "stylelint": "10.1.0",
+    "stylelint-config-prettier": "5.2.0",
+    "stylelint-config-recess-order": "2.0.3",
+    "stylelint-config-recommended": "2.2.0",
     "typescript": "3.5.3",
     "webpack": "4.39.2",
     "yarnhook": "0.4.2"

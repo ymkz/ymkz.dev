@@ -53,13 +53,13 @@ export const GlobalStyle = () => {
           text-rendering: optimizeLegibility;
         }
         body {
-          background-color: var(--base-background);
-          color: var(--base-text);
-          font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', '游ゴシック Medium',
-            YuGothic, 'Hiragino Kaku Gothic ProN', メイリオ, Meiryo, sans-serif;
           margin: 0;
           overflow-y: scroll;
+          font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', '游ゴシック Medium',
+            YuGothic, 'Hiragino Kaku Gothic ProN', メイリオ, Meiryo, sans-serif;
+          color: var(--base-text);
           user-select: none;
+          background-color: var(--base-background);
           -webkit-overflow-scrolling: touch;
           &::-webkit-scrollbar {
             width: 8px;
@@ -81,8 +81,8 @@ export const GlobalStyle = () => {
         button,
         label,
         textarea {
-          touch-action: manipulation;
           -ms-touch-action: manipulation;
+          touch-action: manipulation;
         }
         input,
         textarea {

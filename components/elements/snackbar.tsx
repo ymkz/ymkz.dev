@@ -16,11 +16,11 @@ export function snackbar() {
 
 const Container = styled.div`
   position: fixed;
-  bottom: 16px;
   right: 16px;
-  padding: 8px;
+  bottom: 16px;
+  z-index: 100;
   display: flex;
   align-items: center;
+  padding: 8px;
   background-color: red;
-  z-index: 100;
 `
