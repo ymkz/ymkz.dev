@@ -76,7 +76,7 @@ jobs:
           name: Dry run build
           command: yarn build
 workflows:
-  work:
+  run:
     jobs:
       - setup
       - check-eslint:
