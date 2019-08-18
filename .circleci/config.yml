@@ -13,13 +13,13 @@ executors:
         environment:
           LEFTHOOK: '0'
 commands:
-  restore-dependencies:
+  restore-dependencies-cache:
     steps:
       - restore_cache:
           keys:
             - app-deps-{{ checksum "yarn.lock" }}
             - app-deps
-  save-dependencies:
+  save-dependencies-cache:
     steps:
       - save_cache:
           key: app-deps-{{ checksum "yarn.lock" }}
@@ -30,24 +30,32 @@ jobs:
     executor: default
     steps:
       - checkout
-      - restore-dependencies
+      - restore-dependencies-cache
       - run:
           name: Install dependencies
           command: yarn install
-      - save-dependencies
-  check-linter:
+      - save-dependencies-cache
+  check-eslint:
     executor: default
     steps:
       - checkout
-      - restore-dependencies
+      - restore-dependencies-cache
       - run:
-          name: Run lint
-          command: yarn lint
+          name: Run eslint
+          command: yarn lint:js
+  check-stylelint:
+    executor: default
+    steps:
+      - checkout
+      - restore-dependencies-cache
+      - run:
+          name: Run stylelint
+          command: yarn lint:css
   check-types:
     executor: default
     steps:
       - checkout
-      - restore-dependencies
+      - restore-dependencies-cache
       - run:
           name: Run typecheck
           command: yarn typecheck
@@ -55,7 +63,7 @@ jobs:
     executor: browser
     steps:
       - checkout
-      - restore-dependencies
+      - restore-dependencies-cache
       - run:
           name: Run integration test
           command: yarn test:integration
@@ -63,15 +71,18 @@ jobs:
     executor: default
     steps:
       - checkout
-      - restore-dependencies
+      - restore-dependencies-cache
       - run:
-          name: Run build
+          name: Dry run build
           command: yarn build
 workflows:
   work:
     jobs:
       - setup
-      - check-linter:
+      - check-eslint:
+          requires:
+            - setup
+      - check-stylelint:
           requires:
             - setup
       - check-types:
@@ -83,6 +94,7 @@ workflows:
       - dry-run-build:
           requires:
             - setup
-            - check-linter
+            - check-eslint
+            - check-stylelint
             - check-types
             - run-integration-test
