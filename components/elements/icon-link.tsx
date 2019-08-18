@@ -1,36 +1,43 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import { FlexRow } from '~/components/elements/flex-row'
 
 type IconLinkProps = {
-  label?: string
-  href: string
   src: string
+  href: string
+  name: string
 }
 
-export const IconLink: React.FC<IconLinkProps> = ({ label, href, src }) => {
+export const IconLink = ({ src, href, name }: IconLinkProps) => {
   return (
-    <Container
-      aria-label={label}
-      dangerouslySetInnerHTML={{ __html: src }}
-      href={href}
-      rel="noopener noreferrer"
-      target="_blank"
-    ></Container>
+    <Li>
+      <FlexRow space={12}>
+        <Icon dangerouslySetInnerHTML={{ __html: src }} />
+        <Username href={href} target="_blank" rel="noopener noreferrer">
+          {name}
+        </Username>
+      </FlexRow>
+    </Li>
   )
 }
 
-const Container = styled.a`
-  width: 40px;
-  height: 40px;
-  color: var(--base-text);
-  border-bottom: 1px solid transparent;
-  &:focus {
-    border-bottom: 1px solid var(--base-text);
-    outline: 0;
+const Li = styled.li`
+  list-style: none;
+`
+
+const Icon = styled.div`
+  width: 24px;
+  height: 24px;
+  path {
+    fill: currentColor;
   }
-  & > svg {
-    width: 40px;
-    height: 40px;
-    stroke: var(--base-text);
+`
+
+const Username = styled.a`
+  font-size: 18px;
+  color: var(--base-text);
+  text-decoration-line: none;
+  &:hover {
+    text-decoration-line: underline;
   }
 `
