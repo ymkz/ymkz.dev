@@ -128,5 +128,5 @@ Copyright © 2019 [ymkz](https://github.com/ymkz).
 ---
 
 _Logo Icon made by [Freepik](https://www.flaticon.com/authors/freepik) from www.flaticon.com_  
-_Social Icon made by [simple-icons](https://github.com/simple-icons) from simpleicons.org_  
+_Social Icon made by [simple-icons](https://github.com/simple-icons) from www.simpleicons.org_  
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
