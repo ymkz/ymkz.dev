@@ -3,10 +3,13 @@
 benchmarks
 e2e
 node_modules
-.commitlintrc.json
+.commitlintrc.yml
 .editorconfig
 .eslintignore
-.eslintrc.json
+.eslintrc.yml
 .gitignore
 .prettierignore
-.prettierrc.json
+.prettierrc.yml
+.stylelintignore
+.stylelintrc.yml
+lefthook.yml
