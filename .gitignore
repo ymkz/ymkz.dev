@@ -2,7 +2,7 @@
 /node_modules
 
 # testing
-/tests/__screenshots__
+/e2e/__screenshots__
 
 # production
 /.next

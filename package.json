@@ -18,7 +18,7 @@
     "lint": "run-p lint:*",
     "lint:js": "eslint '**/*.{js,ts,tsx}'",
     "lint:css": "stylelint '**/*.{js,ts,tsx}'",
-    "test:browser": "percy exec -- node tests/index.js",
+    "test:browser": "percy exec -- node e2e",
     "test:integration": "start-test dev http://localhost:3000 test:browser",
     "webapp": "webappgen -i templates/icon.svg -t templates/manifest.json"
   },
