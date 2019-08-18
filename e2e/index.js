@@ -7,11 +7,13 @@
   const { percySnapshot } = require('@percy/puppeteer')
 
   const baseUrl = 'http://localhost:3000'
+  const percyOptions = { widths: [415, 1920], minHeight: 1080 }
+
   const screenshotsDir = await makeDir('e2e/__screenshots__')
 
   async function screenshot(page, name) {
     if (process.env.PERCY_TOKEN) {
-      await percySnapshot(page, name)
+      await percySnapshot(page, name, percyOptions)
     } else {
       await page.screenshot({ fullPage: true, path: path.join(screenshotsDir, `${name}.png`) })
     }
