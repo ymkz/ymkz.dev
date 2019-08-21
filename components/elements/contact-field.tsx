@@ -16,17 +16,11 @@ export const ContactField: React.FC<ContactFieldProps> = props => {
 const Container = styled.div`
   display: flex;
   flex-flow: column;
-  padding: 8px 0;
-  &:first-of-type {
-    padding-top: 0;
-  }
-  &:last-of-type {
-    padding-bottom: 0;
-  }
+  margin-bottom: 20px;
 `
 
 const Label = styled.label`
-  margin-bottom: 4px;
+  margin-bottom: 8px;
   text-transform: capitalize;
 `
 
@@ -39,9 +33,8 @@ const Input = styled.input`
   border: 0;
   border-radius: 4px;
   &:focus {
-    border: 1px solid var(--input-border);
     outline: none;
-    box-shadow: 0 0 0 0.2rem var(--input-shadow);
+    box-shadow: 0 0 0 4px var(--input-shadow);
   }
   &::placeholder {
     color: var(--input-placeholder-text);
@@ -58,9 +51,8 @@ const Textarea = styled.textarea`
   border: 0;
   border-radius: 4px;
   &:focus {
-    border: 1px solid var(--input-border);
     outline: none;
-    box-shadow: 0 0 0 0.2rem var(--input-shadow);
+    box-shadow: 0 0 0 4px var(--input-shadow);
   }
   &::placeholder {
     color: var(--input-placeholder-text);

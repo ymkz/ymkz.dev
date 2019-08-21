@@ -20,7 +20,11 @@ export const Contact = () => {
     const init: RequestInit = { method: 'POST', headers, body }
 
     try {
-      await fetch(input, init)
+      if (process.env.NODE_ENV === 'production') {
+        await fetch(input, init)
+      } else {
+        console.info(`${process.env.NODE_ENV}:`, values)
+      }
       snackbar('Thank you for contact!')
       clear()
     } catch (error) {
@@ -35,7 +39,7 @@ export const Contact = () => {
         <ContactField required placeholder="John Doe" {...text('name')} />
         <ContactField required placeholder="john.doe@example.com" {...email('email')} />
         <ContactField required placeholder="Your message here" rows={8} {...textarea('message')} />
-        <ContactSubmit type="submit" />
+        <ContactSubmit type="submit" disabled={!Object.values(values).every(Boolean)} />
       </form>
     </SectionContainer>
   )

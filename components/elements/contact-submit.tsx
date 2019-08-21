@@ -9,8 +9,7 @@ export function ContactSubmit({ disabled }: ContactSubmitProps) {
       type="submit"
       disabled={disabled}
       css={css`
-        padding: 10px 16px;
-        margin-top: 1rem;
+        padding: 10px 20px;
         color: var(--base-text);
         cursor: pointer;
         background-color: var(--button-background);
