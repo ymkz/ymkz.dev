@@ -1137,10 +1137,10 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@next/bundle-analyzer@9.0.4":
-  version "9.0.4"
-  resolved "https://registry.yarnpkg.com/@next/bundle-analyzer/-/bundle-analyzer-9.0.4.tgz#9198959c67a6caa933cc1850ee9570018b3b5a41"
-  integrity sha512-0YZf0FZjDro/QcuxQoFxgzvQwLnL2omrPLv19y7HwBNCXfcgPE/nlo6eT/gdJLONr935kN8Nj74V7GbwfZUXLw==
+"@next/bundle-analyzer@9.0.5":
+  version "9.0.5"
+  resolved "https://registry.yarnpkg.com/@next/bundle-analyzer/-/bundle-analyzer-9.0.5.tgz#439e0b32fd7bb29110cbe47e335c7787e940d2de"
+  integrity sha512-7WjrP/JqRMPoH6S3V3FAzsw+YUZgbdWkGeVF3mWmXvsafJCe4FKt1KGGrP98Zd45AfRf+2EXHwSVNAAkbLYt1A==
   dependencies:
     webpack-bundle-analyzer "3.3.2"
 
