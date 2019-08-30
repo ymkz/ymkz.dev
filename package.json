@@ -39,7 +39,7 @@
     "@emotion/babel-preset-css-prop": "10.0.14",
     "@next/bundle-analyzer": "9.0.5",
     "@percy/puppeteer": "1.0.8",
-    "@types/node": "12.7.2",
+    "@types/node": "12.7.3",
     "@types/react": "16.9.2",
     "@types/react-dom": "16.9.0",
     "@typescript-eslint/eslint-plugin": "2.0.0",
