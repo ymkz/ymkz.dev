@@ -1,0 +1,9 @@
+{
+  "hooks": {
+    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+    "pre-commit": "run-p typecheck lint build",
+    "post-checkout": "yarnhook",
+    "post-rewrite": "yarnhook",
+    "post-merge": "yarnhook"
+  }
+}
