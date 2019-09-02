@@ -1,11 +1,11 @@
 # dependencies
-/node_modules
+node_modules
 
 # testing
-/e2e/__screenshots__
+e2e/__screenshots__
 
 # production
-/.next
+.next
 
 # misc
 .DS_Store
