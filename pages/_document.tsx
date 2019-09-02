@@ -1,8 +1,8 @@
 import React from 'react'
-import Document, { Head, Main, NextScript } from 'next/document'
+import NextDocument, { Head, Main, NextScript } from 'next/document'
 import { WebappManifest } from '~/components/abstracts/webapp-manifest'
 
-export default class extends Document {
+class Document extends NextDocument {
   render() {
     return (
       <html lang="ja">
@@ -24,3 +24,5 @@ export default class extends Document {
     )
   }
 }
+
+export default Document

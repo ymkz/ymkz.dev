@@ -1,10 +1,10 @@
 import '@egoist/snackbar/dist/snackbar.css'
 import React from 'react'
-import App from 'next/app'
+import NextApp from 'next/app'
 import { GlobalStyle } from '~/components/abstracts/global-style'
 import { PageContainer } from '~/components/abstracts/page-container'
 
-export default class extends App {
+class App extends NextApp {
   render() {
     return (
       <React.StrictMode>
@@ -16,3 +16,5 @@ export default class extends App {
     )
   }
 }
+
+export default App
