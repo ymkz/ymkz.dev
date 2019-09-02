@@ -3,22 +3,18 @@ executors:
   default:
     working_directory: ~/app
     docker:
-      - image: circleci/node:11
-        environment:
-          LEFTHOOK: '0'
+      - image: circleci/node:10.16.3
   browser:
     working_directory: ~/app
     docker:
-      - image: circleci/node:11-browsers
-        environment:
-          LEFTHOOK: '0'
+      - image: circleci/node:10.16.3-browsers
 commands:
-  restore-dependencies-cache:
+  load-dependencies-cache:
     steps:
       - restore_cache:
           keys:
             - app-deps-{{ checksum "yarn.lock" }}
-            - app-deps
+            - app-deps-
   save-dependencies-cache:
     steps:
       - save_cache:
@@ -30,71 +26,58 @@ jobs:
     executor: default
     steps:
       - checkout
-      - restore-dependencies-cache
-      - run:
-          name: Install dependencies
-          command: yarn install
+      - load-dependencies-cache
+      - run: yarn install
       - save-dependencies-cache
-  check-eslint:
-    executor: default
-    steps:
-      - checkout
-      - restore-dependencies-cache
-      - run:
-          name: Run eslint
-          command: yarn lint:js
-  check-stylelint:
-    executor: default
-    steps:
-      - checkout
-      - restore-dependencies-cache
-      - run:
-          name: Run stylelint
-          command: yarn lint:css
   check-types:
     executor: default
     steps:
       - checkout
-      - restore-dependencies-cache
-      - run:
-          name: Run typecheck
-          command: yarn typecheck
+      - load-dependencies-cache
+      - run: yarn typecheck
+  check-eslint:
+    executor: default
+    steps:
+      - checkout
+      - load-dependencies-cache
+      - run: yarn lint:js
+  check-stylelint:
+    executor: default
+    steps:
+      - checkout
+      - load-dependencies-cache
+      - run: yarn lint:css
   run-integration-test:
     executor: browser
     steps:
       - checkout
-      - restore-dependencies-cache
-      - run:
-          name: Run integration test
-          command: yarn test:integration
+      - load-dependencies-cache
+      - run: yarn test:integration
   dry-run-build:
     executor: default
     steps:
       - checkout
-      - restore-dependencies-cache
-      - run:
-          name: Dry run build
-          command: yarn build
+      - load-dependencies-cache
+      - run: yarn build
 workflows:
   run:
     jobs:
       - setup
+      - check-types:
+          requires:
+            - setup
       - check-eslint:
           requires:
             - setup
       - check-stylelint:
           requires:
             - setup
-      - check-types:
-          requires:
-            - setup
-      - run-integration-test:
-          requires:
-            - setup
       - dry-run-build:
           requires:
             - setup
+            - check-types
             - check-eslint
             - check-stylelint
-            - check-types
-            - run-integration-test
+      - run-integration-test:
+          requires:
+            - dry-run-build
