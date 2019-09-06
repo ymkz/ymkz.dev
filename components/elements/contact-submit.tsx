@@ -3,7 +3,7 @@ import { css } from '@emotion/core'
 
 type ContactSubmitProps = React.ButtonHTMLAttributes<HTMLButtonElement>
 
-export function ContactSubmit({ disabled }: ContactSubmitProps) {
+export const ContactSubmit: React.FC<ContactSubmitProps> = ({ disabled }) => {
   return (
     <button
       type="submit"
