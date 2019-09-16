@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-const analyzer = require('@next/bundle-analyzer')({ enabled: process.env.ANALYZER === 'true' })
+const analyzer = require('@next/bundle-analyzer')({ enabled: process.env.ANALYZE === 'true' })
 const optimize = require('next-optimized-images')
 const compose = require('next-compose-plugins')
 const offline = require('next-offline')
