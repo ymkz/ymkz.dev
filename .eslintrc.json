@@ -8,7 +8,6 @@
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": { "jsx": true },
-    "project": "./tsconfig.json",
     "sourceType": "module"
   },
   "plugins": [
@@ -28,9 +27,8 @@
     "plugin:react/recommended",
     "plugin:unicorn/recommended",
     "plugin:security/recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:prettier/recommended",
     "prettier/@typescript-eslint",
     "prettier/unicorn",
