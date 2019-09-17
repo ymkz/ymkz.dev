@@ -1,9 +1,10 @@
 import React from 'react'
 import Head from 'next/head'
+import { NextPage } from 'next'
 import styled from '@emotion/styled'
 import { up } from '~/helpers/breakpoints'
 
-const Home = () => {
+const Home: NextPage = () => {
   return (
     <React.Fragment>
       <Head>
