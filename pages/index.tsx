@@ -1,15 +1,13 @@
 import React from 'react'
-import Head from 'next/head'
 import { NextPage } from 'next'
+import { Head } from '~/components/abstracts/head'
 import styled from '@emotion/styled'
 import { up } from '~/helpers/breakpoints'
 
 const Home: NextPage = () => {
   return (
     <React.Fragment>
-      <Head>
-        <title>Home | ymkz.co</title>
-      </Head>
+      <Head title="Home | ymkz.co" />
       <Container>
         <H1>Hi, I&apos;m ymkz</H1>
         <H2>―Play games, seriously with fun.</H2>
