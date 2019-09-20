@@ -1,9 +1,10 @@
-import React from 'react'
 import { css } from '@emotion/core'
-import { up } from '~/helpers/breakpoints'
+import React from 'react'
+
 import { FlexRow } from '~/components/elements/flex-row'
 import { NavIcon } from '~/components/elements/nav-icon'
 import { NavLink } from '~/components/elements/nav-link'
+import { up } from '~/helpers/breakpoints'
 
 export const AppBar = () => {
   return (

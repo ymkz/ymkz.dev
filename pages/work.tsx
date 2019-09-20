@@ -1,12 +1,13 @@
-import React from 'react'
 import { NextPage } from 'next'
+import React from 'react'
+
 import { Head } from '~/components/abstracts/head'
-import { Portfolio } from '~/components/modules/portfolio'
-import { Narosirase } from '~/components/modules/narosirase'
 import { Cancelectures } from '~/components/modules/cancelectures'
 import { FrontendBoilerplate } from '~/components/modules/frontend-boilerplate'
-import { Toodoo } from '~/components/modules/toodoo'
 import { Json2String } from '~/components/modules/json2string'
+import { Narosirase } from '~/components/modules/narosirase'
+import { Portfolio } from '~/components/modules/portfolio'
+import { Toodoo } from '~/components/modules/toodoo'
 
 const Work: NextPage = () => {
   return (

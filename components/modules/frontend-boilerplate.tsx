@@ -1,10 +1,11 @@
 import React from 'react'
+
 import { SectionContainer } from '~/components/abstracts/section-container'
-import { SectionTitle } from '~/components/elements/section-title'
 import { ProductDescription } from '~/components/elements/product-description'
 import { ProductLink } from '~/components/elements/product-link'
 import { ProductStory } from '~/components/elements/product-story'
 import { ProductSupply } from '~/components/elements/product-supply'
+import { SectionTitle } from '~/components/elements/section-title'
 import { Sentence } from '~/components/elements/sentence'
 
 export const FrontendBoilerplate = () => {

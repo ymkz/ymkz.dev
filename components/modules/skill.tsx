@@ -1,6 +1,7 @@
 import React from 'react'
-import { FlexRow } from '~/components/elements/flex-row'
+
 import { SectionContainer } from '~/components/abstracts/section-container'
+import { FlexRow } from '~/components/elements/flex-row'
 import { SectionTitle } from '~/components/elements/section-title'
 import { TextItem } from '~/components/elements/text-item'
 

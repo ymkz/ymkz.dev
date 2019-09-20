@@ -1,7 +1,8 @@
-import React from 'react'
-import { NextPage } from 'next'
-import { Head } from '~/components/abstracts/head'
 import styled from '@emotion/styled'
+import { NextPage } from 'next'
+import React from 'react'
+
+import { Head } from '~/components/abstracts/head'
 import { up } from '~/helpers/breakpoints'
 
 const Home: NextPage = () => {

@@ -1,6 +1,8 @@
 import '@egoist/snackbar/dist/snackbar.css'
-import React from 'react'
+
 import NextApp from 'next/app'
+import React from 'react'
+
 import { GlobalStyle } from '~/components/abstracts/global-style'
 import { PageContainer } from '~/components/abstracts/page-container'
 

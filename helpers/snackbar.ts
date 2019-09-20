@@ -1,4 +1,5 @@
 import { createSnackbar } from '@egoist/snackbar'
+
 import { getTheme } from '~/helpers/theming'
 
 export function snackbar(message: string, error?: boolean) {

@@ -1,7 +1,7 @@
-import React from 'react'
+import { css } from '@emotion/core'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { css } from '@emotion/core'
+import React from 'react'
 
 type NavLinkProps = {
   href: string

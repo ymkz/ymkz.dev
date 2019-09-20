@@ -1,5 +1,5 @@
-import React from 'react'
 import { css } from '@emotion/core'
+import React from 'react'
 
 export const SectionTitle: React.FC = ({ children }) => {
   return (

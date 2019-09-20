@@ -1,12 +1,13 @@
 import React from 'react'
+
 import { SectionContainer } from '~/components/abstracts/section-container'
 import { FlexRow } from '~/components/elements/flex-row'
-import { SectionTitle } from '~/components/elements/section-title'
 import { ProductDescription } from '~/components/elements/product-description'
 import { ProductImage } from '~/components/elements/product-image'
 import { ProductLink } from '~/components/elements/product-link'
 import { ProductStory } from '~/components/elements/product-story'
 import { ProductSupply } from '~/components/elements/product-supply'
+import { SectionTitle } from '~/components/elements/section-title'
 import { Sentence } from '~/components/elements/sentence'
 import json2string1 from '~/static/images/json2string-1.jpg?resize'
 
