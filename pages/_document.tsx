@@ -9,10 +9,7 @@ class Document extends NextDocument {
           <meta name="theme-color" content="#eceff4" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta name="description" content="ymkz's portfolio site" />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,900&font-display=swap"
-          />
+          <link rel="manifest" href="/static/assets/manifest.json" />
           <link rel="icon" type="image/png" sizes="96x96" href="/static/assets/icon-96x96.png" />
           <link
             rel="icon"
@@ -32,7 +29,10 @@ class Document extends NextDocument {
             sizes="180x180"
             href="/static/assets/icon-180x180.png"
           />
-          <link rel="manifest" href="/static/assets/manifest.json" />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,900&font-display=swap"
+          />
         </Head>
         <body>
           <noscript>You need to enable JavaScript to run this app.</noscript>
