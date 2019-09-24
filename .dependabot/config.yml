@@ -3,11 +3,11 @@ update_configs:
   - package_manager: "javascript"
     directory: "/"
     update_schedule: "daily"
-    allowed_updates:
-      - match:
-          update_type: "all"
     automerged_updates:
       - match:
-          dependency_type: "all"
+          dependency_type: "development"
+          update_type: "semver:minor"
+      - match:
+          dependency_type: "production"
           update_type: "semver:minor"
     version_requirement_updates: "off"
