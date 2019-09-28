@@ -107,7 +107,7 @@ yarn dev
 ## Test
 
 ```sh
-yarn test:integration
+yarn e2e
 ```
 
 ## Author

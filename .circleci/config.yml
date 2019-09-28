@@ -47,12 +47,12 @@ jobs:
       - checkout
       - load-dependencies-cache
       - run: yarn lint:css
-  run-integration-test:
+  run-end-to-end-test:
     executor: browser
     steps:
       - checkout
       - load-dependencies-cache
-      - run: yarn test:integration
+      - run: yarn e2e
   dry-run-build:
     executor: default
     steps:
@@ -78,6 +78,6 @@ workflows:
             - check-types
             - check-eslint
             - check-stylelint
-      - run-integration-test:
+      - run-end-to-end-test:
           requires:
             - dry-run-build

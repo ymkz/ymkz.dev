@@ -5,7 +5,7 @@
   "main": "next.config.js",
   "name": "ymkz.co",
   "homepage": "https://ymkz.co",
-  "description": "ymkz's portfolio site",
+  "description": "ymkz's portfolio website",
   "engines": {
     "node": ">=10"
   },
@@ -15,11 +15,11 @@
     "build:analyze": "cross-env ANALYZE=true next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "lint": "run-p lint:*",
-    "lint:js": "eslint '**/*.{js,ts,tsx}'",
     "lint:css": "stylelint '**/*.{js,ts,tsx}'",
-    "test:browser": "percy exec -- node e2e",
-    "test:integration": "start-test dev http://localhost:3000 test:browser",
+    "lint:js": "eslint '**/*.{js,ts,tsx}'",
+    "lint": "run-p lint:*",
+    "e2e:run": "percy exec -- node e2e",
+    "e2e": "start-test dev http://localhost:3000 e2e:run",
     "webapp": "webappgen -i templates/icon.svg -t templates/manifest.json"
   },
   "dependencies": {
