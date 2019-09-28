@@ -27,7 +27,7 @@ jobs:
     steps:
       - checkout
       - load-dependencies-cache
-      - run: yarn install
+      - run: yarn install --frozen-lockfile
       - save-dependencies-cache
   check-types:
     executor: default
