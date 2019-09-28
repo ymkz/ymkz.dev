@@ -15,6 +15,7 @@ export const NavLink: React.FC<NavLinkProps> = ({ children, href }) => {
   return (
     <Link href={href}>
       <a
+        data-to={href}
         css={css`
           font-family: 'Nunito Sans', sans-serif;
           font-weight: ${active || root ? 900 : 300};

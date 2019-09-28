@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-var-requires, @typescript-eslint/no-misused-promises */
+/* eslint-disable @typescript-eslint/no-var-requires */
 
 !(async () => {
   const path = require('path')
@@ -7,6 +7,8 @@
   const { percySnapshot } = require('@percy/puppeteer')
 
   const baseUrl = 'http://localhost:3000'
+  const timeoutOption = { timeout: 10000 }
+  const waitOption = { waitUntil: 'domcontentloaded' }
   const percyOptions = { widths: [415, 1920], minHeight: 1080 }
 
   const screenshotsDir = await makeDir('e2e/__screenshots__')
@@ -25,13 +27,15 @@
 
   await page.setViewport({ width: 1920, height: 1080 })
 
-  await page.goto(baseUrl)
+  await page.goto(baseUrl, { ...waitOption })
   await screenshot(page, 'index')
 
-  await page.goto(`${baseUrl}/about`)
+  page.click('a[data-to="/about"]')
+  await page.waitForNavigation({ ...waitOption, ...timeoutOption })
   await screenshot(page, 'about')
 
-  await page.goto(`${baseUrl}/work`)
+  page.click('a[data-to="/work"]')
+  await page.waitForNavigation({ ...waitOption, ...timeoutOption })
   await screenshot(page, 'work')
 
   browser.close()
