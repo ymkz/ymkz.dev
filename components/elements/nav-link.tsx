@@ -13,12 +13,12 @@ export const NavLink: React.FC<NavLinkProps> = ({ children, href }) => {
   const root = href === '/'
 
   return (
-    <Link href={href}>
+    <Link href={href} passHref>
       <a
-        data-to={href}
         css={css`
           font-family: 'Nunito Sans', sans-serif;
           font-weight: ${active || root ? 900 : 300};
+          color: var(--base-text);
           pointer-events: ${active ? 'none' : 'auto'};
           text-decoration-line: none;
           &:hover {

@@ -30,11 +30,11 @@
   await page.goto(baseUrl, { ...waitOption })
   await screenshot(page, 'index')
 
-  page.click('a[data-to="/about"]')
+  page.click('a[href="/about"]')
   await page.waitForNavigation({ ...waitOption, ...timeoutOption })
   await screenshot(page, 'about')
 
-  page.click('a[data-to="/work"]')
+  page.click('a[href="/work"]')
   await page.waitForNavigation({ ...waitOption, ...timeoutOption })
   await screenshot(page, 'work')
 
