@@ -9,7 +9,6 @@ class Document extends NextDocument {
           <meta name="theme-color" content="#eceff4" />
           <meta name="description" content="ymkz's portfolio website" />
           <link rel="manifest" href="/static/assets/manifest.json" />
-          <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin="anonymous" />
           <link rel="icon" type="image/png" sizes="96x96" href="/static/assets/icon-96x96.png" />
           <link
             rel="icon"
@@ -31,7 +30,6 @@ class Document extends NextDocument {
           />
           <link
             rel="stylesheet"
-            crossOrigin="anonymous"
             href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,900&font-display=swap"
           />
         </Head>
