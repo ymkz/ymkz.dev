@@ -1,9 +1,8 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
 !(async () => {
-  const puppeteer = require('puppeteer')
-
   const isLocal = !process.env.PERCY_TOKEN
+  const puppeteer = require('puppeteer')
   const path = isLocal && require('path')
   const makeDir = isLocal && require('make-dir')
   const screenshotsDir = isLocal && (await makeDir(`e2e/__screenshots__/${Date.now()}`))
