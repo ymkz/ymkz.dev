@@ -15,11 +15,11 @@
     "build:analyze": "cross-env ANALYZE=true next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "lint:css": "stylelint '**/*.{js,ts,tsx}'",
-    "lint:js": "eslint '**/*.{js,ts,tsx}'",
     "lint": "run-p lint:*",
-    "e2e:run": "percy exec -- node e2e",
-    "e2e": "start-test dev http://localhost:3000 e2e:run",
+    "lint:js": "eslint '**/*.{js,ts,tsx}'",
+    "lint:css": "stylelint '**/*.{js,ts,tsx}'",
+    "e2e": "start-test dev http://localhost:3000 e2e:exec",
+    "e2e:exec": "percy exec -- node e2e",
     "webapp": "webappgen -i templates/icon.svg -t templates/manifest.json"
   },
   "dependencies": {
