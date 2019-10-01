@@ -3,7 +3,7 @@
   <h1>ymkz.co</h1>
 </div>
 
-> ymkz's portfolio site
+> ymkz's portfolio website
 
 <p>
   <a href="https://circleci.com/gh/ymkz/workflows/ymkz.co">

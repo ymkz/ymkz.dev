@@ -8,7 +8,7 @@ class Document extends NextDocument {
         <Head>
           <meta name="theme-color" content="#eceff4" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-          <meta name="description" content="ymkz's portfolio site" />
+          <meta name="description" content="ymkz's portfolio website" />
           <link rel="manifest" href="/static/assets/manifest.json" />
           <link rel="icon" type="image/png" sizes="96x96" href="/static/assets/icon-96x96.png" />
           <link
