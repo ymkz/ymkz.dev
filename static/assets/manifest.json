@@ -1,13 +1,12 @@
 {
   "name": "ymkz.co",
   "short_name": "ymkz.co",
-  "description": "The portfolio site about ymkz",
+  "description": "ymkz's portfolio website",
   "theme_color": "#eceff4",
   "background_color": "#eceff4",
   "display": "standalone",
-  "Scope": "/",
-  "start_url": "/",
-  "splash_pages": null,
+  "scope": "/",
+  "start_url": ".",
   "icons": [
     {
       "src": "icon-512x512.png",
