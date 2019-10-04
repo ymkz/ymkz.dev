@@ -28,7 +28,7 @@
     "@emotion/styled": "10.0.17",
     "next": "9.0.7",
     "react": "16.10.1",
-    "react-dom": "16.10.1",
+    "react-dom": "16.10.2",
     "react-use-form-state": "0.11.0"
   },
   "devDependencies": {
