@@ -4,10 +4,10 @@ import React from 'react'
 import { SectionContainer } from '~/components/abstracts/section-container'
 import { IconLink } from '~/components/elements/icon-link'
 import { SectionTitle } from '~/components/elements/section-title'
-import facebook from '~/static/icons/facebook.svg?include'
-import github from '~/static/icons/github.svg?include'
-import linkedin from '~/static/icons/linkedin.svg?include'
-import twitter from '~/static/icons/twitter.svg?include'
+import facebook from '~/images/icons/facebook.svg?include'
+import github from '~/images/icons/github.svg?include'
+import linkedin from '~/images/icons/linkedin.svg?include'
+import twitter from '~/images/icons/twitter.svg?include'
 
 export const Social = () => {
   return (

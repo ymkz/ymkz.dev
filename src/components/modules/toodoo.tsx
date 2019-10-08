@@ -9,7 +9,7 @@ import { ProductStory } from '~/components/elements/product-story'
 import { ProductSupply } from '~/components/elements/product-supply'
 import { SectionTitle } from '~/components/elements/section-title'
 import { Sentence } from '~/components/elements/sentence'
-import toodoo1 from '~/static/images/toodoo-1.jpg?resize'
+import toodoo1 from '~/images/toodoo-1.jpg?resize'
 
 export const Toodoo = () => {
   return (

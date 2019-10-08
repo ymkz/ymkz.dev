@@ -9,8 +9,8 @@ import { ProductStory } from '~/components/elements/product-story'
 import { ProductSupply } from '~/components/elements/product-supply'
 import { SectionTitle } from '~/components/elements/section-title'
 import { Sentence } from '~/components/elements/sentence'
-import cancelecturesNative1 from '~/static/images/cancelectures-native-1.jpg?resize'
-import cancelecturesNative2 from '~/static/images/cancelectures-native-2.jpg?resize'
+import cancelecturesNative1 from '~/images/cancelectures-native-1.jpg?resize'
+import cancelecturesNative2 from '~/images/cancelectures-native-2.jpg?resize'
 
 export const Cancelectures = () => {
   return (

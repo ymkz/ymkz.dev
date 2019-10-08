@@ -9,8 +9,8 @@ import { ProductStory } from '~/components/elements/product-story'
 import { ProductSupply } from '~/components/elements/product-supply'
 import { SectionTitle } from '~/components/elements/section-title'
 import { Sentence } from '~/components/elements/sentence'
-import portfolio1 from '~/static/images/portfolio-1.jpg?resize'
-import portfolio2 from '~/static/images/portfolio-2.jpg?resize'
+import portfolio1 from '~/images/portfolio-1.jpg?resize'
+import portfolio2 from '~/images/portfolio-2.jpg?resize'
 
 export const Portfolio = () => {
   return (

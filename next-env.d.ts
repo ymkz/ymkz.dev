@@ -2,6 +2,7 @@
 /// <reference types="next/types/global" />
 
 declare module '*?resize'
+declare module '*?inline'
 declare module '*?include'
 
 declare type ContactValues = {

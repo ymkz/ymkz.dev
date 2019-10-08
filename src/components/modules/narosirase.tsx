@@ -9,8 +9,8 @@ import { ProductStory } from '~/components/elements/product-story'
 import { ProductSupply } from '~/components/elements/product-supply'
 import { SectionTitle } from '~/components/elements/section-title'
 import { Sentence } from '~/components/elements/sentence'
-import narosirase1 from '~/static/images/narosirase-1.jpg?resize'
-import narosirase2 from '~/static/images/narosirase-2.jpg?resize'
+import narosirase1 from '~/images/narosirase-1.jpg?resize'
+import narosirase2 from '~/images/narosirase-2.jpg?resize'
 
 export const Narosirase = () => {
   return (

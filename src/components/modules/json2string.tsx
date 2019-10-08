@@ -9,7 +9,7 @@ import { ProductStory } from '~/components/elements/product-story'
 import { ProductSupply } from '~/components/elements/product-supply'
 import { SectionTitle } from '~/components/elements/section-title'
 import { Sentence } from '~/components/elements/sentence'
-import json2string1 from '~/static/images/json2string-1.jpg?resize'
+import json2string1 from '~/images/json2string-1.jpg?resize'
 
 export const Json2String = () => {
   return (
