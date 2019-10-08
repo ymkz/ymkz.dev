@@ -1,6 +1,8 @@
 import NextDocument, { Head, Main, NextScript } from 'next/document'
 import React from 'react'
 
+import { injectscript } from '~/helpers/theming'
+
 class Document extends NextDocument {
   render() {
     return (
@@ -20,6 +22,7 @@ class Document extends NextDocument {
         </Head>
         <body>
           <noscript>You need to enable JavaScript to run this app.</noscript>
+          <script dangerouslySetInnerHTML={{ __html: injectscript }} />
           <Main />
           <NextScript />
         </body>
