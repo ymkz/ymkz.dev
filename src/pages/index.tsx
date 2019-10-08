@@ -1,14 +1,16 @@
 import styled from '@emotion/styled'
 import { NextPage } from 'next'
+import NextHead from 'next/head'
 import React from 'react'
 
-import { Head } from '~/components/abstracts/head'
 import { up } from '~/helpers/breakpoints'
 
 const Home: NextPage = () => {
   return (
     <React.Fragment>
-      <Head title="Home | ymkz.co" />
+      <NextHead>
+        <title>Home | ymkz.co</title>
+      </NextHead>
       <Container>
         <H1>Hi, I&apos;m ymkz</H1>
         <H2>―Play games, seriously with fun.</H2>

@@ -1,18 +1,5 @@
-import { css } from '@emotion/core'
-import React from 'react'
+import styled from '@emotion/styled'
 
-type SectionContainerProps = {
-  id?: string
-}
-
-export const SectionContainer: React.FC<SectionContainerProps> = ({ children }) => {
-  return (
-    <section
-      css={css`
-        margin-bottom: 4rem;
-      `}
-    >
-      {children}
-    </section>
-  )
-}
+export const SectionContainer = styled.section`
+  margin-bottom: 4rem;
+`

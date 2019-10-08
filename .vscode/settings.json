@@ -1,7 +1,9 @@
 {
   "css.validate": false,
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "editor.rulers": [100],
+  "eslint.alwaysShowStatus": true,
+  "eslint.autoFixOnSave": true,
   "eslint.enable": true,
   "eslint.packageManager": "yarn",
   "eslint.validate": [
@@ -16,5 +18,17 @@
     "**/.next": true,
     "**/node_modules": true
   },
-  "stylelint.enable": true
+  "stylelint.enable": true,
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": false
+  },
+  "[typescript]": {
+    "editor.formatOnSave": false
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": false
+  }
 }

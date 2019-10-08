@@ -1,7 +1,7 @@
 import { NextPage } from 'next'
+import NextHead from 'next/head'
 import React from 'react'
 
-import { Head } from '~/components/abstracts/head'
 import { Cancelectures } from '~/components/modules/cancelectures'
 import { FrontendBoilerplate } from '~/components/modules/frontend-boilerplate'
 import { Json2String } from '~/components/modules/json2string'
@@ -12,7 +12,9 @@ import { Toodoo } from '~/components/modules/toodoo'
 const Work: NextPage = () => {
   return (
     <React.Fragment>
-      <Head title="Work | ymkz.co" />
+      <NextHead>
+        <title>Work | ymkz.co</title>
+      </NextHead>
       <Portfolio />
       <Narosirase />
       <Cancelectures />
