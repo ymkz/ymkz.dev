@@ -20,7 +20,7 @@
     "lint:css": "stylelint '**/*.{js,ts,tsx}'",
     "e2e": "start-test dev http://localhost:3000 e2e:exec",
     "e2e:exec": "percy exec -- node e2e/index.js",
-    "webapp": "webappgen -i templates/icon.svg -t templates/manifest.json"
+    "webapp": "webappgen -i other/icon.svg -t other/manifest.json"
   },
   "dependencies": {
     "@egoist/snackbar": "1.5.1",
