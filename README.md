@@ -1,5 +1,5 @@
 <div>
-  <img align="left" src="templates/icon.svg" width="38px">
+  <img align="left" src="other/icon.svg" width="38px">
   <h1>ymkz.co</h1>
 </div>
 
