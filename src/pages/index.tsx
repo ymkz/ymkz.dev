@@ -48,7 +48,6 @@ const H2 = styled.h2`
   font-size: 1.4rem;
   font-weight: 300;
   ${up('mobile')} {
-    width: fit-content;
     margin-top: 0.5rem;
   }
 `
