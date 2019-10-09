@@ -38,7 +38,7 @@
     "@emotion/babel-preset-css-prop": "10.0.17",
     "@next/bundle-analyzer": "9.1.1",
     "@percy/puppeteer": "1.0.8",
-    "@types/node": "12.7.11",
+    "@types/node": "12.7.12",
     "@types/react": "16.9.5",
     "@typescript-eslint/eslint-plugin": "2.3.3",
     "@typescript-eslint/parser": "2.3.3",
