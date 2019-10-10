@@ -2,22 +2,31 @@ import styled from '@emotion/styled'
 import React from 'react'
 
 import { SectionContainer } from '~/components/abstracts/section-container'
-import { IconLink } from '~/components/elements/icon-link'
+import { Facebook, GitHub, LinkedIn, Twitter } from '~/components/abstracts/social-icons'
+import { ExternalLink } from '~/components/elements/external-link'
 import { SectionTitle } from '~/components/elements/section-title'
-import facebook from '~/images/icons/facebook.svg?include'
-import github from '~/images/icons/github.svg?include'
-import linkedin from '~/images/icons/linkedin.svg?include'
-import twitter from '~/images/icons/twitter.svg?include'
 
 export const Social = () => {
   return (
     <SectionContainer id="social">
       <SectionTitle>Social</SectionTitle>
       <List>
-        <IconLink src={github} href="https://github.com/ymkz" name="@ymkz" />
-        <IconLink src={twitter} href="https://twitter.com/ymkzly" name="@ymkzly" />
-        <IconLink src={facebook} href="https://facebook.com/ymkzly" name="/ymkzly" />
-        <IconLink src={linkedin} href="https://www.linkedin.com/in/ymkz/" name="/in/ymkz" />
+        <ListItem>
+          <GitHub />
+          <ExternalLink href="https://github.com/ymkz">@ymkz</ExternalLink>
+        </ListItem>
+        <ListItem>
+          <Twitter />
+          <ExternalLink href="https://twitter.com/ymkzly">@ymkzly</ExternalLink>
+        </ListItem>
+        <ListItem>
+          <Facebook />
+          <ExternalLink href="https://facebook.com/ymkzly">ymkzly</ExternalLink>
+        </ListItem>
+        <ListItem>
+          <LinkedIn />
+          <ExternalLink href="https://www.linkedin.com/in/ymkz">/in/ymkz</ExternalLink>
+        </ListItem>
       </List>
     </SectionContainer>
   )
@@ -28,5 +37,14 @@ const List = styled.ul`
   margin-top: 8px;
   & > *:not(:last-child) {
     margin-bottom: 16px;
+  }
+`
+
+const ListItem = styled.li`
+  display: flex;
+  align-items: center;
+  list-style: none;
+  & > *:not(:last-child) {
+    margin-right: 12px;
   }
 `
