@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import styled from '@emotion/styled'
 import React from 'react'
 
 import { AppBar } from '~/components/modules/app-bar'
@@ -8,19 +8,17 @@ export const PageContainer: React.FC = ({ children }) => {
   return (
     <React.Fragment>
       <AppBar />
-      <main
-        css={css`
-          min-height: calc(100vh - 52px);
-          padding: 0 16px;
-          ${up('mobile')} {
-            max-width: 768px;
-            min-height: calc(100vh - 64px);
-            margin: 0 auto;
-          }
-        `}
-      >
-        {children}
-      </main>
+      <Main>{children}</Main>
     </React.Fragment>
   )
 }
+
+const Main = styled.main`
+  min-height: calc(100vh - 52px);
+  padding: 0 16px;
+  ${up('mobile')} {
+    max-width: 768px;
+    min-height: calc(100vh - 64px);
+    margin: 0 auto;
+  }
+`
