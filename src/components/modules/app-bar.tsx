@@ -4,6 +4,7 @@ import React from 'react'
 import { FlexRow } from '~/components/elements/flex-row'
 import { NavIcon } from '~/components/elements/nav-icon'
 import { NavLink } from '~/components/elements/nav-link'
+import { ThemeSwitch } from '~/components/modules/theme-switch'
 import { up } from '~/helpers/breakpoints'
 
 export const AppBar = () => {
@@ -14,6 +15,7 @@ export const AppBar = () => {
         <NavLink href="/">ymkz</NavLink>
       </FlexRow>
       <FlexRow space={16}>
+        <ThemeSwitch />
         <NavLink href="/about">about</NavLink>
         <NavLink href="/work">work</NavLink>
       </FlexRow>
