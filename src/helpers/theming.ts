@@ -17,15 +17,13 @@ export function switchTheme() {
 
 export const injectscript = `
 (() => {
-  function setTheme(theme) {
+  function __setTheme(theme) {
     localStorage.setItem('theme', theme)
     document.documentElement.setAttribute('theme', theme)
   }
-  const preferredTheme = localStorage.getItem('theme')
-  const darkColorScheme = window.matchMedia('(prefers-color-scheme: dark)')
-  darkColorScheme.addListener(mql => {
-    setTheme(mql.matches ? 'dark' : 'light')
-  })
-  setTheme(preferredTheme || (darkColorScheme.matches ? 'dark' : 'light'))
+  const __preferredTheme = localStorage.getItem('theme')
+  const __darkColorScheme = window.matchMedia('(prefers-color-scheme: dark)')
+  __darkColorScheme.addListener(mql => __setTheme(mql.matches ? 'dark' : 'light'))
+  __setTheme(__preferredTheme || (__darkColorScheme.matches ? 'dark' : 'light'))
 })()
 `
