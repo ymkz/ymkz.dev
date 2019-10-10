@@ -10,7 +10,7 @@ import { up } from '~/helpers/breakpoints'
 export const AppBar = () => {
   return (
     <Container>
-      <FlexRow space={8}>
+      <FlexRow space={12}>
         <NavIcon />
         <NavLink href="/">ymkz</NavLink>
       </FlexRow>
