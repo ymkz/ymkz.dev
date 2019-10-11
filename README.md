@@ -1,5 +1,5 @@
 <div>
-  <img align="left" src="other/icon.svg" width="38px">
+  <img align="left" src="docs/icon.svg" width="38px">
   <h1>ymkz.co</h1>
 </div>
 
@@ -29,7 +29,7 @@
   </a>
   <a href="https://zeit.co/ymkz/ymkz.co">
     <img
-      src="https://flat.badgen.net/badge/deploy/now/000000?icon=now"
+      src="https://flat.badgen.net/badge/hosting/now/000000"
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -85,7 +85,7 @@
   </a>
   <a href="https://twitter.com/ymkzly">
     <img
-      src="https://flat.badgen.net/twitter/follow/ymkzly"
+      src="https://flat.badgen.net/twitter/follow/ymkzly?icon=twitter"
       target="_blank"
       rel="noopener noreferrer"
     />
@@ -128,5 +128,4 @@ Copyright © 2019 [ymkz](https://github.com/ymkz).
 ---
 
 _Logo Icon made by [Freepik](https://www.flaticon.com/authors/freepik) from www.flaticon.com_  
-_Social Icon made by [simple-icons](https://github.com/simple-icons) from www.simpleicons.org_  
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
