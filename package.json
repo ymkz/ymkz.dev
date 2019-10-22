@@ -40,7 +40,7 @@
     "@percy/puppeteer": "1.0.8",
     "@types/node": "12.11.1",
     "@types/react": "16.9.9",
-    "@typescript-eslint/eslint-plugin": "2.4.0",
+    "@typescript-eslint/eslint-plugin": "2.5.0",
     "@typescript-eslint/parser": "2.4.0",
     "@ymkz/webappgen-cli": "1.0.2",
     "@zeit/next-css": "1.0.1",
