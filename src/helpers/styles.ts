@@ -19,6 +19,8 @@ export const global = css`
     --image-border: #d8dee9;
     --scrollbar-background: #e5e9f0;
     --scrollbar-thumb: #d8dee9;
+    --visible-icon-light: none;
+    --visible-icon-dark: block;
   }
   :root[theme='dark'] {
     --base-text: #eceff4;
@@ -38,6 +40,8 @@ export const global = css`
     --image-border: #434c5e;
     --scrollbar-background: #3b4252;
     --scrollbar-thumb: #4c566a;
+    --visible-icon-light: block;
+    --visible-icon-dark: none;
   }
   *,
   *::before,
@@ -58,7 +62,7 @@ export const global = css`
     background-color: var(--base-background);
     -webkit-overflow-scrolling: touch;
     &::-webkit-scrollbar {
-      width: 8px;
+      width: 6px;
     }
     &::-webkit-scrollbar-track {
       background-color: var(--scrollbar-background);
