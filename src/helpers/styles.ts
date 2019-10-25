@@ -22,7 +22,7 @@ export const global = css`
     --visible-icon-light: none;
     --visible-icon-dark: block;
   }
-  :root[theme='dark'] {
+  :root[data-theme='dark'] {
     --base-text: #eceff4;
     --base-background: #2e3440;
     --logo-fill-front: #d8dee9;

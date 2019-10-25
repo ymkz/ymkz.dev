@@ -5,6 +5,8 @@ declare module '*?resize'
 declare module '*?inline'
 declare module '*?include'
 
+declare type Theme = 'light' | 'dark'
+
 declare type ContactValues = {
   name: string
   email: string

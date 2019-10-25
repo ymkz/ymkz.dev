@@ -1,6 +1,6 @@
 import { createSnackbar } from '@egoist/snackbar'
 
-import { getTheme } from '~/helpers/theming'
+import { getTheme } from '~/helpers/theme'
 
 export function snackbar(message: string, error?: boolean) {
   const lightTheme = {

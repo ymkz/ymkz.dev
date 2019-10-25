@@ -1,12 +1,22 @@
-import NextDocument, { Head, Main, NextScript } from 'next/document'
+import NextDocument, { DocumentContext, Head, Main, NextScript } from 'next/document'
 import React from 'react'
 
-import { injectscript } from '~/helpers/theming'
+import { getTheme, initializeTheme } from '~/helpers/theme'
 
-class Document extends NextDocument {
+type DocumentProps = {
+  theme: Theme
+}
+
+class Document extends NextDocument<DocumentProps> {
+  static async getInitialProps(ctx: DocumentContext) {
+    const initialProps = await NextDocument.getInitialProps(ctx)
+    const theme = getTheme(ctx)
+    return { ...initialProps, theme }
+  }
+
   render() {
     return (
-      <html lang="ja">
+      <html lang="ja" data-theme={this.props.theme}>
         <Head>
           <meta name="theme-color" content="#eceff4" />
           <meta name="description" content="ymkz's portfolio website" />
@@ -22,7 +32,7 @@ class Document extends NextDocument {
         </Head>
         <body>
           <noscript>You need to enable JavaScript to run this app.</noscript>
-          <script dangerouslySetInnerHTML={{ __html: injectscript }} />
+          <script dangerouslySetInnerHTML={{ __html: initializeTheme }} />
           <Main />
           <NextScript />
         </body>
