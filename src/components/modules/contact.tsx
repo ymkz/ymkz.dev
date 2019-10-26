@@ -29,7 +29,7 @@ export const Contact = () => {
       snackbar('Thank you for contact!')
       clear()
     } catch (error) {
-      snackbar('An error occurred when sending.', true)
+      snackbar('An error occurred when sending.', { error: true })
     }
   }
 

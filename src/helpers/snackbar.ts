@@ -1,21 +1,28 @@
-import { createSnackbar } from '@snackbar/core'
+import { createSnackbar, SnackOptions, ThemeRules } from '@snackbar/core'
 
-import { getTheme } from '~/helpers/theme'
+type Options = SnackOptions & {
+  error?: boolean
+}
 
-export function snackbar(message: string, error?: boolean) {
-  const lightTheme = {
-    backgroundColor: '#2e3440',
-    actionColor: '#4c566a',
+export function snackbar(message: string, _options: Options = {}) {
+  const { error, ...options } = _options
+
+  const successTheme: ThemeRules = {
+    backgroundColor: '#5e81ac',
+    actionColor: '#d8dee9',
     textColor: '#eceff4'
   }
-  const darkTheme = {
-    backgroundColor: '#eceff4',
-    actionColor: '#4c566a',
-    textColor: '#2e3440'
+
+  const errorTheme: ThemeRules = {
+    backgroundColor: '#bf616a',
+    actionColor: '#d8dee9',
+    textColor: '#eceff4'
   }
+
   return createSnackbar(message, {
     position: 'right',
     timeout: error ? undefined : 4000,
-    theme: getTheme() === 'light' ? lightTheme : darkTheme
+    theme: error ? errorTheme : successTheme,
+    ...options
   })
 }

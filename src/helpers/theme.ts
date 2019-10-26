@@ -13,13 +13,20 @@ export function getTheme(ctx?: NextPageContext): Theme | undefined {
   if (ctx) {
     if (ctx.req) {
       if (ctx.req.headers.cookie) {
-        return parseThemeFromCookie(ctx.req.headers.cookie)
+        const theme = parseThemeFromCookie(ctx.req.headers.cookie)
+        return theme
       }
     }
   }
 
   if (process.browser) {
-    return parseThemeFromCookie(document.cookie)
+    const theme = parseThemeFromCookie(document.cookie)
+    if (theme) {
+      return theme
+    } else {
+      const preferredDarkColorScheme = window.matchMedia('(prefers-color-scheme: dark)')
+      return preferredDarkColorScheme.matches ? 'dark' : 'light'
+    }
   }
 
   return undefined
@@ -48,7 +55,7 @@ export const initializeTheme = `
   }
   const __preferredDarkColorScheme = window.matchMedia('(prefers-color-scheme: dark)')
   __preferredDarkColorScheme.addListener(mql => __setTheme(mql.matches ? 'dark' : 'light'))
-  if (!document.cookie.split(';').filter(str => str.trim().startsWith('theme=')).length) {
+  if (!document.cookie.split(';').find(str => str.trim().startsWith('theme='))) {
     __setTheme(__preferredDarkColorScheme.matches ? 'dark' : 'light')
   }
 })()
