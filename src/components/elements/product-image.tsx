@@ -1,6 +1,19 @@
 import { css } from '@emotion/core'
 import React from 'react'
 
+type OptimizeImage = {
+  height: number
+  width: number
+  images: {
+    height: number
+    width: number
+    path: string
+  }[]
+  placeholder: string
+  src: string
+  srcSet: string
+}
+
 export const ProductImage: React.FC<OptimizeImage> = props => {
   return (
     <div

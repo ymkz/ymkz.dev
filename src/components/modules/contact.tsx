@@ -7,6 +7,12 @@ import { ContactSubmit } from '~/components/elements/contact-submit'
 import { SectionTitle } from '~/components/elements/section-title'
 import { snackbar } from '~/helpers/snackbar'
 
+type ContactValues = {
+  name: string
+  email: string
+  message: string
+}
+
 export const Contact = () => {
   const [{ values, clear }, { text, email, textarea }] = useFormState<ContactValues>(null, {
     withIds: true
