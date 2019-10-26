@@ -1,4 +1,4 @@
-import { createSnackbar } from '@egoist/snackbar'
+import { createSnackbar } from '@snackbar/core'
 
 import { getTheme } from '~/helpers/theme'
 

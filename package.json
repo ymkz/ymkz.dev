@@ -23,9 +23,9 @@
     "webapp": "webappgen -i docs/icon.svg -t docs/manifest.json"
   },
   "dependencies": {
-    "@egoist/snackbar": "1.5.1",
     "@emotion/core": "10.0.22",
     "@emotion/styled": "10.0.22",
+    "@snackbar/core": "1.7.0",
     "next": "9.1.1",
     "react": "16.11.0",
     "react-dom": "16.11.0",

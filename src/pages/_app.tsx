@@ -1,4 +1,4 @@
-import '@egoist/snackbar/dist/snackbar.css'
+import '@snackbar/core/dist/snackbar.css'
 
 import NextApp, { AppContext } from 'next/app'
 import React from 'react'
