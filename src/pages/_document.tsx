@@ -1,6 +1,7 @@
 import NextDocument, { DocumentContext, Head, Main, NextScript } from 'next/document'
 import React from 'react'
 
+import { nord } from '~/helpers/colors'
 import { getTheme, initializeTheme, Theme } from '~/helpers/theme'
 
 type DocumentProps = {
@@ -18,8 +19,11 @@ class Document extends NextDocument<DocumentProps> {
     return (
       <html lang="ja" data-theme={this.props.theme}>
         <Head>
-          <meta name="theme-color" content="#eceff4" />
           <meta name="description" content="ymkz's portfolio website" />
+          <meta
+            name="theme-color"
+            content={this.props.theme === 'dark' ? nord.nord0 : nord.nord6}
+          />
           <link rel="manifest" href="/manifest.webmanifest" />
           <link rel="icon" type="image/png" sizes="96x96" href="/icon-96x96.png" />
           <link rel="icon" type="image/png" sizes="192x192" href="/icon-192x192.png" />
