@@ -1,7 +1,7 @@
 import NextDocument, { DocumentContext, Head, Main, NextScript } from 'next/document'
 import React from 'react'
 
-import { getTheme, initializeTheme } from '~/helpers/theme'
+import { getTheme, initializeTheme, Theme } from '~/helpers/theme'
 
 type DocumentProps = {
   theme: Theme

@@ -1,5 +1,7 @@
 import { NextPageContext } from 'next'
 
+export type Theme = 'light' | 'dark'
+
 function parseThemeFromCookie(cookie: string): Theme | undefined {
   const theme = cookie.replace(/(?:(?:^|.*;\s*)theme\s*=\s*([^;]*).*$)|^.*$/, '$1')
   if (theme === 'light' || theme === 'dark') {
