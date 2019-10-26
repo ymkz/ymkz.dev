@@ -1,49 +1,47 @@
 import { css, Global } from '@emotion/core'
 import React from 'react'
 
+import { nord } from '~/helpers/colors'
+
 export const GlobalStyle = () => {
   return (
     <Global
       styles={css`
         :root {
-          --base-text: #2e3440;
-          --base-background: #eceff4;
-          --logo-fill-front: #4c566a;
-          --logo-fill-back: #2e3440;
-          --input-background: #d8dee9;
-          --input-border: #eceff4;
-          --input-shadow: #e5e9f0;
-          --input-placeholder-text: #4c566a;
-          --input-error-text: #bf616a;
-          --input-error-border: rgba(191, 97, 106, 0.85);
-          --input-error-shadow: rgba(191, 97, 106, 0.25);
-          --button-background: #d8dee9;
-          --button-shadow: #e5e9f0;
-          --button-disable-text: #4c566a;
-          --image-border: #d8dee9;
-          --scrollbar-background: #e5e9f0;
-          --scrollbar-thumb: #d8dee9;
+          --base-text: ${nord.nord0};
+          --base-background: ${nord.nord6};
+          --logo-fill-front: ${nord.nord3};
+          --logo-fill-back: ${nord.nord0};
+          --input-background: ${nord.nord4};
+          --input-border: ${nord.nord6};
+          --input-shadow: ${nord.nord5};
+          --input-placeholder-text: ${nord.nord3};
+          --input-error-text: ${nord.nord11};
+          --button-background: ${nord.nord4};
+          --button-shadow: ${nord.nord5};
+          --button-disable-text: ${nord.nord3};
+          --image-border: ${nord.nord4};
+          --scrollbar-background: ${nord.nord5};
+          --scrollbar-thumb: ${nord.nord4};
           --visible-icon-light: none;
           --visible-icon-dark: block;
         }
         :root[data-theme='dark'] {
-          --base-text: #eceff4;
-          --base-background: #2e3440;
-          --logo-fill-front: #d8dee9;
-          --logo-fill-back: #eceff4;
-          --input-background: #3b4252;
-          --input-border: #4c566a;
-          --input-shadow: #434c5e;
-          --input-placeholder-text: #4c566a;
-          --input-error-text: #bf616a;
-          --input-error-border: rgba(191, 97, 106, 0.85);
-          --input-error-shadow: rgba(191, 97, 106, 0.25);
-          --button-background: #3b4252;
-          --button-shadow: #434c5e;
-          --button-disable-text: #4c566a;
-          --image-border: #434c5e;
-          --scrollbar-background: #3b4252;
-          --scrollbar-thumb: #4c566a;
+          --base-text: ${nord.nord6};
+          --base-background: ${nord.nord0};
+          --logo-fill-front: ${nord.nord4};
+          --logo-fill-back: ${nord.nord6};
+          --input-background: ${nord.nord1};
+          --input-border: ${nord.nord3};
+          --input-shadow: ${nord.nord2};
+          --input-placeholder-text: ${nord.nord3};
+          --input-error-text: ${nord.nord11};
+          --button-background: ${nord.nord1};
+          --button-shadow: ${nord.nord2};
+          --button-disable-text: ${nord.nord3};
+          --image-border: ${nord.nord2};
+          --scrollbar-background: ${nord.nord1};
+          --scrollbar-thumb: ${nord.nord3};
           --visible-icon-light: block;
           --visible-icon-dark: none;
         }
