@@ -1,5 +1,5 @@
 <div>
-  <img align="left" src="docs/icon.svg" width="38px">
+  <img align="left" src="public/icon.svg" width="38px">
   <h1>ymkz.co</h1>
 </div>
 
@@ -29,7 +29,7 @@
   </a>
   <a href="https://zeit.co/ymkz/ymkz.co">
     <img
-      src="https://flat.badgen.net/badge/hosting/now/000000"
+      src="https://flat.badgen.net/badge/hosting/now/000000?icon=now"
       target="_blank"
       rel="noopener noreferrer"
     >
