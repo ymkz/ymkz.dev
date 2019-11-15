@@ -54,7 +54,7 @@
     "eslint-plugin-react-hooks": "2.3.0",
     "eslint-plugin-security": "1.4.0",
     "eslint-plugin-simple-import-sort": "4.0.0",
-    "eslint-plugin-unicorn": "12.1.0",
+    "eslint-plugin-unicorn": "13.0.0",
     "husky": "3.0.9",
     "imagemin-mozjpeg": "8.0.0",
     "imagemin-optipng": "7.1.0",
