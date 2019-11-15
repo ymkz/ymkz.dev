@@ -20,7 +20,7 @@
     "lintcheck:css": "stylelint --print-config '**/*.{js,ts,tsx}' | stylelint-config-prettier-check",
     "e2e": "start-test dev http://localhost:3000 e2e:run",
     "e2e:run": "percy exec -- node e2e/index.js",
-    "webapp": "webappgen -i docs/icon.svg -t docs/manifest.json"
+    "webmanifest": "webmanifest --icon public/icon.svg"
   },
   "dependencies": {
     "@emotion/core": "10.0.22",
@@ -42,7 +42,6 @@
     "@types/react": "16.9.11",
     "@typescript-eslint/eslint-plugin": "2.7.0",
     "@typescript-eslint/parser": "2.7.0",
-    "@ymkz/webappgen-cli": "1.0.2",
     "@zeit/next-css": "1.0.1",
     "babel-plugin-module-resolver": "3.2.0",
     "cross-env": "6.0.3",
@@ -74,6 +73,7 @@
     "stylelint-config-prettier": "6.0.0",
     "stylelint-config-sass-guidelines": "6.1.0",
     "typescript": "3.7.2",
+    "webmanifest-cli": "0.0.0",
     "webpack": "4.41.2",
     "yarnhook": "0.4.3"
   },
