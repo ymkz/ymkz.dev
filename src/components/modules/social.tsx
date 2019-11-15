@@ -33,18 +33,18 @@ export const Social = () => {
 }
 
 const List = styled.ul`
-  padding: 0;
   margin-top: 8px;
-  & > *:not(:last-child) {
+  padding: 0;
+  > *:not(:last-child) {
     margin-bottom: 16px;
   }
 `
 
 const ListItem = styled.li`
-  display: flex;
   align-items: center;
+  display: flex;
   list-style: none;
-  & > *:not(:last-child) {
+  > *:not(:last-child) {
     margin-right: 12px;
   }
 `

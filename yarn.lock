@@ -10230,19 +10230,15 @@ stylelint-config-prettier@6.0.0:
   resolved "https://registry.yarnpkg.com/stylelint-config-prettier/-/stylelint-config-prettier-6.0.0.tgz#600aa218d8e34cf44a025903b0f60c079fd83366"
   integrity sha512-f/BKiUAczB4KODC1w5eY6LoNgfq6QzdSnSc4ccAATKo1IfYCuG3IZwaxj/5AAxl1kyaW7kPLBOXG66O4gSIKTQ==
 
-stylelint-config-recess-order@2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/stylelint-config-recess-order/-/stylelint-config-recess-order-2.0.3.tgz#cff907a13e965dd55c6c673427c65db43856fd1b"
-  integrity sha512-b3mwJyMjTnSWDBJUNjDt4Bb1WjOkYHLH83wSVk3PzB+smWe0kf7wZLhZSXp8t/WpPtkalPWy0nRVWwkxE7VOsA==
+stylelint-config-sass-guidelines@6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/stylelint-config-sass-guidelines/-/stylelint-config-sass-guidelines-6.1.0.tgz#9b3116ad8348d35f606e7ff30627bd00e7d0e810"
+  integrity sha512-0vb45wXET2rrtbDsz6L6VkcADVwfSVsfiz7OHFv/s72b/dfITWFlU6l3hR49aOgPwUu7xWfZA4Vi+fhy44+9kQ==
   dependencies:
-    stylelint-order "^3.0.1"
+    stylelint-order "^3.0.0"
+    stylelint-scss "^3.4.0"
 
-stylelint-config-recommended@3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/stylelint-config-recommended/-/stylelint-config-recommended-3.0.0.tgz#e0e547434016c5539fe2650afd58049a2fd1d657"
-  integrity sha512-F6yTRuc06xr1h5Qw/ykb2LuFynJ2IxkKfCMf+1xqPffkxh0S09Zc902XCffcsw/XMFq/OzQ1w54fLIDtmRNHnQ==
-
-stylelint-order@^3.0.1:
+stylelint-order@^3.0.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/stylelint-order/-/stylelint-order-3.1.1.tgz#ba9ea6844d1482f97f31204e7c9605c7b792c294"
   integrity sha512-4gP/r8j/6JGZ/LL41b2sYtQqfwZl4VSqTp7WeIwI67v/OXNQ08dnn64BGXNwAUSgb2+YIvIOxQaMzqMyQMzoyQ==
@@ -10250,6 +10246,17 @@ stylelint-order@^3.0.1:
     lodash "^4.17.15"
     postcss "^7.0.17"
     postcss-sorting "^5.0.1"
+
+stylelint-scss@^3.4.0:
+  version "3.12.1"
+  resolved "https://registry.yarnpkg.com/stylelint-scss/-/stylelint-scss-3.12.1.tgz#0b06122a33dd2ef368121e920bd3ecfa323bedf2"
+  integrity sha512-k6B78HrqJ6pib5yOtmId7osVGrE2Amcf0VU+tdzk+oqwXe/0+VKtbkogeXrmGKt+z54QhxvjEO++qlE/a7EWlA==
+  dependencies:
+    lodash "^4.17.15"
+    postcss-media-query-parser "^0.2.3"
+    postcss-resolve-nested-selector "^0.1.1"
+    postcss-selector-parser "^6.0.2"
+    postcss-value-parser "^4.0.2"
 
 stylelint@11.1.1:
   version "11.1.1"

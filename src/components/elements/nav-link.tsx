@@ -16,9 +16,9 @@ export const NavLink: React.FC<NavLinkProps> = ({ children, href }) => {
     <Link href={href} passHref>
       <a
         css={css`
+          color: var(--base-text);
           font-family: 'Nunito Sans', sans-serif;
           font-weight: ${active || root ? 900 : 300};
-          color: var(--base-text);
           pointer-events: ${active ? 'none' : 'auto'};
           text-decoration-line: none;
           &:hover {

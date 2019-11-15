@@ -1,15 +1,8 @@
 {
   "root": true,
-  "env": {
-    "es6": true,
-    "node": true,
-    "browser": true
-  },
   "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": { "jsx": true },
-    "sourceType": "module"
-  },
+  "parserOptions": { "ecmaFeatures": { "jsx": true }, "sourceType": "module" },
+  "env": { "es6": true, "node": true, "browser": true },
   "plugins": [
     "react",
     "import",
@@ -48,14 +41,8 @@
     "@typescript-eslint/consistent-type-definitions": ["error", "type"]
   },
   "settings": {
-    "react": {
-      "version": "detect"
-    },
-    "import/resolver": {
-      "babel-module": {}
-    },
-    "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx"]
-    }
+    "import/parsers": { "@typescript-eslint/parser": [".ts", ".tsx"] },
+    "import/resolver": { "babel-module": {} },
+    "react": { "version": "detect" }
   }
 }

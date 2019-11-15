@@ -55,14 +55,14 @@ export const GlobalStyle = () => {
           text-rendering: optimizeLegibility;
         }
         body {
-          margin: 0;
-          overflow-y: scroll;
+          background-color: var(--base-background);
+          color: var(--base-text);
           font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', '游ゴシック Medium',
             YuGothic, 'Hiragino Kaku Gothic ProN', メイリオ, Meiryo, sans-serif;
-          color: var(--base-text);
-          user-select: none;
-          background-color: var(--base-background);
+          margin: 0;
           -webkit-overflow-scrolling: touch;
+          overflow-y: scroll;
+          user-select: none;
           &::-webkit-scrollbar {
             width: 6px;
           }
@@ -83,13 +83,7 @@ export const GlobalStyle = () => {
         button,
         label,
         textarea {
-          -ms-touch-action: manipulation;
           touch-action: manipulation;
-        }
-        input,
-        textarea {
-          -webkit-appearance: none;
-          -moz-appearance: none;
         }
         button,
         input,

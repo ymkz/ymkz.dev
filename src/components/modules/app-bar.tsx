@@ -24,19 +24,19 @@ export const AppBar = () => {
 }
 
 const Container = styled.header`
+  align-items: center;
+  background-color: var(--base-background);
+  display: flex;
+  height: 52px;
+  justify-content: space-between;
+  left: 0;
+  padding: 0 16px;
   position: sticky;
   top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   width: 100%;
-  height: 52px;
-  padding: 0 16px;
-  background-color: var(--base-background);
   ${up('mobile')} {
-    max-width: 768px;
     height: 64px;
     margin: 0 auto;
+    max-width: 768px;
   }
 `

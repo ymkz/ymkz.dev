@@ -14,21 +14,10 @@
   ],
   "less.validate": false,
   "scss.validate": false,
-  "search.exclude": {
-    "**/.next": true,
-    "**/node_modules": true
-  },
+  "search.exclude": { "**/.next": true, "**/node_modules": true },
   "stylelint.enable": true,
-  "[javascript]": {
-    "editor.formatOnSave": false
-  },
-  "[javascriptreact]": {
-    "editor.formatOnSave": false
-  },
-  "[typescript]": {
-    "editor.formatOnSave": false
-  },
-  "[typescriptreact]": {
-    "editor.formatOnSave": false
-  }
+  "[javascript]": { "editor.formatOnSave": false },
+  "[javascriptreact]": { "editor.formatOnSave": false },
+  "[typescript]": { "editor.formatOnSave": false },
+  "[typescriptreact]": { "editor.formatOnSave": false }
 }

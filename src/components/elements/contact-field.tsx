@@ -25,16 +25,16 @@ const Label = styled.label`
 `
 
 const Input = styled.input`
-  height: 36px;
-  padding: 0 8px;
-  margin: 0;
-  color: var(--base-text);
   background-color: var(--input-background);
   border: 0;
   border-radius: 4px;
+  color: var(--base-text);
+  height: 36px;
+  margin: 0;
+  padding: 0 8px;
   &:focus {
-    outline: none;
     box-shadow: 0 0 0 4px var(--input-shadow);
+    outline: none;
   }
   &::placeholder {
     color: var(--input-placeholder-text);
@@ -43,16 +43,16 @@ const Input = styled.input`
 `
 
 const Textarea = styled.textarea`
-  padding: 8px;
-  margin: 0;
-  color: var(--base-text);
-  resize: vertical;
   background-color: var(--input-background);
   border: 0;
   border-radius: 4px;
+  color: var(--base-text);
+  margin: 0;
+  padding: 8px;
+  resize: vertical;
   &:focus {
-    outline: none;
     box-shadow: 0 0 0 4px var(--input-shadow);
+    outline: none;
   }
   &::placeholder {
     color: var(--input-placeholder-text);

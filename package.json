@@ -6,9 +6,6 @@
   "name": "ymkz.co",
   "homepage": "https://ymkz.co",
   "description": "ymkz's portfolio website",
-  "engines": {
-    "node": ">=10"
-  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -18,8 +15,11 @@
     "lint": "run-p lint:*",
     "lint:js": "eslint '**/*.{js,ts,tsx}'",
     "lint:css": "stylelint '**/*.{js,ts,tsx}'",
-    "e2e": "start-test dev http://localhost:3000 e2e:exec",
-    "e2e:exec": "percy exec -- node e2e/index.js",
+    "lintcheck": "run-p lintcheck:*",
+    "lintcheck:js": "eslint --print-config '**/*.{js,ts,tsx}' | eslint-config-prettier-check",
+    "lintcheck:css": "stylelint --print-config '**/*.{js,ts,tsx}' | stylelint-config-prettier-check",
+    "e2e": "start-test dev http://localhost:3000 e2e:run",
+    "e2e:run": "percy exec -- node e2e/index.js",
     "webapp": "webappgen -i docs/icon.svg -t docs/manifest.json"
   },
   "dependencies": {
@@ -72,11 +72,13 @@
     "start-server-and-test": "1.10.6",
     "stylelint": "11.1.1",
     "stylelint-config-prettier": "6.0.0",
-    "stylelint-config-recess-order": "2.0.3",
-    "stylelint-config-recommended": "3.0.0",
+    "stylelint-config-sass-guidelines": "6.1.0",
     "typescript": "3.7.2",
     "webpack": "4.41.2",
     "yarnhook": "0.4.3"
+  },
+  "engines": {
+    "node": ">=10"
   },
   "author": {
     "name": "ymkz",
