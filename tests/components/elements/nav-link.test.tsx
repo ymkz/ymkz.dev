@@ -4,9 +4,7 @@ import React from 'react'
 import { NavLink } from '~/components/elements/nav-link'
 
 jest.mock('next/router', () => ({
-  useRouter() {
-    return { route: '/', pathname: '', query: '', asPath: '' }
-  }
+  useRouter: () => ({ route: '/', pathname: '', query: '', asPath: '' })
 }))
 
 describe('components', () => {

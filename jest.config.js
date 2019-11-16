@@ -5,7 +5,8 @@ module.exports = {
   moduleFileExtensions: ['js', 'ts', 'tsx'],
   moduleNameMapper: {
     '^~/(.+)': '<rootDir>/src/$1',
-    '(.+).(png|jpg|jpeg|gif|svg|ttf|otf|woff|woff2|resize|inline)$': 'jest-transform-stub'
+    '(.+).(png|jpg|jpeg|gif|svg|ttf|otf|woff|woff2|resize|inline)$':
+      '<rootDir>/scripts/image-stub.ts'
   },
   setupFilesAfterEnv: ['<rootDir>/scripts/setup-files-after-env.ts']
 }
