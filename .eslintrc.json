@@ -2,8 +2,9 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "parserOptions": { "ecmaFeatures": { "jsx": true }, "sourceType": "module" },
-  "env": { "es6": true, "node": true, "browser": true },
+  "env": { "es6": true, "node": true, "browser": true, "jest": true },
   "plugins": [
+    "jest",
     "react",
     "import",
     "unicorn",
@@ -18,6 +19,7 @@
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
+    "plugin:jest/recommended",
     "plugin:react/recommended",
     "plugin:unicorn/recommended",
     "plugin:security/recommended",

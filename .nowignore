@@ -3,8 +3,10 @@
 .next
 .vscode
 benchmarks
+coverage
 e2e
 node_modules
+tests
 .commitlintrc.json
 .editorconfig
 .eslintignore
