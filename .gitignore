@@ -2,6 +2,7 @@
 node_modules
 
 # testing
+coverage
 e2e/__screenshots__
 
 # production

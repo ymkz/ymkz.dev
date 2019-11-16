@@ -3,4 +3,3 @@
 
 declare module '*?resize'
 declare module '*?inline'
-declare module '*?include'
