@@ -62,6 +62,13 @@
       rel="noopener noreferrer"
     >
   </a>
+  <a href="https://jestjs.io">
+    <img
+      src="https://flat.badgen.net/badge/unit%20testing/jest/99424f"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+  </a>
   <a href="https://percy.io/ymkz/ymkz.co">
     <img
       src="https://flat.badgen.net/badge/visual%20testing/percy/9e66bf"
@@ -107,6 +114,7 @@ yarn dev
 ## Test
 
 ```sh
+yarn test
 yarn e2e
 ```
 
