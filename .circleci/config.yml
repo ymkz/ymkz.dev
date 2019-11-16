@@ -47,6 +47,12 @@ jobs:
       - checkout
       - load-dependencies-cache
       - run: yarn lint:css
+  run-unit-test:
+    executor: default
+    steps:
+      - checkout
+      - load-dependencies-cache
+      - run: yarn coverage
   run-end-to-end-test:
     executor: browser
     steps:
@@ -72,12 +78,16 @@ workflows:
       - check-stylelint:
           requires:
             - setup
+      - run-unit-test:
+          requires:
+            - setup
       - dry-run-build:
           requires:
             - setup
             - check-types
             - check-eslint
             - check-stylelint
+            - run-unit-test
       - run-end-to-end-test:
           requires:
             - dry-run-build
