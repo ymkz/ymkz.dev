@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "ymkz.co",
+  "alias": "ymkz.co",
   "regions": ["hnd1"],
-  "github": { "silent": true, "autoAlias": false },
   "builds": [{ "src": "next.config.js", "use": "@now/next" }]
 }
