@@ -67,7 +67,7 @@
     "imagemin-optipng": "7.1.0",
     "imagemin-svgo": "7.0.0",
     "jest": "24.9.0",
-    "jest-emotion": "10.0.25",
+    "jest-emotion": "10.0.26",
     "make-dir": "3.0.0",
     "next-compose-plugins": "2.2.0",
     "next-offline": "4.0.6",
