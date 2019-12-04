@@ -46,7 +46,7 @@ const offlineOption = {
         }
       },
       {
-        urlPattern: /\.(?:js)$/i,
+        urlPattern: /\.js$/i,
         handler: 'StaleWhileRevalidate',
         options: {
           cacheName: 'static-js-assets',
