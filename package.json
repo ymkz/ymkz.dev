@@ -39,7 +39,7 @@
     "@commitlint/cli": "8.2.0",
     "@commitlint/config-conventional": "8.2.0",
     "@emotion/babel-preset-css-prop": "10.0.23",
-    "@next/bundle-analyzer": "9.1.4",
+    "@next/bundle-analyzer": "9.1.5",
     "@percy/puppeteer": "1.0.8",
     "@testing-library/jest-dom": "4.2.4",
     "@testing-library/react": "9.3.2",
