@@ -83,7 +83,7 @@
     "stylelint-config-sass-guidelines": "6.2.0",
     "typescript": "3.7.3",
     "webmanifest-cli": "0.0.1",
-    "webpack": "4.41.2",
+    "webpack": "4.41.3",
     "yarnhook": "0.4.3"
   },
   "engines": {
