@@ -1,25 +1,18 @@
 import '@snackbar/core/dist/snackbar.css'
 
-import NextApp, { AppContext } from 'next/app'
+import NextApp from 'next/app'
 import React from 'react'
 
-import { GlobalStyle } from '~/components/abstracts/global-style'
-import { PageContainer } from '~/components/abstracts/page-container'
+import { Header } from '~/components/organisms/header'
+import { GlobalStyle } from '~/components/templates/global-style'
 
 class App extends NextApp {
-  static async getInitialProps({ Component, ctx }: AppContext) {
-    return {
-      pageProps: Component.getInitialProps ? await Component.getInitialProps(ctx) : {}
-    }
-  }
-
   render() {
     return (
       <React.StrictMode>
         <GlobalStyle />
-        <PageContainer>
-          <this.props.Component {...this.props.pageProps} />
-        </PageContainer>
+        <Header />
+        <this.props.Component {...this.props.pageProps} />
       </React.StrictMode>
     )
   }

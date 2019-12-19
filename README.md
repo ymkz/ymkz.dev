@@ -6,8 +6,8 @@
 > ymkz's portfolio website
 
 <p>
-  <a href="https://circleci.com/gh/ymkz/workflows/ymkz.co" target="_blank" rel="noopener noreferrer">
-    <img src="https://flat.badgen.net/circleci/github/ymkz/ymkz.co?icon=circleci" />
+  <a href="https://github.com/ymkz/ymkz.co" target="_blank" rel="noopener noreferrer">
+    <img src="https://flat.badgen.net/github/checks/ymkz/ymkz.co?icon=github" />
   </a>
   <a href="https://app.dependabot.com/accounts/ymkz/repos/172352878" target="_blank" rel="noopener noreferrer">
     <img src="https://flat.badgen.net/badge/deps/dependabot/0366d6?icon=dependabot" />
@@ -30,7 +30,7 @@
   <a href="https://emotion.sh" target="_blank" rel="noopener noreferrer">
     <img src="https://flat.badgen.net/badge/styling/emotion/d36ac2" />
   </a>
-  <a href="https://jestjs.io" target="_blank" rel="noopener noreferrer">
+  <!-- <a href="https://jestjs.io" target="_blank" rel="noopener noreferrer">
     <img src="https://flat.badgen.net/badge/unit%20testing/jest/99424f" />
   </a>
   <a href="https://percy.io/ymkz/ymkz.co" target="_blank" rel="noopener noreferrer">
@@ -41,7 +41,7 @@
   </a>
   <a href="https://percy.io/ymkz/ymkz.co" target="_blank" rel="noopener noreferrer">
     <img src="https://flat.badgen.net/badge/_/firefox/ff5722/?icon=firefox&label" />
-  </a>
+  </a> -->
   <a href="https://twitter.com/ymkzly" target="_blank" rel="noopener noreferrer">
     <img src="https://flat.badgen.net/twitter/follow/ymkzly?icon=twitter" />
   </a>

@@ -1,18 +1,40 @@
-export const nord = {
-  nord0: '#2e3440',
-  nord1: '#3b4252',
-  nord2: '#434c5e',
-  nord3: '#4c566a',
-  nord4: '#d8dee9',
-  nord5: '#e5e9f0',
-  nord6: '#eceff4',
-  nord7: '#8fbcbb',
-  nord8: '#88c0d0',
-  nord9: '#81a1c1',
-  nord10: '#5e81ac',
-  nord11: '#bf616a',
-  nord12: '#d08770',
-  nord13: '#ebcb8b',
-  nord14: '#a3be8c',
-  nord15: '#b48ead'
-}
+export const primary = {
+  0: '#ffffff',
+  50: '#eceff1',
+  100: '#cfd8dc',
+  200: '#b0bec5',
+  300: '#90a4ae',
+  400: '#78909c',
+  500: '#607d8b',
+  600: '#546e7a',
+  700: '#455a64',
+  800: '#37474f',
+  900: '#263238',
+  1000: '#000000',
+} as const
+
+export const success = {
+  50: '#e3f2fd',
+  100: '#bbdefb',
+  200: '#90caf9',
+  300: '#64b5f6',
+  400: '#42a5f5',
+  500: '#2196f3',
+  600: '#1e88e5',
+  700: '#1976d2',
+  800: '#1565c0',
+  900: '#0d47a1',
+} as const
+
+export const danger = {
+  50: '#ffebee',
+  100: '#ffcdd2',
+  200: '#ef9a9a',
+  300: '#e57373',
+  400: '#ef5350',
+  500: '#f44336',
+  600: '#e53935',
+  700: '#d32f2f',
+  800: '#c62828',
+  900: '#b71c1c',
+} as const

@@ -1,16 +1,17 @@
 /* eslint-disable security/detect-object-injection */
 
+/*
+  reference: https://www.webdlab.com/labs/responsive-web-design-4/
+*/
+
 type Breakpoints = {
   mobile: string
   tablet: string
 }
 
-/*
-  reference: https://www.webdlab.com/labs/responsive-web-design-4/
-*/
 const breakpoints: Breakpoints = {
   mobile: '415px',
-  tablet: '960px'
+  tablet: '960px',
 }
 
 function mediaMinWidth(minWidth: string): string {

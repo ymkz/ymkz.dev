@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-const analyzer = require('@next/bundle-analyzer')({ enabled: process.env.ANALYZE === 'true' })
-const optimize = require('next-optimized-images')
 const compose = require('next-compose-plugins')
 const offline = require('next-offline')
 const css = require('@zeit/next-css')
@@ -19,9 +17,9 @@ const offlineOption = {
           cacheName: 'google-fonts',
           expiration: {
             maxEntries: 4,
-            maxAgeSeconds: 365 * 24 * 60 * 60
-          }
-        }
+            maxAgeSeconds: 365 * 24 * 60 * 60,
+          },
+        },
       },
       {
         urlPattern: /\.(?:otf|ttc|ttf|woff|woff2|font.css)$/i,
@@ -30,9 +28,9 @@ const offlineOption = {
           cacheName: 'static-font-assets',
           expiration: {
             maxEntries: 4,
-            maxAgeSeconds: 7 * 24 * 60 * 60
-          }
-        }
+            maxAgeSeconds: 7 * 24 * 60 * 60,
+          },
+        },
       },
       {
         urlPattern: /\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i,
@@ -41,9 +39,9 @@ const offlineOption = {
           cacheName: 'static-image-assets',
           expiration: {
             maxEntries: 64,
-            maxAgeSeconds: 24 * 60 * 60
-          }
-        }
+            maxAgeSeconds: 24 * 60 * 60,
+          },
+        },
       },
       {
         urlPattern: /\.js$/i,
@@ -52,9 +50,9 @@ const offlineOption = {
           cacheName: 'static-js-assets',
           expiration: {
             maxEntries: 16,
-            maxAgeSeconds: 24 * 60 * 60
-          }
-        }
+            maxAgeSeconds: 24 * 60 * 60,
+          },
+        },
       },
       {
         urlPattern: /\.(?:css|less)$/i,
@@ -63,9 +61,9 @@ const offlineOption = {
           cacheName: 'static-style-assets',
           expiration: {
             maxEntries: 16,
-            maxAgeSeconds: 24 * 60 * 60
-          }
-        }
+            maxAgeSeconds: 24 * 60 * 60,
+          },
+        },
       },
       {
         urlPattern: /.*/i,
@@ -74,19 +72,17 @@ const offlineOption = {
           cacheName: 'others',
           expiration: {
             maxEntries: 16,
-            maxAgeSeconds: 24 * 60 * 60
-          }
-        }
-      }
-    ]
-  }
+            maxAgeSeconds: 24 * 60 * 60,
+          },
+        },
+      },
+    ],
+  },
 }
 
-const optimizeOption = {
-  responsive: {
-    placeholder: true,
-    sizes: [128, 256, 384]
-  }
+const nextOption = {
+  poweredByHeader: false,
+  devIndicators: { autoPrerender: false },
 }
 
-module.exports = compose([[analyzer], [css], [offline, offlineOption], [optimize, optimizeOption]])
+module.exports = compose([[css], [offline, offlineOption]], nextOption)
