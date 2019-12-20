@@ -6,7 +6,6 @@ env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
   PR_NUMBER: ${{ github.event.number }}
-  REPO_NAME: ${{ github.event.repository.name }}
 jobs:
   dump:
     runs-on: ubuntu-latest
@@ -91,12 +90,12 @@ jobs:
           alias
           --token ${ZEIT_TOKEN}
           `cat ${HOME}/deployment.txt`
-          ${REPO_NAME}-pr-${PR_NUMBER}.now.sh
+          ymkzco-pr-${PR_NUMBER}.now.sh
       - run: >
           curl
           -X POST
           -H "Authorization: token $GITHUB_TOKEN"
-          -d "{ \"body\": \"🌍 Preview: https://${REPO_NAME}-pr-${PR_NUMBER}.now.sh\" }"
+          -d "{ \"body\": \"🌍 Preview: https://ymkzco-pr-${PR_NUMBER}.now.sh\" }"
           ${{ github.event.pull_request.comments_url }}
         if: github.event_name == 'pull_request' && github.event.action == 'opened'
   e2e:
@@ -115,4 +114,4 @@ jobs:
           restore-keys: yarn-
       - run: yarn run e2e
         env:
-          PREVIEW_URL: https://${REPO_NAME}-pr-${PR_NUMBER}.now.sh
+          PREVIEW_URL: https://ymkzco-pr-${PR_NUMBER}.now.sh
