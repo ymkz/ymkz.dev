@@ -8,7 +8,15 @@ class Document extends NextDocument {
         <Head>
           <meta name="description" content="ymkz's portfolio website" />
           <link rel="manifest" href="/manifest.webmanifest" />
-          <link rel="icon" type="image/svg+xml" sizes="any" href="/icon.svg" />
+          <link rel="icon" type="image/png" sizes="96x96" href="/assets/icon-96x96.png" />
+          <link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192x192.png" />
+          <link rel="icon" type="image/png" sizes="512x512" href="/assets/icon-512x512.png" />
+          <link
+            rel="apple-touch-icon"
+            type="image/png"
+            sizes="180x180"
+            href="/assets/icon-180x180.png"
+          />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,900&font-display=swap"
