@@ -98,20 +98,3 @@ jobs:
           -d "{ \"body\": \"🌍 Preview: https://ymkzco-pr-${PR_NUMBER}.now.sh\" }"
           ${{ github.event.pull_request.comments_url }}
         if: github.event_name == 'pull_request' && github.event.action == 'opened'
-  # e2e:
-  #   runs-on: ubuntu-latest
-  #   needs: deploy-preview
-  #   steps:
-  #     - uses: actions/checkout@v1
-  #     - uses: actions/setup-node@v1
-  #       with:
-  #         node-version: 12.x
-  #     - uses: actions/cache@v1
-  #       id: yarn-cache
-  #       with:
-  #         path: node_modules
-  #         key: yarn-${{ hashFiles('**/yarn.lock') }}
-  #         restore-keys: yarn-
-  #     - run: yarn run e2e
-  #       env:
-  #         PREVIEW_URL: https://ymkzco-pr-${PR_NUMBER}.now.sh
