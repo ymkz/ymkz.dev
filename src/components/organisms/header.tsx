@@ -11,7 +11,7 @@ export const Header = () => {
     <Container>
       <Link href="/">
         <FlexRow space={10}>
-          <img src="/icon.svg" width={20} />
+          <img src="/icon.svg" width={20} alt="" />
           <Name>ymkz</Name>
         </FlexRow>
       </Link>
