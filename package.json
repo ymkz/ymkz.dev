@@ -18,7 +18,7 @@
     "webmanifest": "webmanifest --icon public/icon.svg"
   },
   "dependencies": {
-    "@emotion/core": "10.0.22",
+    "@emotion/core": "10.0.27",
     "@emotion/styled": "10.0.23",
     "@snackbar/core": "1.7.0",
     "framer-motion": "1.7.0",
