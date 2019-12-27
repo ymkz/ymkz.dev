@@ -56,8 +56,8 @@ jobs:
         id: build-cache
         with:
           path: .next
-          key: build-${GITHUB_SHA}
-          restore-keys: build-${GITHUB_SHA}
+          key: ${{ env.cache-version }}-build-${GITHUB_SHA}
+          restore-keys: ${{ env.cache-version }}-build-${GITHUB_SHA}
       - run: yarn run build
         if: steps.build-cache.outputs.cache-hit != 'true'
   deploy-preview:
@@ -78,8 +78,8 @@ jobs:
         id: build-cache
         with:
           path: .next
-          key: build-${GITHUB_SHA}
-          restore-keys: build-${GITHUB_SHA}
+          key: ${{ env.cache-version }}-build-${GITHUB_SHA}
+          restore-keys: ${{ env.cache-version }}-build-${GITHUB_SHA}
       - run: >
           now
           --no-clipboard
