@@ -106,4 +106,9 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.action == 'closed'
     steps:
-      - run: now remove --yes `cat ${HOME}/deployment.txt`
+      - run: >
+          now
+          remove
+          --yes
+          --token ${ZEIT_TOKEN}
+          `cat ${HOME}/deployment.txt`
