@@ -3,9 +3,11 @@ on:
     types: [opened, synchronize]
 env:
   CI: true
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
+  HUSKY_SKIP_INSTALL: 1
   PR_NUMBER: ${{ github.event.number }}
+  ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  cache-version: cache-0.0.0
 jobs:
   dump:
     runs-on: ubuntu-latest
@@ -29,12 +31,10 @@ jobs:
         id: yarn-cache
         with:
           path: node_modules
-          key: yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: yarn-
+          key: ${{ env.cache-version }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ env.cache-version }}-yarn-
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
-        env:
-          HUSKY_SKIP_INSTALL: 1
       - run: yarn run lint:js
       - run: yarn run lint:css
       - run: yarn run typecheck
@@ -50,8 +50,8 @@ jobs:
         id: yarn-cache
         with:
           path: node_modules
-          key: yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: yarn-
+          key: ${{ env.cache-version }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ env.cache-version }}-yarn-
       - uses: actions/cache@v1
         id: build-cache
         with:
@@ -72,8 +72,8 @@ jobs:
         id: yarn-cache
         with:
           path: node_modules
-          key: yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: yarn-
+          key: ${{ env.cache-version }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ env.cache-version }}-yarn-
       - uses: actions/cache@v1
         id: build-cache
         with:

@@ -27,14 +27,14 @@ jobs:
         id: yarn-cache
         with:
           path: node_modules
-          key: yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: yarn-
+          key: ${{ env.cache-version }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ env.cache-version }}-yarn-
       - uses: actions/cache@v1
         id: build-cache
         with:
           path: .next
-          key: build-${GITHUB_SHA}
-          restore-keys: build-${GITHUB_SHA}
+          key: ${{ env.cache-version }}-build-${GITHUB_SHA}
+          restore-keys: ${{ env.cache-version }}-build-${GITHUB_SHA}
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         env:
@@ -53,8 +53,8 @@ jobs:
         id: build-cache
         with:
           path: .next
-          key: build-${GITHUB_SHA}
-          restore-keys: build-${GITHUB_SHA}
+          key: ${{ env.cache-version }}-build-${GITHUB_SHA}
+          restore-keys: ${{ env.cache-version }}-build-${GITHUB_SHA}
       - run: now --prod --no-clipboard --token $ZEIT_TOKEN
         env:
           ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
