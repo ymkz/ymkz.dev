@@ -91,6 +91,7 @@ jobs:
           --token ${ZEIT_TOKEN}
           `cat ${HOME}/deployment.txt`
           ymkzco-pr-${PR_NUMBER}.now.sh
+      - run: cat deployment.txt
       - run: >
           curl
           -X POST
