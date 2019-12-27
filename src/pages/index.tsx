@@ -41,41 +41,41 @@ const Container = styled.main`
 `
 
 const CatchTheWind = styled.div`
-  color: ${primary[50]};
-  font-size: 110px;
-  font-weight: 700;
-  line-height: 0.85;
   padding-left: 8px;
+  color: ${primary[50]};
+  font-weight: 700;
+  font-size: 110px;
+  line-height: 0.85;
   ${up('mobile')} {
-    font-size: 330px;
     padding-left: 20px;
+    font-size: 330px;
   }
 `
 
 const Iam = styled.div`
-  color: ${primary[700]};
-  font-family: 'Nunito Sans', sans-serif;
-  font-size: 50px;
-  font-weight: 900;
-  line-height: 1.15;
   margin: 20px 0;
   padding-left: 10px;
+  color: ${primary[700]};
+  font-weight: 900;
+  font-size: 50px;
+  font-family: 'Nunito Sans', sans-serif;
+  line-height: 1.15;
   ${up('mobile')} {
+    padding-left: 20px;
     font-size: 100px;
     line-height: 1;
-    padding-left: 20px;
   }
 `
 
 const AboutMe = styled.div`
-  color: ${primary[700]};
-  font-family: 'Nunito Sans', sans-serif;
-  font-size: 20px;
-  font-weight: 300;
-  line-height: 1.25;
   padding-left: 10px;
+  color: ${primary[700]};
+  font-weight: 300;
+  font-size: 20px;
+  font-family: 'Nunito Sans', sans-serif;
+  line-height: 1.25;
   ${up('mobile')} {
-    font-size: 25px;
     padding-left: 20px;
+    font-size: 25px;
   }
 `

@@ -17,12 +17,12 @@ export const GlobalStyle = () => {
           text-rendering: optimizeLegibility;
         }
         body {
+          margin: 0;
+          overflow-y: scroll;
           font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', '游ゴシック Medium',
             YuGothic, 'Hiragino Kaku Gothic ProN', メイリオ, Meiryo, sans-serif;
           line-height: 1;
-          margin: 0;
           -webkit-overflow-scrolling: touch;
-          overflow-y: scroll;
           overscroll-behavior-y: none;
           &::-webkit-scrollbar {
             width: 4px;
@@ -50,8 +50,8 @@ export const GlobalStyle = () => {
         button,
         input,
         textarea {
-          font-family: inherit;
           font-size: 100%;
+          font-family: inherit;
         }
       `}
     />

@@ -1,4 +1,8 @@
 {
   "syntax": "css-in-js",
-  "extends": ["stylelint-config-sass-guidelines", "stylelint-config-prettier"]
+  "extends": [
+    "stylelint-config-recommended",
+    "stylelint-config-rational-order",
+    "stylelint-config-prettier"
+  ]
 }

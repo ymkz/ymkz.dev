@@ -101,27 +101,27 @@ const Content = styled.section`
 
 const Text = styled.p`
   color: ${primary[800]};
-  font-family: 'Nunito Sans', sans-serif;
-  font-size: 20px;
   font-weight: 300;
+  font-size: 20px;
+  font-family: 'Nunito Sans', sans-serif;
   line-height: 1.5;
 `
 
 const ContactLink = styled(LinkInternal)`
-  border-bottom: 1px solid ${primary[200]};
   text-decoration: none;
+  border-bottom: 1px solid ${primary[200]};
   &:hover {
     text-decoration-line: none;
   }
 `
 
 const List = styled.ul`
-  color: ${primary[800]};
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 1.5;
   padding-left: 24px;
+  color: ${primary[800]};
+  font-weight: 300;
+  font-size: 18px;
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.5;
 `
 
 const SocialList = styled.ul`
@@ -129,8 +129,8 @@ const SocialList = styled.ul`
 `
 
 const SocialItem = styled.li`
-  align-items: center;
   display: flex;
+  align-items: center;
   > *:not(:last-child) {
     margin-right: 12px;
   }
@@ -138,8 +138,8 @@ const SocialItem = styled.li`
 
 const SocialLink = styled(LinkExternal)`
   color: ${primary[800]};
-  font-family: 'Nunito Sans', sans-serif;
-  font-size: 18px;
   font-weight: 300;
+  font-size: 18px;
+  font-family: 'Nunito Sans', sans-serif;
   line-height: 2;
 `

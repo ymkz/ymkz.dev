@@ -25,21 +25,21 @@ export const Header = () => {
 }
 
 const Container = styled.header`
-  align-items: center;
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid ${primary['50']};
-  display: flex;
-  height: 50px;
-  justify-content: space-between;
-  padding: 0 16px;
   position: sticky;
   top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding: 0 16px;
+  border-bottom: 1px solid ${primary['50']};
+  backdrop-filter: blur(10px);
 `
 
 const Link = styled(LinkInternal)`
   color: ${primary[800]};
-  font-family: 'Nunito Sans', sans-serif;
   font-weight: 300;
+  font-family: 'Nunito Sans', sans-serif;
 `
 
 const Name = styled.span`

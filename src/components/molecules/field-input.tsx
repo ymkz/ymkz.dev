@@ -23,24 +23,24 @@ const Container = styled.div`
 `
 
 const Label = styled.label`
-  color: ${primary[900]};
   display: block;
   margin-bottom: 8px;
+  color: ${primary[900]};
   text-transform: capitalize;
 `
 
 const Input = styled.input`
-  background-color: ${primary[50]};
-  border: 0;
-  border-radius: 4px;
-  color: ${primary[900]};
+  width: 100%;
   height: 40px;
   margin: 0;
   padding: 0 8px;
-  width: 100%;
+  color: ${primary[900]};
+  background-color: ${primary[50]};
+  border: 0;
+  border-radius: 4px;
   &:focus {
-    box-shadow: 0 0 0 3px ${primary[100]};
     outline: none;
+    box-shadow: 0 0 0 3px ${primary[100]};
   }
   &::placeholder {
     color: ${primary[200]};
@@ -49,17 +49,17 @@ const Input = styled.input`
 `
 
 const Textarea = styled.textarea`
+  width: 100%;
+  margin: 0;
+  padding: 8px;
+  color: ${primary[900]};
   background-color: ${primary[50]};
   border: 0;
   border-radius: 4px;
-  color: ${primary[900]};
-  margin: 0;
-  padding: 8px;
   resize: vertical;
-  width: 100%;
   &:focus {
-    box-shadow: 0 0 0 3px ${primary[100]};
     outline: none;
+    box-shadow: 0 0 0 3px ${primary[100]};
   }
   &::placeholder {
     color: ${primary[200]};

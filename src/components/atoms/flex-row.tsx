@@ -8,9 +8,9 @@ type FlexRowProps = {
 }
 
 export const FlexRow = styled.div<FlexRowProps>`
-  align-items: center;
   display: flex;
   flex-flow: row;
+  align-items: center;
   > *:not(:last-child) {
     margin-right: ${({ space, mobileSpace }) => mobileSpace ?? space ?? 0}px;
     ${up('mobile')} {

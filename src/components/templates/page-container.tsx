@@ -8,8 +8,8 @@ export const PageContainer: React.FC = ({ children }) => {
 }
 
 const Container = styled.main`
-  margin: 0 auto;
   max-width: 672px;
+  margin: 0 auto;
   padding: 32px 16px;
   ${up('mobile')} {
     padding: 48px 16px;
