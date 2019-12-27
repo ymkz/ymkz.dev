@@ -1,0 +1,38 @@
+on:
+  schedule:
+    # every day AM 00:00
+    - cron: 0 0 * * *
+env:
+  CI: true
+  HUSKY_SKIP_INSTALL: 1
+  cache-version: cache-0.0.0
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "node: `node --version`"
+          echo "npm:  v`npm --version`"
+          echo "yarn: v`yarn --version`"
+          echo "now:  v`now --version`"
+      - run: echo "${GITHUB_CONTEXT}"
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - uses: actions/cache@v1
+        id: yarn-cache
+        with:
+          path: node_modules
+          key: ${{ env.cache-version }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ env.cache-version }}-yarn-
+      - run: yarn install --frozen-lockfile
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+      - run: yarn run lint:js
+      - run: yarn run lint:css
+      - run: yarn run typecheck
