@@ -2,6 +2,7 @@ import React from 'react'
 
 import { ProjectDescription } from '~/components/molecules/project-description'
 import { ProjectImage } from '~/components/molecules/project-image'
+import { ProjectItem } from '~/components/molecules/project-item'
 import { ProjectLink } from '~/components/molecules/project-link'
 import { ProjectList } from '~/components/molecules/project-list'
 import { ProjectSection } from '~/components/molecules/project-section'
@@ -22,12 +23,12 @@ export const Portfolio = () => {
         Workerの導入や、next-optimized-imagesによる画像の最適化などウェブサイトのパフォーマンスを意識して開発を行いました。
       </ProjectText>
       <ProjectList>
-        <li>
+        <ProjectItem>
           <ProjectLink href="https://ymkz.co">Website - ymkz.co</ProjectLink>
-        </li>
-        <li>
+        </ProjectItem>
+        <ProjectItem>
           <ProjectLink href="https://github.com/ymkz/ymkz.co">Repository - ymkz/ymkz.co</ProjectLink>
-        </li>
+        </ProjectItem>
       </ProjectList>
       <ProjectImage src="/images/portfolio.png" />
     </ProjectSection>

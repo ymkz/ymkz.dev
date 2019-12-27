@@ -31,11 +31,11 @@ const About: NextPage = () => {
             Like Simple-UI, Padding, Sci-Fi, FPS Games.
           </Text>
           <List>
-            <li>ARIA(天野こずえ)</li>
-            <li>ハーモニー(伊藤計劃)</li>
-            <li>Overwatch</li>
-            <li>PLAYERUNKNOWN&apos;SBATTLEGROUNDS</li>
-            <li>Counter-Strike Global Offensive</li>
+            <Item>ARIA(天野こずえ)</Item>
+            <Item>ハーモニー(伊藤計劃)</Item>
+            <Item>Overwatch</Item>
+            <Item>PLAYERUNKNOWN&apos;SBATTLEGROUNDS</Item>
+            <Item>Counter-Strike Global Offensive</Item>
           </List>
           <Text>
             Social account is open, and get in touch with me <ContactLink href="/contact">/contact</ContactLink>.
@@ -64,20 +64,20 @@ const About: NextPage = () => {
             Working as a junior frontend engineer, build/improve UI.
           </Text>
           <List>
-            <li>React</li>
-            <li>TypeScript</li>
-            <li>Node.js</li>
-            <li>React Native</li>
-            <li>Next.js</li>
-            <li>Webpack</li>
-            <li>HTML5</li>
-            <li>CSS3</li>
+            <Item>React</Item>
+            <Item>TypeScript</Item>
+            <Item>Node.js</Item>
+            <Item>React Native</Item>
+            <Item>Next.js</Item>
+            <Item>Webpack</Item>
+            <Item>HTML5</Item>
+            <Item>CSS3</Item>
           </List>
           <Text>Majored in computer science, studying Human-Computer Interaction with face/eye tracking.</Text>
           <List>
-            <li>Shimane University</li>
-            <li>Bachelor: 2014.4 - 2018.3</li>
-            <li>Master: 2018.4 - 2020.3</li>
+            <Item>Shimane University</Item>
+            <Item>Bachelor: 2014.4 - 2018.3</Item>
+            <Item>Master: 2018.4 - 2020.3</Item>
           </List>
         </Content>
       </PageContainer>
@@ -119,6 +119,10 @@ const List = styled.ul`
   font-size: 18px;
   font-family: 'Noto Sans JP', sans-serif;
   line-height: 1.5;
+`
+
+const Item = styled.li`
+  list-style: disc;
 `
 
 const SocialList = styled.ul`
