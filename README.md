@@ -63,7 +63,6 @@ yarn dev
 
 ```sh
 yarn test
-yarn e2e
 ```
 
 ## Author

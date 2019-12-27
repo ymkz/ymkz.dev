@@ -14,7 +14,6 @@
     "lint:js": "eslint '**/*.{js,ts,tsx}'",
     "lint:css": "stylelint '**/*.{js,ts,tsx}'",
     "typecheck": "tsc --noEmit",
-    "e2e": "testcafe chrome:headless e2e",
     "webmanifest": "webmanifest --icon public/icon.svg"
   },
   "dependencies": {

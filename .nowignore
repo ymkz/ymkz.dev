@@ -2,7 +2,6 @@
 .github
 .next
 .vscode
-e2e
 node_modules
 .commitlintrc.json
 .editorconfig
