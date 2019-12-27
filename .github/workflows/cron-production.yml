@@ -5,6 +5,7 @@ on:
 env:
   CI: true
   HUSKY_SKIP_INSTALL: 1
+  cache-version: cache-0.0.0
 jobs:
   dump:
     runs-on: ubuntu-latest
