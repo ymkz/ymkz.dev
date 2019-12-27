@@ -102,8 +102,8 @@ jobs:
           -d "{ \"body\": \"🌍 Preview: https://ymkzco-pr-${PR_NUMBER}.now.sh\" }"
           ${{ github.event.pull_request.comments_url }}
         if: github.event_name == 'pull_request' && github.event.action == 'opened'
-  # cleanup-preview:
-  #   runs-on: ubuntu-latest
-  #   if: github.event.action == 'closed'
-  #   steps:
-  #     - run: now remove ${deployment}
+  cleanup-preview:
+    runs-on: ubuntu-latest
+    if: github.event.action == 'closed'
+    steps:
+      - run: now remove --yes `cat ${HOME}/deployment.txt`
