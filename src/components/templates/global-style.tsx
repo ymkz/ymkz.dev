@@ -19,8 +19,8 @@ export const GlobalStyle = () => {
         body {
           margin: 0;
           overflow-y: scroll;
-          font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', '游ゴシック Medium',
-            YuGothic, 'Hiragino Kaku Gothic ProN', メイリオ, Meiryo, sans-serif;
+          font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', '游ゴシック Medium', YuGothic,
+            'Hiragino Kaku Gothic ProN', メイリオ, Meiryo, sans-serif;
           line-height: 1;
           -webkit-overflow-scrolling: touch;
           overscroll-behavior-y: none;

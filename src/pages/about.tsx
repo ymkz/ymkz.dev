@@ -38,8 +38,7 @@ const About: NextPage = () => {
             <li>Counter-Strike Global Offensive</li>
           </List>
           <Text>
-            Social account is open, and get in touch with me{' '}
-            <ContactLink href="/contact">/contact</ContactLink>.
+            Social account is open, and get in touch with me <ContactLink href="/contact">/contact</ContactLink>.
           </Text>
           <SocialList>
             <SocialItem>
@@ -74,9 +73,7 @@ const About: NextPage = () => {
             <li>HTML5</li>
             <li>CSS3</li>
           </List>
-          <Text>
-            Majored in computer science, studying Human-Computer Interaction with face/eye tracking.
-          </Text>
+          <Text>Majored in computer science, studying Human-Computer Interaction with face/eye tracking.</Text>
           <List>
             <li>Shimane University</li>
             <li>Bachelor: 2014.4 - 2018.3</li>

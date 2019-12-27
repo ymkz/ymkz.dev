@@ -26,9 +26,7 @@ export const Portfolio = () => {
           <ProjectLink href="https://ymkz.co">Website - ymkz.co</ProjectLink>
         </li>
         <li>
-          <ProjectLink href="https://github.com/ymkz/ymkz.co">
-            Repository - ymkz/ymkz.co
-          </ProjectLink>
+          <ProjectLink href="https://github.com/ymkz/ymkz.co">Repository - ymkz/ymkz.co</ProjectLink>
         </li>
       </ProjectList>
       <ProjectImage src="/images/portfolio.png" />
