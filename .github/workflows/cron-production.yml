@@ -4,6 +4,7 @@ on:
     - cron: 00 10 * * 1
 env:
   CI: true
+  HUSKY_SKIP_INSTALL: 1
 jobs:
   dump:
     runs-on: ubuntu-latest
@@ -37,8 +38,6 @@ jobs:
           restore-keys: ${{ env.cache-version }}-build-${GITHUB_SHA}
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
-        env:
-          HUSKY_SKIP_INSTALL: 1
       - run: yarn run build
         if: steps.build-cache.outputs.cache-hit != 'true'
   deploy-production:
