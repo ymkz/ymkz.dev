@@ -96,6 +96,10 @@ jobs:
           `cat ${HOME}/deployment.txt`
           ymkzco-pr-${PR_NUMBER}.now.sh
       - run: cat ${HOME}/deployment.txt
+      - uses: actions/upload-artifact@master
+        with:
+          name: deployment-${PR_NUMBER}
+          path: ${HOME}/deployment.txt
       - run: >
           curl
           -X POST
@@ -107,6 +111,10 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.action == 'closed'
     steps:
+      - uses: actions/download-artifact@v1
+        with:
+          name: deployment-${PR_NUMBER}
+          path: ${HOME}/deployment.txt
       - run: >
           now
           remove
