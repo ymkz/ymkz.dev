@@ -37,25 +37,6 @@ export const GlobalStyle = () => {
         *::after {
           box-sizing: border-box;
         }
-        ul,
-        ol {
-          padding: 0;
-        }
-        body,
-        h1,
-        h2,
-        h3,
-        h4,
-        p,
-        ul,
-        ol,
-        li,
-        figure,
-        figcaption,
-        blockquote {
-          margin: 0;
-          list-style: none;
-        }
         body {
           overflow-y: scroll;
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Hiragino Sans', 'Noto Sans CJK JP',
@@ -76,15 +57,32 @@ export const GlobalStyle = () => {
             background-color: ${primary[100]};
           }
         }
+        h1,
+        h2,
+        h3,
+        h4,
+        p,
+        ul,
+        ol,
+        li,
+        figure,
+        figcaption,
+        blockquote {
+          margin: 0;
+        }
+        ul,
+        ol {
+          padding: 0;
+        }
+        li {
+          list-style: none;
+        }
         a:not([class]) {
           text-decoration-skip-ink: auto;
         }
         img {
           display: block;
           max-width: 100%;
-        }
-        article > * + * {
-          margin-top: 1em;
         }
         input,
         button,
