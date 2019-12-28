@@ -4,6 +4,7 @@ on:
     - cron: 00 10 * * 1
 env:
   CI: true
+  TZ: Asia/Tokyo
   HUSKY_SKIP_INSTALL: 1
   cache-version: cache-0.0.0
 jobs:

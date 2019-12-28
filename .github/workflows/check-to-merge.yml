@@ -3,6 +3,7 @@ on:
     types: [synchronize, opened, reopened, closed]
 env:
   CI: true
+  TZ: Asia/Tokyo
   HUSKY_SKIP_INSTALL: 1
   PR_NUMBER: ${{ github.event.number }}
   ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
