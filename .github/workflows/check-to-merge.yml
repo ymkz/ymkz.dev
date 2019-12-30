@@ -95,6 +95,7 @@ jobs:
           --token ${ZEIT_TOKEN}
           `cat .deployment-${PR_NUMBER}.txt`
           ymkzco-pr-${PR_NUMBER}.now.sh
+      - run: cat .deployment-${PR_NUMBER}.txt
       - uses: actions/upload-artifact@master
         with:
           name: .deployment-${PR_NUMBER}
