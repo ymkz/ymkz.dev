@@ -88,19 +88,17 @@ jobs:
           now
           --no-clipboard
           --token ${ZEIT_TOKEN}
-          > ${HOME}/deployment-{PR_NUMBER}.txt
+          > .deployment-{PR_NUMBER}.txt
       - run: >
           now
           alias
           --token ${ZEIT_TOKEN}
-          `cat ${HOME}/deployment-{PR_NUMBER}.txt`
+          `cat .deployment-{PR_NUMBER}.txt`
           ymkzco-pr-${PR_NUMBER}.now.sh
-      - run: echo ${{ temp }}
-      - run: cat ${HOME}/deployment-{PR_NUMBER}.txt
       - uses: actions/upload-artifact@master
         with:
           name: deployment-${PR_NUMBER}
-          path: ${HOME}/deployment-{PR_NUMBER}.txt
+          path: .deployment-{PR_NUMBER}.txt
       - run: >
           curl
           -X POST
@@ -115,10 +113,10 @@ jobs:
       - uses: actions/download-artifact@v1
         with:
           name: deployment-${PR_NUMBER}
-          path: ${HOME}/deployment-{PR_NUMBER}.txt
+          path: .deployment-{PR_NUMBER}.txt
       - run: >
           now
           remove
           --yes
           --token ${ZEIT_TOKEN}
-          `cat ${HOME}/deployment-{PR_NUMBER}.txt`
+          `cat .deployment-{PR_NUMBER}.txt`

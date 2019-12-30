@@ -6,7 +6,6 @@ env:
   CI: true
   TZ: Asia/Tokyo
   HUSKY_SKIP_INSTALL: 1
-  cache-version: cache-0.0.0
 jobs:
   dump:
     runs-on: ubuntu-latest
@@ -26,14 +25,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      - uses: actions/cache@v1
-        id: yarn-cache
-        with:
-          path: node_modules
-          key: ${{ env.cache-version }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ env.cache-version }}-yarn-
       - run: yarn install --frozen-lockfile
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
       - run: yarn run lint:js
       - run: yarn run lint:css
       - run: yarn run typecheck
