@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize'
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: 12.x
@@ -45,7 +45,7 @@ jobs:
     if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize'
     needs: check
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: 12.x
@@ -68,7 +68,7 @@ jobs:
     if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize'
     needs: build
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: 12.x
@@ -111,7 +111,8 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.action == 'closed'
     steps:
-      - uses: actions/download-artifact@v1
+      - uses: actions/checkout@v2
+      - uses: actions/download-artifact@master
         with:
           name: .deployment
           path: .deployment.txt
