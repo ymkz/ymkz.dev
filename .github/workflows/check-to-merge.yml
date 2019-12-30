@@ -4,11 +4,11 @@ on:
 env:
   CI: true
   TZ: Asia/Tokyo
+  CACHE: cache-0.0.0
   HUSKY_SKIP_INSTALL: 1
   PR_NUMBER: ${{ github.event.number }}
   ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  cache-version: cache-0.0.0
 jobs:
   dump:
     runs-on: ubuntu-latest
@@ -33,8 +33,8 @@ jobs:
         id: yarn-cache
         with:
           path: node_modules
-          key: ${{ env.cache-version }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ env.cache-version }}-yarn-
+          key: ${CACHE}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${CACHE}-yarn-
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
       - run: yarn run lint:js
@@ -53,14 +53,14 @@ jobs:
         id: yarn-cache
         with:
           path: node_modules
-          key: ${{ env.cache-version }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ env.cache-version }}-yarn-
+          key: ${CACHE}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${CACHE}-yarn-
       - uses: actions/cache@v1
         id: build-cache
         with:
           path: .next
-          key: ${{ env.cache-version }}-build-${GITHUB_SHA}
-          restore-keys: ${{ env.cache-version }}-build-${GITHUB_SHA}
+          key: ${CACHE}-build-${GITHUB_SHA}
+          restore-keys: ${CACHE}-build-${GITHUB_SHA}
       - run: yarn run build
         if: steps.build-cache.outputs.cache-hit != 'true'
   deploy-preview:
@@ -76,30 +76,31 @@ jobs:
         id: yarn-cache
         with:
           path: node_modules
-          key: ${{ env.cache-version }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ env.cache-version }}-yarn-
+          key: ${CACHE}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${CACHE}-yarn-
       - uses: actions/cache@v1
         id: build-cache
         with:
           path: .next
-          key: ${{ env.cache-version }}-build-${GITHUB_SHA}
-          restore-keys: ${{ env.cache-version }}-build-${GITHUB_SHA}
+          key: ${CACHE}-build-${GITHUB_SHA}
+          restore-keys: ${CACHE}-build-${GITHUB_SHA}
       - run: >
           now
           --no-clipboard
           --token ${ZEIT_TOKEN}
-          > ${HOME}/deployment.txt
+          > ${HOME}/deployment-{PR_NUMBER}.txt
       - run: >
           now
           alias
           --token ${ZEIT_TOKEN}
-          `cat ${HOME}/deployment.txt`
+          `cat ${HOME}/deployment-{PR_NUMBER}.txt`
           ymkzco-pr-${PR_NUMBER}.now.sh
-      - run: cat ${HOME}/deployment.txt
+      - run: echo {{ temp }}
+      - run: cat ${HOME}/deployment-{PR_NUMBER}.txt
       - uses: actions/upload-artifact@master
         with:
           name: deployment-${PR_NUMBER}
-          path: ${HOME}/deployment.txt
+          path: ${HOME}/deployment-{PR_NUMBER}.txt
       - run: >
           curl
           -X POST
@@ -114,10 +115,10 @@ jobs:
       - uses: actions/download-artifact@v1
         with:
           name: deployment-${PR_NUMBER}
-          path: ${HOME}/deployment.txt
+          path: ${HOME}/deployment-{PR_NUMBER}.txt
       - run: >
           now
           remove
           --yes
           --token ${ZEIT_TOKEN}
-          `cat ${HOME}/deployment.txt`
+          `cat ${HOME}/deployment-{PR_NUMBER}.txt`
