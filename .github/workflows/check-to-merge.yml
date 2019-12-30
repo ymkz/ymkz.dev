@@ -97,7 +97,7 @@ jobs:
           ymkzco-pr-${PR_NUMBER}.now.sh
       - uses: actions/upload-artifact@master
         with:
-          name: deployment-${PR_NUMBER}
+          name: .deployment-${PR_NUMBER}
           path: .deployment-${PR_NUMBER}.txt
       - run: >
           curl
@@ -112,7 +112,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v1
         with:
-          name: deployment-${PR_NUMBER}
+          name: .deployment-${PR_NUMBER}
           path: .deployment-${PR_NUMBER}.txt
       - run: >
           now
