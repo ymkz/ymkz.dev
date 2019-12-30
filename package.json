@@ -57,7 +57,7 @@
     "stylelint-config-recommended": "3.0.0",
     "typescript": "3.7.4",
     "webmanifest-cli": "0.0.1",
-    "webpack": "4.41.4",
+    "webpack": "4.41.5",
     "yarnhook": "0.4.3"
   },
   "engines": {
