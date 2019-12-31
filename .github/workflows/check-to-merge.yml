@@ -98,7 +98,7 @@ jobs:
       - run: cat .deployment
       - uses: actions/upload-artifact@master
         with:
-          name: .deployment
+          name: deployment-artifact
           path: .deployment
       - run: >
           curl
@@ -111,10 +111,9 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.action == 'closed'
     steps:
-      - uses: actions/checkout@v2
       - uses: actions/download-artifact@master
         with:
-          name: .deployment
+          name: deployment-artifact
       - run: >
           now
           remove
