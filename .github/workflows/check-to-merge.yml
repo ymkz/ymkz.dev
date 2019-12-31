@@ -9,6 +9,7 @@ env:
   PR_NUMBER: ${{ github.event.number }}
   ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
 jobs:
   dump:
     runs-on: ubuntu-latest
@@ -88,18 +89,20 @@ jobs:
           now
           --no-clipboard
           --token ${ZEIT_TOKEN}
-          > .deployment
+          > deployment-preview-url.txt
       - run: >
           now
           alias
           --token ${ZEIT_TOKEN}
-          `cat .deployment`
+          `cat deployment-preview-url.txt`
           ymkzco-pr-${PR_NUMBER}.now.sh
-      - run: cat .deployment
+      - uses: Ilshidur/action-discord@master
+        with:
+          args: "🌍 Preview: https://ymkzco-pr-${PR_NUMBER}.now.sh"
       - uses: actions/upload-artifact@master
         with:
           name: deployment-artifact
-          path: .deployment
+          path: deployment-preview-url.txt
       - run: >
           curl
           -X POST
@@ -119,4 +122,4 @@ jobs:
           remove
           --yes
           --token ${ZEIT_TOKEN}
-          `cat .deployment`
+          `cat deployment-preview-url.txt`
