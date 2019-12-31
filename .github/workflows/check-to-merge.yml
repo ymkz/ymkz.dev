@@ -88,18 +88,18 @@ jobs:
           now
           --no-clipboard
           --token ${ZEIT_TOKEN}
-          > .deployment.txt
+          > .deployment
       - run: >
           now
           alias
           --token ${ZEIT_TOKEN}
-          `cat .deployment.txt`
+          `cat .deployment`
           ymkzco-pr-${PR_NUMBER}.now.sh
-      - run: cat .deployment.txt
+      - run: cat .deployment
       - uses: actions/upload-artifact@master
         with:
           name: .deployment
-          path: .deployment.txt
+          path: .deployment
       - run: >
           curl
           -X POST
@@ -115,10 +115,9 @@ jobs:
       - uses: actions/download-artifact@master
         with:
           name: .deployment
-          path: .deployment.txt
       - run: >
           now
           remove
           --yes
           --token ${ZEIT_TOKEN}
-          `cat .deployment.txt`
+          `cat .deployment`
