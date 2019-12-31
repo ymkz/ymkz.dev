@@ -47,7 +47,7 @@
   </a>
 </p>
 
-## Installl
+## Install
 
 ```sh
 yarn install
