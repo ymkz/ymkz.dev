@@ -22,6 +22,7 @@ jobs:
       - run: echo "${GITHUB_CONTEXT}"
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
+      - run: echo ${{ runner.temp }}
   check:
     runs-on: ubuntu-latest
     if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize'
