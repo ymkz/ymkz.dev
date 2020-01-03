@@ -106,13 +106,16 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.action == 'closed'
     steps:
-      - uses: actions/checkout@v2
+      - run: ls -a
+      - run: pwd
       - run: >
           curl
           "https://api.zeit.co/v11/now/deployments/get?url=$DEPLOY_TARGET"
           -H "Authorization: Bearer $ZEIT_TOKEN"
           | jq ".id"
           > deployment-preview-id.txt
+      - run: ls -a
+      - run: pwd
       - run: >
           now
           remove
