@@ -112,10 +112,11 @@ jobs:
           curl
           "https://api.zeit.co/v11/now/deployments/get?url=$DEPLOY_TARGET"
           -H "Authorization: Bearer $ZEIT_TOKEN"
-          | jq ".id"
+          | jq -r ".id"
           > deployment-preview-id.txt
       - run: ls -a
       - run: pwd
+      - run: cat deployment-preview-id.txt
       - run: >
           now
           remove
