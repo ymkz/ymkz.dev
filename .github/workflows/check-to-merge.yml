@@ -9,7 +9,7 @@ env:
   PR_NUMBER: ${{ github.event.number }}
   ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+  # DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
 jobs:
   dump:
     runs-on: ubuntu-latest
@@ -22,7 +22,6 @@ jobs:
       - run: echo "${GITHUB_CONTEXT}"
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-      - run: echo ${{ runner.temp }}
   check:
     runs-on: ubuntu-latest
     if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize'
@@ -97,13 +96,6 @@ jobs:
           --token ${ZEIT_TOKEN}
           `cat deployment-preview-url.txt`
           ymkzco-pr-${PR_NUMBER}.now.sh
-      - uses: Ilshidur/action-discord@master
-        with:
-          args: Deploy Preview is ready on https://ymkzco-pr-${PR_NUMBER}.now.sh
-      - uses: actions/upload-artifact@master
-        with:
-          name: deployment-artifact
-          path: deployment-preview-url.txt
       - run: >
           curl
           -X POST
@@ -116,24 +108,24 @@ jobs:
     needs: deploy-preview
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/download-artifact@master
-        with:
-          name: deployment-artifact
-      - run: ls
-      - run: ls deployment-artifact
-      - run: cat deployment-artifact/deployment-preview-url.txt
+      - run: >
+          curl
+          "https://api.zeit.co/v11/now/deployments/get?url=ymkzco-pr-$PR_NUMBER.now.sh"
+          -H "Authorization: Bearer $ZEIT_TOKEN"
+          | jq ".id"
   cleanup-preview:
     runs-on: ubuntu-latest
     if: github.event.action == 'closed'
     steps:
       - uses: actions/checkout@v2
-      - run: now inspect --token ${ZEIT_TOKEN} https://ymkzco-pr-${PR_NUMBER}.now.sh
-      - uses: actions/download-artifact@master
-        with:
-          name: deployment-artifact
       - run: >
-          now
-          remove
-          --yes
-          --token ${ZEIT_TOKEN}
-          `cat deployment-preview-url.txt`
+          curl
+          "https://api.zeit.co/v11/now/deployments/get?url=ymkzco-pr-$PR_NUMBER.now.sh"
+          -H "Authorization: Bearer $ZEIT_TOKEN"
+          | jq ".id"
+      # - run: >
+      #     now
+      #     remove
+      #     --yes
+      #     --token ${ZEIT_TOKEN}
+      #     `cat deployment-preview-url.txt`
