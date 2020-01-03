@@ -99,7 +99,7 @@ jobs:
           ymkzco-pr-${PR_NUMBER}.now.sh
       - uses: Ilshidur/action-discord@master
         with:
-          args: "🌍 Preview: https://ymkzco-pr-${PR_NUMBER}.now.sh"
+          args: Deploy Preview is ready on https://ymkzco-pr-${PR_NUMBER}.now.sh
       - uses: actions/upload-artifact@master
         with:
           name: deployment-artifact
@@ -108,13 +108,24 @@ jobs:
           curl
           -X POST
           -H "Authorization: token $GITHUB_TOKEN"
-          -d "{ \"body\": \"🌍 Preview: https://ymkzco-pr-${PR_NUMBER}.now.sh\" }"
+          -d "{ \"body\": \"Deploy Preview is ready on https://ymkzco-pr-${PR_NUMBER}.now.sh\" }"
           ${{ github.event.pull_request.comments_url }}
         if: github.event_name == 'pull_request' && github.event.action == 'opened'
+  debug-deploy-preview:
+    runs-on: ubuntu-latest
+    needs: deploy-preview
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/download-artifact@master
+        with:
+          name: deployment-artifact
+      - run: cat deployment-preview-url.txt
   cleanup-preview:
     runs-on: ubuntu-latest
     if: github.event.action == 'closed'
     steps:
+      - uses: actions/checkout@v2
+      - run: now inspect https://ymkzco-pr-${PR_NUMBER}.now.sh
       - uses: actions/download-artifact@master
         with:
           name: deployment-artifact
