@@ -119,18 +119,18 @@ jobs:
       - uses: actions/download-artifact@master
         with:
           name: deployment-artifact
-          path: deployment-preview-url.txt
-      - run: cat deployment-preview-url.txt
+      - run: ls
+      - run: ls deployment-artifact
+      - run: cat deployment-artifact/deployment-preview-url.txt
   cleanup-preview:
     runs-on: ubuntu-latest
     if: github.event.action == 'closed'
     steps:
       - uses: actions/checkout@v2
-      - run: now inspect https://ymkzco-pr-${PR_NUMBER}.now.sh
+      - run: now inspect --token ${ZEIT_TOKEN} https://ymkzco-pr-${PR_NUMBER}.now.sh
       - uses: actions/download-artifact@master
         with:
           name: deployment-artifact
-          path: deployment-preview-url.txt
       - run: >
           now
           remove
