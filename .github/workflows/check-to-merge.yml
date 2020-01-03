@@ -113,6 +113,8 @@ jobs:
           "https://api.zeit.co/v11/now/deployments/get?url=ymkzco-pr-$PR_NUMBER.now.sh"
           -H "Authorization: Bearer $ZEIT_TOKEN"
           | jq ".id"
+          > deployment-preview-id.txt
+      - run: cat deployment-preview-id.txt
   cleanup-preview:
     runs-on: ubuntu-latest
     if: github.event.action == 'closed'
@@ -123,6 +125,8 @@ jobs:
           "https://api.zeit.co/v11/now/deployments/get?url=ymkzco-pr-$PR_NUMBER.now.sh"
           -H "Authorization: Bearer $ZEIT_TOKEN"
           | jq ".id"
+          > deployment-preview-id.txt
+      - run: cat deployment-preview-id.txt
       # - run: >
       #     now
       #     remove
