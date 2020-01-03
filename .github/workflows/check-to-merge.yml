@@ -6,10 +6,9 @@ env:
   TZ: Asia/Tokyo
   CACHE: cache-0.0.0
   HUSKY_SKIP_INSTALL: 1
-  PR_NUMBER: ${{ github.event.number }}
   ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+  DEPLOY_TARGET: ymkzco-pr-${{ github.event.number }}.now.sh
 jobs:
   dump:
     runs-on: ubuntu-latest
@@ -22,7 +21,6 @@ jobs:
       - run: echo "${GITHUB_CONTEXT}"
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-      - run: echo ${{ runner.temp }}
   check:
     runs-on: ubuntu-latest
     if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize'
@@ -96,42 +94,28 @@ jobs:
           alias
           --token ${ZEIT_TOKEN}
           `cat deployment-preview-url.txt`
-          ymkzco-pr-${PR_NUMBER}.now.sh
-      - uses: Ilshidur/action-discord@master
-        with:
-          args: Deploy Preview is ready on https://ymkzco-pr-${PR_NUMBER}.now.sh
-      - uses: actions/upload-artifact@master
-        with:
-          name: deployment-artifact
-          path: deployment-preview-url.txt
+          $DEPLOY_TARGET
       - run: >
           curl
           -X POST
           -H "Authorization: token $GITHUB_TOKEN"
-          -d "{ \"body\": \"Deploy Preview is ready on https://ymkzco-pr-${PR_NUMBER}.now.sh\" }"
+          -d "{ \"body\": \"Deploy Preview is ready on https://$DEPLOY_TARGET\" }"
           ${{ github.event.pull_request.comments_url }}
         if: github.event_name == 'pull_request' && github.event.action == 'opened'
-  debug-deploy-preview:
-    runs-on: ubuntu-latest
-    needs: deploy-preview
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/download-artifact@master
-        with:
-          name: deployment-artifact
-      - run: cat deployment-preview-url.txt
   cleanup-preview:
     runs-on: ubuntu-latest
     if: github.event.action == 'closed'
     steps:
       - uses: actions/checkout@v2
-      - run: now inspect https://ymkzco-pr-${PR_NUMBER}.now.sh
-      - uses: actions/download-artifact@master
-        with:
-          name: deployment-artifact
+      - run: >
+          curl
+          "https://api.zeit.co/v11/now/deployments/get?url=$DEPLOY_TARGET"
+          -H "Authorization: Bearer $ZEIT_TOKEN"
+          | jq ".id"
+          > deployment-preview-id.txt
       - run: >
           now
           remove
           --yes
           --token ${ZEIT_TOKEN}
-          `cat deployment-preview-url.txt`
+          `cat deployment-preview-id.txt`
