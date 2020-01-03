@@ -119,6 +119,7 @@ jobs:
       - uses: actions/download-artifact@master
         with:
           name: deployment-artifact
+          path: deployment-preview-url.txt
       - run: cat deployment-preview-url.txt
   cleanup-preview:
     runs-on: ubuntu-latest
@@ -129,6 +130,7 @@ jobs:
       - uses: actions/download-artifact@master
         with:
           name: deployment-artifact
+          path: deployment-preview-url.txt
       - run: >
           now
           remove
