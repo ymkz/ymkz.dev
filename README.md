@@ -3,7 +3,7 @@
   <h1>ymkz.co</h1>
 </div>
 
-> ymkz's portfolio website
+> ymkz's portfolio websitee
 
 <p>
   <a href="https://github.com/ymkz/ymkz.co" target="_blank" rel="noopener noreferrer">
