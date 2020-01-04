@@ -18,7 +18,7 @@ jobs:
           echo "npm:  v`npm --version`"
           echo "yarn: v`yarn --version`"
           echo "now:  v`now --version`"
-      - run: echo "${GITHUB_CONTEXT}"
+      - run: echo "$GITHUB_CONTEXT"
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
   check:
@@ -33,8 +33,8 @@ jobs:
         id: yarn-cache
         with:
           path: node_modules
-          key: ${CACHE}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${CACHE}-yarn-
+          key: $CACHE-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: $CACHE-yarn-
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
       - run: yarn run lint:js
@@ -53,14 +53,14 @@ jobs:
         id: yarn-cache
         with:
           path: node_modules
-          key: ${CACHE}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${CACHE}-yarn-
+          key: $CACHE-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: $CACHE-yarn-
       - uses: actions/cache@v1
         id: build-cache
         with:
           path: .next
-          key: ${CACHE}-build-${GITHUB_SHA}
-          restore-keys: ${CACHE}-build-${GITHUB_SHA}
+          key: $CACHE-build-$GITHUB_SHA
+          restore-keys: $CACHE-build-$GITHUB_SHA
       - run: yarn run build
         if: steps.build-cache.outputs.cache-hit != 'true'
   deploy-preview:
@@ -76,23 +76,23 @@ jobs:
         id: yarn-cache
         with:
           path: node_modules
-          key: ${CACHE}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${CACHE}-yarn-
+          key: $CACHE-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: $CACHE-yarn-
       - uses: actions/cache@v1
         id: build-cache
         with:
           path: .next
-          key: ${CACHE}-build-${GITHUB_SHA}
-          restore-keys: ${CACHE}-build-${GITHUB_SHA}
+          key: $CACHE-build-$GITHUB_SHA
+          restore-keys: $CACHE-build-$GITHUB_SHA
       - run: >
           now
+          --token $ZEIT_TOKEN
           --no-clipboard
-          --token ${ZEIT_TOKEN}
           > deployment-preview-url.txt
       - run: >
           now
           alias
-          --token ${ZEIT_TOKEN}
+          --token $ZEIT_TOKEN
           `cat deployment-preview-url.txt`
           $DEPLOY_TARGET
       - run: >
@@ -106,19 +106,15 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.action == 'closed'
     steps:
-      - run: ls -a
-      - run: pwd
       - run: >
           curl
           "https://api.zeit.co/v11/now/deployments/get?url=$DEPLOY_TARGET"
           -H "Authorization: Bearer $ZEIT_TOKEN"
-          | jq ".id"
+          | jq -r ".id"
           > deployment-preview-id.txt
-      - run: ls -a
-      - run: pwd
       - run: >
           now
           remove
+          --token $ZEIT_TOKEN
           --yes
-          --token ${ZEIT_TOKEN}
           `cat deployment-preview-id.txt`
