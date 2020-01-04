@@ -1,7 +1,7 @@
 on:
   schedule:
-    # every day AM 00:00
-    - cron: 0 0 * * *
+    # At minute 0 past every 12 hour
+    - cron: 0 */12 * * *
 env:
   CI: true
   TZ: Asia/Tokyo
@@ -15,7 +15,7 @@ jobs:
           echo "npm:  v`npm --version`"
           echo "yarn: v`yarn --version`"
           echo "now:  v`now --version`"
-      - run: echo "${GITHUB_CONTEXT}"
+      - run: echo "$GITHUB_CONTEXT"
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
   check:

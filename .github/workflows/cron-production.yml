@@ -1,7 +1,7 @@
 on:
   schedule:
-    # every week Monday AM 10:00
-    - cron: 00 10 * * 1
+    # At 00:00 on Monday and Thursday
+    - cron: 0 0 * * 1,4
 env:
   CI: true
   TZ: Asia/Tokyo
@@ -16,7 +16,7 @@ jobs:
           echo "npm:  v`npm --version`"
           echo "yarn: v`yarn --version`"
           echo "now:  v`now --version`"
-      - run: echo "${GITHUB_CONTEXT}"
+      - run: echo "$GITHUB_CONTEXT"
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
   build:
@@ -30,14 +30,14 @@ jobs:
         id: yarn-cache
         with:
           path: node_modules
-          key: ${CACHE}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${CACHE}-yarn-
+          key: $CACHE-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: $CACHE-yarn-
       - uses: actions/cache@v1
         id: build-cache
         with:
           path: .next
-          key: ${CACHE}-build-${GITHUB_SHA}
-          restore-keys: ${CACHE}-build-${GITHUB_SHA}
+          key: $CACHE-build-$GITHUB_SHA
+          restore-keys: $CACHE-build-$GITHUB_SHA
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
       - run: yarn run build
@@ -54,24 +54,12 @@ jobs:
         id: build-cache
         with:
           path: .next
-          key: ${CACHE}-build-${GITHUB_SHA}
-          restore-keys: ${CACHE}-build-${GITHUB_SHA}
-      - run: now --prod --no-clipboard --token $ZEIT_TOKEN
+          key: $CACHE-build-$GITHUB_SHA
+          restore-keys: $CACHE-build-$GITHUB_SHA
+      - run: >
+          now
+          --token $ZEIT_TOKEN
+          --no-clipboard
+          --prod
         env:
           ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
-  lighthouse:
-    runs-on: ubuntu-latest
-    needs: deploy-production
-    steps:
-      - uses: actions/checkout@v1
-      - uses: treosh/lighthouse-ci-action@v2
-        with:
-          urls: |
-            https://ymkz.co/
-            https://ymkz.co/about
-            https://ymkz.co/contact
-            https://ymkz.co/projects
-      - uses: actions/upload-artifact@v1
-        with:
-          name: lighthouse-artifact
-          path: .lighthouseci
