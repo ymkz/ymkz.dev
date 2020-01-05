@@ -1,20 +1,27 @@
 {
   "private": true,
+  "name": "ymkz.co",
+  "description": "ymkz's portfolio website",
   "license": "MIT",
+  "author": "ymkz <ymkzly@gmail.com> (https://github.com/ymkz)",
+  "homepage": "https://ymkz.co",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ymkz/ymkz.co"
+  },
+  "bugs": {
+    "url": "https://github.com/ymkz/ymkz.co/issues"
+  },
   "version": "4.0.0",
   "main": "next.config.js",
-  "name": "ymkz.co",
-  "homepage": "https://ymkz.co",
-  "description": "ymkz's portfolio website",
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "dev": "next dev",
     "lint": "run-p lint:*",
-    "lint:js": "eslint '**/*.{js,ts,tsx}'",
     "lint:css": "stylelint '**/*.{js,ts,tsx}'",
-    "typecheck": "tsc --noEmit",
-    "webmanifest": "webmanifest --icon public/icon.svg"
+    "lint:js": "eslint '**/*.{js,ts,tsx}'",
+    "start": "next start",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@emotion/core": "10.0.27",
@@ -32,47 +39,21 @@
     "@emotion/babel-preset-css-prop": "10.0.27",
     "@types/node": "13.1.2",
     "@types/react": "16.9.17",
-    "@typescript-eslint/eslint-plugin": "2.14.0",
-    "@typescript-eslint/parser": "2.14.0",
+    "@ymkz/eslint-config": "1.0.0",
+    "@ymkz/prettier-config": "1.0.0",
+    "@ymkz/stylelint-config": "1.0.0",
     "@zeit/next-css": "1.0.1",
     "babel-plugin-module-resolver": "3.2.0",
     "eslint": "6.8.0",
-    "eslint-config-prettier": "6.9.0",
-    "eslint-import-resolver-babel-module": "5.1.0",
-    "eslint-plugin-import": "2.19.1",
-    "eslint-plugin-prettier": "3.1.2",
-    "eslint-plugin-react": "7.17.0",
-    "eslint-plugin-react-hooks": "2.3.0",
-    "eslint-plugin-security": "1.4.0",
-    "eslint-plugin-simple-import-sort": "5.0.0",
-    "eslint-plugin-unicorn": "15.0.1",
     "husky": "3.1.0",
+    "lint-staged": "10.0.0-beta.14",
     "next-compose-plugins": "2.2.0",
-    "next-offline": "4.0.6",
     "npm-run-all": "4.1.5",
     "prettier": "1.19.1",
+    "prettier-package-json": "2.1.3",
     "stylelint": "12.0.1",
-    "stylelint-config-prettier": "8.0.0",
-    "stylelint-config-rational-order": "0.1.2",
-    "stylelint-config-recommended": "3.0.0",
     "typescript": "3.7.4",
-    "webmanifest-cli": "0.0.1",
     "webpack": "4.41.5",
     "yarnhook": "0.4.3"
-  },
-  "engines": {
-    "node": "12.x"
-  },
-  "author": {
-    "name": "ymkz",
-    "email": "ymkzly@gmail.com",
-    "url": "https://github.com/ymkz"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ymkz/ymkz.co"
-  },
-  "bugs": {
-    "url": "https://github.com/ymkz/ymkz.co/issues"
   }
 }
