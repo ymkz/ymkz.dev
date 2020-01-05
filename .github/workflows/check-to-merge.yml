@@ -4,7 +4,7 @@ on:
 env:
   CI: true
   TZ: Asia/Tokyo
-  CACHE: cache-0.0.0
+  CACHE: v0.0.0
   HUSKY_SKIP_INSTALL: 1
   ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -26,19 +26,22 @@ jobs:
     if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize'
     steps:
       - uses: actions/checkout@v2
+      - run: echo "::set-output name=version::$(cat .node-version)"
+        id: node-version
       - uses: actions/setup-node@v1
         with:
-          node-version: 12.x
-      - uses: actions/cache@v1
+          node-version: ${{ steps.node-version.outputs.version }}
+      - run: echo "::set-output name=dir::$(yarn cache dir)"
         id: yarn-cache
+      - uses: actions/cache@v1
+        id: node-cache
         with:
-          path: node_modules
-          key: $CACHE-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: $CACHE-yarn-
+          path: ${{ steps.yarn-cache.outputs.dir }}
+          key: $CACHE-${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: $CACHE-${{ runner.os }}-yarn-
       - run: yarn install --frozen-lockfile
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-      - run: yarn run lint:js
-      - run: yarn run lint:css
+        if: steps.node-cache.outputs.cache-hit != 'true'
+      - run: yarn run lint
       - run: yarn run typecheck
   build:
     runs-on: ubuntu-latest
@@ -46,15 +49,19 @@ jobs:
     needs: check
     steps:
       - uses: actions/checkout@v2
+      - run: echo "::set-output name=version::$(cat .node-version)"
+        id: node-version
       - uses: actions/setup-node@v1
         with:
-          node-version: 12.x
-      - uses: actions/cache@v1
+          node-version: ${{ steps.node-version.outputs.version }}
+      - run: echo "::set-output name=dir::$(yarn cache dir)"
         id: yarn-cache
+      - uses: actions/cache@v1
+        id: node-cache
         with:
-          path: node_modules
-          key: $CACHE-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: $CACHE-yarn-
+          path: ${{ steps.yarn-cache.outputs.dir }}
+          key: $CACHE-${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: $CACHE-${{ runner.os }}-yarn-
       - uses: actions/cache@v1
         id: build-cache
         with:
@@ -69,15 +76,19 @@ jobs:
     needs: build
     steps:
       - uses: actions/checkout@v2
+      - run: echo "::set-output name=version::$(cat .node-version)"
+        id: node-version
       - uses: actions/setup-node@v1
         with:
-          node-version: 12.x
-      - uses: actions/cache@v1
+          node-version: ${{ steps.node-version.outputs.version }}
+      - run: echo "::set-output name=dir::$(yarn cache dir)"
         id: yarn-cache
+      - uses: actions/cache@v1
+        id: node-cache
         with:
-          path: node_modules
-          key: $CACHE-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: $CACHE-yarn-
+          path: ${{ steps.yarn-cache.outputs.dir }}
+          key: $CACHE-${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: $CACHE-${{ runner.os }}-yarn-
       - uses: actions/cache@v1
         id: build-cache
         with:
