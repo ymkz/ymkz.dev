@@ -4,7 +4,7 @@ on:
 env:
   CI: true
   TZ: Asia/Tokyo
-  CACHE: v0.0.0
+  CACHE: v0.0.1
   HUSKY_SKIP_INSTALL: 1
   ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
