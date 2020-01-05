@@ -1,5 +1,3 @@
-/* eslint-disable security/detect-object-injection */
-
 /*
   reference: https://www.webdlab.com/labs/responsive-web-design-4/
 */

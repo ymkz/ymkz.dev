@@ -59,12 +59,6 @@ yarn install
 yarn dev
 ```
 
-## Test
-
-```sh
-yarn test
-```
-
 ## Author
 
 👤 **ymkz**
@@ -78,7 +72,7 @@ Give a ⭐️ if this project helped you!
 
 ## License
 
-Copyright © 2019 [ymkz](https://github.com/ymkz).
+Copyright © 2020 [ymkz](https://github.com/ymkz).
 
 ---
 

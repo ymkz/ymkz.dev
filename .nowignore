@@ -8,6 +8,7 @@ node_modules
 .eslintrc.json
 .gitignore
 .huskyrc.json
+.lintstagedrc.json
 .prettierrc.json
 .stylelintrc.json
 README.md
