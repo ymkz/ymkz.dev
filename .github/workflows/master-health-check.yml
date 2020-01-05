@@ -5,11 +5,11 @@ on:
 env:
   CI: true
   TZ: Asia/Tokyo
-  HUSKY_SKIP_INSTALL: 1
 jobs:
   dump:
     runs-on: ubuntu-latest
     steps:
+      - run: date
       - run: |
           echo "node: `node --version`"
           echo "npm:  v`npm --version`"
@@ -22,10 +22,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - run: echo "::set-output name=version::$(cat .node-version)"
+        id: node-version
       - uses: actions/setup-node@v1
         with:
-          node-version: 12.x
+          node-version: ${{ steps.node-version.outputs.version }}
       - run: yarn install --frozen-lockfile
-      - run: yarn run lint:js
-      - run: yarn run lint:css
+      - run: yarn run lint
       - run: yarn run typecheck

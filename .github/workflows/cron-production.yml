@@ -5,12 +5,12 @@ on:
 env:
   CI: true
   TZ: Asia/Tokyo
-  CACHE: cache-0.0.0
-  HUSKY_SKIP_INSTALL: 1
+  cache-prefix: apple
 jobs:
   dump:
     runs-on: ubuntu-latest
     steps:
+      - run: date
       - run: |
           echo "node: `node --version`"
           echo "npm:  v`npm --version`"
@@ -23,21 +23,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - run: echo "::set-output name=version::$(cat .node-version)"
+        id: node-version
       - uses: actions/setup-node@v1
         with:
-          node-version: 12.x
+          node-version: ${{ steps.node-version.outputs.version }}
       - uses: actions/cache@v1
         id: yarn-cache
         with:
           path: node_modules
-          key: $CACHE-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: $CACHE-yarn-
+          key: ${{ env.cache-prefix }}-${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ env.cache-prefix }}-${{ runner.os }}-yarn-
       - uses: actions/cache@v1
         id: build-cache
         with:
           path: .next
-          key: $CACHE-build-$GITHUB_SHA
-          restore-keys: $CACHE-build-$GITHUB_SHA
+          key: ${{ env.cache-prefix }}-${{ runner.os }}-build-$GITHUB_SHA
+          restore-keys: ${{ env.cache-prefix }}-${{ runner.os }}-build-$GITHUB_SHA
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
       - run: yarn run build
@@ -47,15 +49,17 @@ jobs:
     needs: build
     steps:
       - uses: actions/checkout@v1
+      - run: echo "::set-output name=version::$(cat .node-version)"
+        id: node-version
       - uses: actions/setup-node@v1
         with:
-          node-version: 12.x
+          node-version: ${{ steps.node-version.outputs.version }}
       - uses: actions/cache@v1
         id: build-cache
         with:
           path: .next
-          key: $CACHE-build-$GITHUB_SHA
-          restore-keys: $CACHE-build-$GITHUB_SHA
+          key: ${{ env.cache-prefix }}-${{ runner.os }}-build-$GITHUB_SHA
+          restore-keys: ${{ env.cache-prefix }}-${{ runner.os }}-build-$GITHUB_SHA
       - run: >
           now
           --token $ZEIT_TOKEN
