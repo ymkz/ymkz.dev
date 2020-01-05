@@ -4,11 +4,8 @@ on:
 env:
   CI: true
   TZ: Asia/Tokyo
-  CACHE: v0.0.1
-  HUSKY_SKIP_INSTALL: 1
-  ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  DEPLOY_TARGET: ymkzco-pr-${{ github.event.number }}.now.sh
+  cache-prefix: apple
+  deploy-destination: ymkzco-pr-${{ github.event.number }}.now.sh
 jobs:
   dump:
     runs-on: ubuntu-latest
@@ -35,8 +32,8 @@ jobs:
         id: yarn-cache
         with:
           path: node_modules
-          key: $CACHE-${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: $CACHE-${{ runner.os }}-yarn-
+          key: ${{ env.cache-prefix }}-${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: ${{ env.cache-prefix }}-${{ runner.os }}-yarn-
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
       - run: yarn run lint
@@ -56,14 +53,14 @@ jobs:
         id: yarn-cache
         with:
           path: node_modules
-          key: $CACHE-${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: $CACHE-${{ runner.os }}-yarn-
+          key: ${{ env.cache-prefix }}-${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: ${{ env.cache-prefix }}-${{ runner.os }}-yarn-
       - uses: actions/cache@v1
         id: build-cache
         with:
           path: .next
-          key: $CACHE-build-$GITHUB_SHA
-          restore-keys: $CACHE-build-$GITHUB_SHA
+          key: ${{ env.cache-prefix }}-build-$GITHUB_SHA
+          restore-keys: ${{ env.cache-prefix }}-build-$GITHUB_SHA
       - run: yarn run build
         if: steps.build-cache.outputs.cache-hit != 'true'
   deploy-preview:
@@ -81,30 +78,30 @@ jobs:
         id: yarn-cache
         with:
           path: node_modules
-          key: $CACHE-${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: $CACHE-${{ runner.os }}-yarn-
+          key: ${{ env.cache-prefix }}-${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: ${{ env.cache-prefix }}-${{ runner.os }}-yarn-
       - uses: actions/cache@v1
         id: build-cache
         with:
           path: .next
-          key: $CACHE-build-$GITHUB_SHA
-          restore-keys: $CACHE-build-$GITHUB_SHA
+          key: ${{ env.cache-prefix }}-build-$GITHUB_SHA
+          restore-keys: ${{ env.cache-prefix }}-build-$GITHUB_SHA
       - run: >
           now
-          --token $ZEIT_TOKEN
+          --token ${{ secrets.ZEIT_TOKEN }}
           --no-clipboard
           > deployment-preview-url.txt
       - run: >
           now
           alias
-          --token $ZEIT_TOKEN
+          --token ${{ secrets.ZEIT_TOKEN }}
           `cat deployment-preview-url.txt`
-          $DEPLOY_TARGET
+          ${{ env.deploy-destination }}
       - run: >
           curl
           -X POST
-          -H "Authorization: token $GITHUB_TOKEN"
-          -d "{ \"body\": \"Deploy Preview is ready on https://$DEPLOY_TARGET\" }"
+          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}"
+          -d "{ \"body\": \"Deploy Preview is ready on https://${{ env.deploy-destination }}\" }"
           ${{ github.event.pull_request.comments_url }}
         if: github.event_name == 'pull_request' && github.event.action == 'opened'
   cleanup-preview:
@@ -113,13 +110,13 @@ jobs:
     steps:
       - run: >
           curl
-          "https://api.zeit.co/v11/now/deployments/get?url=$DEPLOY_TARGET"
-          -H "Authorization: Bearer $ZEIT_TOKEN"
+          "https://api.zeit.co/v11/now/deployments/get?url=${{ env.deploy-destination }}"
+          -H "Authorization: Bearer ${{ secrets.ZEIT_TOKEN }}"
           | jq -r ".id"
           > deployment-preview-id.txt
       - run: >
           now
           remove
-          --token $ZEIT_TOKEN
+          --token ${{ secrets.ZEIT_TOKEN }}
           --yes
           `cat deployment-preview-id.txt`
