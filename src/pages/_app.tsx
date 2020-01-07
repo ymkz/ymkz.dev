@@ -9,11 +9,11 @@ import { GlobalStyle } from '~/components/templates/global-style'
 class App extends NextApp {
   render() {
     return (
-      <React.StrictMode>
+      <React.Fragment>
         <GlobalStyle />
         <Header />
         <this.props.Component {...this.props.pageProps} />
-      </React.StrictMode>
+      </React.Fragment>
     )
   }
 }

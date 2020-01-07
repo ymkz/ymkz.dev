@@ -5,6 +5,7 @@ const css = require('@zeit/next-css')
 
 const nextOption = {
   poweredByHeader: false,
+  reactStrictMode: true,
   devIndicators: { autoPrerender: false },
 }
 
