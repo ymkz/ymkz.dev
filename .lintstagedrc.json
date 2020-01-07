@@ -1,6 +1,6 @@
 {
   "package.json": ["prettier-package-json --write"],
-  "*.{js,ts,tsx}": ["yarn lint"],
+  "*.{js,ts,tsx}": ["eslint --fix", "stylelint --fix", "tsc --noEmit"],
   "*.json": ["prettier --write"],
   "*.yml": ["prettier --write"],
   "*.md": ["prettier --write"]
