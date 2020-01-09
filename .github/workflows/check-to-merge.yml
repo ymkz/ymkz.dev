@@ -4,6 +4,7 @@ on:
 env:
   CI: true
   TZ: Asia/Tokyo
+  DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
   cache-prefix: apple
   deploy-destination: ymkzco-pr-${{ github.event.number }}.now.sh
 jobs:
@@ -105,6 +106,9 @@ jobs:
           -d "{ \"body\": \"Deploy Preview is ready on https://${{ env.deploy-destination }}\" }"
           ${{ github.event.pull_request.comments_url }}
         if: github.event_name == 'pull_request' && github.event.action == 'opened'
+      - uses: Ilshidur/action-discord@master
+        with:
+          args: Deploy Preview is ready on https://{{ env.deploy-destination }}
   cleanup-preview:
     runs-on: ubuntu-latest
     if: github.event.action == 'closed'
