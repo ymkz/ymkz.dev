@@ -108,7 +108,7 @@ jobs:
         if: github.event_name == 'pull_request' && github.event.action == 'opened'
       - uses: Ilshidur/action-discord@master
         with:
-          args: Deploy Preview is ready on https://{{ deploy-destination }}
+          args: Deploy Preview is ready on https://${{ deploy-destination }}
   cleanup-preview:
     runs-on: ubuntu-latest
     if: github.event.action == 'closed'
