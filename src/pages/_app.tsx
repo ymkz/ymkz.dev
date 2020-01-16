@@ -8,11 +8,12 @@ import { GlobalStyle } from '~/components/templates/global-style'
 
 class App extends NextApp {
   render() {
+    const { Component, pageProps } = this.props
     return (
       <React.Fragment>
         <GlobalStyle />
         <Header />
-        <this.props.Component {...this.props.pageProps} />
+        <Component {...pageProps} />
       </React.Fragment>
     )
   }
