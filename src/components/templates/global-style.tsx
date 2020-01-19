@@ -38,6 +38,7 @@ export const GlobalStyle = () => {
           box-sizing: border-box;
         }
         body {
+          margin: 0;
           overflow-y: scroll;
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Hiragino Sans', 'Noto Sans CJK JP',
             'Original Yu Gothic', 'Yu Gothic', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
