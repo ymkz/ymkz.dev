@@ -15,7 +15,9 @@ jobs:
           echo "yarn: v`yarn --version`"
           echo "now:  v`now --version`"
       - run: date
-      - run: echo "${{ toJson(github) }}"
+      - run: echo "${GITHUB_CONTEXT}"
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
   check:
     runs-on: ubuntu-latest
     steps:
