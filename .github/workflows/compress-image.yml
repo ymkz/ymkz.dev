@@ -1,0 +1,24 @@
+on:
+  pull_request:
+    paths:
+      - '**.jpg'
+      - '**.png'
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "node: `node --version`"
+          echo "npm:  v`npm --version`"
+          echo "yarn: v`yarn --version`"
+          echo "now:  v`now --version`"
+      - run: date
+      - run: echo "${{ toJson(github) }}"
+  compress:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: calibreapp/image-actions@v1
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          ignorePaths: 'node_modules/**,.next/**,e2e/**'

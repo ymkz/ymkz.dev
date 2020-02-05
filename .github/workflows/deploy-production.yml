@@ -1,0 +1,68 @@
+on:
+  schedule:
+    - cron: 0 0 * * 1,3,5
+    # At 00:00 on Monday and Thursday
+env:
+  CI: true
+  TZ: Asia/Tokyo
+  CACHE: apple
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "node: `node --version`"
+          echo "npm:  v`npm --version`"
+          echo "yarn: v`yarn --version`"
+          echo "now:  v`now --version`"
+      - run: date
+      - run: echo "${{ toJson(github) }}"
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: echo "::set-output name=version::$(cat .node-version)"
+        id: node-version
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ steps.node-version.outputs.version }}
+      - uses: actions/cache@v1
+        id: yarn-cache
+        with:
+          path: node_modules
+          key: ${{ env.CACHE }}-${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ env.CACHE }}-${{ runner.os }}-yarn-
+      - uses: actions/cache@v1
+        id: build-cache
+        with:
+          path: .next
+          key: ${{ env.CACHE }}-${{ runner.os }}-build-$GITHUB_SHA
+          restore-keys: ${{ env.CACHE }}-${{ runner.os }}-build-$GITHUB_SHA
+      - run: yarn install --frozen-lockfile
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+      - run: yarn run build
+        if: steps.build-cache.outputs.cache-hit != 'true'
+  deploy-production:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v2
+      - run: echo "::set-output name=version::$(cat .node-version)"
+        id: node-version
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ steps.node-version.outputs.version }}
+      - uses: actions/cache@v1
+        id: build-cache
+        with:
+          path: .next
+          key: ${{ env.CACHE }}-${{ runner.os }}-build-$GITHUB_SHA
+          restore-keys: ${{ env.CACHE }}-${{ runner.os }}-build-$GITHUB_SHA
+      - run: >
+          now
+          deploy
+          --token $ZEIT_TOKEN
+          --no-clipboard
+          --prod
+        env:
+          ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}

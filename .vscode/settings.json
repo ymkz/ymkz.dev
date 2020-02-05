@@ -1,8 +1,8 @@
 {
   "css.validate": false,
+  "editor.codeActionsOnSave": { "source.fixAll": true },
   "editor.formatOnSave": true,
   "editor.rulers": [120],
-  "editor.codeActionsOnSave": { "source.fixAll": true },
   "emmet.excludeLanguages": ["markdown", "javascript", "javascriptreact", "typescript", "typescriptreact"],
   "eslint.enable": true,
   "eslint.packageManager": "yarn",

@@ -1,10 +1,9 @@
-import '@snackbar/core/dist/snackbar.css'
-
 import NextApp from 'next/app'
 import React from 'react'
 
-import { Header } from '~/components/organisms/header'
-import { GlobalStyle } from '~/components/templates/global-style'
+import { GlobalStyle } from '~/components/global-style'
+import { PageContainer } from '~/components/page-container'
+import { PageParticles } from '~/components/page-particles'
 
 class App extends NextApp {
   render() {
@@ -12,8 +11,10 @@ class App extends NextApp {
     return (
       <React.Fragment>
         <GlobalStyle />
-        <Header />
-        <Component {...pageProps} />
+        <PageParticles />
+        <PageContainer>
+          <Component {...pageProps} />
+        </PageContainer>
       </React.Fragment>
     )
   }

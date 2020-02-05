@@ -1,0 +1,28 @@
+on:
+  schedule:
+    - cron: 0 0 * * 0
+    # At 00:00 on Sunday at Asia/Tokyo
+env:
+  CI: true
+  TZ: Asia/Tokyo
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "node: `node --version`"
+          echo "npm:  v`npm --version`"
+          echo "yarn: v`yarn --version`"
+          echo "now:  v`now --version`"
+      - run: date
+      - run: echo "${{ toJson(github) }}"
+  remove:
+    runs-on: ubuntu-latest
+    steps:
+      - run: >
+          now
+          remove
+          ymkz.co
+          --token ${{ secrets.ZEIT_TOKEN }}
+          --safe
+          --yes
