@@ -69,12 +69,13 @@ jobs:
           restore-keys: ${{ env.CACHE }}-${{ runner.os }}-build-$GITHUB_SHA
       - run: yarn run build | awk '/Page/,/webpack/' > build-result.txt
         if: steps.build-cache.outputs.cache-hit != 'true'
-      - uses: harupy/comment-on-pr@master
-        if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          filename: build-result.txt
+      - run: test -f build-result.txt
+      # - uses: harupy/comment-on-pr@master
+      #   if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize'
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     filename: build-result.txt
       # - uses: peter-evans/commit-comment@v1
       #   if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize'
       #   with:
