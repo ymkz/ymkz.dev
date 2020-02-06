@@ -15,6 +15,11 @@ jobs:
           echo "npm:  v`npm --version`"
           echo "yarn: v`yarn --version`"
           echo "now:  v`now --version`"
+      - run: |
+          echo "${CI}"
+          echo "${TZ}"
+          echo "${CACHE}"
+          echo "${IDENTIFIER}"
       - run: date
       - run: echo "${GITHUB_CONTEXT}"
         env:
@@ -68,6 +73,7 @@ jobs:
         if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize'
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          body: Build Result
           path: build-result.txt
   deploy-preview:
     runs-on: ubuntu-latest
@@ -139,6 +145,7 @@ jobs:
         if: failure() && steps.diff-file.outputs.exist == 'true'
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          body: Visual Regression Test
           path: e2e/__image_snapshots__/__diff_output__/${{ env.IDENTIFIER }}-diff.png
   remove-preview:
     runs-on: ubuntu-latest
