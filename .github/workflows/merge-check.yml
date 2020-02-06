@@ -69,12 +69,18 @@ jobs:
           restore-keys: ${{ env.CACHE }}-${{ runner.os }}-build-$GITHUB_SHA
       - run: yarn run build | awk '/Page/,/webpack/' > build-result.txt
         if: steps.build-cache.outputs.cache-hit != 'true'
-      - uses: peter-evans/commit-comment@v1
+      - uses: harupy/comment-on-pr@master
         if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          body: Build Result
-          path: build-result.txt
+          filename: build-result.txt
+      # - uses: peter-evans/commit-comment@v1
+      #   if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize'
+      #   with:
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+      #     body: Build Result
+      #     path: build-result.txt
   deploy-preview:
     runs-on: ubuntu-latest
     if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize'
@@ -110,13 +116,20 @@ jobs:
           --token ${{ secrets.ZEIT_TOKEN }}
           `cat deployment-preview-url.txt`
           ${{ env.IDENTIFIER }}.now.sh
-      - uses: peter-evans/commit-comment@v1
+      - uses: mshick/add-pr-comment@v1
         if: github.event.action == 'opened'
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          body: |
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          message: |
             Ready to preview deploy
             - Preview: https://${{ env.IDENTIFIER }}.now.sh
+      # - uses: peter-evans/commit-comment@v1
+      #   if: github.event.action == 'opened'
+      #   with:
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+      #     body: |
+      #       Ready to preview deploy
+      #       - Preview: https://${{ env.IDENTIFIER }}.now.sh
   visual-regression-test:
     runs-on: ubuntu-latest
     if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize'
