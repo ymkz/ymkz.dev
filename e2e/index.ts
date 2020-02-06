@@ -4,7 +4,7 @@ describe('visual regression test with image snapshot', () => {
   let browser: puppeteer.Browser
 
   const identifier = process.env.IDENTIFIER
-  const url = `https://${identifier}.now.sh`
+  const url = identifier ? `https://${identifier}.now.sh` : 'https://ymkz.co'
 
   beforeAll(async () => {
     browser = await puppeteer.launch({
@@ -17,8 +17,8 @@ describe('visual regression test with image snapshot', () => {
     const page = await browser.newPage()
     await page.setViewport({ width: 1920, height: 1080 })
     await page.goto(url)
-    const image = await page.screenshot()
-    expect(image).toMatchImageSnapshot({ customSnapshotIdentifier: identifier })
+    const image = await page.screenshot({ fullPage: true })
+    expect(image).toMatchImageSnapshot()
   })
 
   afterAll(async () => {

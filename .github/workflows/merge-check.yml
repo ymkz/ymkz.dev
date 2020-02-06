@@ -15,6 +15,11 @@ jobs:
           echo "npm:  v`npm --version`"
           echo "yarn: v`yarn --version`"
           echo "now:  v`now --version`"
+      - run: |
+          echo "CI: ${CI}"
+          echo "TZ: ${TZ}"
+          echo "CACHE: ${CACHE}"
+          echo "IDENTIFIER: ${IDENTIFIER}"
       - run: date
       - run: echo "${GITHUB_CONTEXT}"
         env:
@@ -62,13 +67,8 @@ jobs:
           path: .next
           key: ${{ env.CACHE }}-${{ runner.os }}-build-$GITHUB_SHA
           restore-keys: ${{ env.CACHE }}-${{ runner.os }}-build-$GITHUB_SHA
-      - run: yarn run build | awk '/Page/,/webpack/' > build-result.txt
-        if: steps.build-cache.outputs.cache-hit != 'true'
-      - uses: peter-evans/commit-comment@v1
-        if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize'
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          path: build-result.txt
+      - run: yarn run build
+      # - run: yarn run build | awk '/Page/,/webpack/' > build-result.txt
   deploy-preview:
     runs-on: ubuntu-latest
     if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize'
@@ -104,42 +104,44 @@ jobs:
           --token ${{ secrets.ZEIT_TOKEN }}
           `cat deployment-preview-url.txt`
           ${{ env.IDENTIFIER }}.now.sh
-      - uses: peter-evans/commit-comment@v1
+      - run: >
+          curl
+          -X POST
+          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}"
+          -d "{ \"body\": \"Ready to preview deploy\n- Preview: https://${{ env.IDENTIFIER }}.now.sh\" }"
+          ${{ github.event.pull_request.comments_url }}
         if: github.event.action == 'opened'
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          body: |
-            Ready to preview deploy
-            - Preview: https://${{ env.IDENTIFIER }}.now.sh
-  visual-regression-test:
-    runs-on: ubuntu-latest
-    if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize'
-    needs: deploy-preview
-    steps:
-      - uses: actions/checkout@v2
-      - run: echo "::set-output name=version::$(cat .node-version)"
-        id: node-version
-      - uses: actions/setup-node@v1
-        with:
-          node-version: ${{ steps.node-version.outputs.version }}
-      - uses: actions/cache@v1
-        id: yarn-cache
-        with:
-          path: node_modules
-          key: ${{ env.CACHE }}-${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: ${{ env.CACHE }}-${{ runner.os }}-yarn-
-      - run: yarn run test
-        env:
-          IDENTIFIER: ${{ env.IDENTIFIER }}
-      - run: echo "::set-output name=exist::$(test -f e2e/__image_snapshots__/__diff_output__/${{ env.IDENTIFIER }}-diff.png)"
-        id: diff-file
-        if: failure()
-      - run: echo ${{ steps.diff-file.outputs.exist }}
-      - uses: peter-evans/commit-comment@v1
-        if: failure() && steps.diff-file.outputs.exist == 'true'
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          path: e2e/__image_snapshots__/__diff_output__/${{ env.IDENTIFIER }}-diff.png
+  # visual-regression-test:
+  #   runs-on: ubuntu-latest
+  #   if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize'
+  #   needs: deploy-preview
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - run: echo "::set-output name=version::$(cat .node-version)"
+  #       id: node-version
+  #     - uses: actions/setup-node@v1
+  #       with:
+  #         node-version: ${{ steps.node-version.outputs.version }}
+  #     - uses: actions/cache@v1
+  #       id: yarn-cache
+  #       with:
+  #         path: node_modules
+  #         key: ${{ env.CACHE }}-${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+  #         restore-keys: ${{ env.CACHE }}-${{ runner.os }}-yarn-
+  #     - run: yarn run test
+  #       env:
+  #         IDENTIFIER: ${{ env.IDENTIFIER }}
+  #     - run: echo "::set-output name=exist::$(test -f e2e/__image_snapshots__/__diff_output__/${{ env.IDENTIFIER }}-diff.png)"
+  #       id: diff-file
+  #       if: always()
+  #     - run: echo "${{ steps.diff-file.outputs.exist }}"
+  #       if: always()
+  #     - uses: peter-evans/commit-comment@v1
+  #       if: always()
+  #       with:
+  #         token: ${{ secrets.GITHUB_TOKEN }}
+  #         body: Visual Regression Test
+  #         path: e2e/__image_snapshots__/__diff_output__/${{ env.IDENTIFIER }}-diff.png
   remove-preview:
     runs-on: ubuntu-latest
     if: github.event.action == 'closed'

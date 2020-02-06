@@ -41,6 +41,7 @@ export const GlobalStyle = () => {
             'Original Yu Gothic', 'Yu Gothic', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
             'Noto Sans Emoji';
           line-height: 1;
+          background-color: #000000;
           scroll-behavior: smooth;
           text-rendering: optimizeSpeed;
           -webkit-overflow-scrolling: touch;
