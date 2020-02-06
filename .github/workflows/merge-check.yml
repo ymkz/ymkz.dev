@@ -110,6 +110,7 @@ jobs:
           -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}"
           -d "{ \"body\": \"Ready to preview deploy\n- Preview: https://${{ env.IDENTIFIER }}.now.sh\" }"
           ${{ github.event.pull_request.comments_url }}
+        if: github.event.action == 'opened'
   # visual-regression-test:
   #   runs-on: ubuntu-latest
   #   if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize'
