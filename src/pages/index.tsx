@@ -1,90 +1,96 @@
 import styled from '@emotion/styled'
+import Head from 'next/head'
 import React from 'react'
 
 import { Facebook, GitHub, LinkedIn, Twitter } from '~/components/social-icons'
 
 const Index = () => {
   return (
-    <Container>
-      <Title>
-        Catch
-        <br />
-        the
-        <br />
-        wind.
-      </Title>
-      <Sub>
-        [&nbsp;
-        <img src="/images/wind.svg" width={24} height={24} />
-        &nbsp;]
-      </Sub>
-      <Paragraph>
-        I&apos;m Kazuya Yamashita. a.k.a ymkz.
-        <br />
-        23y/o, based in Matsue at Shimane prefecture in Japan.
-        <br />
-        Working as a frontend engineer.
-      </Paragraph>
-      <ListRow>
-        <ListRowItem>React</ListRowItem>
-        <ListRowItem>TypeScript</ListRowItem>
-        <ListRowItem>Node.js</ListRowItem>
-        <ListRowItem>Next.js</ListRowItem>
-        <ListRowItem>React Native</ListRowItem>
-        <ListRowItem>Redux</ListRowItem>
-        <ListRowItem>Webpack</ListRowItem>
-        <ListRowItem>HTML5</ListRowItem>
-        <ListRowItem>CSS3</ListRowItem>
-      </ListRow>
-      <Paragraph>Majored in computer science, studying Human-Computer Interaction with face/eye tracking.</Paragraph>
-      <ListColumn>
-        <ListColumnItem>Shimane University</ListColumnItem>
-        <ListColumnItem>Bachelor: 2014.4 - 2018.3</ListColumnItem>
-        <ListColumnItem>Master: 2018.4 - 2020.3</ListColumnItem>
-      </ListColumn>
-      <Paragraph>
-        Social account is here, and get in touch with me.
-        <br />
-        Twitter DM is open.
-      </Paragraph>
-      <ListRow>
-        <Anchor href="https://twitter.com/ymkzly" target="_blank" rel="noopener noreferrer">
-          <Icon>
-            <Twitter />
-          </Icon>
-          <ListRowItem>Twitter</ListRowItem>
-        </Anchor>
-        <Anchor href="https://facebook.com/ymkzly" target="_blank" rel="noopener noreferrer">
-          <Icon>
-            <Facebook />
-          </Icon>
-          <ListRowItem>Facebook</ListRowItem>
-        </Anchor>
-        <Anchor href="https://github.com/ymkz" target="_blank" rel="noopener noreferrer">
-          <Icon>
-            <GitHub />
-          </Icon>
-          <ListRowItem>GitHub</ListRowItem>
-        </Anchor>
-        <Anchor href="https://www.linkedin.com/in/ymkz" target="_blank" rel="noopener noreferrer">
-          <Icon>
-            <LinkedIn />
-          </Icon>
-          <ListRowItem>LinkedIn</ListRowItem>
-        </Anchor>
-      </ListRow>
-      <Paragraph>
-        I Like Padding, Sci-Fi, FPS Games.
-        <br />
-        Play games seriously with fun.
-      </Paragraph>
-      <ListColumn>
-        <ListColumnItem>ARIA(天野こずえ)</ListColumnItem>
-        <ListColumnItem>ハーモニー(伊藤計劃)</ListColumnItem>
-        <ListColumnItem>Overwatch</ListColumnItem>
-        <ListColumnItem>PUBG</ListColumnItem>
-      </ListColumn>
-    </Container>
+    <React.Fragment>
+      <Head>
+        <title>ymkz.co</title>
+      </Head>
+      <Container>
+        <Title>
+          Catch
+          <br />
+          the
+          <br />
+          wind.
+        </Title>
+        <Sub>
+          [&nbsp;
+          <img src="/images/wind.svg" width={24} height={24} />
+          &nbsp;]
+        </Sub>
+        <Paragraph>
+          I&apos;m Kazuya Yamashita. a.k.a ymkz.
+          <br />
+          23y/o, based in Matsue at Shimane prefecture in Japan.
+          <br />
+          Working as a frontend engineer.
+        </Paragraph>
+        <ListRow>
+          <ListRowItem>React</ListRowItem>
+          <ListRowItem>TypeScript</ListRowItem>
+          <ListRowItem>Node.js</ListRowItem>
+          <ListRowItem>Next.js</ListRowItem>
+          <ListRowItem>React Native</ListRowItem>
+          <ListRowItem>Redux</ListRowItem>
+          <ListRowItem>Webpack</ListRowItem>
+          <ListRowItem>HTML5</ListRowItem>
+          <ListRowItem>CSS3</ListRowItem>
+        </ListRow>
+        <Paragraph>Majored in computer science, studying Human-Computer Interaction with face/eye tracking.</Paragraph>
+        <ListColumn>
+          <ListColumnItem>Shimane University</ListColumnItem>
+          <ListColumnItem>Bachelor: 2014.4 - 2018.3</ListColumnItem>
+          <ListColumnItem>Master: 2018.4 - 2020.3</ListColumnItem>
+        </ListColumn>
+        <Paragraph>
+          Social account is here, and get in touch with me.
+          <br />
+          Twitter DM is open.
+        </Paragraph>
+        <ListRow>
+          <Anchor href="https://twitter.com/ymkzly" target="_blank" rel="noopener noreferrer">
+            <Icon>
+              <Twitter />
+            </Icon>
+            <ListRowItem>Twitter</ListRowItem>
+          </Anchor>
+          <Anchor href="https://facebook.com/ymkzly" target="_blank" rel="noopener noreferrer">
+            <Icon>
+              <Facebook />
+            </Icon>
+            <ListRowItem>Facebook</ListRowItem>
+          </Anchor>
+          <Anchor href="https://github.com/ymkz" target="_blank" rel="noopener noreferrer">
+            <Icon>
+              <GitHub />
+            </Icon>
+            <ListRowItem>GitHub</ListRowItem>
+          </Anchor>
+          <Anchor href="https://www.linkedin.com/in/ymkz" target="_blank" rel="noopener noreferrer">
+            <Icon>
+              <LinkedIn />
+            </Icon>
+            <ListRowItem>LinkedIn</ListRowItem>
+          </Anchor>
+        </ListRow>
+        <Paragraph>
+          I Like Padding, Sci-Fi, FPS Games.
+          <br />
+          Play games seriously with fun.
+        </Paragraph>
+        <ListColumn>
+          <ListColumnItem>ARIA(天野こずえ)</ListColumnItem>
+          <ListColumnItem>ハーモニー(伊藤計劃)</ListColumnItem>
+          <ListColumnItem>Overwatch</ListColumnItem>
+          <ListColumnItem>PUBG</ListColumnItem>
+        </ListColumn>
+      </Container>
+    </React.Fragment>
   )
 }
 
