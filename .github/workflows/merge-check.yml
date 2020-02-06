@@ -16,10 +16,10 @@ jobs:
           echo "yarn: v`yarn --version`"
           echo "now:  v`now --version`"
       - run: |
-          echo "${CI}"
-          echo "${TZ}"
-          echo "${CACHE}"
-          echo "${IDENTIFIER}"
+          echo "CI: ${CI}"
+          echo "TZ: ${TZ}"
+          echo "CACHE: ${CACHE}"
+          echo "IDENTIFIER: ${IDENTIFIER}"
       - run: date
       - run: echo "${GITHUB_CONTEXT}"
         env:
@@ -141,6 +141,7 @@ jobs:
         id: diff-file
         if: failure()
       - run: echo ${{ steps.diff-file.outputs.exist }}
+        if: failure()
       - uses: peter-evans/commit-comment@v1
         if: failure()
         with:
