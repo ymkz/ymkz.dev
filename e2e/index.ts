@@ -18,7 +18,7 @@ describe('visual regression test with image snapshot', () => {
     await page.setViewport({ width: 1920, height: 1080 })
     await page.goto(url)
     const image = await page.screenshot()
-    expect(image).toMatchImageSnapshot({ customSnapshotIdentifier: identifier })
+    expect(image).toMatchImageSnapshot()
   })
 
   afterAll(async () => {
