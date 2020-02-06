@@ -142,7 +142,7 @@ jobs:
         if: failure()
       - run: echo ${{ steps.diff-file.outputs.exist }}
       - uses: peter-evans/commit-comment@v1
-        if: failure() && steps.diff-file.outputs.exist == 'true'
+        if: failure()
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           body: Visual Regression Test
