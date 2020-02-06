@@ -3,8 +3,9 @@ import puppeteer from 'puppeteer'
 describe('visual regression test with image snapshot', () => {
   let browser: puppeteer.Browser
 
+  const query = 'env=test'
   const identifier = process.env.IDENTIFIER
-  const url = identifier ? `https://${identifier}.now.sh` : 'https://ymkz.co'
+  const url = identifier ? `https://${identifier}.now.sh?${query}` : `https://ymkz.co?${query}`
 
   beforeAll(async () => {
     browser = await puppeteer.launch({

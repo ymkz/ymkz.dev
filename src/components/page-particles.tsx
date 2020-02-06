@@ -1,11 +1,13 @@
 import styled from '@emotion/styled'
+import { useRouter } from 'next/router'
 import React from 'react'
 import Particles from 'react-particles-js'
 
 import { bubbles } from '~/constants/particles'
 
 export const PageParticles = () => {
-  return <Container params={bubbles} disabled={process.env.NODE_ENV === 'test'} />
+  const { query } = useRouter()
+  return <Container params={bubbles} disabled={query.env === 'test'} />
 }
 
 const Container = styled(Particles)<{ disabled?: boolean }>`
