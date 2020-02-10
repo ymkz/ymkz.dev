@@ -111,37 +111,37 @@ jobs:
           -d "{ \"body\": \"Ready to preview deploy\n- Preview: https://${{ env.IDENTIFIER }}.now.sh\" }"
           ${{ github.event.pull_request.comments_url }}
         if: github.event.action == 'opened'
-  visual-regression-test:
-    runs-on: ubuntu-latest
-    if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize'
-    needs: deploy-preview
-    steps:
-      - uses: actions/checkout@v2
-      - run: echo "::set-output name=version::$(cat .node-version)"
-        id: node-version
-      - uses: actions/setup-node@v1
-        with:
-          node-version: ${{ steps.node-version.outputs.version }}
-      - uses: actions/cache@v1
-        id: yarn-cache
-        with:
-          path: node_modules
-          key: ${{ env.CACHE }}-${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: ${{ env.CACHE }}-${{ runner.os }}-yarn-
-      - run: yarn run test
-        env:
-          IDENTIFIER: ${{ env.IDENTIFIER }}
-      - run: echo "::set-output name=exist::$(test -f e2e/__image_snapshots__/__diff_output__/vrt-diff.png)"
-        id: diff-file
-      - run: echo "${DIFFFILE_EXIST}"
-        env:
-          DIFFFILE_EXIST: ${{ steps.diff-file.outputs.exist }}
-      - run: >
-          curl
-          -X POST
-          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}"
-          -d "{ \"body\": \"Visual Regression Test found page design changed.\" }"
-          ${{ github.event.pull_request.comments_url }}
+  # visual-regression-test:
+  #   runs-on: ubuntu-latest
+  #   if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize'
+  #   needs: deploy-preview
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - run: echo "::set-output name=version::$(cat .node-version)"
+  #       id: node-version
+  #     - uses: actions/setup-node@v1
+  #       with:
+  #         node-version: ${{ steps.node-version.outputs.version }}
+  #     - uses: actions/cache@v1
+  #       id: yarn-cache
+  #       with:
+  #         path: node_modules
+  #         key: ${{ env.CACHE }}-${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+  #         restore-keys: ${{ env.CACHE }}-${{ runner.os }}-yarn-
+  #     - run: yarn run test
+  #       env:
+  #         IDENTIFIER: ${{ env.IDENTIFIER }}
+  #     - run: echo "::set-output name=exist::$(test -f e2e/__image_snapshots__/__diff_output__/vrt-diff.png)"
+  #       id: diff-file
+  #     - run: echo "${DIFFFILE_EXIST}"
+  #       env:
+  #         DIFFFILE_EXIST: ${{ steps.diff-file.outputs.exist }}
+  #     - run: >
+  #         curl
+  #         -X POST
+  #         -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}"
+  #         -d "{ \"body\": \"Visual Regression Test found page design changed.\" }"
+  #         ${{ github.event.pull_request.comments_url }}
   remove-preview:
     runs-on: ubuntu-latest
     if: github.event.action == 'closed'
