@@ -38,7 +38,7 @@
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "@emotion/babel-preset-css-prop": "^10.0.27",
-    "@types/jest": "^25.1.1",
+    "@types/jest": "^25.1.2",
     "@types/jest-image-snapshot": "^2.11.1",
     "@types/node": "^13.7.0",
     "@types/puppeteer": "^2.0.0",
