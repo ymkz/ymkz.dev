@@ -1,4 +1,3 @@
 root: true
-extends: '@ymkz/eslint-config'
-env:
-  jest: true
+extends:
+  - '@ymkz/eslint-config'
