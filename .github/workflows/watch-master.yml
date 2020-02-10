@@ -27,6 +27,14 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ steps.node-version.outputs.version }}
+      - uses: actions/cache@v1
+        id: yarn-cache
+        with:
+          path: node_modules
+          key: ${{ env.CACHE }}-${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: ${{ env.CACHE }}-${{ runner.os }}-yarn-
       - run: yarn install --frozen-lockfile
-      - run: yarn run lint
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+      - run: yarn run lint:js
+      - run: yarn run lint:css
       - run: yarn run typecheck

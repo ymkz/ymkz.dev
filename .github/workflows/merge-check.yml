@@ -42,7 +42,8 @@ jobs:
           restore-keys: ${{ env.CACHE }}-${{ runner.os }}-yarn-
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
-      - run: yarn run lint
+      - run: yarn run lint:js
+      - run: yarn run lint:css
       - run: yarn run typecheck
   build:
     runs-on: ubuntu-latest
