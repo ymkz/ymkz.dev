@@ -43,7 +43,7 @@
     "@types/node": "^13.7.0",
     "@types/puppeteer": "^2.0.0",
     "@types/react": "^16.9.19",
-    "@ymkz/eslint-config": "^1.1.0",
+    "@ymkz/eslint-config": "^1.2.0",
     "@ymkz/prettier-config": "^1.0.0",
     "@ymkz/stylelint-config": "^1.0.0",
     "babel-plugin-module-resolver": "^4.0.0",
