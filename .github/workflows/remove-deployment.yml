@@ -14,6 +14,9 @@ jobs:
           echo "npm:  v`npm --version`"
           echo "yarn: v`yarn --version`"
           echo "now:  v`now --version`"
+      - run: |
+          echo "CI: ${CI}"
+          echo "TZ: ${TZ}"
       - run: date
       - run: echo "${GITHUB_CONTEXT}"
         env:

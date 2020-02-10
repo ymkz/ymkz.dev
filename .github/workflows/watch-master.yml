@@ -5,6 +5,7 @@ on:
 env:
   CI: true
   TZ: Asia/Tokyo
+  CACHE: apple
 jobs:
   dump:
     runs-on: ubuntu-latest
@@ -14,6 +15,10 @@ jobs:
           echo "npm:  v`npm --version`"
           echo "yarn: v`yarn --version`"
           echo "now:  v`now --version`"
+      - run: |
+          echo "CI: ${CI}"
+          echo "TZ: ${TZ}"
+          echo "CACHE: ${CACHE}"
       - run: date
       - run: echo "${GITHUB_CONTEXT}"
         env:
