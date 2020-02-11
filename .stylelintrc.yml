@@ -1,1 +1,2 @@
-extends: '@ymkz/stylelint-config'
+extends:
+  - '@ymkz/stylelint-config'
