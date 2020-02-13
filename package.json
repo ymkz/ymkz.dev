@@ -47,7 +47,7 @@
     "@ymkz/stylelint-config": "^1.0.0",
     "babel-plugin-module-resolver": "^4.0.0",
     "eslint": "^6.8.0",
-    "husky": "^4.2.2",
+    "husky": "^4.2.3",
     "jest": "^25.1.0",
     "jest-image-snapshot": "^2.12.0",
     "jest-transform-stub": "^2.0.0",
