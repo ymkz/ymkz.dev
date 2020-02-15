@@ -98,11 +98,13 @@ jobs:
           deploy
           --token ${{ secrets.ZEIT_TOKEN }}
           --no-clipboard
+          --confirm
           > deployment-preview-url.txt
       - run: >
           now
           alias
           --token ${{ secrets.ZEIT_TOKEN }}
+          --confirm
           `cat deployment-preview-url.txt`
           ${{ env.IDENTIFIER }}.now.sh
       - run: >

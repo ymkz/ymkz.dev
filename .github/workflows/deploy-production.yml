@@ -69,6 +69,7 @@ jobs:
           deploy
           --token $ZEIT_TOKEN
           --no-clipboard
+          --confirm
           --prod
         env:
           ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
