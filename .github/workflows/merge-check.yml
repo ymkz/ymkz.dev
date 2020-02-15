@@ -104,7 +104,6 @@ jobs:
           now
           alias
           --token ${{ secrets.ZEIT_TOKEN }}
-          --confirm
           `cat deployment-preview-url.txt`
           ${{ env.IDENTIFIER }}.now.sh
       - run: >
