@@ -90,3 +90,6 @@ typings/
 
 # Production
 build
+
+# Zeit Now directories
+.now
