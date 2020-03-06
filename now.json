@@ -1,7 +1,0 @@
-{
-  "version": 2,
-  "name": "ymkz.co",
-  "regions": ["hnd1"],
-  "github": { "enabled": false },
-  "builds": [{ "src": "next.config.js", "use": "@now/next" }]
-}

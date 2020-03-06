@@ -12,54 +12,39 @@
   "bugs": {
     "url": "https://github.com/ymkz/ymkz.co/issues"
   },
-  "version": "5.0.0",
-  "main": "next.config.js",
+  "version": "6.0.0",
   "scripts": {
-    "build": "next build",
-    "dev": "next dev",
-    "lint:css": "stylelint 'src/**/*.{js,ts,tsx}'",
-    "lint:js": "eslint 'src/**/*.{js,ts,tsx}'",
-    "start": "next start",
-    "test": "jest",
-    "test:update": "jest --updateSnapshot",
+    "build": "preact build",
+    "dev": "preact watch",
+    "lint:css": "stylelint 'src/**/*.css'",
+    "lint:js": "eslint 'src/**/*.tsx'",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.28",
-    "@emotion/styled": "^10.0.27",
-    "next": "^9.2.2",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "react-particles-js": "^2.7.1"
+    "preact": "^10.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
-    "@emotion/babel-preset-css-prop": "^10.0.27",
-    "@types/jest": "^25.1.3",
-    "@types/jest-image-snapshot": "^2.11.1",
-    "@types/node": "^13.7.7",
-    "@types/puppeteer": "^2.0.1",
-    "@types/react": "^16.9.23",
+    "@secretlint/secretlint-rule-preset-recommend": "^0.7.2",
     "@ymkz/eslint-config": "^1.3.0",
     "@ymkz/prettier-config": "^1.0.0",
     "@ymkz/stylelint-config": "^1.0.0",
     "babel-plugin-module-resolver": "^4.0.0",
     "eslint": "^6.8.0",
     "husky": "^4.2.3",
-    "jest": "^25.1.0",
-    "jest-image-snapshot": "^2.12.0",
-    "jest-transform-stub": "^2.0.0",
     "lint-staged": "^10.0.8",
+    "preact-cli": "^3.0.0-rc.9",
+    "preact-render-to-string": "^5.1.4",
     "prettier": "^1.19.1",
     "prettier-package-json": "^2.1.3",
-    "puppeteer": "^2.1.0",
+    "secretlint": "^0.7.3",
     "stylelint": "^13.2.0",
     "typescript": "^3.8.3",
     "yarnhook": "^0.4.3"
   },
   "engines": {
-    "node": "12.x"
+    "node": ">=12"
   }
 }

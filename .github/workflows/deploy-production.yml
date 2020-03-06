@@ -5,7 +5,7 @@ on:
 env:
   CI: true
   TZ: Asia/Tokyo
-  CACHE: apple
+  CACHE: alpha
 jobs:
   dump:
     runs-on: ubuntu-latest
@@ -41,7 +41,7 @@ jobs:
       - uses: actions/cache@v1
         id: build-cache
         with:
-          path: .next
+          path: build
           key: ${{ env.CACHE }}-${{ runner.os }}-build-$GITHUB_SHA
           restore-keys: ${{ env.CACHE }}-${{ runner.os }}-build-$GITHUB_SHA
       - run: yarn install --frozen-lockfile
@@ -61,7 +61,7 @@ jobs:
       - uses: actions/cache@v1
         id: build-cache
         with:
-          path: .next
+          path: build
           key: ${{ env.CACHE }}-${{ runner.os }}-build-$GITHUB_SHA
           restore-keys: ${{ env.CACHE }}-${{ runner.os }}-build-$GITHUB_SHA
       - run: >

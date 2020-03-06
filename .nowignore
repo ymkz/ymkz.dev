@@ -1,0 +1,13 @@
+.github
+.vscode
+resource
+.commitlintrc.yml
+.editorconfig
+.eslintrc.yml
+.prettierrc.yml
+.huskyrc.yml
+.lintstagedrc.yml
+.secretlintrc.yml
+.stylelintrc.yml
+README.md
+yarn.lock
