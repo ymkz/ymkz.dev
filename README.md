@@ -44,6 +44,10 @@ yarn install
 yarn dev
 ```
 
+## Audits
+
+<img src="resource/audits.png">
+
 ## Author
 
 👤 **ymkz**
