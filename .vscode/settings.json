@@ -8,7 +8,6 @@
   "eslint.packageManager": "yarn",
   "less.validate": false,
   "scss.validate": false,
-  "search.exclude": { "**/.next": true, "**/node_modules": true },
   "stylelint.enable": true,
   "[javascript]": { "editor.formatOnSave": false },
   "[javascriptreact]": { "editor.formatOnSave": false },

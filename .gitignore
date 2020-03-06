@@ -1,4 +1,3 @@
-
 ### Node
 # Logs
 logs
@@ -89,8 +88,5 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
-# zeit/now directories
-.now
-
-# jest-image-snapshot diff files
-e2e/__image_snapshots__/__diff_output__
+# Production
+build

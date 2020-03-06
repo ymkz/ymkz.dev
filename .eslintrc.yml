@@ -4,3 +4,7 @@ extends:
   - '@ymkz/eslint-config/react'
   - '@ymkz/eslint-config/import'
   - '@ymkz/eslint-config/typescript'
+settings:
+  react:
+    pragma: h
+    version: '16.0'

@@ -1,7 +1,8 @@
 'package.json':
   - prettier-package-json --write
-'*.{js,ts,tsx}':
+'*.tsx':
   - eslint --fix
+'*.css':
   - stylelint --fix
 '*.json':
   - prettier --write
@@ -9,3 +10,5 @@
   - prettier --write
 '*.md':
   - prettier --write
+'*':
+  - secretlint

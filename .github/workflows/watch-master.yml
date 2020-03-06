@@ -5,7 +5,7 @@ on:
 env:
   CI: true
   TZ: Asia/Tokyo
-  CACHE: apple
+  CACHE: alpha
 jobs:
   dump:
     runs-on: ubuntu-latest
