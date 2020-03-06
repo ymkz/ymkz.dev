@@ -4,7 +4,7 @@ import { Facebook } from '~/components/icon-facebook'
 import { GitHub } from '~/components/icon-github'
 import { LinkedIn } from '~/components/icon-linkedin'
 import { Twitter } from '~/components/icon-twitter'
-import { LinkExtern } from '~/components/link-extern'
+import { LinkBadge } from '~/components/link-badge'
 
 export const Social = () => {
   return (
@@ -15,21 +15,37 @@ export const Social = () => {
         Twitter DM is open.
       </p>
       <ul className="list-row">
-        <Twitter />
-        <li className="list-row__item">
-          <LinkExtern href="https://twitter.com/ymkzly">Twitter</LinkExtern>
+        <li className="list-row__item--zero-padding">
+          <LinkBadge href="https://twitter.com/ymkzly">
+            <div className="icon-image">
+              <Twitter />
+            </div>
+            <div className="icon-label">Twitter</div>
+          </LinkBadge>
         </li>
-        <Facebook />
-        <li className="list-row__item">
-          <LinkExtern href="https://facebook.com/ymkzly">Facebook</LinkExtern>
+        <li className="list-row__item--zero-padding">
+          <LinkBadge href="https://facebook.com/ymkzly">
+            <div className="icon-image">
+              <Facebook />
+            </div>
+            <div className="icon-label">Facebook</div>
+          </LinkBadge>
         </li>
-        <GitHub />
-        <li className="list-row__item">
-          <LinkExtern href="https://github.com/ymkz">GitHub</LinkExtern>
+        <li className="list-row__item--zero-padding">
+          <LinkBadge href="https://github.com/ymkz">
+            <div className="icon-image">
+              <GitHub />
+            </div>
+            <div className="icon-label">GitHub</div>
+          </LinkBadge>
         </li>
-        <LinkedIn />
-        <li className="list-row__item">
-          <LinkExtern href="https://linkedin.com/in/ymkz">LinkedIn</LinkExtern>
+        <li className="list-row__item--zero-padding">
+          <LinkBadge href="https://linkedin.com/in/ymkz">
+            <div className="icon-image">
+              <LinkedIn />
+            </div>
+            <div className="icon-label">LinkedIn</div>
+          </LinkBadge>
         </li>
       </ul>
     </Fragment>
