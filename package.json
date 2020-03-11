@@ -43,6 +43,7 @@
     "secretlint": "^0.8.0",
     "stylelint": "^13.2.1",
     "typescript": "^3.8.3",
+    "webpack": "^4.42.0",
     "yarnhook": "^0.4.3"
   },
   "engines": {
