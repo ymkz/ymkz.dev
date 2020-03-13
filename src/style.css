@@ -146,15 +146,8 @@ select {
   border: 1px solid #ffffff;
 }
 
-.list-row__item--zero-padding {
-  display: flex;
-  align-items: center;
-  height: 27px;
-  margin-bottom: 8px;
+.zero-padding {
   padding: 0;
-  font-size: 16px;
-  font-family: 'Montserrat', sans-serif;
-  border: 1px solid #ffffff;
 }
 
 .list-column {

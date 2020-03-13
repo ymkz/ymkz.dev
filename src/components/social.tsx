@@ -15,7 +15,7 @@ export const Social = () => {
         Twitter DM is open.
       </p>
       <ul className="list-row">
-        <li className="list-row__item--zero-padding">
+        <li className="list-row__item zero-padding">
           <LinkBadge href="https://twitter.com/ymkzly">
             <div className="icon-image">
               <Twitter />
@@ -23,7 +23,7 @@ export const Social = () => {
             <div className="icon-label">Twitter</div>
           </LinkBadge>
         </li>
-        <li className="list-row__item--zero-padding">
+        <li className="list-row__item zero-padding">
           <LinkBadge href="https://facebook.com/ymkzly">
             <div className="icon-image">
               <Facebook />
@@ -31,7 +31,7 @@ export const Social = () => {
             <div className="icon-label">Facebook</div>
           </LinkBadge>
         </li>
-        <li className="list-row__item--zero-padding">
+        <li className="list-row__item zero-padding">
           <LinkBadge href="https://github.com/ymkz">
             <div className="icon-image">
               <GitHub />
@@ -39,7 +39,7 @@ export const Social = () => {
             <div className="icon-label">GitHub</div>
           </LinkBadge>
         </li>
-        <li className="list-row__item--zero-padding">
+        <li className="list-row__item zero-padding">
           <LinkBadge href="https://linkedin.com/in/ymkz">
             <div className="icon-image">
               <LinkedIn />
