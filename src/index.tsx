@@ -1,6 +1,6 @@
 import '~/style.css'
 
-import { h } from 'preact'
+import { Fragment, h } from 'preact'
 
 import { Education } from '~/components/education'
 import { Personality } from '~/components/personality'
@@ -10,13 +10,13 @@ import { Social } from '~/components/social'
 
 const Index = () => {
   return (
-    <main className="container">
+    <Fragment>
       <Profile />
       <Skill />
       <Education />
       <Social />
       <Personality />
-    </main>
+    </Fragment>
   )
 }
 
