@@ -4,7 +4,7 @@ export const Education = () => {
   return (
     <Fragment>
       <p className="paragraph">
-        Majored in computer science, studying Human-Computer Interaction with face/eye tracking.
+        Majored in computer science, studied human-computer interaction with face/eye tracking.
       </p>
       <ul className="list-column">
         <li className="list-column__item">Shimane University</li>
