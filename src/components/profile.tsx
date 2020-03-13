@@ -13,9 +13,9 @@ export const Profile = () => {
         wind.
       </h1>
       <div className="totem">
-        [&nbsp;
+        <span>[&nbsp;</span>
         <Wind />
-        &nbsp;]
+        <span>&nbsp;]</span>
       </div>
       <p className="paragraph">
         I&apos;m Kazuya Yamashita. a.k.a ymkz.

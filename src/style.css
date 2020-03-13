@@ -98,6 +98,7 @@ select {
 
 .title {
   margin-bottom: 48px;
+  font-weight: 800;
   font-size: 64px;
   font-family: 'Montserrat', sans-serif;
   line-height: 1.15;
@@ -113,7 +114,7 @@ select {
 }
 
 .totem > *:not(:last-child) {
-  margin-right: 16px;
+  margin-right: 4px;
 }
 
 .paragraph {
