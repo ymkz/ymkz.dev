@@ -1609,7 +1609,7 @@
   resolved "https://registry.yarnpkg.com/@ymkz/prettier-config/-/prettier-config-1.1.0.tgz#d4fc18fc2408c0105827df227ea1d1632ec2c90d"
   integrity sha512-wBYfuuC9qH7G/283pFH3JZ5EhKycsh99BS8V5N9f6T23lo0WxO+Fxu5wRL4uevloCfGGZHomHsuwX1PK8eP95Q==
 
-"@ymkz/stylelint-config@^1.0.0":
+"@ymkz/stylelint-config@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@ymkz/stylelint-config/-/stylelint-config-1.1.0.tgz#507a176a7d480c3def1be29c9ccaa3fdf1029ecd"
   integrity sha512-EuYrGjvwvc4OVTVh1uqk9x1m8hROQB2edCtMgT6e4T+04R+sANS8iVA3OfaU6KMO5GW6q0/7Mu3AdbEvxH/o6w==

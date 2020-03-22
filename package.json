@@ -30,7 +30,7 @@
     "@secretlint/secretlint-rule-preset-recommend": "^1.0.0",
     "@ymkz/eslint-config": "^1.4.0",
     "@ymkz/prettier-config": "^1.1.0",
-    "@ymkz/stylelint-config": "^1.0.0",
+    "@ymkz/stylelint-config": "^1.1.0",
     "copy-webpack-plugin": "^5.1.1",
     "eslint": "^6.8.0",
     "husky": "^4.2.3",
