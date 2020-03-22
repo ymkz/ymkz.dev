@@ -1604,7 +1604,7 @@
     eslint-plugin-simple-import-sort "5.0.2"
     eslint-plugin-unicorn "17.2.0"
 
-"@ymkz/prettier-config@^1.0.0":
+"@ymkz/prettier-config@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@ymkz/prettier-config/-/prettier-config-1.1.0.tgz#d4fc18fc2408c0105827df227ea1d1632ec2c90d"
   integrity sha512-wBYfuuC9qH7G/283pFH3JZ5EhKycsh99BS8V5N9f6T23lo0WxO+Fxu5wRL4uevloCfGGZHomHsuwX1PK8eP95Q==
