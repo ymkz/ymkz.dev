@@ -19,7 +19,7 @@
     "build:next": "next build",
     "build:tcm": "tcm --pattern src/**/*.module.scss",
     "dev": "run-p dev:tcm dev:format dev:next",
-    "dev:format": "onchange 'src/**/*.module.scss' -- prettier --write 'src/**/*.module.scss.d.ts'",
+    "dev:format": "onchange 'src/**/*.module.scss.d.ts' -- prettier --write 'src/**/*.module.scss.d.ts'",
     "dev:next": "next dev",
     "dev:tcm": "tcm --watch --pattern src/**/*.module.scss",
     "lint": "run-p lint:*",
