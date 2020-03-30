@@ -1,12 +1,15 @@
 .github
+.next
 .vscode
+node_modules
 resource
 .commitlintrc.yml
 .editorconfig
 .eslintrc.yml
-.prettierrc.yml
+.gitignore
 .huskyrc.yml
 .lintstagedrc.yml
+.prettierrc.yml
 .secretlintrc.yml
 .stylelintrc.yml
 README.md

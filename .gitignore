@@ -88,7 +88,7 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
-# Production
+# Production directories
 build
 
 # Zeit Now directories

@@ -5,7 +5,6 @@ on:
 env:
   CI: true
   TZ: Asia/Tokyo
-  CACHE: alpha
 jobs:
   dump:
     runs-on: ubuntu-latest
@@ -18,7 +17,6 @@ jobs:
       - run: |
           echo "CI: ${CI}"
           echo "TZ: ${TZ}"
-          echo "CACHE: ${CACHE}"
       - run: date
       - run: echo "${GITHUB_CONTEXT}"
         env:
@@ -32,14 +30,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ steps.node-version.outputs.version }}
-      - uses: actions/cache@v1
-        id: yarn-cache
-        with:
-          path: node_modules
-          key: ${{ env.CACHE }}-${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: ${{ env.CACHE }}-${{ runner.os }}-yarn-
-      - run: yarn install --frozen-lockfile
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
+      - uses: bahmutov/npm-install@v1
       - run: yarn run lint:js
       - run: yarn run lint:css
       - run: yarn run typecheck

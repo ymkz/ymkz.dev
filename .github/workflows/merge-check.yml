@@ -4,7 +4,6 @@ on:
 env:
   CI: true
   TZ: Asia/Tokyo
-  CACHE: alpha
   IDENTIFIER: ymkzco-pr-${{ github.event.number }}
 jobs:
   dump:
@@ -18,7 +17,6 @@ jobs:
       - run: |
           echo "CI: ${CI}"
           echo "TZ: ${TZ}"
-          echo "CACHE: ${CACHE}"
           echo "IDENTIFIER: ${IDENTIFIER}"
       - run: date
       - run: echo "${GITHUB_CONTEXT}"
@@ -34,18 +32,11 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ steps.node-version.outputs.version }}
-      - uses: actions/cache@v1
-        id: yarn-cache
-        with:
-          path: node_modules
-          key: ${{ env.CACHE }}-${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: ${{ env.CACHE }}-${{ runner.os }}-yarn-
-      - run: yarn install --frozen-lockfile
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
+      - uses: bahmutov/npm-install@v1
       - run: yarn run lint:js
       - run: yarn run lint:css
       - run: yarn run typecheck
-  build:
+  deploy-preview:
     runs-on: ubuntu-latest
     if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize'
     needs: check
@@ -56,42 +47,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ steps.node-version.outputs.version }}
-      - uses: actions/cache@v1
-        id: yarn-cache
-        with:
-          path: node_modules
-          key: ${{ env.CACHE }}-${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: ${{ env.CACHE }}-${{ runner.os }}-yarn-
-      - uses: actions/cache@v1
-        id: build-cache
-        with:
-          path: build
-          key: ${{ env.CACHE }}-${{ runner.os }}-build-$GITHUB_SHA
-          restore-keys: ${{ env.CACHE }}-${{ runner.os }}-build-$GITHUB_SHA
+      - uses: bahmutov/npm-install@v1
       - run: yarn run build
-  deploy-preview:
-    runs-on: ubuntu-latest
-    if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize'
-    needs: build
-    steps:
-      - uses: actions/checkout@v2
-      - run: echo "::set-output name=version::$(cat .node-version)"
-        id: node-version
-      - uses: actions/setup-node@v1
-        with:
-          node-version: ${{ steps.node-version.outputs.version }}
-      - uses: actions/cache@v1
-        id: yarn-cache
-        with:
-          path: node_modules
-          key: ${{ env.CACHE }}-${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: ${{ env.CACHE }}-${{ runner.os }}-yarn-
-      - uses: actions/cache@v1
-        id: build-cache
-        with:
-          path: build
-          key: ${{ env.CACHE }}-${{ runner.os }}-build-$GITHUB_SHA
-          restore-keys: ${{ env.CACHE }}-${{ runner.os }}-build-$GITHUB_SHA
       - run: >
           now
           deploy

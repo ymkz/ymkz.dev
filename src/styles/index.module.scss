@@ -1,0 +1,92 @@
+.motto {
+  margin-bottom: 48px;
+  font-weight: 800;
+  font-size: 64px;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.15;
+}
+
+.totem {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  margin-bottom: 48px;
+  color: #ffffff;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+  & > *:not(:last-child) {
+    margin-right: 4px;
+  }
+}
+
+.paragraph {
+  margin-bottom: 16px;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+}
+
+.listRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 40px;
+  & > li {
+    margin-bottom: 8px;
+  }
+  & > :not(:last-child) {
+    margin-right: 8px;
+  }
+}
+
+.listRowItem {
+  display: flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 8px;
+  font-family: 'Montserrat', sans-serif;
+  border: 1px solid #ffffff;
+  &:hover {
+    transform: scale(1.1);
+    transition: 0.2s ease-out;
+  }
+}
+
+.listRowBadge {
+  display: flex;
+  align-items: center;
+  height: 28px;
+  font-family: 'Montserrat', sans-serif;
+  border: 1px solid #ffffff;
+  &:hover {
+    transform: scale(1.1);
+    transition: 0.2s ease-out;
+  }
+}
+
+.listRowBadgeIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 100%;
+  background-color: #ffffff;
+}
+
+.listColumn {
+  margin-bottom: 48px;
+  padding-left: 20px;
+}
+
+.listColumnItem {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+  list-style-type: disc;
+}
+
+.anchor {
+  padding: 0 8px;
+  color: #ffffff;
+  text-decoration: none;
+}
