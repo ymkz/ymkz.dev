@@ -43,6 +43,8 @@ const Index = () => {
       </ul>
       <p className={style.paragraph}>
         Majored in computer science, studied human-computer interaction with face/eye tracking.
+        <br />
+        Master of Engineering.
       </p>
       <ul className={style.listColumn}>
         <li className={style.listColumnItem}>Shimane University</li>
