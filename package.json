@@ -38,7 +38,7 @@
     "@commitlint/config-conventional": "^8.3.4",
     "@secretlint/secretlint-rule-preset-recommend": "^1.0.4",
     "@types/node": "^13.9.8",
-    "@types/react": "^16.9.27",
+    "@types/react": "^16.9.31",
     "@ymkz/eslint-config": "^1.4.0",
     "@ymkz/prettier-config": "^1.1.0",
     "@ymkz/stylelint-config": "^1.1.0",
