@@ -30,7 +30,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ steps.node-version.outputs.version }}
-      - uses: bahmutov/npm-install@v1
+      - run: yarn install --frozen-lockfile
       - run: yarn run build
       - run: >
           now
