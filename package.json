@@ -36,7 +36,7 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
-    "@secretlint/secretlint-rule-preset-recommend": "^1.0.4",
+    "@secretlint/secretlint-rule-preset-recommend": "^1.1.0",
     "@types/node": "^13.11.0",
     "@types/react": "^16.9.32",
     "@ymkz/eslint-config": "^1.4.0",
