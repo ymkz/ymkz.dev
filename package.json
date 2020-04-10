@@ -43,7 +43,7 @@
     "@ymkz/prettier-config": "^1.1.0",
     "@ymkz/stylelint-config": "^1.1.0",
     "eslint": "^6.8.0",
-    "husky": "^4.2.3",
+    "husky": "^4.2.5",
     "lint-staged": "^10.1.3",
     "npm-run-all": "^4.1.5",
     "onchange": "^6.1.0",
