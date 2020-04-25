@@ -2,4 +2,5 @@ root: true
 extends:
   - '@ymkz/eslint-config'
   - '@ymkz/eslint-config/react'
+  - '@ymkz/eslint-config/import'
   - '@ymkz/eslint-config/typescript'
