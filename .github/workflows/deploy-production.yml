@@ -1,7 +1,7 @@
 on:
   schedule:
-    - cron: 0 0 * * 1,3,5
-    # At 00:00 on Monday, Wednesday and Friday
+    - cron: 0 0 * * 0
+    # At 00:00 on Sunday
 env:
   CI: true
   TZ: Asia/Tokyo
