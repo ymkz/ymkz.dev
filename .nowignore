@@ -2,7 +2,6 @@
 .next
 .vscode
 node_modules
-resource
 .commitlintrc.yml
 .editorconfig
 .eslintrc.yml
