@@ -23,10 +23,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "front-matter": "^3.2.1",
     "next": "^9.4.0",
     "next-seo": "^4.4.0",
-    "raw-loader": "^4.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-markdown": "^4.3.1"
@@ -42,11 +40,13 @@
     "@ymkz/prettier-config": "^1.1.0",
     "@ymkz/stylelint-config": "^1.1.0",
     "eslint": "^6.8.0",
+    "front-matter": "^3.2.1",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.2",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.0.5",
     "prettier-package-json": "^2.1.3",
+    "raw-loader": "^4.0.1",
     "secretlint": "^2.0.0",
     "stylelint": "^13.3.3",
     "typescript": "^3.9.2",
