@@ -7,7 +7,7 @@ import React from 'react'
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <React.Fragment>
-      <DefaultSeo title="ymkz.co" />
+      <DefaultSeo title="ymkz" />
       <Component {...pageProps} />
     </React.Fragment>
   )
