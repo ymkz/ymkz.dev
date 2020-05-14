@@ -1,4 +1,4 @@
-import matter from 'gray-matter'
+import fm from 'front-matter'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
@@ -26,7 +26,7 @@ export default Post
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const content = await import(`../../contents/${params?.slug}.md`)
-  const { data: frontmatter, content: markdown } = matter(content.default)
+  const { attributes: frontmatter, body: markdown } = fm(content.default)
   return { props: { frontmatter, markdown } }
 }
 

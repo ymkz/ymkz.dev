@@ -23,7 +23,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "gray-matter": "^4.0.2",
+    "front-matter": "^3.2.1",
     "next": "^9.4.0",
     "next-seo": "^4.4.0",
     "raw-loader": "^4.0.1",
