@@ -32,6 +32,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const slugs = getSlugs(require.context('../../contents', true, /\.md$/))
-  const paths = slugs.map((slug: string) => `/post/${slug}`)
+  const paths = slugs.map((slug: string) => `/blog/${slug}`)
   return { paths, fallback: false }
 }

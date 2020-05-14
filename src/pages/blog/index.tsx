@@ -2,7 +2,7 @@ import { GetStaticProps, NextPage } from 'next'
 import NextLink from 'next/link'
 import React from 'react'
 
-import { getPosts } from '../utils/get-posts'
+import { getPosts } from '../../utils/get-posts'
 
 type Props = {
   posts: {
@@ -18,7 +18,7 @@ const Blog: NextPage<Props> = ({ posts }) => {
       <section>
         {posts.map((post) => (
           <div key={post.slug}>
-            <NextLink href="/post/[slug]" as={`/post/${post.slug}`}>
+            <NextLink href="/blog/[slug]" as={`/blog/${post.slug}`}>
               <a>{post.frontmatter.title}</a>
             </NextLink>
           </div>
@@ -31,6 +31,6 @@ const Blog: NextPage<Props> = ({ posts }) => {
 export default Blog
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = getPosts(require.context('../contents', true, /\.md$/))
+  const posts = getPosts(require.context('../../contents', true, /\.md$/))
   return { props: { posts } }
 }
