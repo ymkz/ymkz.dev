@@ -3,6 +3,6 @@
 
 declare type Frontmatter = {
   title: string
-  author: string
-  date: string
+  createdAt: string
+  updatedAt?: string
 }

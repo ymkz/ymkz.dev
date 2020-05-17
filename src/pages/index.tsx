@@ -1,3 +1,5 @@
+import { GetStaticProps, NextPage } from 'next'
+import NextLink from 'next/link'
 import React from 'react'
 
 import { Facebook } from '../components/icon-facebook'
@@ -6,8 +8,16 @@ import { LinkedIn } from '../components/icon-linkedin'
 import { Twitter } from '../components/icon-twitter'
 import { Wind } from '../components/icon-wind'
 import { LinkExtern } from '../components/link-extern'
+import { getPosts } from '../utils/get-posts'
 
-const Index = () => {
+type Props = {
+  posts: {
+    frontmatter: Frontmatter
+    slug: string
+  }[]
+}
+
+const Index: NextPage<Props> = ({ posts }) => {
   return (
     <React.Fragment>
       <h1 className="motto">
@@ -101,8 +111,27 @@ const Index = () => {
         <li className="list-column__item">Overwatch</li>
         <li className="list-column__item">PUBG</li>
       </ul>
+      <p className="post-heading">Posts</p>
+      {posts.map((post) => (
+        <ul key={post.slug}>
+          <li>
+            <NextLink href="/post/[slug]" as={`/post/${post.slug}`}>
+              <a className="post-link">{post.frontmatter.title}</a>
+            </NextLink>
+            <div className="date">
+              {post.frontmatter.createdAt}に投稿
+              {post.frontmatter.updatedAt && <React.Fragment>（{post.frontmatter.updatedAt}に改稿）</React.Fragment>}
+            </div>
+          </li>
+        </ul>
+      ))}
     </React.Fragment>
   )
 }
 
 export default Index
+
+export const getStaticProps: GetStaticProps = async () => {
+  const posts = getPosts(require.context('../contents', true, /\.md$/))
+  return { props: { posts } }
+}

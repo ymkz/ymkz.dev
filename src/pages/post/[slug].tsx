@@ -13,9 +13,12 @@ type Props = {
 const Post: NextPage<Props> = ({ frontmatter, markdown }) => {
   return (
     <React.Fragment>
-      <h1>{frontmatter.title}</h1>
-      <small>{frontmatter.date}</small>
-      <section>
+      <h1 className="title">{frontmatter.title}</h1>
+      <div className="date">
+        {frontmatter.createdAt}に投稿
+        {frontmatter.updatedAt && <React.Fragment>（{frontmatter.updatedAt}に改稿）</React.Fragment>}
+      </div>
+      <section className="content">
         <ReactMarkdown source={markdown} />
       </section>
     </React.Fragment>
@@ -32,6 +35,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const slugs = getSlugs(require.context('../../contents', true, /\.md$/))
-  const paths = slugs.map((slug: string) => `/blog/${slug}`)
+  const paths = slugs.map((slug: string) => `/post/${slug}`)
   return { paths, fallback: false }
 }

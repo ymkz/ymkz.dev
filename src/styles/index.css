@@ -182,3 +182,39 @@ select {
   color: currentColor;
   text-decoration: none;
 }
+
+.title {
+  font-weight: 800;
+  font-size: 48px;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.25;
+}
+
+.date {
+  margin-top: 12px;
+  margin-bottom: 24px;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.content {
+  max-width: 720px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.post-heading {
+  margin-bottom: 24px;
+  font-weight: 800;
+  font-size: 40px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.post-link {
+  color: currentColor;
+  font-weight: 400;
+  font-size: 24px;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+}
