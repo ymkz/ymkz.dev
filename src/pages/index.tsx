@@ -112,9 +112,9 @@ const Index: NextPage<Props> = ({ posts }) => {
         <li className="list-column__item">PUBG</li>
       </ul>
       <p className="post-heading">Posts</p>
-      {posts.map((post) => (
-        <ul key={post.slug}>
-          <li>
+      <ul>
+        {posts.map((post) => (
+          <li key={post.slug}>
             <NextLink href="/post/[slug]" as={`/post/${post.slug}`}>
               <a className="post-link">{post.frontmatter.title}</a>
             </NextLink>
@@ -123,8 +123,8 @@ const Index: NextPage<Props> = ({ posts }) => {
               {post.frontmatter.updatedAt && <React.Fragment>（{post.frontmatter.updatedAt}に改稿）</React.Fragment>}
             </div>
           </li>
-        </ul>
-      ))}
+        ))}
+      </ul>
     </React.Fragment>
   )
 }
