@@ -91,5 +91,6 @@ typings/
 # Production directories
 build
 
-# Zeit Now directories
+# Vercel directories
+.vercel
 .now
