@@ -204,17 +204,27 @@ select {
   line-height: 1.5;
 }
 
-.post-heading {
-  margin-bottom: 24px;
+.post-index__heading {
+  margin-bottom: 16px;
+  color: currentColor;
   font-weight: 800;
   font-size: 40px;
   font-family: 'Montserrat', sans-serif;
 }
 
-.post-link {
+.post-index__link {
   color: currentColor;
-  font-weight: 400;
+  font-weight: 800;
   font-size: 24px;
   font-family: 'Montserrat', sans-serif;
   text-decoration: none;
+}
+
+.post-index__date {
+  margin-top: 4px;
+  margin-bottom: 24px;
+  color: currentColor;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
 }
