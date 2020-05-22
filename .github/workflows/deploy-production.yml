@@ -1,7 +1,6 @@
 on:
   schedule:
-    - cron: 0 0 * * 0
-    # At 00:00 on Sunday
+    - cron: 0 0 * * 0 # Run at Sunday
 env:
   CI: true
   TZ: Asia/Tokyo
@@ -25,12 +24,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: echo "::set-output name=version::$(cat .node-version)"
-        id: node-version
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2-beta
         with:
-          node-version: ${{ steps.node-version.outputs.version }}
-      - run: yarn install --frozen-lockfile
+          node-version: '14'
+      - uses: bahmutov/npm-install@v1
       - run: yarn run build
       - run: >
           now
