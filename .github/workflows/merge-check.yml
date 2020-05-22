@@ -13,7 +13,6 @@ jobs:
           echo "node: `node --version`"
           echo "npm:  v`npm --version`"
           echo "yarn: v`yarn --version`"
-          echo "now:  v`now --version`"
           echo "vercel:  v`vercel --version`"
       - run: |
           echo "CI: ${CI}"
@@ -30,7 +29,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2-beta
         with:
-          node-version: '14'
+          node-version: '12'
       - uses: bahmutov/npm-install@v1
       - run: yarn run lint:js
       - run: yarn run lint:css
@@ -43,7 +42,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2-beta
         with:
-          node-version: '14'
+          node-version: '12'
       - uses: bahmutov/npm-install@v1
       - run: yarn run build
       - run: >
