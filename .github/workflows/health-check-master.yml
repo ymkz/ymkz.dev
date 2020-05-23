@@ -25,9 +25,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - run: echo "::set-output name=version::$(cat package.json | jq .volta.node)"
+        id: node-version
       - uses: actions/setup-node@v2-beta
         with:
-          node-version: ${{ cat package.json | jq .volta.node }}
+          node-version: $(cat package.json | jq .volta.node)"
       - uses: bahmutov/npm-install@master
       - run: yarn run lint:js
       - run: yarn run lint:css
