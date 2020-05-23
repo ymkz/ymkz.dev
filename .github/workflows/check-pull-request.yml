@@ -29,8 +29,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2-beta
         with:
-          node-version: '12'
-      - uses: bahmutov/npm-install@v1
+          node-version: cat package.json | jq .volta.node
+      - uses: bahmutov/npm-install@master
       - run: yarn run lint:js
       - run: yarn run lint:css
       - run: yarn run typecheck
@@ -42,18 +42,18 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2-beta
         with:
-          node-version: '12'
-      - uses: bahmutov/npm-install@v1
+          node-version: cat package.json | jq .volta.node
+      - uses: bahmutov/npm-install@master
       - run: yarn run build
       - run: >
-          now
+          vercel
           deploy
           --token ${{ secrets.ZEIT_TOKEN }}
           --no-clipboard
           --confirm
           > deployment-preview-url.txt
       - run: >
-          now
+          vercel
           alias
           --token ${{ secrets.ZEIT_TOKEN }}
           `cat deployment-preview-url.txt`
@@ -76,7 +76,7 @@ jobs:
           | jq -r ".id"
           > deployment-preview-id.txt
       - run: >
-          now
+          vercel
           remove
           --token ${{ secrets.ZEIT_TOKEN }}
           --yes

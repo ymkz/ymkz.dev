@@ -1,6 +1,7 @@
 on:
-  schedule:
-    - cron: '0 9,21 * * *' # Run this every day at 9am and 21pm
+  push:
+    branches:
+      - master
 env:
   CI: true
   TZ: Asia/Tokyo
@@ -12,20 +13,22 @@ jobs:
           echo "node: `node --version`"
           echo "npm:  v`npm --version`"
           echo "yarn: v`yarn --version`"
-          echo "now:  v`now --version`"
+          echo "vercel:  v`vercel --version`"
       - run: |
           echo "CI: ${CI}"
           echo "TZ: ${TZ}"
-          echo "IDENTIFIER: ${IDENTIFIER}"
       - run: date
       - run: echo "${GITHUB_CONTEXT}"
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-  github-notifier:
+  check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: SeanReece/pr-reporter-slack@v1
+      - uses: actions/setup-node@v2-beta
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          slack-webhook: ${{ secrets.SLACK_WEBHOOK }}
+          node-version: ${{ cat package.json | jq .volta.node }}
+      - uses: bahmutov/npm-install@master
+      - run: yarn run lint:js
+      - run: yarn run lint:css
+      - run: yarn run typecheck

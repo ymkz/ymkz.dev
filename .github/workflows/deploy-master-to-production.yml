@@ -1,7 +1,6 @@
 on:
-  push:
-    branches:
-      - master
+  schedule:
+    - cron: 0 0 * * 0 # Run at Sunday
 env:
   CI: true
   TZ: Asia/Tokyo
@@ -13,7 +12,7 @@ jobs:
           echo "node: `node --version`"
           echo "npm:  v`npm --version`"
           echo "yarn: v`yarn --version`"
-          echo "now:  v`now --version`"
+          echo "vercel:  v`vercel --version`"
       - run: |
           echo "CI: ${CI}"
           echo "TZ: ${TZ}"
@@ -21,16 +20,21 @@ jobs:
       - run: echo "${GITHUB_CONTEXT}"
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-  check:
+  deploy-production:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: echo "::set-output name=version::$(cat .node-version)"
-        id: node-version
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2-beta
         with:
-          node-version: ${{ steps.node-version.outputs.version }}
-      - uses: bahmutov/npm-install@v1
-      - run: yarn run lint:js
-      - run: yarn run lint:css
-      - run: yarn run typecheck
+          node-version: cat package.json | jq .volta.node
+      - uses: bahmutov/npm-install@master
+      - run: yarn run build
+      - run: >
+          now
+          deploy
+          --token $ZEIT_TOKEN
+          --no-clipboard
+          --confirm
+          --prod
+        env:
+          ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
