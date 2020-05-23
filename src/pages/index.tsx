@@ -132,6 +132,6 @@ const Index: NextPage<Props> = ({ posts }) => {
 export default Index
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = getPosts(require.context('../contents', true, /\.md$/))
+  const posts = getPosts(require.context('../../contents', true, /\.md$/))
   return { props: { posts } }
 }

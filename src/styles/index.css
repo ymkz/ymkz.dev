@@ -198,7 +198,7 @@ select {
   font-family: 'Montserrat', sans-serif;
 }
 
-.content {
+article {
   max-width: 720px;
   font-size: 18px;
   line-height: 1.5;
