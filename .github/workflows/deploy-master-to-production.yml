@@ -12,7 +12,7 @@ jobs:
           echo "node: `node --version`"
           echo "npm:  v`npm --version`"
           echo "yarn: v`yarn --version`"
-          echo "vercel:  v`vercel --version`"
+          echo "now:  v`now --version`"
       - run: |
           echo "CI: ${CI}"
           echo "TZ: ${TZ}"
@@ -30,7 +30,7 @@ jobs:
       - uses: bahmutov/npm-install@master
       - run: yarn run build
       - run: >
-          vercel
+          now
           deploy
           --token $ZEIT_TOKEN
           --no-clipboard

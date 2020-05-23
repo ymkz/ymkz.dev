@@ -13,7 +13,7 @@ jobs:
           echo "node: `node --version`"
           echo "npm:  v`npm --version`"
           echo "yarn: v`yarn --version`"
-          echo "vercel:  v`vercel --version`"
+          echo "now:  v`now --version`"
       - run: |
           echo "CI: ${CI}"
           echo "TZ: ${TZ}"
@@ -46,14 +46,14 @@ jobs:
       - uses: bahmutov/npm-install@master
       - run: yarn run build
       - run: >
-          vercel
+          now
           deploy
           --token ${{ secrets.ZEIT_TOKEN }}
           --no-clipboard
           --confirm
           > deployment-preview-url.txt
       - run: >
-          vercel
+          now
           alias
           --token ${{ secrets.ZEIT_TOKEN }}
           `cat deployment-preview-url.txt`
@@ -76,7 +76,7 @@ jobs:
           | jq -r ".id"
           > deployment-preview-id.txt
       - run: >
-          vercel
+          now
           remove
           --token ${{ secrets.ZEIT_TOKEN }}
           --yes

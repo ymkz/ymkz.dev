@@ -5,7 +5,6 @@ on:
 env:
   CI: true
   TZ: Asia/Tokyo
-  NODE_VERSION: $(cat package.json | jq .volta.node)
 jobs:
   dump:
     runs-on: ubuntu-latest
@@ -14,11 +13,10 @@ jobs:
           echo "node: `node --version`"
           echo "npm:  v`npm --version`"
           echo "yarn: v`yarn --version`"
-          echo "vercel:  v`vercel --version`"
+          echo "now:  v`now --version`"
       - run: |
           echo "CI: ${CI}"
           echo "TZ: ${TZ}"
-          echo "NODE_VERSION: ${NODE_VERSION}"
       - run: date
       - run: echo "${GITHUB_CONTEXT}"
         env:
