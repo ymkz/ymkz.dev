@@ -5,6 +5,7 @@ on:
 env:
   CI: true
   TZ: Asia/Tokyo
+  NODE_VERSION: $(cat package.json | jq .volta.node)
 jobs:
   dump:
     runs-on: ubuntu-latest
@@ -17,6 +18,7 @@ jobs:
       - run: |
           echo "CI: ${CI}"
           echo "TZ: ${TZ}"
+          echo "NODE_VERSION: ${NODE_VERSION}"
       - run: date
       - run: echo "${GITHUB_CONTEXT}"
         env:
@@ -25,11 +27,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: echo "::set-output name=version::$(cat package.json | jq .volta.node)"
-        id: node-version
       - uses: actions/setup-node@v2-beta
         with:
-          node-version: $(cat package.json | jq .volta.node)"
+          node-version: '12'
       - uses: bahmutov/npm-install@master
       - run: yarn run lint:js
       - run: yarn run lint:css

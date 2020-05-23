@@ -26,11 +26,11 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2-beta
         with:
-          node-version: cat package.json | jq .volta.node
+          node-version: '12'
       - uses: bahmutov/npm-install@master
       - run: yarn run build
       - run: >
-          now
+          vercel
           deploy
           --token $ZEIT_TOKEN
           --no-clipboard
