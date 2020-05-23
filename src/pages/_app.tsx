@@ -1,4 +1,4 @@
-import '../styles/index.css'
+import '../styles/index.scss'
 
 import { DefaultSeo } from 'next-seo'
 import { AppProps } from 'next/app'
