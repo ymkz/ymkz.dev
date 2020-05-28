@@ -40,7 +40,7 @@
     "@ymkz/prettier-config": "^1.1.0",
     "@ymkz/stylelint-config": "^1.1.0",
     "eslint": "^7.1.0",
-    "front-matter": "^4.0.0",
+    "front-matter": "^4.0.1",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.6",
     "npm-run-all": "^4.1.5",
