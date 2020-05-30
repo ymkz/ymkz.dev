@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Wind = () => {
+export const Wind = (): JSX.Element => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -53 512 512" height="24" width="24">
       <g>

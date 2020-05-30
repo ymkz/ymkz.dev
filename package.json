@@ -44,8 +44,7 @@
       "stylelint --fix"
     ],
     "*.{ts,tsx}": [
-      "eslint --fix",
-      "tsc --noEmit"
+      "eslint --fix"
     ]
   },
   "prettier": "@ymkz/prettier-config",

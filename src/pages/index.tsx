@@ -8,13 +8,10 @@ import { LinkedIn } from '../components/icon-linkedin'
 import { Twitter } from '../components/icon-twitter'
 import { Wind } from '../components/icon-wind'
 import { LinkExtern } from '../components/link-extern'
-import { getPosts } from '../utils/get-posts'
+import { getPosts, PostShape } from '../utils/get-posts'
 
 type Props = {
-  posts: {
-    frontmatter: Frontmatter
-    slug: string
-  }[]
+  posts: PostShape[]
 }
 
 const Index: NextPage<Props> = ({ posts }) => {
