@@ -1,3 +1,4 @@
+name: deploy-master-to-production
 on:
   schedule:
     - cron: 0 0 * * 0 # Run at Sunday

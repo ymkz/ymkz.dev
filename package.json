@@ -1,57 +1,94 @@
 {
-  "private": true,
   "name": "ymkz.co",
+  "version": "7.0.0",
+  "private": true,
   "description": "ymkz's website",
-  "license": "MIT",
-  "author": "ymkz <ymkzly@gmail.com> (https://github.com/ymkz)",
   "homepage": "https://ymkz.co",
+  "bugs": {
+    "url": "https://github.com/ymkz/ymkz.co/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ymkz/ymkz.co"
   },
-  "bugs": {
-    "url": "https://github.com/ymkz/ymkz.co/issues"
-  },
-  "version": "7.0.0",
+  "license": "MIT",
+  "author": "ymkz <ymkzly@gmail.com> (https://github.com/ymkz)",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
     "lint": "run-p lint:*",
-    "lint:css": "stylelint 'src/**/*.{js,ts,tsx,css}'",
-    "lint:js": "eslint 'src/**/*.{js,ts,tsx}'",
+    "lint:css": "stylelint 'src/**/*.{ts,tsx,css}'",
+    "lint:js": "eslint 'src/**/*.{ts,tsx}'",
     "start": "next start",
     "typecheck": "tsc --noEmit"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "post-checkout": "yarnhook",
+      "post-merge": "yarnhook",
+      "post-rewrite": "yarnhook"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.{md,yml,json,html}": [
+      "prettier --write"
+    ],
+    "*.{ts,tsx,css,scss}": [
+      "stylelint --fix"
+    ],
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "tsc --noEmit"
+    ]
+  },
+  "prettier": "@ymkz/prettier-config",
+  "eslintConfig": {
+    "extends": [
+      "@ymkz/eslint-config",
+      "@ymkz/eslint-config/react",
+      "@ymkz/eslint-config/import",
+      "@ymkz/eslint-config/typescript"
+    ],
+    "root": true
+  },
+  "stylelint": {
+    "extends": "@ymkz/stylelint-config"
+  },
   "dependencies": {
-    "next": "^9.4.2",
-    "next-seo": "^4.5.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-markdown": "^4.3.1"
+    "next": "9.4.4",
+    "next-seo": "4.5.0",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-markdown": "4.3.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.3.5",
-    "@commitlint/config-conventional": "^8.3.4",
-    "@secretlint/secretlint-rule-preset-recommend": "^2.0.0",
-    "@types/node": "^13.13.9",
-    "@types/react": "^16.9.34",
-    "@types/webpack-env": "^1.15.2",
-    "@ymkz/eslint-config": "^1.6.0",
-    "@ymkz/prettier-config": "^1.1.0",
-    "@ymkz/stylelint-config": "^1.1.0",
-    "eslint": "^7.1.0",
-    "front-matter": "^4.0.1",
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.6",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^2.0.5",
-    "prettier-package-json": "^2.1.3",
-    "raw-loader": "^4.0.1",
-    "sass": "^1.26.5",
-    "secretlint": "^2.0.0",
-    "stylelint": "^13.5.0",
-    "typescript": "^3.9.3",
-    "yarnhook": "^0.4.3"
+    "@commitlint/cli": "8.3.5",
+    "@commitlint/config-conventional": "8.3.4",
+    "@types/node": "14.0.6",
+    "@types/react": "16.9.34",
+    "@types/webpack-env": "1.15.2",
+    "@ymkz/eslint-config": "1.6.0",
+    "@ymkz/prettier-config": "1.1.0",
+    "@ymkz/stylelint-config": "1.1.0",
+    "eslint": "7.1.0",
+    "front-matter": "4.0.2",
+    "husky": "4.2.5",
+    "lint-staged": "10.2.6",
+    "npm-run-all": "4.1.5",
+    "prettier": "2.0.5",
+    "prettier-plugin-packagejson": "2.2.5",
+    "raw-loader": "4.0.1",
+    "sass": "1.26.5",
+    "stylelint": "13.5.0",
+    "typescript": "3.9.3",
+    "yarnhook": "0.4.3"
   },
   "engines": {
     "node": "12.x"

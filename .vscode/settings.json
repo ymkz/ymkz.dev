@@ -3,7 +3,7 @@
   "editor.codeActionsOnSave": { "source.fixAll": true },
   "editor.formatOnSave": true,
   "editor.rulers": [120],
-  "emmet.excludeLanguages": ["markdown", "javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "emmet.excludeLanguages": ["markdown", "javascript", "typescript", "typescriptreact"],
   "eslint.enable": true,
   "eslint.packageManager": "yarn",
   "less.validate": false,
@@ -11,7 +11,6 @@
   "stylelint.enable": true,
   "search.exclude": { "**/.next": true, "**/node_modules": true },
   "[javascript]": { "editor.formatOnSave": false },
-  "[javascriptreact]": { "editor.formatOnSave": false },
   "[typescript]": { "editor.formatOnSave": false },
   "[typescriptreact]": { "editor.formatOnSave": false }
 }

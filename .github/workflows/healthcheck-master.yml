@@ -1,3 +1,4 @@
+name: healthcheck-master
 on:
   push:
     branches:

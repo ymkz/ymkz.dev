@@ -1,0 +1,9 @@
+.github
+.next
+.vercel
+.vscode
+node_modules
+.editorconfig
+.gitignore
+LICENSE
+README.md

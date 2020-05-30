@@ -1,3 +1,4 @@
+name: check-pull-request
 on:
   pull_request:
     types: [synchronize, opened, reopened, closed]
