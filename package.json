@@ -74,7 +74,7 @@
     "@types/react": "16.9.35",
     "@types/webpack-env": "1.15.2",
     "@ymkz/eslint-config": "1.6.0",
-    "@ymkz/prettier-config": "1.1.0",
+    "@ymkz/prettier-config": "1.2.0",
     "@ymkz/stylelint-config": "1.1.0",
     "eslint": "7.1.0",
     "front-matter": "4.0.2",
@@ -85,7 +85,7 @@
     "prettier-plugin-packagejson": "2.2.5",
     "raw-loader": "4.0.1",
     "sass": "1.26.7",
-    "stylelint": "13.5.0",
+    "stylelint": "13.6.0",
     "typescript": "3.9.3",
     "yarnhook": "0.4.3"
   },
