@@ -86,7 +86,7 @@
     "raw-loader": "4.0.1",
     "sass": "1.26.7",
     "stylelint": "13.6.0",
-    "typescript": "3.9.3",
+    "typescript": "3.9.5",
     "yarnhook": "0.4.3"
   },
   "engines": {
