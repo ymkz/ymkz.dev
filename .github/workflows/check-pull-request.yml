@@ -46,6 +46,8 @@ jobs:
           node-version: '12'
       - uses: bahmutov/npm-install@master
       - run: yarn run build
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
       - run: >
           now
           deploy
