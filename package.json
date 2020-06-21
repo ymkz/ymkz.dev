@@ -61,6 +61,7 @@
     "extends": "@ymkz/stylelint-config"
   },
   "dependencies": {
+    "dayjs": "1.8.28",
     "next": "9.4.4",
     "next-seo": "4.5.0",
     "react": "16.13.1",

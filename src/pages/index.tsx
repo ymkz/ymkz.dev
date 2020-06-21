@@ -8,6 +8,7 @@ import { LinkedIn } from '../components/icon-linkedin'
 import { Twitter } from '../components/icon-twitter'
 import { Wind } from '../components/icon-wind'
 import { LinkExtern } from '../components/link-extern'
+import { formatDate } from '../utils/date'
 
 type Props = {
   contents: Content[]
@@ -115,8 +116,8 @@ const Index: NextPage<Props> = ({ contents }) => {
               <a className="post-index__link">{content.title}</a>
             </NextLink>
             <div className="post-index__date">
-              {content.publishedAt}に投稿
-              {content.updatedAt && <React.Fragment>（{content.updatedAt}に改稿）</React.Fragment>}
+              {formatDate(content.publishedAt)}に投稿
+              {content.updatedAt && <React.Fragment>（{formatDate(content.updatedAt)}に改稿）</React.Fragment>}
             </div>
           </li>
         ))}

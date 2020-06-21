@@ -2,6 +2,8 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 
+import { formatDate } from '../../utils/date'
+
 type Props = {
   content: Content
 }
@@ -11,8 +13,8 @@ const Post: NextPage<Props> = ({ content }) => {
     <article>
       <h1 className="title">{content.title}</h1>
       <div className="date">
-        {content.publishedAt}に投稿
-        {content.updatedAt && <React.Fragment>（{content.updatedAt}に改稿）</React.Fragment>}
+        {formatDate(content.publishedAt)}に投稿
+        {content.updatedAt && <React.Fragment>（{formatDate(content.updatedAt)}に改稿）</React.Fragment>}
       </div>
       <main>
         <ReactMarkdown source={content.body} />
