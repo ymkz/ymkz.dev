@@ -40,4 +40,5 @@ jobs:
           --confirm
           --prod
         env:
+          API_KEY: ${{ secrets.API_KEY }}
           ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}

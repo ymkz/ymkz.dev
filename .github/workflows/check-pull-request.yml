@@ -55,6 +55,8 @@ jobs:
           --no-clipboard
           --confirm
           > deployment-preview-url.txt
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
       - run: >
           now
           alias
