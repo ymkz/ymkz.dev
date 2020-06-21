@@ -54,9 +54,8 @@ jobs:
           --token ${{ secrets.ZEIT_TOKEN }}
           --no-clipboard
           --confirm
+          --build-env API_KEY=${{ secrets.API_KEY }}
           > deployment-preview-url.txt
-        env:
-          API_KEY: ${{ secrets.API_KEY }}
       - run: >
           now
           alias
