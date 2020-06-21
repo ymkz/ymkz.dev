@@ -37,14 +37,14 @@
     ]
   },
   "lint-staged": {
-    "*.{md,yml,json,html}": [
-      "prettier --write"
-    ],
-    "*.{ts,tsx,css,scss}": [
+    "*.css": [
       "stylelint --fix"
     ],
     "*.{ts,tsx}": [
       "eslint --fix"
+    ],
+    "*.{yml,json,html,md}": [
+      "prettier --write"
     ]
   },
   "prettier": "@ymkz/prettier-config",
