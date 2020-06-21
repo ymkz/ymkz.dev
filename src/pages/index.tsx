@@ -8,13 +8,12 @@ import { LinkedIn } from '../components/icon-linkedin'
 import { Twitter } from '../components/icon-twitter'
 import { Wind } from '../components/icon-wind'
 import { LinkExtern } from '../components/link-extern'
-import { getPosts, PostShape } from '../utils/get-posts'
 
 type Props = {
-  posts: PostShape[]
+  contents: Content[]
 }
 
-const Index: NextPage<Props> = ({ posts }) => {
+const Index: NextPage<Props> = ({ contents }) => {
   return (
     <React.Fragment>
       <h1 className="motto">
@@ -110,14 +109,14 @@ const Index: NextPage<Props> = ({ posts }) => {
       </ul>
       <p className="post-index__heading">Posts</p>
       <ul>
-        {posts.map((post) => (
-          <li key={post.slug}>
-            <NextLink href="/post/[slug]" as={`/post/${post.slug}`}>
-              <a className="post-index__link">{post.frontmatter.title}</a>
+        {contents.map((content) => (
+          <li key={content.slug}>
+            <NextLink href="/post/[slug]" as={`/post/${content.slug}`}>
+              <a className="post-index__link">{content.title}</a>
             </NextLink>
             <div className="post-index__date">
-              {post.frontmatter.createdAt}に投稿
-              {post.frontmatter.updatedAt && <React.Fragment>（{post.frontmatter.updatedAt}に改稿）</React.Fragment>}
+              {content.publishedAt}に投稿
+              {content.updatedAt && <React.Fragment>（{content.updatedAt}に改稿）</React.Fragment>}
             </div>
           </li>
         ))}
@@ -129,6 +128,9 @@ const Index: NextPage<Props> = ({ posts }) => {
 export default Index
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = getPosts(require.context('../../contents', true, /\.md$/))
-  return { props: { posts } }
+  const endpoint: RequestInfo = 'https://ymkz.microcms.io/api/v1/post'
+  const options: RequestInit = { headers: { 'X-API-KEY': process.env.API_KEY || '' } }
+  const response = await fetch(endpoint, options)
+  const { contents }: Contents = await response.json()
+  return { props: { contents } }
 }

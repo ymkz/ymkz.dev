@@ -1,40 +1,42 @@
-import fm from 'front-matter'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 
-import { getSlugs } from '../../utils/get-slug'
-
 type Props = {
-  frontmatter: Frontmatter
-  markdown: string
+  content: Content
 }
 
-const Post: NextPage<Props> = ({ frontmatter, markdown }) => {
+const Post: NextPage<Props> = ({ content }) => {
   return (
-    <React.Fragment>
-      <h1 className="title">{frontmatter.title}</h1>
+    <article>
+      <h1 className="title">{content.title}</h1>
       <div className="date">
-        {frontmatter.createdAt}に投稿
-        {frontmatter.updatedAt && <React.Fragment>（{frontmatter.updatedAt}に改稿）</React.Fragment>}
+        {content.publishedAt}に投稿
+        {content.updatedAt && <React.Fragment>（{content.updatedAt}に改稿）</React.Fragment>}
       </div>
-      <article>
-        <ReactMarkdown source={markdown} />
-      </article>
-    </React.Fragment>
+      <main>
+        <ReactMarkdown source={content.body} />
+      </main>
+    </article>
   )
 }
 
 export default Post
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const content = await import(`../../../contents/${params?.slug}.md`)
-  const { attributes: frontmatter, body: markdown } = fm(content.default)
-  return { props: { frontmatter, markdown } }
+export const getStaticPaths: GetStaticPaths = async () => {
+  const endpoint: RequestInfo = 'https://ymkz.microcms.io/api/v1/post'
+  const options: RequestInit = { headers: { 'X-API-KEY': process.env.API_KEY || '' } }
+  const response = await fetch(endpoint, options)
+  const json: Contents = await response.json()
+  const paths = json.contents.map((content) => `/post/${content.slug}`)
+  return { paths, fallback: false }
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const slugs = getSlugs(require.context('../../../contents', true, /\.md$/))
-  const paths = slugs.map((slug: string) => `/post/${slug}`)
-  return { paths, fallback: false }
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const endpoint: RequestInfo = 'https://ymkz.microcms.io/api/v1/post'
+  const options: RequestInit = { headers: { 'X-API-KEY': process.env.API_KEY || '' } }
+  const response = await fetch(endpoint, options)
+  const json: Contents = await response.json()
+  const content = json.contents.find((content) => content.slug === params?.slug)
+  return { props: { content }, unstable_revalidate: 1 }
 }
