@@ -12,9 +12,8 @@ jobs:
     steps:
       - run: |
           echo "node: `node --version`"
-          echo "npm:  v`npm --version`"
-          echo "yarn: v`yarn --version`"
-          echo "now:  v`now --version`"
+          echo "npm: v`npm --version`"
+          echo "now: v`now --version`"
       - run: |
           echo "CI: ${CI}"
           echo "TZ: ${TZ}"
@@ -32,9 +31,9 @@ jobs:
         with:
           node-version: '12'
       - uses: bahmutov/npm-install@master
-      - run: yarn run lint:js
-      - run: yarn run lint:css
-      - run: yarn run typecheck
+      - run: npm run lint:js
+      - run: npm run lint:css
+      - run: npm run typecheck
   deploy-preview:
     runs-on: ubuntu-latest
     if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize'
@@ -45,7 +44,7 @@ jobs:
         with:
           node-version: '12'
       - uses: bahmutov/npm-install@master
-      - run: yarn run build
+      - run: npm run build
         env:
           API_KEY: ${{ secrets.API_KEY }}
       - run: >

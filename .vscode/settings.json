@@ -5,11 +5,11 @@
   "editor.rulers": [120],
   "emmet.excludeLanguages": ["markdown", "javascript", "typescript", "typescriptreact"],
   "eslint.enable": true,
-  "eslint.packageManager": "yarn",
+  "eslint.packageManager": "npm",
   "less.validate": false,
   "scss.validate": false,
   "stylelint.enable": true,
-  "search.exclude": { "**/.next": true, "**/node_modules": true },
+  "search.exclude": { "**/.next": true, "**/node_modules": true, "**/*.code-search": true },
   "[javascript]": { "editor.formatOnSave": false },
   "[typescript]": { "editor.formatOnSave": false },
   "[typescriptreact]": { "editor.formatOnSave": false }
