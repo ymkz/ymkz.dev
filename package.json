@@ -76,7 +76,7 @@
     "@ymkz/eslint-config": "1.6.1",
     "@ymkz/prettier-config": "1.2.0",
     "@ymkz/stylelint-config": "1.1.0",
-    "eslint": "7.3.0",
+    "eslint": "7.3.1",
     "front-matter": "4.0.2",
     "husky": "4.2.5",
     "lint-staged": "10.2.11",
