@@ -37,7 +37,7 @@ const Post: NextPage<Props> = ({ content, preview }) => {
 export default Post
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const endpoint: RequestInfo = 'https://ymkz.microcms.io/api/v1/post'
+  const endpoint = 'https://ymkz.microcms.io/api/v1/post'
   const options: RequestInit = { headers: { 'X-API-KEY': process.env.API_KEY || '' } }
   const response = await fetch(endpoint, options)
   const json: Contents = await response.json()
@@ -47,12 +47,18 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params, preview, previewData }) => {
   if (preview) {
-    return { props: { preview, content: previewData.content } }
+    const { id, draftKey } = previewData
+    const endpoint = `https://ymkz.microcms.io/api/v1/post/${id}${!draftKey ? `?draftKey=${draftKey}` : ''}`
+    const options: RequestInit = { headers: { 'X-API-KEY': process.env.API_KEY || '' } }
+    const response = await fetch(endpoint, options)
+    const content: Content = await response.json()
+    return { props: { preview, content } }
+  } else {
+    const endpoint = 'https://ymkz.microcms.io/api/v1/post'
+    const options: RequestInit = { headers: { 'X-API-KEY': process.env.API_KEY || '' } }
+    const response = await fetch(endpoint, options)
+    const json: Contents = await response.json()
+    const content = json.contents.find((content) => content.slug === params?.slug)
+    return { props: { content }, unstable_revalidate: 1 }
   }
-  const endpoint: RequestInfo = 'https://ymkz.microcms.io/api/v1/post'
-  const options: RequestInit = { headers: { 'X-API-KEY': process.env.API_KEY || '' } }
-  const response = await fetch(endpoint, options)
-  const json: Contents = await response.json()
-  const content = json.contents.find((content) => content.slug === params?.slug)
-  return { props: { content }, unstable_revalidate: 1 }
 }
