@@ -6,11 +6,22 @@ import { formatDate } from '../../utils/date'
 
 type Props = {
   content: Content
+  preview: boolean
 }
 
-const Post: NextPage<Props> = ({ content }) => {
+const Post: NextPage<Props> = ({ content, preview }) => {
+  const handleClear = async () => {
+    await fetch('/api/clear')
+  }
+
   return (
     <article>
+      {preview && (
+        <React.Fragment>
+          <span>Preview Mode Enabled</span>
+          <button onClick={handleClear}>Clear preview cookie</button>
+        </React.Fragment>
+      )}
       <h1 className="title">{content.title}</h1>
       <div className="date">
         {formatDate(content.publishedAt)}に投稿
@@ -34,7 +45,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: false }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({ params, preview, previewData }) => {
+  if (preview) {
+    return { props: { preview, content: previewData.content } }
+  }
   const endpoint: RequestInfo = 'https://ymkz.microcms.io/api/v1/post'
   const options: RequestInit = { headers: { 'X-API-KEY': process.env.API_KEY || '' } }
   const response = await fetch(endpoint, options)
