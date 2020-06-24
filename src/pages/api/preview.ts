@@ -9,13 +9,13 @@ const preview = async (request: NextApiRequest, response: NextApiResponse): Prom
   const options: RequestInit = { headers: { 'X-API-KEY': process.env.API_KEY || '' } }
 
   const result = await fetch(endpoint, options)
-  const content = await result.json()
+  const content: Content = await result.json()
 
   if (!content) {
-    return response.status(401).json({ message: 'Invalid id' })
+    return response.status(401).json({ message: 'Invalid ID' })
   }
 
-  response.setPreviewData({ slug: content.slug, draftKey: request.query.draftKey })
+  response.setPreviewData({ content: content, draftKey: request.query.draftKey })
   response.writeHead(307, { Location: `/post/${content.slug}` })
   response.end('Preview mode enabled')
 }

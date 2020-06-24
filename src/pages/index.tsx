@@ -133,5 +133,5 @@ export const getStaticProps: GetStaticProps = async () => {
   const options: RequestInit = { headers: { 'X-API-KEY': process.env.API_KEY || '' } }
   const response = await fetch(endpoint, options)
   const { contents }: Contents = await response.json()
-  return { props: { contents } }
+  return { props: { contents }, unstable_revalidate: true }
 }
