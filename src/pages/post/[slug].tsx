@@ -6,15 +6,9 @@ import { formatDate } from '../../utils/date'
 
 type Props = {
   content: Content
-  preview: boolean
-  previewData: { content: Content; draftKey: string }
 }
 
-const Post: NextPage<Props> = ({ content, preview, previewData }) => {
-  if (preview) {
-    console.log(previewData)
-  }
-
+const Post: NextPage<Props> = ({ content }) => {
   return (
     <article>
       <h1 className="title">{content.title}</h1>
@@ -40,11 +34,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: false }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params, preview, previewData }) => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const endpoint: RequestInfo = 'https://ymkz.microcms.io/api/v1/post'
   const options: RequestInit = { headers: { 'X-API-KEY': process.env.API_KEY || '' } }
   const response = await fetch(endpoint, options)
   const json: Contents = await response.json()
   const content = json.contents.find((content) => content.slug === params?.slug)
-  return { props: { content, preview, previewData }, unstable_revalidate: 1 }
+  return { props: { content }, unstable_revalidate: 1 }
 }
