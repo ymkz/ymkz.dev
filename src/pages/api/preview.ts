@@ -5,7 +5,7 @@ const preview = async (request: NextApiRequest, response: NextApiResponse): Prom
     return response.status(404).end()
   }
 
-  const endpoint: RequestInfo = `https://ymkz.microcms.io/api/v1/post/${request.query.id}?fields=id&draftKey=${request.query.draftKey}`
+  const endpoint: RequestInfo = `https://ymkz.microcms.io/api/v1/post/${request.query.id}?draftKey=${request.query.draftKey}`
   const options: RequestInit = { headers: { 'X-API-KEY': process.env.API_KEY || '' } }
 
   const result = await fetch(endpoint, options)
