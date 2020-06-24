@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+import { default as Router } from 'next/router'
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 
@@ -10,17 +11,17 @@ type Props = {
 }
 
 const Post: NextPage<Props> = ({ content, preview }) => {
-  const handleClear = async () => {
+  const handleClearCookie = async () => {
     await fetch('/api/clear')
+    Router.replace(`/post/${content.slug}`)
   }
 
   return (
     <article>
       {preview && (
-        <React.Fragment>
-          <span>Preview Mode Enabled</span>
-          <button onClick={handleClear}>Clear preview cookie</button>
-        </React.Fragment>
+        <button className="preview-mode" onClick={handleClearCookie}>
+          PREVIEW MODE
+        </button>
       )}
       <h1 className="title">{content.title}</h1>
       <div className="date">
