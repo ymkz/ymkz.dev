@@ -1,0 +1,26 @@
+name: remove-stale-deployment
+on:
+  schedule:
+    - cron: 0 0 * * 0 # Run at Sunday
+env:
+  CI: true
+  TZ: Asia/Tokyo
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "node: `node --version`"
+          echo "npm: v`npm --version`"
+          echo "now: v`now --version`"
+      - run: |
+          echo "CI: ${CI}"
+          echo "TZ: ${TZ}"
+      - run: date
+      - run: echo "${GITHUB_CONTEXT}"
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: now remove ymkz.co --safe --yes

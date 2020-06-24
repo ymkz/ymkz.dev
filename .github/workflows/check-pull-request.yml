@@ -1,11 +1,8 @@
 name: check-pull-request
-on:
-  pull_request:
-    types: [synchronize, opened, reopened, closed]
+on: pull_request
 env:
   CI: true
   TZ: Asia/Tokyo
-  IDENTIFIER: ymkzco-pr-${{ github.event.number }}
 jobs:
   dump:
     runs-on: ubuntu-latest
@@ -17,14 +14,12 @@ jobs:
       - run: |
           echo "CI: ${CI}"
           echo "TZ: ${TZ}"
-          echo "IDENTIFIER: ${IDENTIFIER}"
       - run: date
       - run: echo "${GITHUB_CONTEXT}"
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
   check:
     runs-on: ubuntu-latest
-    if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize'
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2-beta
@@ -34,10 +29,8 @@ jobs:
       - run: npm run lint:js
       - run: npm run lint:css
       - run: npm run typecheck
-  deploy-preview:
+  build:
     runs-on: ubuntu-latest
-    if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize'
-    needs: check
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2-beta
@@ -47,40 +40,3 @@ jobs:
       - run: npm run build
         env:
           API_KEY: ${{ secrets.API_KEY }}
-      - run: >
-          now
-          deploy
-          --token ${{ secrets.ZEIT_TOKEN }}
-          --no-clipboard
-          --confirm
-          --build-env API_KEY=${{ secrets.API_KEY }}
-          > deployment-preview-url.txt
-      - run: >
-          now
-          alias
-          --token ${{ secrets.ZEIT_TOKEN }}
-          `cat deployment-preview-url.txt`
-          ${{ env.IDENTIFIER }}.now.sh
-      - run: >
-          curl
-          -X POST
-          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}"
-          -d "{ \"body\": \"Ready to preview deploy\n- Preview: https://${{ env.IDENTIFIER }}.now.sh\" }"
-          ${{ github.event.pull_request.comments_url }}
-        if: github.event.action == 'opened'
-  remove-preview:
-    runs-on: ubuntu-latest
-    if: github.event.action == 'closed'
-    steps:
-      - run: >
-          curl
-          "https://api.zeit.co/v11/now/deployments/get?url=${{ env.IDENTIFIER }}.now.sh"
-          -H "Authorization: Bearer ${{ secrets.ZEIT_TOKEN }}"
-          | jq -r ".id"
-          > deployment-preview-id.txt
-      - run: >
-          now
-          remove
-          --token ${{ secrets.ZEIT_TOKEN }}
-          --yes
-          `cat deployment-preview-id.txt`
