@@ -12,7 +12,7 @@ jobs:
       - run: |
           echo "node: `node --version`"
           echo "npm: v`npm --version`"
-          echo "now: v`now --version`"
+          echo "vercel: v`vercel --version`"
       - run: |
           echo "CI: ${CI}"
           echo "TZ: ${TZ}"
@@ -23,4 +23,4 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: now remove ymkz.co --safe --yes
+      - run: vercel remove ymkz.co --safe --yes
