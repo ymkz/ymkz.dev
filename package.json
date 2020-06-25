@@ -72,7 +72,7 @@
     "@commitlint/cli": "9.0.1",
     "@commitlint/config-conventional": "9.0.1",
     "@types/node": "14.0.14",
-    "@types/react": "16.9.38",
+    "@types/react": "16.9.41",
     "@ymkz/eslint-config": "1.6.1",
     "@ymkz/prettier-config": "1.2.0",
     "@ymkz/stylelint-config": "1.1.0",
