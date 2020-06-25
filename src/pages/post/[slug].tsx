@@ -49,7 +49,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params, preview, previewData }) => {
   if (preview) {
     const { id, draftKey } = previewData
-    const endpoint = `https://ymkz.microcms.io/api/v1/post/${id}${!draftKey ? `?draftKey=${draftKey}` : ''}`
+    const endpoint = `https://ymkz.microcms.io/api/v1/post/${id}${
+      draftKey !== undefined ? `?draftKey=${draftKey}` : ''
+    }`
     const options: RequestInit = { headers: { 'X-API-KEY': process.env.API_KEY || '' } }
     const response = await fetch(endpoint, options)
     const content: Content = await response.json()
