@@ -3,6 +3,7 @@ import { default as Router } from 'next/router'
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 
+import { PreviewMode } from '../../components/preview-mode'
 import { formatDate } from '../../utils/date'
 
 type Props = {
@@ -18,11 +19,7 @@ const Post: NextPage<Props> = ({ content, preview }) => {
 
   return (
     <article>
-      {preview && (
-        <button className="preview-mode" onClick={handleClearCookie}>
-          PREVIEW MODE
-        </button>
-      )}
+      <PreviewMode preview={preview} slug={content.slug} />
       <h1 className="title">{content.title}</h1>
       <div className="date">
         {formatDate(content.publishedAt)}に投稿
@@ -49,9 +46,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params, preview, previewData }) => {
   if (preview) {
     const { id, draftKey } = previewData
-    const endpoint = `https://ymkz.microcms.io/api/v1/post/${id}${
-      draftKey !== undefined ? `?draftKey=${draftKey}` : ''
-    }`
+    const endpoint = `https://ymkz.microcms.io/api/v1/post/${id}${!draftKey ? `?draftKey=${draftKey}` : ''}`
     const options: RequestInit = { headers: { 'X-API-KEY': process.env.API_KEY || '' } }
     const response = await fetch(endpoint, options)
     const content: Content = await response.json()

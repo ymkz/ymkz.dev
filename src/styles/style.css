@@ -147,17 +147,3 @@ article {
   font-size: 28px;
   font-family: 'Montserrat', sans-serif;
 }
-
-.preview-mode {
-  position: fixed;
-  top: 24px;
-  left: 24px;
-  padding: 4px 8px;
-  color: #eceff1;
-  font-size: 14px;
-  font-family: 'Montserrat', sans-serif;
-  background-color: #263238;
-  border: 0;
-  outline: 0;
-  cursor: pointer;
-}
