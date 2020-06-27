@@ -4,20 +4,6 @@ env:
   CI: true
   TZ: Asia/Tokyo
 jobs:
-  dump:
-    runs-on: ubuntu-latest
-    steps:
-      - run: |
-          echo "node: `node --version`"
-          echo "npm: v`npm --version`"
-          echo "vercel: v`vercel --version`"
-      - run: |
-          echo "CI: ${CI}"
-          echo "TZ: ${TZ}"
-      - run: date
-      - run: echo "${GITHUB_CONTEXT}"
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
   check:
     runs-on: ubuntu-latest
     steps:
@@ -26,8 +12,7 @@ jobs:
         with:
           node-version: '12'
       - uses: bahmutov/npm-install@master
-      - run: npm run lint:js
-      - run: npm run lint:css
+      - run: npm run lint
       - run: npm run typecheck
   build:
     runs-on: ubuntu-latest
