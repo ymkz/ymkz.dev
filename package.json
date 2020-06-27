@@ -16,9 +16,8 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "lint": "run-p lint:*",
-    "lint:css": "stylelint 'src/**/*.{ts,tsx,css}'",
-    "lint:js": "eslint 'src/**/*.{ts,tsx}'",
+    "format": "prettier --write .",
+    "lint": "prettier --check .",
     "start": "next start",
     "typecheck": "tsc --noEmit"
   },
@@ -37,28 +36,14 @@
     ]
   },
   "lint-staged": {
-    "*.css": [
-      "stylelint --fix"
-    ],
-    "*.{ts,tsx}": [
-      "eslint --fix"
-    ],
-    "*.{yml,json,html,md}": [
+    "*.{ts,tsx,css,yml,json,html,md}": [
       "prettier --write"
     ]
   },
-  "prettier": "@ymkz/prettier-config",
-  "eslintConfig": {
-    "extends": [
-      "@ymkz/eslint-config",
-      "@ymkz/eslint-config/react",
-      "@ymkz/eslint-config/import",
-      "@ymkz/eslint-config/typescript"
-    ],
-    "root": true
-  },
-  "stylelint": {
-    "extends": "@ymkz/stylelint-config"
+  "prettier": {
+    "printWidth": 120,
+    "semi": false,
+    "singleQuote": true
   },
   "dependencies": {
     "dayjs": "1.8.28",
@@ -73,16 +58,12 @@
     "@commitlint/config-conventional": "9.0.1",
     "@types/node": "14.0.14",
     "@types/react": "16.9.41",
-    "@ymkz/eslint-config": "1.6.1",
-    "@ymkz/prettier-config": "1.2.0",
-    "@ymkz/stylelint-config": "1.1.0",
-    "eslint": "7.3.1",
     "husky": "4.2.5",
     "lint-staged": "10.2.11",
     "npm-run-all": "4.1.5",
     "prettier": "2.0.5",
     "prettier-plugin-packagejson": "2.2.5",
-    "stylelint": "13.6.1",
+    "prettier-plugin-sorted": "2.0.0",
     "typescript": "3.9.5",
     "yarnhook": "0.4.3"
   },
