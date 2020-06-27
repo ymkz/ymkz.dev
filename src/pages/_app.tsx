@@ -1,7 +1,7 @@
 import '../styles/reset.css'
 import '../styles/style.css'
 
-import { setPragma } from 'goober'
+import { glob, setPragma } from 'goober'
 import { DefaultSeo } from 'next-seo'
 import { AppProps } from 'next/app'
 import React from 'react'

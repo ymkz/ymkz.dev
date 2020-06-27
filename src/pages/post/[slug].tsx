@@ -1,10 +1,10 @@
+import { styled } from 'goober'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
-import { default as Router } from 'next/router'
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 
 import { PreviewMode } from '../../components/preview-mode'
-import { formatDate } from '../../utils/date'
+import { PublishedOrUpdated } from '../../components/published-or-updated'
 
 type Props = {
   content: Content
@@ -12,23 +12,17 @@ type Props = {
 }
 
 const Post: NextPage<Props> = ({ content, preview }) => {
-  const handleClearCookie = async () => {
-    await fetch('/api/clear')
-    Router.replace(`/post/${content.slug}`)
-  }
-
   return (
-    <article>
+    <Container>
       <PreviewMode preview={preview} slug={content.slug} />
-      <h1 className="title">{content.title}</h1>
-      <div className="date">
-        {formatDate(content.publishedAt)}に投稿
-        {content.updatedAt && <React.Fragment>（{formatDate(content.updatedAt)}に改稿）</React.Fragment>}
-      </div>
+      <Title>{content.title}</Title>
+      <Date>
+        <PublishedOrUpdated publishedAt={content.publishedAt} updatedAt={content.updatedAt} />
+      </Date>
       <main>
         <ReactMarkdown source={content.body} />
       </main>
-    </article>
+    </Container>
   )
 }
 
@@ -60,3 +54,24 @@ export const getStaticProps: GetStaticProps = async ({ params, preview, previewD
     return { props: { content }, unstable_revalidate: 1 }
   }
 }
+
+const Container = styled('article')`
+  max-width: 1024px;
+  font-size: 18px;
+  line-height: 1.5;
+`
+
+const Title = styled('h1')`
+  font-weight: 800;
+  font-size: 48px;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.25;
+`
+
+const Date = styled('div')`
+  margin-top: 12px;
+  margin-bottom: 24px;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+`
