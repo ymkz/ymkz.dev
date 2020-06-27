@@ -1,5 +1,5 @@
 {
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.rulers": [120],
   "emmet.excludeLanguages": ["markdown", "typescript", "typescriptreact"],
   "search.exclude": { "**/.next": true, "**/node_modules": true, "**/*.code-search": true }
