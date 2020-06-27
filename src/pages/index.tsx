@@ -1,15 +1,14 @@
 import { GetStaticProps, NextPage } from 'next'
-import NextLink from 'next/link'
 import React from 'react'
 
 import { Facebook } from '../components/icon-facebook'
 import { GitHub } from '../components/icon-github'
 import { LinkedIn } from '../components/icon-linkedin'
 import { Twitter } from '../components/icon-twitter'
-import { Wind } from '../components/icon-wind'
 import { LinkExtern } from '../components/link-extern'
 import { PostList } from '../components/post-list'
-import { formatDate } from '../utils/date'
+import { MyMotto } from '../components/my-motto'
+import { MyTotem } from '../components/my-totem'
 
 type Props = {
   contents: Content[]
@@ -18,18 +17,8 @@ type Props = {
 const Index: NextPage<Props> = ({ contents }) => {
   return (
     <React.Fragment>
-      <h1 className="motto">
-        Catch
-        <br />
-        the
-        <br />
-        wind.
-      </h1>
-      <div className="totem">
-        <span>[&nbsp;</span>
-        <Wind />
-        <span>&nbsp;]</span>
-      </div>
+      <MyMotto />
+      <MyTotem />
       <p className="paragraph">
         I&apos;m Kazuya Yamashita. a.k.a ymkz.
         <br />
@@ -98,7 +87,7 @@ const Index: NextPage<Props> = ({ contents }) => {
         </li>
       </ul>
       <p className="paragraph">
-        I Like Padding, Sci-Fi, FPS Games.
+        I Like Sleeping, Walking, Padding, Sci-Fi, FPS Games.
         <br />
         Play games seriously with fun.
       </p>
@@ -108,6 +97,7 @@ const Index: NextPage<Props> = ({ contents }) => {
         <li className="list-column__item">CS:GO</li>
         <li className="list-column__item">Overwatch</li>
         <li className="list-column__item">PUBG</li>
+        <li className="list-column__item">VALORANT</li>
       </ul>
       <PostList contents={contents} />
     </React.Fragment>

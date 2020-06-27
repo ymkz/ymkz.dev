@@ -5,27 +5,6 @@ body {
   background-size: calc(10 * 1.5px) calc(10 * 1.5px);
 }
 
-.motto {
-  margin-bottom: 48px;
-  font-weight: 800;
-  font-size: 64px;
-  font-family: 'Montserrat', sans-serif;
-  line-height: 1.15;
-}
-
-.totem {
-  display: flex;
-  flex-flow: row;
-  align-items: center;
-  margin-bottom: 48px;
-  font-weight: 400;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.totem > *:not(:last-child) {
-  margin-right: 4px;
-}
-
 .paragraph {
   margin-bottom: 16px;
   font-size: 18px;
