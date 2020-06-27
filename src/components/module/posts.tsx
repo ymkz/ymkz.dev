@@ -1,14 +1,14 @@
-import { styled } from 'goober'
+import { css, styled } from 'goober'
 import NextLink from 'next/link'
 import React from 'react'
 
-import { PublishedOrUpdated } from './published-or-updated'
+import { PublishedOrUpdated } from '../atomic/published-or-updated'
 
 type Props = {
   contents: Content[]
 }
 
-export const PostList = ({ contents }: Props) => {
+export const Posts = ({ contents }: Props) => {
   return (
     <React.Fragment>
       <Heading>Posts</Heading>
@@ -16,7 +16,7 @@ export const PostList = ({ contents }: Props) => {
         {contents.map((content) => (
           <li key={content.slug}>
             <NextLink href="/post/[slug]" as={`/post/${content.slug}`}>
-              <Title>{content.title}</Title>
+              <a className={Title}>{content.title}</a>
             </NextLink>
             <Date>
               <PublishedOrUpdated publishedAt={content.publishedAt} updatedAt={content.updatedAt} />
@@ -36,7 +36,7 @@ const Heading = styled('div')`
   font-family: 'Montserrat', sans-serif;
 `
 
-const Title = styled('a')`
+const Title = css`
   color: currentColor;
   cursor: pointer;
   font-weight: 800;

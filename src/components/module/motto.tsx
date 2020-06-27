@@ -1,7 +1,7 @@
 import { styled } from 'goober'
 import React from 'react'
 
-export const MyMotto = () => {
+export const Motto = () => {
   return (
     <Container>
       Catch

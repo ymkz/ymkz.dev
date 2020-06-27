@@ -1,5 +1,6 @@
 import React from 'react'
-import { formatDate } from '../utils/date'
+
+import { formatDate } from '../../utils/date'
 
 type Props = {
   publishedAt: Content['publishedAt']

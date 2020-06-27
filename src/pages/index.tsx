@@ -1,14 +1,13 @@
 import { GetStaticProps, NextPage } from 'next'
 import React from 'react'
 
-import { Facebook } from '../components/icon-facebook'
-import { GitHub } from '../components/icon-github'
-import { LinkedIn } from '../components/icon-linkedin'
-import { Twitter } from '../components/icon-twitter'
-import { LinkExtern } from '../components/link-extern'
-import { PostList } from '../components/post-list'
-import { MyMotto } from '../components/my-motto'
-import { MyTotem } from '../components/my-totem'
+import { Like } from '../components/module/like'
+import { Motto } from '../components/module/motto'
+import { Posts } from '../components/module/posts'
+import { Profile } from '../components/module/profile'
+import { Social } from '../components/module/social'
+import { Study } from '../components/module/study'
+import { Totem } from '../components/module/totem'
 
 type Props = {
   contents: Content[]
@@ -17,89 +16,13 @@ type Props = {
 const Index: NextPage<Props> = ({ contents }) => {
   return (
     <React.Fragment>
-      <MyMotto />
-      <MyTotem />
-      <p className="paragraph">
-        I&apos;m Kazuya Yamashita. a.k.a ymkz.
-        <br />
-        24y/o, based in Tokyo, Japan.
-        <br />
-        Working as a frontend engineer.
-      </p>
-      <ul className="list-row">
-        <li className="list-row__item">React</li>
-        <li className="list-row__item">TypeScript</li>
-        <li className="list-row__item">Node.js</li>
-        <li className="list-row__item">Next.js</li>
-        <li className="list-row__item">React Native</li>
-        <li className="list-row__item">Redux</li>
-        <li className="list-row__item">Webpack</li>
-        <li className="list-row__item">HTML5</li>
-        <li className="list-row__item">CSS3</li>
-      </ul>
-      <p className="paragraph">
-        Majored in computer science, studied human-computer interaction with face/eye tracking.
-        <br />
-        Master of Engineering.
-      </p>
-      <ul className="list-column">
-        <li className="list-column__item">Shimane University</li>
-        <li className="list-column__item">Bachelor: 2014.4 - 2018.3</li>
-        <li className="list-column__item">Master: 2018.4 - 2020.3</li>
-      </ul>
-      <p className="paragraph">
-        Social account is here, get in touch with me.
-        <br />
-        Twitter DM is open.
-      </p>
-      <ul className="list-row">
-        <li className="list-row__badge">
-          <div className="list-row__badge--icon">
-            <Twitter />
-          </div>
-          <LinkExtern className="anchor" href="https://twitter.com/ymkzly">
-            Twitter
-          </LinkExtern>
-        </li>
-        <li className="list-row__badge">
-          <div className="list-row__badge--icon">
-            <Facebook />
-          </div>
-          <LinkExtern className="anchor" href="https://facebook.com/ymkzly">
-            Facebook
-          </LinkExtern>
-        </li>
-        <li className="list-row__badge">
-          <div className="list-row__badge--icon">
-            <GitHub />
-          </div>
-          <LinkExtern className="anchor" href="https://github.com/ymkz">
-            GitHub
-          </LinkExtern>
-        </li>
-        <li className="list-row__badge">
-          <div className="list-row__badge--icon">
-            <LinkedIn />
-          </div>
-          <LinkExtern className="anchor" href="https://linkedin.com/in/ymkz">
-            LinkedIn
-          </LinkExtern>
-        </li>
-      </ul>
-      <p className="paragraph">
-        I Like Sleeping, Walking, Padding, Sci-Fi, FPS Games.
-        <br />
-        Play games seriously with fun.
-      </p>
-      <ul className="list-column">
-        <li className="list-column__item">ARIA(天野こずえ)</li>
-        <li className="list-column__item">ハーモニー(伊藤計劃)</li>
-        <li className="list-column__item">CS:GO</li>
-        <li className="list-column__item">Overwatch</li>
-        <li className="list-column__item">PUBG</li>
-        <li className="list-column__item">VALORANT</li>
-      </ul>
-      <PostList contents={contents} />
+      <Motto />
+      <Totem />
+      <Profile />
+      <Study />
+      <Social />
+      <Like />
+      <Posts contents={contents} />
     </React.Fragment>
   )
 }

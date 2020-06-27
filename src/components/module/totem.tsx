@@ -1,9 +1,9 @@
 import { styled } from 'goober'
 import React from 'react'
 
-import { Wind } from './icon-wind'
+import { Wind } from '../atomic/icon'
 
-export const MyTotem = () => {
+export const Totem = () => {
   return (
     <Container>
       <span>[&nbsp;</span>
@@ -20,7 +20,7 @@ const Container = styled('div')`
   margin-bottom: 48px;
   font-weight: 400;
   font-family: 'Montserrat', sans-serif;
-  & > *:not(:last-child) {
+  > *:not(:last-child) {
     margin-right: 4px;
   }
 `

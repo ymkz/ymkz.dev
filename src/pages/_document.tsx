@@ -2,7 +2,7 @@ import NextDocument, { Head, Html, Main, NextScript } from 'next/document'
 import React from 'react'
 
 class Document extends NextDocument {
-  render(): JSX.Element {
+  render() {
     return (
       <Html lang="ja">
         <Head>

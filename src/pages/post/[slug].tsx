@@ -1,10 +1,11 @@
 import { styled } from 'goober'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+import { DefaultSeo } from 'next-seo'
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 
-import { PreviewMode } from '../../components/preview-mode'
-import { PublishedOrUpdated } from '../../components/published-or-updated'
+import { PreviewMode } from '../../components/element/preview-mode'
+import { PublishedOrUpdated } from '../../components/atomic/published-or-updated'
 
 type Props = {
   content: Content
@@ -13,16 +14,19 @@ type Props = {
 
 const Post: NextPage<Props> = ({ content, preview }) => {
   return (
-    <Container>
-      <PreviewMode preview={preview} slug={content.slug} />
-      <Title>{content.title}</Title>
-      <Date>
-        <PublishedOrUpdated publishedAt={content.publishedAt} updatedAt={content.updatedAt} />
-      </Date>
-      <main>
-        <ReactMarkdown source={content.body} />
-      </main>
-    </Container>
+    <React.Fragment>
+      <DefaultSeo title={content.title} />
+      <Container>
+        <PreviewMode preview={preview} slug={content.slug} />
+        <Title>{content.title}</Title>
+        <Date>
+          <PublishedOrUpdated publishedAt={content.publishedAt} updatedAt={content.updatedAt} />
+        </Date>
+        <main>
+          <ReactMarkdown source={content.body} />
+        </main>
+      </Container>
+    </React.Fragment>
   )
 }
 
