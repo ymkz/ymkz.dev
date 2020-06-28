@@ -6,7 +6,7 @@ env:
   CI: true
   TZ: Asia/Tokyo
 jobs:
-  build:
+  remove:
     runs-on: ubuntu-latest
     steps:
-      - run: vercel remove ymkz.co --safe --yes
+      - run: vercel remove ymkz.co --safe --yes --token ${{ secrets.VERCEL_TOKEN }}
