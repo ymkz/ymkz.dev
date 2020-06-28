@@ -1,19 +1,12 @@
 import { NextPage } from 'next'
 import React from 'react'
-import { styled } from 'goober'
 
 const NotFound: NextPage = () => {
   return (
     <React.Fragment>
-      <StatusCode>404</StatusCode>
+      <div className="font-weight-800 font-size-128 montserrat">404</div>
     </React.Fragment>
   )
 }
 
 export default NotFound
-
-const StatusCode = styled('div')`
-  font-weight: 800;
-  font-size: 128px;
-  font-family: 'Montserrat', sans-serif;
-`

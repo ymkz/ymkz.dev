@@ -1,11 +1,10 @@
-import { styled } from 'goober'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import { DefaultSeo } from 'next-seo'
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 
-import { PreviewMode } from '../../components/element/preview-mode'
-import { PublishedOrUpdated } from '../../components/atomic/published-or-updated'
+import { Preview } from '../../components/preview'
+import { formatDate } from '../../utils/date'
 
 type Props = {
   content: Content
@@ -16,16 +15,17 @@ const Post: NextPage<Props> = ({ content, preview }) => {
   return (
     <React.Fragment>
       <DefaultSeo title={content.title} />
-      <Container>
-        <PreviewMode preview={preview} slug={content.slug} />
-        <Title>{content.title}</Title>
-        <Date>
-          <PublishedOrUpdated publishedAt={content.publishedAt} updatedAt={content.updatedAt} />
-        </Date>
-        <main>
+      <article className="max-width-1024 font-size-18 line-height-1p5">
+        <Preview preview={preview} slug={content.slug} />
+        <h1 className="font-weight-800 font-size-48 montserrat line-height-1">{content.title}</h1>
+        <p className="font-size-14 font-weight-400 montserrat margin-top-16">
+          {formatDate(content.publishedAt)}に投稿&nbsp;
+          {content.updatedAt && <React.Fragment>（{formatDate(content.updatedAt)}に改稿）</React.Fragment>}
+        </p>
+        <main className="margin-top-16">
           <ReactMarkdown source={content.body} />
         </main>
-      </Container>
+      </article>
     </React.Fragment>
   )
 }
@@ -58,24 +58,3 @@ export const getStaticProps: GetStaticProps = async ({ params, preview, previewD
     return { props: { content }, unstable_revalidate: 1 }
   }
 }
-
-const Container = styled('article')`
-  max-width: 1024px;
-  font-size: 18px;
-  line-height: 1.5;
-`
-
-const Title = styled('h1')`
-  font-weight: 800;
-  font-size: 48px;
-  font-family: 'Montserrat', sans-serif;
-  line-height: 1.25;
-`
-
-const Date = styled('div')`
-  margin-top: 12px;
-  margin-bottom: 24px;
-  font-weight: 400;
-  font-size: 14px;
-  font-family: 'Montserrat', sans-serif;
-`

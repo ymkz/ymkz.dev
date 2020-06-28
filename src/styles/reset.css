@@ -83,3 +83,10 @@ textarea,
 select {
   font: inherit;
 }
+
+body {
+  padding: 168px 24px;
+  color: #263238;
+  background-image: radial-gradient(#eceff1 1.5px, transparent 1.5px);
+  background-size: calc(10 * 1.5px) calc(10 * 1.5px);
+}
