@@ -13,5 +13,4 @@
 
 ---
 
-_Logo Icon made by [favicon.io](https://favicon.io/emoji-favicons) <img src="public/favicon.ico" width="16" />_  
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+_Logo Icon made by [favicon.io](https://favicon.io/emoji-favicons) <img src="public/favicon.ico" width="16" />_
