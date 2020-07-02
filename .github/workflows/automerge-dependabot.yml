@@ -1,0 +1,26 @@
+name: automerge-dependabot
+on:
+  pull_request_review:
+    types:
+      - submitted
+env:
+  CI: true
+  TZ: Asia/Tokyo
+jobs:
+  merge:
+    # if: github.event.review.state == 'approved'
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${GITHUB_CONTEXT}" >> github-context.json
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+      - uses: actions/upload-artifact@v2
+        with:
+          name: github-context
+          path: github-context.json
+      # - uses: buildsville/simple-merge@v1
+      #   with:
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+      #     method: 'squash'
+      #     title: ''
+      #     message: ''
