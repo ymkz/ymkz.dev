@@ -48,7 +48,7 @@
   "dependencies": {
     "dayjs": "1.8.28",
     "next": "9.4.4",
-    "next-seo": "4.6.0",
+    "next-seo": "4.7.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-markdown": "4.3.1"
