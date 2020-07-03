@@ -18,9 +18,10 @@ jobs:
         with:
           name: github-context
           path: github-context.json
-      # - uses: buildsville/simple-merge@v1
-      #   with:
-      #     token: ${{ secrets.GITHUB_TOKEN }}
-      #     method: 'squash'
-      #     title: ''
-      #     message: ''
+      - uses: squalrus/merge-bot@v0.1.0
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          test: true
+          reviewers: true
+          checks_enabled: true
+          method: squash
