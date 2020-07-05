@@ -15,7 +15,7 @@ const preview = async (request: NextApiRequest, response: NextApiResponse): Prom
   }
 
   response.setPreviewData({ slug: content.id, draftKey: request.query.draftKey })
-  response.writeHead(307, { Location: `/post/${content.slug}` })
+  response.writeHead(307, { Location: `/post/${content.id}` })
   response.end('Preview mode enabled')
 }
 
