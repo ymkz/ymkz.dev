@@ -3,13 +3,12 @@ import React from 'react'
 
 type Props = {
   preview: boolean
-  slug: string
 }
 
-export const Preview = ({ preview, slug }: Props) => {
+export const Preview = ({ preview }: Props) => {
   const handleClearCookie = async () => {
     await fetch('/api/clear')
-    Router.replace(`/post/${slug}`)
+    Router.replace(`/`)
   }
 
   if (preview) {
