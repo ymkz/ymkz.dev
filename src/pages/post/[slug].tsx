@@ -24,7 +24,7 @@ const Post: NextPage<Props> = ({ content, preview }) => {
       <DefaultSeo title={content.title} />
       <article className="max-width-1024 font-size-18 line-height-1p5">
         <Preview preview={preview} />
-        <h1 className="font-weight-800 font-size-48 montserrat line-height-1">{content.title}</h1>
+        <h1 className="font-weight-800 font-size-48 montserrat line-height-1p25">{content.title}</h1>
         <p className="font-size-14 font-weight-400 montserrat margin-top-16">
           {formatDate(content.publishedAt)}に投稿&nbsp;
           {content.updatedAt && <React.Fragment>（{formatDate(content.updatedAt)}に改稿）</React.Fragment>}
