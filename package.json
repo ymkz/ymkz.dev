@@ -46,7 +46,7 @@
     "singleQuote": true
   },
   "dependencies": {
-    "dayjs": "1.8.28",
+    "dayjs": "1.8.29",
     "next": "9.4.4",
     "next-seo": "4.7.1",
     "react": "16.13.1",
