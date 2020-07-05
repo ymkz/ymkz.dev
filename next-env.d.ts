@@ -6,7 +6,6 @@ type Content = {
   createdAt: string
   updatedAt: string
   publishedAt: string
-  slug: string
   title: string
   eyecatch: { url: string }
   body: string
