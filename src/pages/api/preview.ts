@@ -14,7 +14,7 @@ const preview = async (request: NextApiRequest, response: NextApiResponse): Prom
     return response.status(401).json({ message: 'Invalid ID' })
   }
 
-  response.setPreviewData({ id: content.id, draftKey: request.query.draftKey })
+  response.setPreviewData({ slug: content.id, draftKey: request.query.draftKey })
   response.writeHead(307, { Location: `/post/${content.slug}` })
   response.end('Preview mode enabled')
 }
