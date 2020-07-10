@@ -16,7 +16,7 @@ const Post: NextPage<Props> = ({ content, preview }) => {
   const router = useRouter()
 
   if (router.isFallback) {
-    return <div>Loading...</div>
+    return null
   }
 
   return (
