@@ -14,10 +14,7 @@ export const Preview = ({ preview }: Props) => {
   if (preview) {
     return (
       <React.Fragment>
-        <button
-          className="fixed top-24 left-24 cursor-pointer color-white bg-color-black font-size-14 montserrat border-0"
-          onClick={handleClearCookie}
-        >
+        <button className="post-page__preview" onClick={handleClearCookie}>
           PREVIEW MODE
         </button>
       </React.Fragment>

@@ -2,24 +2,24 @@ import React from 'react'
 
 export const Profile = () => {
   return (
-    <section className="margin-bottom-48">
-      <p className="margin-bottom-16 font-size-18 montserrat line-height-1p5">
+    <section className="section">
+      <p className="text">
         I&apos;m Kazuya Yamashita. a.k.a ymkz.
         <br />
         24y/o, based in Tokyo, Japan.
         <br />
         Working as a frontend engineer.
       </p>
-      <ul className="flex gap-8">
-        <li className="padding-vertical-4 padding-horizontal-8 margin-bottom-8 montserrat border">React</li>
-        <li className="padding-vertical-4 padding-horizontal-8 margin-bottom-8 montserrat border">TypeScript</li>
-        <li className="padding-vertical-4 padding-horizontal-8 margin-bottom-8 montserrat border">Node.js</li>
-        <li className="padding-vertical-4 padding-horizontal-8 margin-bottom-8 montserrat border">Next.js</li>
-        <li className="padding-vertical-4 padding-horizontal-8 margin-bottom-8 montserrat border">React Native</li>
-        <li className="padding-vertical-4 padding-horizontal-8 margin-bottom-8 montserrat border">Redux</li>
-        <li className="padding-vertical-4 padding-horizontal-8 margin-bottom-8 montserrat border">Webpack</li>
-        <li className="padding-vertical-4 padding-horizontal-8 margin-bottom-8 montserrat border">HTML5</li>
-        <li className="padding-vertical-4 padding-horizontal-8 margin-bottom-8 montserrat border">CSS3</li>
+      <ul className="list-row">
+        <li className="list-row__item">React</li>
+        <li className="list-row__item">TypeScript</li>
+        <li className="list-row__item">Node.js</li>
+        <li className="list-row__item">Next.js</li>
+        <li className="list-row__item">React Native</li>
+        <li className="list-row__item">Redux</li>
+        <li className="list-row__item">Webpack</li>
+        <li className="list-row__item">HTML5</li>
+        <li className="list-row__item">CSS3</li>
       </ul>
     </section>
   )

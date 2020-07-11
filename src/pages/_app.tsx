@@ -1,5 +1,5 @@
 import '../styles/reset.css'
-import '../styles/atomic.css'
+import '../styles/style.css'
 
 import { DefaultSeo } from 'next-seo'
 import { AppProps } from 'next/app'

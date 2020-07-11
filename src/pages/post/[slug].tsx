@@ -22,14 +22,14 @@ const Post: NextPage<Props> = ({ content, preview }) => {
   return (
     <React.Fragment>
       <DefaultSeo title={content.title} />
-      <article className="max-width-1024 font-size-18 line-height-1p5">
+      <article className="post-page__container">
         <Preview preview={preview} />
-        <h1 className="font-weight-800 font-size-48 montserrat line-height-1p25">{content.title}</h1>
-        <p className="font-size-14 font-weight-400 montserrat margin-top-16">
+        <h1 className="post-page__title">{content.title}</h1>
+        <p className="post-page__date">
           {formatDate(content.publishedAt)}に投稿&nbsp;
           {content.updatedAt && <React.Fragment>（{formatDate(content.updatedAt)}に改稿）</React.Fragment>}
         </p>
-        <main className="margin-top-16">
+        <main className="post-page__body">
           <ReactMarkdown source={content.body} />
         </main>
       </article>

@@ -8,10 +8,10 @@ type Props = {
 
 export const Badge = ({ name, href, icon }: Props) => {
   return (
-    <li className="margin-bottom-8 border border-left-0">
-      <a className="color-black link flex-center-vertical" target="_blank" rel="noopener noreferrer" href={href}>
-        <div className="color-white bg-color-black size-24 flex-center">{icon}</div>
-        <div className="padding-horizontal-8 montserrat">{name}</div>
+    <li className="list-row__badge">
+      <a className="list-row__anchor" target="_blank" rel="noopener noreferrer" href={href}>
+        <div className="list-row__icon">{icon}</div>
+        <div className="list-row__text">{name}</div>
       </a>
     </li>
   )

@@ -9,15 +9,15 @@ type Props = {
 
 export const Posts = ({ contents }: Props) => {
   return (
-    <section>
-      <p className="margin-bottom16 color-black font-weight-800 font-size-40 montserrat">Post</p>
+    <section className="section">
+      <p className="post-index__head">Post</p>
       <ul>
         {contents.map((content) => (
-          <li key={content.id}>
+          <li key={content.id} className="post-index__item">
             <NextLink href="/post/[slug]" as={`/post/${content.id}`}>
-              <a className="block link color-black margin-top-16">
-                <p className="font-size-24 font-weight-800 montserrat">{content.title}</p>
-                <p className="font-size-14 font-weight-400 montserrat margin-top-4">
+              <a className="post-index__anchor">
+                <p className="post-index__title">{content.title}</p>
+                <p className="post-index__date">
                   {formatDate(content.publishedAt)}に投稿&nbsp;
                   {content.updatedAt && <React.Fragment>（{formatDate(content.updatedAt)}に改稿）</React.Fragment>}
                 </p>

@@ -4,7 +4,7 @@ import React from 'react'
 const NotFound: NextPage = () => {
   return (
     <React.Fragment>
-      <div className="font-weight-800 font-size-128 montserrat">404</div>
+      <div className="not-found">404</div>
     </React.Fragment>
   )
 }
