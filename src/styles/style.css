@@ -147,6 +147,7 @@ body {
 }
 
 .post-page__title {
+  font-family: var(--pretty-font);
   font-weight: 800;
   font-size: 48px;
   line-height: 1.5;
@@ -175,6 +176,8 @@ body {
   font-size: 14px;
   font-family: var(--pretty-font);
   border: 0;
+  height: 28px;
+  outline: 0;
 }
 
 .not-found {
