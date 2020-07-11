@@ -180,7 +180,7 @@ body {
   outline: 0;
 }
 
-.not-found {
+.error-page__status-code {
   position: fixed;
   top: 50%;
   left: 50%;
