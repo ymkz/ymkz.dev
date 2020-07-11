@@ -11,17 +11,11 @@ jobs:
     # if: github.event.review.state == 'approved'
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${GITHUB_CONTEXT}" > github-context.json
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-      - uses: actions/upload-artifact@v2
-        with:
-          name: github-context
-          path: github-context.json
       - uses: squalrus/merge-bot@v0.1.0
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           test: true
-          reviewers: true
+          reviewers: false
+          labels: dependencies
           checks_enabled: true
           method: squash
