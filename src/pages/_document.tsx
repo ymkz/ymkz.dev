@@ -6,9 +6,7 @@ class Document extends NextDocument {
     return (
       <Html lang="ja">
         <Head>
-          <meta charSet="utf-8" />
           <meta name="description" content="ymkz's website" />
-          <meta name="viewport" content="width=device-width,initial-scale=1" />
           <meta name="mobile-web-app-capable" content="yes" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <link rel="icon" href="/favicon.ico" />
