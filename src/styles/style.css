@@ -1,14 +1,22 @@
 :root {
-  --color: #263238;
-  --bg-color: #eceff1;
+  --color: #2e3440;
+  --bg-color-primary: #ffffff;
+  --bg-color-secondary: #eceff4;
   --pretty-font: 'Montserrat', sans-serif;
 }
 
-body {
+.root {
   padding: 168px 24px;
   color: var(--color);
-  background-image: radial-gradient(var(--bg-color) 1.5px, transparent 1.5px);
+  background-color: var(--bg-color-primary);
+  background-image: radial-gradient(var(--bg-color-secondary) 1.5px, transparent 1.5px);
   background-size: calc(10 * 1.5px) calc(10 * 1.5px);
+}
+
+.root.dark {
+  --color: #ffffff;
+  --bg-color-primary: #2e3440;
+  --bg-color-secondary: #3b4252;
 }
 
 .motto {
@@ -51,7 +59,7 @@ body {
   display: flex;
   align-items: center;
   padding: 0 8px;
-  border: 1px solid currentColor;
+  border: 1px solid var(--color);
   margin-top: 8px;
 }
 
@@ -73,7 +81,7 @@ body {
 }
 
 .list-row__anchor {
-  color: currentColor;
+  color: var(--color);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -81,7 +89,7 @@ body {
 
 .list-row__icon {
   background-color: var(--color);
-  color: var(--bg-color);
+  color: var(--bg-color-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -115,7 +123,7 @@ body {
   font-family: var(--pretty-font);
   font-size: 40px;
   font-weight: 800;
-  color: currentColor;
+  color: var(--color);
 }
 
 .post-index__item {
@@ -123,7 +131,7 @@ body {
 }
 
 .post-index__anchor {
-  color: currentColor;
+  color: var(--color);
   text-decoration: none;
   display: block;
   width: fit-content;
@@ -172,7 +180,7 @@ body {
   left: 24px;
   cursor: pointer;
   background-color: var(--color);
-  color: var(--bg-color);
+  color: var(--bg-color-secondary);
   font-size: 14px;
   font-family: var(--pretty-font);
   border: 0;
