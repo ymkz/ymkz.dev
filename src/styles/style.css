@@ -1,8 +1,22 @@
+@font-face {
+  font-family: 'Euclid Square';
+  src: url('../fonts/EuclidSquare-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Euclid Square';
+  src: url('../fonts/EuclidSquare-Bold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
 :root {
   --color: #2e3440;
   --bg-color-primary: #ffffff;
   --bg-color-secondary: #eceff4;
-  --pretty-font: 'Montserrat', sans-serif;
+  --pretty-font: 'Euclid Square', sans-serif;
 }
 
 .root {
@@ -20,8 +34,8 @@
 }
 
 .motto {
-  font-weight: 800;
-  font-size: 64px;
+  font-weight: 600;
+  font-size: 72px;
   font-family: var(--pretty-font);
   line-height: 1.15;
 }
@@ -32,7 +46,7 @@
 
 .text {
   font-family: var(--pretty-font);
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.5;
 }
 
@@ -55,12 +69,13 @@
 
 .list-row__item {
   font-family: var(--pretty-font);
-  height: 28px;
+  height: 32px;
   display: flex;
   align-items: center;
   padding: 0 8px;
-  border: 1px solid var(--color);
+  border: 2px solid var(--color);
   margin-top: 8px;
+  line-height: 28px;
 }
 
 .list-row__item:not(:last-child) {
@@ -93,17 +108,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
 }
 
 .list-row__text {
   font-family: var(--pretty-font);
   padding: 0 8px;
-  border-top: 1px solid var(--color);
-  border-right: 1px solid var(--color);
-  border-bottom: 1px solid var(--color);
-  height: 28px;
+  border-top: 2px solid var(--color);
+  border-right: 2px solid var(--color);
+  border-bottom: 2px solid var(--color);
+  height: 32px;
+  line-height: 28px;
   display: flex;
   align-items: center;
 }
@@ -116,13 +132,15 @@
 .list-column__item {
   font-family: var(--pretty-font);
   line-height: 1.5;
+  font-size: 20px;
+  font-weight: 500;
   list-style: disc;
 }
 
 .post-index__head {
   font-family: var(--pretty-font);
-  font-size: 40px;
-  font-weight: 800;
+  font-size: 48px;
+  font-weight: 600;
   color: var(--color);
 }
 
@@ -140,14 +158,13 @@
 .post-index__title {
   font-family: var(--pretty-font);
   font-size: 24px;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .post-index__date {
   font-size: 14px;
-  font-weight: 400;
-  font-family: var(--pretty-font);
-  margin-top: 4px;
+  font-weight: 500;
+  margin-top: 8px;
 }
 
 .post-page__container {
@@ -156,15 +173,13 @@
 
 .post-page__title {
   font-family: var(--pretty-font);
-  font-weight: 800;
+  font-weight: 600;
   font-size: 48px;
   line-height: 1.5;
 }
 
 .post-page__date {
-  font-weight: 400;
   font-size: 14px;
-  font-family: var(--pretty-font);
   margin-top: 20px;
 }
 
@@ -194,6 +209,5 @@
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
   font-family: var(--pretty-font);
-  font-weight: 400;
   font-size: 96px;
 }

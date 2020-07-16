@@ -9,11 +9,10 @@ export const Like = () => {
         Play games seriously with fun.
       </p>
       <ul className="list-column">
-        <li className="list-column__item">ARIA（天野こずえ）</li>
-        <li className="list-column__item">ハーモニー（伊藤計劃）</li>
+        <li className="list-column__item">ARIA</li>
+        <li className="list-column__item">Harmony</li>
         <li className="list-column__item">Overwatch</li>
         <li className="list-column__item">PUBG</li>
-        <li className="list-column__item">VALORANT</li>
       </ul>
     </section>
   )
