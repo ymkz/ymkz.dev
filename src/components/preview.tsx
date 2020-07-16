@@ -8,16 +8,14 @@ type Props = {
 export const Preview = ({ preview }: Props) => {
   const handleClearCookie = async () => {
     await fetch('/api/clear')
-    Router.replace(`/`)
+    Router.replace('/')
   }
 
   if (preview) {
     return (
-      <React.Fragment>
-        <button className="post-page__preview" onClick={handleClearCookie}>
-          PREVIEW MODE
-        </button>
-      </React.Fragment>
+      <button className="post-page__preview" onClick={handleClearCookie}>
+        PREVIEW MODE
+      </button>
     )
   } else {
     return null

@@ -13,7 +13,7 @@
 }
 
 :root {
-  --color: #2e3440;
+  --color-primary: #2e3440;
   --bg-color-primary: #ffffff;
   --bg-color-secondary: #eceff4;
   --pretty-font: 'Euclid Square', sans-serif;
@@ -21,14 +21,14 @@
 
 .root {
   padding: 168px 24px;
-  color: var(--color);
+  color: var(--color-primary);
   background-color: var(--bg-color-primary);
   background-image: radial-gradient(var(--bg-color-secondary) 1.5px, transparent 1.5px);
   background-size: calc(10 * 1.5px) calc(10 * 1.5px);
 }
 
 .root.dark {
-  --color: #ffffff;
+  --color-primary: #ffffff;
   --bg-color-primary: #2e3440;
   --bg-color-secondary: #3b4252;
 }
@@ -52,12 +52,12 @@
 
 .totem__left {
   font-family: var(--pretty-font);
-  margin-right: 10px;
+  margin-right: 8px;
 }
 
 .totem__right {
   font-family: var(--pretty-font);
-  margin-left: 10px;
+  margin-left: 8px;
 }
 
 .list-row {
@@ -73,7 +73,7 @@
   display: flex;
   align-items: center;
   padding: 0 8px;
-  border: 2px solid var(--color);
+  border: 2px solid var(--color-primary);
   margin-top: 8px;
   line-height: 28px;
 }
@@ -96,14 +96,14 @@
 }
 
 .list-row__anchor {
-  color: var(--color);
+  color: var(--color-primary);
   text-decoration: none;
   display: flex;
   align-items: center;
 }
 
 .list-row__icon {
-  background-color: var(--color);
+  background-color: var(--color-primary);
   color: var(--bg-color-secondary);
   display: flex;
   align-items: center;
@@ -115,9 +115,9 @@
 .list-row__text {
   font-family: var(--pretty-font);
   padding: 0 8px;
-  border-top: 2px solid var(--color);
-  border-right: 2px solid var(--color);
-  border-bottom: 2px solid var(--color);
+  border-top: 2px solid var(--color-primary);
+  border-right: 2px solid var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
   height: 32px;
   line-height: 28px;
   display: flex;
@@ -141,7 +141,7 @@
   font-family: var(--pretty-font);
   font-size: 48px;
   font-weight: 600;
-  color: var(--color);
+  color: var(--color-primary);
 }
 
 .post-index__item {
@@ -149,7 +149,7 @@
 }
 
 .post-index__anchor {
-  color: var(--color);
+  color: var(--color-primary);
   text-decoration: none;
   display: block;
   width: fit-content;
@@ -194,7 +194,7 @@
   top: 24px;
   left: 24px;
   cursor: pointer;
-  background-color: var(--color);
+  background-color: var(--color-primary);
   color: var(--bg-color-secondary);
   font-size: 14px;
   font-family: var(--pretty-font);

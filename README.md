@@ -10,7 +10,3 @@
 
 - Twitter: [@ymkzly](https://twitter.com/ymkzly)
 - Github: [@ymkz](https://github.com/ymkz)
-
----
-
-_Logo Icon made by [favicon.io](https://favicon.io/emoji-favicons) <img src="public/favicon.ico" width="16" />_
