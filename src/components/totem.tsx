@@ -6,9 +6,9 @@ export const Totem = () => {
   return (
     <section className="section">
       <div className="list-row">
-        <span className="totem__left">[</span>
+        <div className="totem__left"></div>
         <Wind />
-        <span className="totem__right">]</span>
+        <div className="totem__right"></div>
       </div>
     </section>
   )
