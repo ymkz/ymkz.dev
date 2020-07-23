@@ -25,29 +25,12 @@ jobs:
       - run: npm run build
         env:
           API_KEY: ${{ secrets.API_KEY }}
-  autoapprove:
-    runs-on: ubuntu-latest
-    needs: [check, build]
-    steps:
-      - uses: hmarr/auto-approve-action@v2.0.0
-        if: github.actor == 'dependabot[bot]'
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-  autolabeler:
-    runs-on: ubuntu-latest
-    needs: autoapprove
-    steps:
-      - uses: actions/labeler@v2
-        if: github.actor == 'dependabot[bot]'
-        with:
-          repo-token: '${{ secrets.GITHUB_TOKEN }}'
   automerge:
     runs-on: ubuntu-latest
-    needs: autolabeler
+    needs:
+      - check
+      - build
     steps:
-      - uses: pascalgn/automerge-action@v0.8.4
-        if: github.actor == 'dependabot[bot]'
-        env:
+      - uses: ridedott/dependabot-auto-merge-action@master
+        with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MERGE_METHOD: squash
-          UPDATE_METHOD: rebase
