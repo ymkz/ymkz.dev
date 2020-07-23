@@ -29,7 +29,7 @@ const Index: NextPage<Props> = ({ contents }) => {
 
 export default Index
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
   const endpoint = 'https://ymkz.microcms.io/api/v1/post'
   const options: RequestInit = { headers: { 'X-API-KEY': process.env.API_KEY || '' } }
   const response = await fetch(endpoint, options)
