@@ -33,4 +33,6 @@ jobs:
     steps:
       - uses: ridedott/merge-me-action@master
         with:
+          MERGE_METHOD: SQUASH
+          GITHUB_LOGIN: dependabot[bot]
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
