@@ -31,6 +31,6 @@ jobs:
       - check
       - build
     steps:
-      - uses: ridedott/dependabot-auto-merge-action@master
+      - uses: ridedott/merge-me-action@master
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
