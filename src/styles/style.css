@@ -197,6 +197,10 @@
   font-size: 18px;
   font-weight: 500;
   line-height: 1.5;
+}
+
+.post-page__body h1 {
+  font-size: 32px;
   margin-top: 24px;
 }
 
