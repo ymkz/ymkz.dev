@@ -189,11 +189,13 @@
 
 .post-page__date {
   font-size: 14px;
+  font-weight: 500;
   margin-top: 20px;
 }
 
 .post-page__body {
   font-size: 18px;
+  font-weight: 500;
   line-height: 1.5;
   margin-top: 24px;
 }
