@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "dayjs": "1.8.30",
-    "next": "9.4.4",
+    "next": "9.5.0",
     "next-dark-mode": "2.3.0",
     "next-seo": "4.7.3",
     "react": "16.13.1",
