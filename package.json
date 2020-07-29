@@ -49,7 +49,7 @@
     "singleQuote": true
   },
   "dependencies": {
-    "dayjs": "1.8.30",
+    "dayjs": "1.8.31",
     "next": "9.5.0",
     "next-dark-mode": "2.3.0",
     "next-seo": "4.7.3",
