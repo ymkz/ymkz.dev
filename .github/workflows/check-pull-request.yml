@@ -11,7 +11,7 @@ jobs:
       - uses: actions/setup-node@v2-beta
         with:
           node-version: '12'
-      - uses: bahmutov/npm-install@master
+      - run: npm ci
       - run: npm run lint
       - run: npm run typecheck
   build:
@@ -21,7 +21,7 @@ jobs:
       - uses: actions/setup-node@v2-beta
         with:
           node-version: '12'
-      - uses: bahmutov/npm-install@master
+      - run: npm ci
       - run: npm run build
         env:
           API_KEY: ${{ secrets.API_KEY }}
