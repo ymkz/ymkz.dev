@@ -51,7 +51,6 @@
   "dependencies": {
     "dayjs": "1.8.34",
     "next": "9.5.2",
-    "next-dark-mode": "2.3.0",
     "next-seo": "4.7.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",
