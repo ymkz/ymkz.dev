@@ -19,6 +19,14 @@
   --pretty-font: 'Euclid Square', sans-serif;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #eceff4;
+    --bg-color-primary: #212121;
+    --bg-color-secondary: #323232;
+  }
+}
+
 body {
   padding: 168px 24px;
   color: var(--color-primary);
@@ -27,14 +35,6 @@ body {
   background-size: calc(10 * 1.5px) calc(10 * 1.5px);
   min-height: 100vh;
 }
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --color-primary: #eceff4;
-    --bg-color-primary: #2e3440;
-    --bg-color-secondary: #3b4252;
-  }
-} */
 
 .motto {
   font-weight: 600;
