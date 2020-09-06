@@ -46,7 +46,7 @@
     "singleQuote": true
   },
   "dependencies": {
-    "dayjs": "1.8.35",
+    "light-date": "^1.1.2",
     "next": "9.5.3",
     "next-seo": "4.7.3",
     "react": "16.13.1",
