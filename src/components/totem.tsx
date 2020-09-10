@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { Wind } from './icon'
 
 export const Totem = () => {

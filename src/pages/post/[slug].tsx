@@ -3,7 +3,6 @@ import { DefaultSeo } from 'next-seo'
 import { useRouter } from 'next/router'
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
-
 import { Preview } from '../../components/preview'
 import { formatDate } from '../../utils/date'
 

@@ -1,6 +1,5 @@
 import { GetStaticProps, NextPage } from 'next'
 import React from 'react'
-
 import { Like } from '../components/like'
 import { Motto } from '../components/motto'
 import { Posts } from '../components/posts'

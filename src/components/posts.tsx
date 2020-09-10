@@ -1,6 +1,5 @@
 import NextLink from 'next/link'
 import React from 'react'
-
 import { formatDate } from '../utils/date'
 
 type Props = {
