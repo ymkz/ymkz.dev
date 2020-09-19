@@ -70,6 +70,6 @@
     "singleQuote": true
   },
   "volta": {
-    "node": "12.18.1"
+    "node": "12.18.4"
   }
 }
