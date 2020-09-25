@@ -30,7 +30,8 @@
     "next-seo": "4.9.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-markdown": "4.3.1"
+    "react-markdown": "4.3.1",
+    "urlcat": "2.0.1"
   },
   "devDependencies": {
     "@commitlint/cli": "11.0.0",

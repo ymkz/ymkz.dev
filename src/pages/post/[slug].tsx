@@ -3,6 +3,7 @@ import { DefaultSeo } from 'next-seo'
 import { useRouter } from 'next/router'
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
+import urlcat from 'urlcat'
 import { Preview } from '../../components/preview'
 import { formatDate } from '../../utils/date'
 
@@ -48,18 +49,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params, preview, previewData }) => {
-  if (preview) {
-    const { slug, draftKey } = previewData
-    const endpoint = `https://ymkz.microcms.io/api/v1/post/${slug}${draftKey ? `?draftKey=${draftKey}` : ''}`
-    const options: RequestInit = { headers: { 'X-API-KEY': process.env.API_KEY || '' } }
-    const response = await fetch(endpoint, options)
-    const content: Content = await response.json()
-    return { props: { content, preview } }
-  } else {
-    const endpoint = `https://ymkz.microcms.io/api/v1/post/${params?.slug}`
-    const options: RequestInit = { headers: { 'X-API-KEY': process.env.API_KEY || '' } }
-    const response = await fetch(endpoint, options)
-    const content: Content = await response.json()
-    return { props: { content }, revalidate: 1 }
-  }
+  const slug = params?.slug
+  const draftKey = previewData?.draftKey
+  const endpoint = urlcat('https://ymkz.microcms.io/api/v1/post/:slug', { slug, draftKey })
+  const options: RequestInit = { headers: { 'X-API-KEY': process.env.API_KEY || '' } }
+  const response = await fetch(endpoint, options)
+  const content: Content = await response.json()
+  return { props: { content, preview: preview || false }, revalidate: 1 }
 }
