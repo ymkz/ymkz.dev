@@ -31,7 +31,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-markdown": "4.3.1",
-    "urlcat": "2.0.2"
+    "urlcat": "2.0.3"
   },
   "devDependencies": {
     "@commitlint/cli": "11.0.0",
