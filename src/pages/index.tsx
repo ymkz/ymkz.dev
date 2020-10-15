@@ -1,12 +1,12 @@
 import { GetStaticProps, NextPage } from 'next'
 import React from 'react'
-import { Like } from '../components/like'
-import { Motto } from '../components/motto'
-import { Posts } from '../components/posts'
-import { Profile } from '../components/profile'
-import { Social } from '../components/social'
-import { Study } from '../components/study'
-import { Totem } from '../components/totem'
+import { Like } from '~/components/like'
+import { Motto } from '~/components/motto'
+import { Posts } from '~/components/posts'
+import { Profile } from '~/components/profile'
+import { Social } from '~/components/social'
+import { Study } from '~/components/study'
+import { Totem } from '~/components/totem'
 
 type Props = {
   contents: Content[]

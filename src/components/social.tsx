@@ -1,6 +1,6 @@
 import React from 'react'
-import { Badge } from './badge'
-import { Facebook, GitHub, LinkedIn, Twitter } from './icon'
+import { Badge } from '~/components/badge'
+import { Facebook, GitHub, LinkedIn, Twitter } from '~/components/icon'
 
 export const Social = () => {
   return (

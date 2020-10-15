@@ -1,6 +1,6 @@
 import NextLink from 'next/link'
 import React from 'react'
-import { formatDate } from '../utils/date'
+import { formatDate } from '~/utils/date'
 
 type Props = {
   contents: Content[]

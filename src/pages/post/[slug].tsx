@@ -4,8 +4,8 @@ import { DefaultSeo } from 'next-seo'
 import { useRouter } from 'next/router'
 import React from 'react'
 import urlcat from 'urlcat'
-import { Preview } from '../../components/preview'
-import { formatDate } from '../../utils/date'
+import { Preview } from '~/components/preview'
+import { formatDate } from '~/utils/date'
 
 type Props = {
   content: Content
