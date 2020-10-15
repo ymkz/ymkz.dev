@@ -2,14 +2,7 @@
   "name": "ymkz.co",
   "version": "7.0.0",
   "description": "ymkz's website",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ymkz/ymkz.co"
-  },
   "homepage": "https://ymkz.co",
-  "bugs": {
-    "url": "https://github.com/ymkz/ymkz.co/issues"
-  },
   "author": "ymkz <ymkzly@gmail.com> (https://github.com/ymkz)",
   "license": "MIT",
   "private": true,
@@ -20,7 +13,7 @@
     "build": "next build",
     "dev": "next dev",
     "format": "prettier --write .",
-    "lint": "prettier --check .",
+    "lint": "npm run typecheck && npm run format",
     "start": "next start",
     "typecheck": "tsc --noEmit"
   },
@@ -39,12 +32,10 @@
     "@types/node": "14.11.8",
     "@types/react": "16.9.52",
     "husky": "4.3.0",
-    "lint-staged": "10.4.0",
     "prettier": "2.1.2",
     "prettier-plugin-organize-imports": "1.1.1",
     "prettier-plugin-pkg": "0.8.0",
-    "typescript": "4.0.3",
-    "yarnhook": "0.4.5"
+    "typescript": "4.0.3"
   },
   "commitlint": {
     "extends": [
@@ -53,17 +44,9 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "post-checkout": "yarnhook",
-      "post-merge": "yarnhook",
-      "post-rewrite": "yarnhook"
+      "pre-commit": "npm run lint",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  },
-  "lint-staged": {
-    "*.{ts,tsx,css,yml,json,html,md}": [
-      "prettier --write"
-    ]
   },
   "prettier": {
     "printWidth": 120,
