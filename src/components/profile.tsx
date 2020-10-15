@@ -6,7 +6,7 @@ export const Profile = () => {
         <br />
         24y/o, based in Tokyo, Japan.
         <br />
-        Working as a web engineer mainly DevOps, good at web frontend.
+        Working as a web engineer, good at web frontend.
       </p>
       <ul className="list-row">
         <li className="list-row__item">React</li>
