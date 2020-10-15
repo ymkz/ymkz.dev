@@ -1,8 +1,8 @@
+import Markdown from 'markdown-to-jsx'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import { DefaultSeo } from 'next-seo'
 import { useRouter } from 'next/router'
 import React from 'react'
-import ReactMarkdown from 'react-markdown'
 import urlcat from 'urlcat'
 import { Preview } from '../../components/preview'
 import { formatDate } from '../../utils/date'
@@ -30,7 +30,7 @@ const Post: NextPage<Props> = ({ content, preview }) => {
           {content.updatedAt && <React.Fragment>（{formatDate(content.updatedAt)}に改稿）</React.Fragment>}
         </p>
         <main className="post-page__body">
-          <ReactMarkdown source={content.body} />
+          <Markdown children={content.body} />
         </main>
       </article>
     </React.Fragment>
