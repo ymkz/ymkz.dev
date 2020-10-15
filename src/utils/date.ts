@@ -1,5 +1,5 @@
-import { format } from 'light-date'
+import dayjs from 'dayjs'
 
-export const formatDate = (at: string): string => {
-  return format(new Date(at), '{yyyy}/{MM}/{dd}')
+export function formatDate(at: string): string {
+  return dayjs(at).locale('ja').format('YYYY/MM/DD')
 }
