@@ -1,5 +1,4 @@
 import { GetStaticProps, NextPage } from 'next'
-import React from 'react'
 import { Like } from '~/components/like'
 import { Motto } from '~/components/motto'
 import { Posts } from '~/components/posts'
@@ -14,7 +13,7 @@ type Props = {
 
 const Index: NextPage<Props> = ({ contents }) => {
   return (
-    <React.Fragment>
+    <>
       <Motto />
       <Totem />
       <Profile />
@@ -22,7 +21,7 @@ const Index: NextPage<Props> = ({ contents }) => {
       <Social />
       <Like />
       <Posts contents={contents} />
-    </React.Fragment>
+    </>
   )
 }
 

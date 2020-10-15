@@ -2,7 +2,6 @@ import Markdown from 'markdown-to-jsx'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import { DefaultSeo } from 'next-seo'
 import { useRouter } from 'next/router'
-import React from 'react'
 import urlcat from 'urlcat'
 import { Preview } from '~/components/preview'
 import { formatDate } from '~/utils/date'
@@ -20,20 +19,20 @@ const Post: NextPage<Props> = ({ content, preview }) => {
   }
 
   return (
-    <React.Fragment>
+    <>
       <DefaultSeo title={content.title} />
       <article className="post-page__container">
         <Preview preview={preview} />
         <h1 className="post-page__title">{content.title}</h1>
         <p className="post-page__date">
           {formatDate(content.publishedAt)}に投稿&nbsp;
-          {content.updatedAt && <React.Fragment>（{formatDate(content.updatedAt)}に改稿）</React.Fragment>}
+          {content.updatedAt && <>（{formatDate(content.updatedAt)}に改稿）</>}
         </p>
         <main className="post-page__body">
           <Markdown children={content.body} />
         </main>
       </article>
-    </React.Fragment>
+    </>
   )
 }
 

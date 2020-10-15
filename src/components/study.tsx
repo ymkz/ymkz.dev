@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const Study = () => {
   return (
     <section className="section">

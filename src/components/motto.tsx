@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const Motto = () => {
   return (
     <h1 className="motto">

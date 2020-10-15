@@ -1,4 +1,3 @@
-import React from 'react'
 import { Badge } from '~/components/badge'
 import { Facebook, GitHub, LinkedIn, Twitter } from '~/components/icon'
 

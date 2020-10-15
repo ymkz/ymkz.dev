@@ -1,16 +1,11 @@
 import { NextPage, NextPageContext } from 'next'
-import React from 'react'
 
 type Props = {
   statusCode: number
 }
 
 const Error: NextPage<Props> = ({ statusCode }) => {
-  return (
-    <React.Fragment>
-      <div className="error-page__status-code">{statusCode}</div>
-    </React.Fragment>
-  )
+  return <div className="error-page__status-code">{statusCode}</div>
 }
 
 Error.getInitialProps = async ({ res, err }: NextPageContext) => {

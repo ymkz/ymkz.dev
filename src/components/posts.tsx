@@ -1,5 +1,4 @@
 import NextLink from 'next/link'
-import React from 'react'
 import { formatDate } from '~/utils/date'
 
 type Props = {
@@ -18,7 +17,7 @@ export const Posts = ({ contents }: Props) => {
                 <p className="post-index__title">{content.title}</p>
                 <p className="post-index__date">
                   {formatDate(content.publishedAt)}に投稿&nbsp;
-                  {content.updatedAt && <React.Fragment>（{formatDate(content.updatedAt)}に改稿）</React.Fragment>}
+                  {content.updatedAt && <>（{formatDate(content.updatedAt)}に改稿）</>}
                 </p>
               </a>
             </NextLink>
