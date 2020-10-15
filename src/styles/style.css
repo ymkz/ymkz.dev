@@ -34,6 +34,8 @@ body {
   background-image: radial-gradient(var(--bg-color-secondary) 1.5px, transparent 1.5px);
   background-size: calc(10 * 1.5px) calc(10 * 1.5px);
   min-height: 100vh;
+  max-width: 720px;
+  margin: 0 auto;
 }
 
 .motto {
