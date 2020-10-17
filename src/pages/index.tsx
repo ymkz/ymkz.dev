@@ -1,17 +1,11 @@
-import { GetStaticProps, NextPage } from 'next'
-import { Like } from '~/components/like'
-import { Motto } from '~/components/motto'
-import { Posts } from '~/components/posts'
-import { Profile } from '~/components/profile'
-import { Social } from '~/components/social'
-import { Study } from '~/components/study'
-import { Totem } from '~/components/totem'
+import { Like } from '~/components/modules/like'
+import { Motto } from '~/components/modules/motto'
+import { Profile } from '~/components/modules/profile'
+import { Social } from '~/components/modules/social'
+import { Study } from '~/components/modules/study'
+import { Totem } from '~/components/modules/totem'
 
-type Props = {
-  contents: Content[]
-}
-
-const Index: NextPage<Props> = ({ contents }) => {
+const Index = () => {
   return (
     <>
       <Motto />
@@ -20,17 +14,8 @@ const Index: NextPage<Props> = ({ contents }) => {
       <Study />
       <Social />
       <Like />
-      <Posts contents={contents} />
     </>
   )
 }
 
 export default Index
-
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  const endpoint = 'https://ymkz.microcms.io/api/v1/post'
-  const options: RequestInit = { headers: { 'X-API-KEY': process.env.API_KEY || '' } }
-  const response = await fetch(endpoint, options)
-  const { contents }: Contents = await response.json()
-  return { props: { contents }, revalidate: true }
-}

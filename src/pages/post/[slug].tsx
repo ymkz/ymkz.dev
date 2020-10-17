@@ -3,7 +3,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import { DefaultSeo } from 'next-seo'
 import { useRouter } from 'next/router'
 import urlcat from 'urlcat'
-import { Preview } from '~/components/preview'
+import { Preview } from '~/components/modules/preview'
 import { formatDate } from '~/utils/date'
 
 type Props = {
