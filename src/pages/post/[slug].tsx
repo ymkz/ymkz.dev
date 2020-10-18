@@ -29,7 +29,7 @@ const Post: NextPage<Props> = ({ content, preview }) => {
           {formatDate(content.publishedAt)}に投稿&nbsp;
           {content.updatedAt && <>（{formatDate(content.updatedAt)}に改稿）</>}
         </p>
-        <img className="eyecatch" src={content.eyecatch.url} />
+        <img className="eyecatch" alt="" height={400} src={content.eyecatch.url} />
         <main className="body">
           <Markdown children={content.body} />
         </main>
