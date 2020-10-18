@@ -11,6 +11,7 @@ export const InternalLink: FC<LinkProps> = ({ children, href }) => {
         .root {
           color: var(--color-primary);
           text-decoration: underline;
+          font-weight: 600;
         }
       `}</style>
     </>
