@@ -1,5 +1,6 @@
 import { GetStaticProps, NextPage } from 'next'
 import Link from 'next/link'
+import { InternalLink } from '~/components/elements/internal-link'
 import { formatDate } from '~/utils/date'
 
 type Props = {
@@ -10,6 +11,9 @@ const Index: NextPage<Props> = ({ contents }) => {
   return (
     <>
       <h1 className="heading">Posts</h1>
+      <div className="description">
+        This is my posts. My portfolio is <InternalLink href="/">ymkz.co</InternalLink> .
+      </div>
       <ul className="list">
         {contents.map((content) => (
           <li key={content.id} className="item">
@@ -31,6 +35,9 @@ const Index: NextPage<Props> = ({ contents }) => {
           font-size: 72px;
           font-family: var(--pretty-font);
           line-height: 1.15;
+        }
+        .description {
+          font-family: var(--pretty-font);
         }
         .list {
           margin-top: 48px;
