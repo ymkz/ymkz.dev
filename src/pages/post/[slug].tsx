@@ -29,6 +29,7 @@ const Post: NextPage<Props> = ({ content, preview }) => {
           {formatDate(content.publishedAt)}に投稿&nbsp;
           {content.updatedAt && <>（{formatDate(content.updatedAt)}に改稿）</>}
         </p>
+        <img className="eyecatch" src={content.eyecatch.url} />
         <main className="body">
           <Markdown children={content.body} />
         </main>
@@ -51,6 +52,10 @@ const Post: NextPage<Props> = ({ content, preview }) => {
           font-size: 12px;
           font-weight: 500;
           margin-top: 20px;
+        }
+        .eyecatch {
+          margin-top: 24px;
+          border-radius: 4px;
         }
         .body {
           font-size: 18px;
