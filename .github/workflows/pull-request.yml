@@ -30,7 +30,7 @@ jobs:
       - check
       - build
     steps:
-      - uses: ridedott/merge-me-action@v1
+      - uses: ridedott/merge-me-action@v1.2.62
         if: github.actor == 'dependabot[bot]'
         with:
           MERGE_METHOD: SQUASH

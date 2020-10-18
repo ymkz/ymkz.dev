@@ -1,9 +1,14 @@
 version: 2
 updates:
-  - package-ecosystem: npm
+  - package-ecosystem: 'npm'
     directory: '/'
     schedule:
-      interval: daily
+      interval: 'daily'
       time: '21:00'
-      timezone: Asia/Tokyo
-    open-pull-requests-limit: 10
+      timezone: 'Asia/Tokyo'
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+      time: '21:00'
+      timezone: 'Asia/Tokyo'
