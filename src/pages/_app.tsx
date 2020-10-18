@@ -6,7 +6,7 @@ import '~/styles/style.css'
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
-      <DefaultSeo title="ymkz" />
+      <DefaultSeo title="ymkz.co" />
       <Component {...pageProps} />
     </>
   )

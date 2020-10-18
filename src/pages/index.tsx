@@ -1,3 +1,4 @@
+import { DefaultSeo } from 'next-seo'
 import { Like } from '~/components/modules/like'
 import { Motto } from '~/components/modules/motto'
 import { Profile } from '~/components/modules/profile'
@@ -8,6 +9,7 @@ import { Totem } from '~/components/modules/totem'
 const Index = () => {
   return (
     <>
+      <DefaultSeo title="Portfolio" />
       <Motto />
       <Totem />
       <Profile />

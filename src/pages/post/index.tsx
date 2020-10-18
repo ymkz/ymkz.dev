@@ -1,4 +1,5 @@
 import { GetStaticProps, NextPage } from 'next'
+import { DefaultSeo } from 'next-seo'
 import Link from 'next/link'
 import { InternalLink } from '~/components/elements/internal-link'
 import { formatDate } from '~/utils/date'
@@ -10,6 +11,7 @@ type Props = {
 const Index: NextPage<Props> = ({ contents }) => {
   return (
     <>
+      <DefaultSeo title="Posts" />
       <h1 className="heading">Posts</h1>
       <div className="description">
         This is my posts. My portfolio is <InternalLink href="/">ymkz.co</InternalLink> .

@@ -3,6 +3,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import { DefaultSeo } from 'next-seo'
 import { useRouter } from 'next/router'
 import urlcat from 'urlcat'
+import { InternalLink } from '~/components/elements/internal-link'
 import { Preview } from '~/components/modules/preview'
 import { formatDate } from '~/utils/date'
 
@@ -21,7 +22,7 @@ const Post: NextPage<Props> = ({ content, preview }) => {
   return (
     <>
       <DefaultSeo title={content.title} />
-      <article className="root">
+      <article className="article">
         <Preview preview={preview} />
         <h1 className="title">{content.title}</h1>
         <p className="date">
@@ -32,8 +33,12 @@ const Post: NextPage<Props> = ({ content, preview }) => {
           <Markdown children={content.body} />
         </main>
       </article>
+      <footer className="footer">
+        All posts are <InternalLink href="/post">/post</InternalLink>, my portfolio is{' '}
+        <InternalLink href="/">ymkz.co</InternalLink> .
+      </footer>
       <style jsx>{`
-        .root {
+        .article {
           max-width: 1024px;
         }
         .title {
@@ -55,6 +60,11 @@ const Post: NextPage<Props> = ({ content, preview }) => {
         }
         .body h1 {
           font-size: 32px;
+          margin-top: 24px;
+        }
+        .footer {
+          font-family: var(--pretty-font);
+          font-size: 14px;
           margin-top: 24px;
         }
       `}</style>
