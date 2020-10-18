@@ -21,17 +21,43 @@ const Post: NextPage<Props> = ({ content, preview }) => {
   return (
     <>
       <DefaultSeo title={content.title} />
-      <article className="post-page__container">
+      <article className="root">
         <Preview preview={preview} />
-        <h1 className="post-page__title">{content.title}</h1>
-        <p className="post-page__date">
+        <h1 className="title">{content.title}</h1>
+        <p className="date">
           {formatDate(content.publishedAt)}に投稿&nbsp;
           {content.updatedAt && <>（{formatDate(content.updatedAt)}に改稿）</>}
         </p>
-        <main className="post-page__body">
+        <main className="body">
           <Markdown children={content.body} />
         </main>
       </article>
+      <style jsx>{`
+        .root {
+          max-width: 1024px;
+        }
+        .title {
+          font-family: var(--pretty-font);
+          font-weight: 600;
+          font-size: 48px;
+          line-height: 1.5;
+        }
+        .date {
+          font-size: 12px;
+          font-weight: 500;
+          margin-top: 20px;
+        }
+        .body {
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 1.5;
+          margin-top: 24px;
+        }
+        .body h1 {
+          font-size: 32px;
+          margin-top: 24px;
+        }
+      `}</style>
     </>
   )
 }
