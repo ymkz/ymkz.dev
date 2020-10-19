@@ -33,6 +33,6 @@ jobs:
       - uses: ridedott/merge-me-action@v1.8.7
         if: github.actor == 'dependabot[bot]'
         with:
-          MERGE_METHOD: SQUASH
-          GITHUB_LOGIN: dependabot[bot]
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_LOGIN: dependabot[bot]
+          PRESET: DEPENDABOT_MINOR
