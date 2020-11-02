@@ -1,7 +1,8 @@
-import Markdown from 'markdown-to-jsx'
+import { Markup } from 'interweave'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import { DefaultSeo } from 'next-seo'
 import { useRouter } from 'next/router'
+import snarkdown from 'snarkdown'
 import urlcat from 'urlcat'
 import { InternalLink } from '~/components/elements/internal-link'
 import { Preview } from '~/components/modules/preview'
@@ -31,7 +32,7 @@ const Post: NextPage<Props> = ({ content, preview }) => {
         </p>
         <img className="eyecatch" alt="" height={400} src={content.eyecatch.url} />
         <main className="body">
-          <Markdown children={content.body} />
+          <Markup content={snarkdown(content.body)} noWrap />
         </main>
       </article>
       <footer className="footer">

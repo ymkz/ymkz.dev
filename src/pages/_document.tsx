@@ -1,4 +1,7 @@
+import { polyfill } from 'interweave-ssr'
 import NextDocument, { Head, Html, Main, NextScript } from 'next/document'
+
+polyfill()
 
 class Document extends NextDocument {
   render() {
