@@ -20,10 +20,10 @@
   "dependencies": {
     "dayjs": "1.9.4",
     "markdown-to-jsx": "7.0.1",
-    "next": "9.5.5",
-    "next-seo": "4.14.1",
-    "react": "16.14.0",
-    "react-dom": "16.14.0",
+    "next": "10.0.0",
+    "next-seo": "4.15.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
     "urlcat": "2.0.4"
   },
   "devDependencies": {
