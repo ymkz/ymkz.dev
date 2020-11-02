@@ -1,14 +1,10 @@
-import { GetStaticProps, NextPage } from 'next'
+import { InferGetStaticPropsType } from 'next'
 import { DefaultSeo } from 'next-seo'
 import Link from 'next/link'
 import { InternalLink } from '~/components/elements/internal-link'
 import { formatDate } from '~/utils/date'
 
-type Props = {
-  contents: Content[]
-}
-
-const Index: NextPage<Props> = ({ contents }) => {
+function Index({ contents }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <DefaultSeo title="Posts" />
@@ -76,7 +72,7 @@ const Index: NextPage<Props> = ({ contents }) => {
 
 export default Index
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export async function getStaticProps() {
   const endpoint = 'https://ymkz.microcms.io/api/v1/post'
   const options: RequestInit = { headers: { 'X-API-KEY': process.env.API_KEY || '' } }
   const response = await fetch(endpoint, options)

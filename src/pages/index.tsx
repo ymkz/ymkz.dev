@@ -6,7 +6,7 @@ import { Social } from '~/components/modules/social'
 import { Study } from '~/components/modules/study'
 import { Totem } from '~/components/modules/totem'
 
-const Index = () => {
+function Index() {
   return (
     <>
       <DefaultSeo title="Portfolio" />

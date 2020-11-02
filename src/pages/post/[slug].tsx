@@ -1,5 +1,5 @@
 import { Markup } from 'interweave'
-import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+import { GetStaticPropsContext, InferGetServerSidePropsType } from 'next'
 import { DefaultSeo } from 'next-seo'
 import { useRouter } from 'next/router'
 import snarkdown from 'snarkdown'
@@ -8,12 +8,7 @@ import { InternalLink } from '~/components/elements/internal-link'
 import { Preview } from '~/components/modules/preview'
 import { formatDate } from '~/utils/date'
 
-type Props = {
-  content: Content
-  preview: boolean
-}
-
-const Post: NextPage<Props> = ({ content, preview }) => {
+function Post({ content, preview }: InferGetServerSidePropsType<typeof getStaticProps>) {
   const router = useRouter()
 
   if (router.isFallback) {
@@ -36,7 +31,7 @@ const Post: NextPage<Props> = ({ content, preview }) => {
         </main>
       </article>
       <footer className="footer">
-        All posts are <InternalLink href="/post">/post</InternalLink>, my portfolio is{' '}
+        All posts are <InternalLink href="/post">/post</InternalLink>, my portfolio is&nbsp;
         <InternalLink href="/">ymkz.co</InternalLink> .
       </footer>
       <style jsx>{`
@@ -80,7 +75,7 @@ const Post: NextPage<Props> = ({ content, preview }) => {
 
 export default Post
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export async function getStaticPaths() {
   const endpoint = 'https://ymkz.microcms.io/api/v1/post'
   const options: RequestInit = { headers: { 'X-API-KEY': process.env.API_KEY || '' } }
   const response = await fetch(endpoint, options)
@@ -89,7 +84,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: true }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params, preview, previewData }) => {
+export async function getStaticProps({ params, preview, previewData }: GetStaticPropsContext) {
   const slug = params?.slug
   const draftKey = previewData?.draftKey
   const endpoint = urlcat('https://ymkz.microcms.io/api/v1/post/:slug', { slug, draftKey })
