@@ -6,6 +6,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.rulers": [120],
+  "emmet.excludeLanguages": ["markdown", "typescript", "typescriptreact"],
   "search.exclude": {
     "**/.next": true,
     "**/node_modules": true,
