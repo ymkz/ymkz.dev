@@ -21,7 +21,7 @@
     "dayjs": "1.9.4",
     "interweave": "12.5.0",
     "interweave-ssr": "1.1.0",
-    "next": "10.0.0",
+    "next": "10.0.1",
     "next-seo": "4.15.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
