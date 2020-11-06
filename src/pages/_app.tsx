@@ -6,7 +6,7 @@ import '~/styles/style.css'
 function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <DefaultSeo title="ymkz.co" description="ymkz's website" />
+      <DefaultSeo titleTemplate="%s - ymkz.co" description="ymkz's website" />
       <Component {...pageProps} />
     </>
   )

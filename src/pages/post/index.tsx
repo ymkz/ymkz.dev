@@ -1,4 +1,5 @@
 import { InferGetStaticPropsType } from 'next'
+import { NextSeo } from 'next-seo'
 import { PublishDate } from '~/components/elements/date'
 import { InternalBlockLink, InternalInlineLink } from '~/components/elements/link'
 import { fetchPostAll } from '~/helpers/post'
@@ -6,6 +7,7 @@ import { fetchPostAll } from '~/helpers/post'
 function Posts({ contents }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
+      <NextSeo title="Posts" />
       <h1 className="posts-heading">Posts</h1>
       <p className="posts-description">
         There are my posts. My portfolio is <InternalInlineLink href="/">ymkz.co</InternalInlineLink>.

@@ -9,7 +9,7 @@ import { Totem } from '~/components/modules/totem'
 function Index() {
   return (
     <>
-      <NextSeo title="Portfolio - ymkz.co" />
+      <NextSeo title="Portfolio" />
       <Motto />
       <Totem />
       <Profile />
