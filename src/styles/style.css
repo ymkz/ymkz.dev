@@ -138,6 +138,9 @@ body {
 .list-row-badge__name {
   padding: 0 10px;
 }
+.list-row-badge__name:hover {
+  text-decoration: underline;
+}
 
 .posts-heading {
   font-size: 72px;

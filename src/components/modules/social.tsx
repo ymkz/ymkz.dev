@@ -1,5 +1,5 @@
 import { Facebook, GitHub, LinkedIn, Twitter } from '~/components/elements/icon'
-import { ExternalInlineLink } from '~/components/elements/link'
+import { ExternalBlockLink } from '~/components/elements/link'
 
 export function Social() {
   return (
@@ -10,37 +10,37 @@ export function Social() {
         Twitter DM is open.
       </p>
       <ul className="list-row">
-        <li className="list-row-badge__item">
-          <div className="list-row-badge__icon">
-            <GitHub />
-          </div>
-          <ExternalInlineLink className="list-row-badge__name" href="https://github.com/ymkz">
-            GitHub
-          </ExternalInlineLink>
+        <li>
+          <ExternalBlockLink className="list-row-badge__item" href="https://github.com/ymkz">
+            <div className="list-row-badge__icon">
+              <GitHub />
+            </div>
+            <div className="list-row-badge__name">GitHub</div>
+          </ExternalBlockLink>
         </li>
-        <li className="list-row-badge__item">
-          <div className="list-row-badge__icon">
-            <Twitter />
-          </div>
-          <ExternalInlineLink className="list-row-badge__name" href="https://twitter.com/ymkzly">
-            Twitter
-          </ExternalInlineLink>
+        <li>
+          <ExternalBlockLink className="list-row-badge__item" href="https://twitter.com/ymkzly">
+            <div className="list-row-badge__icon">
+              <Twitter />
+            </div>
+            <div className="list-row-badge__name">Twitter</div>
+          </ExternalBlockLink>
         </li>
-        <li className="list-row-badge__item">
-          <div className="list-row-badge__icon">
-            <Facebook />
-          </div>
-          <ExternalInlineLink className="list-row-badge__name" href="https://facebook.com/ymkzly">
-            Facebook
-          </ExternalInlineLink>
+        <li>
+          <ExternalBlockLink className="list-row-badge__item" href="https://facebook.com/ymkzly">
+            <div className="list-row-badge__icon">
+              <Facebook />
+            </div>
+            <div className="list-row-badge__name">Facebook</div>
+          </ExternalBlockLink>
         </li>
-        <li className="list-row-badge__item">
-          <div className="list-row-badge__icon">
-            <LinkedIn />
-          </div>
-          <ExternalInlineLink className="list-row-badge__name" href="https://linkedin.com/in/ymkz">
-            LinkedIn
-          </ExternalInlineLink>
+        <li>
+          <ExternalBlockLink className="list-row-badge__item" href="https://linkedin.com/in/ymkz">
+            <div className="list-row-badge__icon">
+              <LinkedIn />
+            </div>
+            <div className="list-row-badge__name">LinkedIn</div>
+          </ExternalBlockLink>
         </li>
       </ul>
     </section>
