@@ -1,41 +1,48 @@
 import { Facebook, GitHub, LinkedIn, Twitter } from '~/components/elements/icon'
-import { ListRowBadge } from '~/components/elements/list-row-badge'
-import { Paragraph } from '~/components/elements/paragraph'
-import { Section } from '~/components/elements/section'
-import { BadgeShape } from '~/types'
+import { ExternalInlineLink } from '~/components/elements/link'
 
-const items: BadgeShape[] = [
-  {
-    name: 'GitHub',
-    href: 'https://github.com/ymkz',
-    icon: <GitHub />,
-  },
-  {
-    name: 'Twitter',
-    href: 'https://twitter.com/ymkzly',
-    icon: <Twitter />,
-  },
-  {
-    name: 'Facebook',
-    href: 'https://facebook.com/ymkzly',
-    icon: <Facebook />,
-  },
-  {
-    name: 'LinkedIn',
-    href: 'https://linkedin.com/in/ymkz',
-    icon: <LinkedIn />,
-  },
-]
-
-export const Social = () => {
+export function Social() {
   return (
-    <Section>
-      <Paragraph>
+    <section className="section">
+      <p>
         Social account is here, get in touch with me.
         <br />
         Twitter DM is open.
-      </Paragraph>
-      <ListRowBadge items={items} />
-    </Section>
+      </p>
+      <ul className="list-row">
+        <li className="list-row-badge__item">
+          <div className="list-row-badge__icon">
+            <GitHub />
+          </div>
+          <ExternalInlineLink className="list-row-badge__name" href="https://github.com/ymkz">
+            GitHub
+          </ExternalInlineLink>
+        </li>
+        <li className="list-row-badge__item">
+          <div className="list-row-badge__icon">
+            <Twitter />
+          </div>
+          <ExternalInlineLink className="list-row-badge__name" href="https://twitter.com/ymkzly">
+            Twitter
+          </ExternalInlineLink>
+        </li>
+        <li className="list-row-badge__item">
+          <div className="list-row-badge__icon">
+            <Facebook />
+          </div>
+          <ExternalInlineLink className="list-row-badge__name" href="https://facebook.com/ymkzly">
+            Facebook
+          </ExternalInlineLink>
+        </li>
+        <li className="list-row-badge__item">
+          <div className="list-row-badge__icon">
+            <LinkedIn />
+          </div>
+          <ExternalInlineLink className="list-row-badge__name" href="https://linkedin.com/in/ymkz">
+            LinkedIn
+          </ExternalInlineLink>
+        </li>
+      </ul>
+    </section>
   )
 }

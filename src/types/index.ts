@@ -1,7 +1,15 @@
-import { ReactNode } from 'react'
-
-export type BadgeShape = {
-  name: string
-  href: string
-  icon: ReactNode
+export type ContentShape = {
+  id: string
+  createdAt: string
+  updatedAt: string
+  publishedAt: string
+  title: string
+  eyecatch?: { url: string }
+  body: string
 }
+
+export type APIResponseAll = {
+  contents: ContentShape[]
+}
+
+export type APIResponseOne = ContentShape

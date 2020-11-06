@@ -18,23 +18,22 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "dayjs": "1.9.4",
+    "clsx": "1.1.1",
+    "dayjs": "1.9.5",
     "interweave": "12.5.0",
     "interweave-ssr": "1.1.0",
-    "next": "10.0.0",
-    "next-seo": "4.15.0",
+    "next": "10.0.1",
+    "next-secure-headers": "2.0.0",
+    "next-seo": "4.15.1",
     "react": "17.0.1",
-    "react-dom": "17.0.1",
-    "snarkdown": "2.0.0",
-    "urlcat": "2.0.4"
+    "react-dom": "17.0.1"
   },
   "devDependencies": {
     "@commitlint/cli": "11.0.0",
     "@commitlint/config-conventional": "11.0.0",
     "@types/node": "14.14.6",
-    "@types/react": "16.9.55",
+    "@types/react": "16.9.56",
     "husky": "4.3.0",
-    "next-secure-headers": "2.0.0",
     "prettier": "2.1.2",
     "prettier-plugin-organize-imports": "1.1.1",
     "prettier-plugin-pkg": "0.8.0",

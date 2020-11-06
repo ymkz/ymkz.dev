@@ -8,9 +8,8 @@ class Document extends NextDocument {
     return (
       <Html lang="ja">
         <Head>
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" />
           <meta name="description" content="ymkz's website" />
-          <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-          <link rel="manifest" href="/site.webmanifest" />
         </Head>
         <body>
           <noscript>You need to enable JavaScript to run this app.</noscript>

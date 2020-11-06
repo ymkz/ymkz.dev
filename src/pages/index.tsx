@@ -1,21 +1,21 @@
-import { DefaultSeo } from 'next-seo'
-import { Like } from '~/components/modules/like'
+import { NextSeo } from 'next-seo'
+import { Education } from '~/components/modules/education'
+import { Hobby } from '~/components/modules/hobby'
 import { Motto } from '~/components/modules/motto'
 import { Profile } from '~/components/modules/profile'
 import { Social } from '~/components/modules/social'
-import { Study } from '~/components/modules/study'
 import { Totem } from '~/components/modules/totem'
 
 function Index() {
   return (
     <>
-      <DefaultSeo title="Portfolio" />
+      <NextSeo title="Portfolio - ymkz.co" />
       <Motto />
       <Totem />
       <Profile />
-      <Study />
+      <Education />
       <Social />
-      <Like />
+      <Hobby />
     </>
   )
 }
