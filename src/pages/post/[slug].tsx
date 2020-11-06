@@ -5,17 +5,21 @@ import { Preview } from '~/components/elements/preview'
 import { fetchPostAll, fetchPostOne } from '~/helpers/post'
 
 function Post({ content, preview }: InferGetStaticPropsType<typeof getStaticProps>) {
-  return (
-    <>
-      <h1 className="post__title">{content.title}</h1>
-      <PublishDate publishedAt={content.publishedAt} updatedAt={content.updatedAt} />
-      {content.eyecatch && <img className="post__eyecatch" src={content.eyecatch.url} alt="" />}
-      <main className="post__body">
-        <Markup content={content.body} noWrap />
-      </main>
-      <Preview preview={preview} />
-    </>
-  )
+  if (content) {
+    return (
+      <>
+        <h1 className="post__title">{content.title}</h1>
+        <PublishDate publishedAt={content.publishedAt} updatedAt={content.updatedAt} />
+        {content.eyecatch && <img className="post__eyecatch" src={content.eyecatch.url} alt="" />}
+        <main className="post__body">
+          <Markup content={content.body} noWrap />
+        </main>
+        <Preview preview={preview} />
+      </>
+    )
+  } else {
+    return null
+  }
 }
 
 export async function getStaticPaths() {

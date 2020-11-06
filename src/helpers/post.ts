@@ -1,6 +1,6 @@
 import { APIResponseAll, APIResponseOne } from '~/types'
 
-const endpoint = 'https://ymkz.microcms.io/api/v1/test'
+const endpoint = 'https://ymkz.microcms.io/api/v1/posts'
 
 export async function fetchPostAll() {
   const options: RequestInit = { headers: { 'X-API-KEY': process.env.API_KEY || '' } }
