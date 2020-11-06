@@ -171,6 +171,9 @@ body {
 
 .post__eyecatch {
   margin-top: 64px;
+}
+
+.post__eyecatch img {
   border-radius: 4px;
 }
 
