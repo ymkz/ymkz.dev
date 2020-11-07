@@ -2,11 +2,11 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import { fetchPostOne } from '~/helpers/post'
 
 async function preview(request: NextApiRequest, response: NextApiResponse) {
-  if (!request.query.id) {
+  if (!request.query.slug) {
     return response.status(404).end()
   }
 
-  const { content } = await fetchPostOne(request.query.id, request.query.draftKey)
+  const { content } = await fetchPostOne(request.query.slug, request.query.draftKey)
 
   if (!content) {
     return response.status(401).json({ message: 'Invalid ContentID' })
