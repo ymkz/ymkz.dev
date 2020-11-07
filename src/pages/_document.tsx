@@ -8,10 +8,6 @@ class Document extends NextDocument {
     return (
       <Html lang="ja">
         <Head>
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&text=Catchthewind.&display=swap"
-          />
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
