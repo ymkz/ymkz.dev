@@ -2,7 +2,7 @@ import { Markup } from 'interweave'
 import { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 import { NextSeo } from 'next-seo'
 import { PublishDate } from '~/components/elements/date'
-import { Image } from '~/components/elements/image'
+import { Eyecatch } from '~/components/elements/image'
 import { Preview } from '~/components/elements/preview'
 import { fetchPostAll, fetchPostOne } from '~/helpers/post'
 
@@ -14,7 +14,7 @@ function Post({ content, preview }: InferGetStaticPropsType<typeof getStaticProp
         <Preview preview={preview} />
         <h1 className="post__title">{content.title}</h1>
         <PublishDate publishedAt={content.publishedAt} updatedAt={content.updatedAt} />
-        <Image eyecatch={content.eyecatch} />
+        <Eyecatch eyecatch={content.eyecatch} />
         <main className="post__body">
           <Markup content={content.body} noWrap />
         </main>

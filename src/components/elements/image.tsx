@@ -3,7 +3,7 @@ import { ContentShape } from '~/types'
 
 type Props = Pick<ContentShape, 'eyecatch'>
 
-export function Image({ eyecatch }: Props) {
+export function Eyecatch({ eyecatch }: Props) {
   if (eyecatch) {
     return (
       <div className="post__eyecatch">
