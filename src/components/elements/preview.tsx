@@ -3,8 +3,16 @@ type Props = {
 }
 
 export function Preview({ preview }: Props) {
+  const handleClick = () => {
+    fetch('/api/clear')
+  }
+
   if (preview) {
-    return <div>Preview</div>
+    return (
+      <button className="preview" onClick={handleClick}>
+        PREVIEW MODE
+      </button>
+    )
   } else {
     return null
   }

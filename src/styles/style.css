@@ -41,6 +41,19 @@ body {
   font-size: 96px;
 }
 
+.preview {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  cursor: pointer;
+  background-color: var(--color-primary);
+  color: var(--bg-color-secondary);
+  font-size: 14px;
+  border: 0;
+  height: 28px;
+  outline: 0;
+}
+
 .motto {
   font-family: var(--pretty-font);
   font-size: 130px;

@@ -9,7 +9,7 @@ export async function fetchPostAll() {
   return json
 }
 
-export async function fetchPostOne(slug: string | string[] | undefined, draftKey?: string) {
+export async function fetchPostOne(slug: string | string[] | undefined, draftKey?: string | string[]) {
   const url = `${endpoint}/${slug}?draftKey=${draftKey}`
   const options: RequestInit = { headers: { 'X-API-KEY': process.env.API_KEY || '' } }
   const response = await fetch(url, options)
