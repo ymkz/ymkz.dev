@@ -21,7 +21,7 @@
     "clsx": "1.1.1",
     "dayjs": "1.10.3",
     "interweave": "12.7.0",
-    "interweave-ssr": "1.1.1",
+    "interweave-ssr": "1.2.0",
     "next": "10.0.5",
     "next-secure-headers": "2.1.0",
     "next-seo": "4.17.0",
