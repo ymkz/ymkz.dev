@@ -30,7 +30,7 @@ jobs:
       - check
       - build
     steps:
-      - uses: ridedott/merge-me-action@v2.1.1
+      - uses: ridedott/merge-me-action@v2.1.4
         if: github.actor == 'dependabot[bot]'
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
