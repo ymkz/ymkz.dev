@@ -2,28 +2,18 @@ name: healthcheck
 on:
   push:
     branches:
-      - master
+      - $default-branch
 env:
   CI: true
   TZ: Asia/Tokyo
 jobs:
-  check:
+  all:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2.1.4
+      - uses: actions/setup-node@v2.1.5
         with:
-          node-version: '12'
+          node-version: '14'
       - run: npm ci
-      - run: npm run lint
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2.1.4
-        with:
-          node-version: '12'
-      - run: npm ci
-      - run: npm run build
-        env:
-          API_KEY: ${{ secrets.API_KEY }}
+      - run: npm run typecheck
+      - run: npm run codecheck

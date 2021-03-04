@@ -1,12 +1,11 @@
 import { DefaultSeo } from 'next-seo'
 import { AppProps } from 'next/app'
-import '~/styles/reset.css'
-import '~/styles/style.css'
+import '~/styles/global.css'
 
 function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <DefaultSeo titleTemplate="%s - ymkz.co" description="ymkz's website" />
+      <DefaultSeo title="ymkz.co" description="A website about ymkz" />
       <Component {...pageProps} />
     </>
   )

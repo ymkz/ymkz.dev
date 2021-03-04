@@ -1,19 +1,7 @@
-# npm logs
-npm-debug.log*
-
-# Dependency directories
-node_modules/
-
-# Optional npm cache directory
-.npm
-
-# dotenv environment variables file
-.env
-.env.test
-.env.local
-
-# next.js build output
 .next
-
-# Vercel directories
 .vercel
+node_modules
+package-lock.json
+.env.*
+!.env.example
+*.log*

@@ -1,23 +1,20 @@
-import { NextSeo } from 'next-seo'
-import { Education } from '~/components/modules/education'
-import { Hobby } from '~/components/modules/hobby'
-import { Motto } from '~/components/modules/motto'
-import { Profile } from '~/components/modules/profile'
-import { Social } from '~/components/modules/social'
-import { Totem } from '~/components/modules/totem'
+import { Education } from '~/components/education'
+import { Like } from '~/components/like'
+import { Motto } from '~/components/motto'
+import { Profile } from '~/components/profile'
+import { Sign } from '~/components/sign'
+import { Social } from '~/components/social'
+import layout from '~/styles/pages/index.layout.module.css'
 
-function Index() {
+export default function IndexPage() {
   return (
-    <>
-      <NextSeo title="Portfolio" />
+    <div className={layout.container}>
       <Motto />
-      <Totem />
       <Profile />
       <Education />
       <Social />
-      <Hobby />
-    </>
+      <Like />
+      <Sign />
+    </div>
   )
 }
-
-export default Index

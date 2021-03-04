@@ -1,7 +1,6 @@
 {
   "editor.codeActionsOnSave": {
-    "source.organizeImports": true,
-    "source.fixAll": true
+    "source.organizeImports": true
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
@@ -11,5 +10,6 @@
     "**/.next": true,
     "**/node_modules": true,
     "package-lock.json": true
-  }
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

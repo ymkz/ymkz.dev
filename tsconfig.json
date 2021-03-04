@@ -2,7 +2,6 @@
   "compilerOptions": {
     "allowJs": true,
     "baseUrl": ".",
-    "declaration": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
@@ -15,6 +14,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "paths": { "~/*": ["src/*"] },
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
     "removeComments": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,

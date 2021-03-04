@@ -1,0 +1,12 @@
+.list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.tag {
+  padding: 0 6px;
+  border: 1px solid var(--color-base-900);
+}

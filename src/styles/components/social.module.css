@@ -1,0 +1,27 @@
+.list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.badge {
+  border: 1px solid var(--color-base-900);
+}
+
+.badgeLink {
+  display: flex;
+  color: var(--color-base-900);
+  text-decoration: none;
+}
+
+.badgeIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badgeName {
+  padding: 0 6px;
+}
