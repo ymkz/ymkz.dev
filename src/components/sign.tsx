@@ -1,9 +1,9 @@
-import { Icon } from '~/components/icons'
+import { Icon } from '~/components/icon'
 
 export function Sign() {
   return (
     <div>
-      <Icon name="Logo" />
+      <Icon name="logo" />
     </div>
   )
 }

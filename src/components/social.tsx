@@ -1,4 +1,4 @@
-import { Icon } from '~/components/icons'
+import { Icon } from '~/components/icon'
 import style from '~/styles/components/social.module.css'
 
 export function Social() {
@@ -18,7 +18,7 @@ export function Social() {
             target="_blank"
           >
             <div className={style.badgeIcon}>
-              <Icon name="GitHub" />
+              <Icon name="github" />
             </div>
             <div className={style.badgeName}>GitHub</div>
           </a>
@@ -31,7 +31,7 @@ export function Social() {
             target="_blank"
           >
             <div className={style.badgeIcon}>
-              <Icon name="Twitter" />
+              <Icon name="twitter" />
             </div>
             <div className={style.badgeName}>Twitter</div>
           </a>
@@ -44,7 +44,7 @@ export function Social() {
             target="_blank"
           >
             <div className={style.badgeIcon}>
-              <Icon name="Facebook" />
+              <Icon name="facebook" />
             </div>
             <div className={style.badgeName}>Facebook</div>
           </a>
@@ -57,7 +57,7 @@ export function Social() {
             target="_blank"
           >
             <div className={style.badgeIcon}>
-              <Icon name="LinkedIn" />
+              <Icon name="linkedin" />
             </div>
             <div className={style.badgeName}>LinkedIn</div>
           </a>
