@@ -4,7 +4,7 @@ import { Motto } from '~/components/motto'
 import { Profile } from '~/components/profile'
 import { Sign } from '~/components/sign'
 import { Social } from '~/components/social'
-import layout from '~/styles/pages/index.layout.module.css'
+import layout from '~/styles/pages/index.module.css'
 
 export default function IndexPage() {
   return (
