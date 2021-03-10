@@ -20,6 +20,8 @@ class Document extends NextDocument {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap&text=Catchthewind."
           />
+          {/* prettier-ignore */}
+          <script>if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"ymkz",utcoffset:"9"}))};sessionStorage.setItem("_swa","1");</script>
         </Head>
         <body>
           <noscript>You need to enable JavaScript to run this app.</noscript>
