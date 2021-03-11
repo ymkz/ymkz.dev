@@ -2,7 +2,7 @@ name: healthcheck
 on:
   push:
     branches:
-      - $default-branch
+      - main
 env:
   CI: true
   TZ: Asia/Tokyo
