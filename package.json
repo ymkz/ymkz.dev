@@ -1,4 +1,5 @@
 {
+  "name": "ymkz.co",
   "private": true,
   "scripts": {
     "prepare": "git config --local core.hooksPath .githook || echo 'CI'",
