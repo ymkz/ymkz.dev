@@ -14,9 +14,6 @@
   "lint-staged": {
     "*.{js,ts,tsx,css,yml,json,html,md}": [
       "prettier --write"
-    ],
-    "*.{ts,tsx}": [
-      "tsc --noEmit"
     ]
   },
   "prettier": {
@@ -24,7 +21,7 @@
     "singleQuote": true
   },
   "dependencies": {
-    "next": "10.1.3",
+    "next": "10.2.0",
     "next-seo": "4.24.0",
     "react": "17.0.2",
     "react-dom": "17.0.2"
