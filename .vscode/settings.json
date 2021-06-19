@@ -7,9 +7,11 @@
   "editor.rulers": [80],
   "emmet.excludeLanguages": ["markdown", "typescript", "typescriptreact"],
   "search.exclude": {
-    "**/.next": true,
+    "**/dist": true,
     "**/node_modules": true,
-    "package-lock.json": true
+    "**/package-lock.json": true
   },
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  }
 }

@@ -1,7 +1,0 @@
-.container {
-  padding: 108px 24px;
-}
-
-.container > * + * {
-  margin-top: 36px;
-}

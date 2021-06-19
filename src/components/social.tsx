@@ -1,68 +1,55 @@
-import { Icon } from '~/components/icon'
-import style from '~/styles/components/social.module.css'
+import { css } from '@emotion/react'
+import { Avatar } from '../components/avatar'
+import { Icon } from '../components/icon'
+import { color } from '../constants/color'
 
-export function Social() {
+export const Social = () => {
   return (
-    <div>
-      <div>
-        Social account is here, get in touch with me.
-        <br />
-        Twitter DM is open.
+    <div css={container}>
+      <Avatar />
+      <div css={icons}>
+        <a
+          css={link}
+          href="https://github.com/ymkz"
+          rel="noreferrer noopener"
+          target="_blank"
+        >
+          <Icon name="github" width={32} height={32} />
+        </a>
+        <a
+          css={link}
+          href="https://twitter.com/ymkzly"
+          rel="noreferrer noopener"
+          target="_blank"
+        >
+          <Icon name="twitter" width={32} height={32} />
+        </a>
+        <a
+          css={link}
+          href="https://facebook.com/ymkzly"
+          rel="noreferrer noopener"
+          target="_blank"
+        >
+          <Icon name="facebook" width={32} height={32} />
+        </a>
       </div>
-      <ul className={style.list}>
-        <li className={style.badge}>
-          <a
-            href="https://github.com/ymkz"
-            className={style.badgeLink}
-            rel="noreferrer noopener"
-            target="_blank"
-          >
-            <div className={style.badgeIcon}>
-              <Icon name="github" />
-            </div>
-            <div className={style.badgeName}>GitHub</div>
-          </a>
-        </li>
-        <li className={style.badge}>
-          <a
-            href="https://twitter.com/ymkzly"
-            className={style.badgeLink}
-            rel="noreferrer noopener"
-            target="_blank"
-          >
-            <div className={style.badgeIcon}>
-              <Icon name="twitter" />
-            </div>
-            <div className={style.badgeName}>Twitter</div>
-          </a>
-        </li>
-        <li className={style.badge}>
-          <a
-            href="https://facebook.com/ymkzly"
-            className={style.badgeLink}
-            rel="noreferrer noopener"
-            target="_blank"
-          >
-            <div className={style.badgeIcon}>
-              <Icon name="facebook" />
-            </div>
-            <div className={style.badgeName}>Facebook</div>
-          </a>
-        </li>
-        <li className={style.badge}>
-          <a
-            href="https://linkedin.com/in/ymkz"
-            className={style.badgeLink}
-            rel="noreferrer noopener"
-            target="_blank"
-          >
-            <div className={style.badgeIcon}>
-              <Icon name="linkedin" />
-            </div>
-            <div className={style.badgeName}>LinkedIn</div>
-          </a>
-        </li>
-      </ul>
     </div>
   )
 }
+
+const container = css`
+  display: flex;
+  gap: 72px;
+  align-items: center;
+`
+
+const icons = css`
+  display: flex;
+  gap: 24px;
+  align-items: center;
+`
+
+const link = css`
+  line-height: 0;
+  color: ${color.baseWhite};
+`

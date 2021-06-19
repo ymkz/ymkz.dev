@@ -1,9 +1,20 @@
-import style from '~/styles/components/motto.module.css'
+import { css } from '@emotion/react'
+import { font } from '../constants/font'
 
-export function Motto() {
+export const Motto = () => {
   return (
-    <div>
-      <h1 className={style.motto}>Catch the wind.</h1>
+    <div css={motto}>
+      Catch
+      <br />
+      the
+      <br />
+      wind.
     </div>
   )
 }
+
+const motto = css`
+  font-size: 80px;
+  font-weight: 700;
+  font-family: ${font.mono};
+`

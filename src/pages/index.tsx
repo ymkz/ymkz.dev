@@ -1,20 +1,24 @@
-import { Education } from '~/components/education'
-import { Like } from '~/components/like'
-import { Motto } from '~/components/motto'
-import { Profile } from '~/components/profile'
-import { Sign } from '~/components/sign'
-import { Social } from '~/components/social'
-import layout from '~/styles/pages/index.module.css'
+import { css } from '@emotion/react'
+import { Motto } from '../components/motto'
+import { Social } from '../components/social'
+import { Text } from '../components/text'
 
-export default function IndexPage() {
+export const IndexPage = () => {
   return (
-    <div className={layout.container}>
+    <div css={container}>
       <Motto />
-      <Profile />
-      <Education />
+      <Text />
       <Social />
-      <Like />
-      <Sign />
     </div>
   )
 }
+
+const container = css`
+  max-width: 1024px;
+  width: 100%;
+  padding: 48px 24px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+`
