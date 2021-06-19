@@ -14,7 +14,7 @@ export const Text = () => {
 }
 
 const text = css`
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.75;
   font-weight: 500;
   font-family: ${font.mono};

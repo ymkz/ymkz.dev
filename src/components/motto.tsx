@@ -14,7 +14,7 @@ export const Motto = () => {
 }
 
 const motto = css`
-  font-size: 80px;
+  font-size: 70px;
   font-weight: 700;
   font-family: ${font.mono};
 `
