@@ -14,6 +14,9 @@ const globalStyle = css`
     background-color: ${color.baseBlack};
     color: ${color.baseWhite};
   }
+  ::selection {
+    background-color: ${color.baseAccent};
+  }
 `
 
 export const GlobalStyle = () => {
