@@ -2,7 +2,7 @@ import { css } from '@emotion/react'
 import src from '../images/avatar.jpg'
 
 export const Avatar = () => {
-  return <img src={src} css={avatar} />
+  return <img src={src} alt="" css={avatar} />
 }
 
 const avatar = css`
