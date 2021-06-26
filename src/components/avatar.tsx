@@ -1,5 +1,5 @@
 import { css } from '@emotion/react'
-import src from '../images/avatar.jpg'
+import src from '../images/avatar.webp'
 
 export const Avatar = () => {
   return <img src={src} alt="" css={avatar} />
