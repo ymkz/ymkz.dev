@@ -3,13 +3,13 @@ import { font } from '../constants/font'
 
 export const Text = () => {
   return (
-    <div css={text}>
+    <main css={text}>
       I'm Kazuya Yamashita. a.k.a ymkz.
       <br />
       a web engineer, good at web frontend.
       <br />
       sleep, walk and write code.
-    </div>
+    </main>
   )
 }
 

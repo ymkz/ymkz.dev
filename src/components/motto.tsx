@@ -3,13 +3,13 @@ import { font } from '../constants/font'
 
 export const Motto = () => {
   return (
-    <div css={motto}>
+    <header css={motto}>
       Catch
       <br />
       the
       <br />
       wind.
-    </div>
+    </header>
   )
 }
 

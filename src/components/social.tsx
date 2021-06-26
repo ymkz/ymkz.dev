@@ -5,7 +5,7 @@ import { color } from '../constants/color'
 
 export const Social = () => {
   return (
-    <div css={container}>
+    <footer css={container}>
       <Avatar />
       <div css={icons}>
         <a
@@ -13,6 +13,7 @@ export const Social = () => {
           href="https://github.com/ymkz"
           rel="noreferrer noopener"
           target="_blank"
+          aria-label="github icon link"
         >
           <Icon name="github" width={32} height={32} />
         </a>
@@ -21,6 +22,7 @@ export const Social = () => {
           href="https://twitter.com/ymkzly"
           rel="noreferrer noopener"
           target="_blank"
+          aria-label="twitter icon link"
         >
           <Icon name="twitter" width={32} height={32} />
         </a>
@@ -29,11 +31,12 @@ export const Social = () => {
           href="https://facebook.com/ymkzly"
           rel="noreferrer noopener"
           target="_blank"
+          aria-label="facebook icon link"
         >
           <Icon name="facebook" width={32} height={32} />
         </a>
       </div>
-    </div>
+    </footer>
   )
 }
 
