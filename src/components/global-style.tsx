@@ -1,8 +1,9 @@
-import { css, Global } from '@emotion/react'
+import { createGlobalStyles } from 'solid-styled-components'
 import { color } from '../constants/color'
 import { font } from '../constants/font'
 
-const globalStyle = css`
+export const GlobalStyle = () => {
+  const Style = createGlobalStyles`
   *,
   *::before,
   *::after {
@@ -17,8 +18,6 @@ const globalStyle = css`
   ::selection {
     background-color: ${color.baseAccent};
   }
-`
-
-export const GlobalStyle = () => {
-  return <Global styles={globalStyle} />
+  `
+  return <Style />
 }

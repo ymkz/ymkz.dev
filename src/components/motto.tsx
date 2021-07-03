@@ -1,9 +1,9 @@
-import { css } from '@emotion/react'
+import { css } from 'solid-styled-components'
 import { font } from '../constants/font'
 
 export const Motto = () => {
   return (
-    <header css={motto}>
+    <header class={motto}>
       Catch
       <br />
       the

@@ -1,9 +1,9 @@
-import { css } from '@emotion/react'
+import { css } from 'solid-styled-components'
 import { font } from '../constants/font'
 
 export const Text = () => {
   return (
-    <main css={text}>
+    <main class={text}>
       I'm Kazuya Yamashita. a.k.a ymkz.
       <br />
       a web engineer, good at web frontend.
