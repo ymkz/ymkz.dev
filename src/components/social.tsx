@@ -1,7 +1,7 @@
 import { css } from 'solid-styled-components'
-import { Avatar } from '../components/avatar'
-import { Icon } from '../components/icon'
-import { color } from '../constants/color'
+import { Avatar } from '~/components/avatar'
+import { Icon } from '~/components/icon'
+import { color } from '~/constants/color'
 
 export const Social = () => {
   return (

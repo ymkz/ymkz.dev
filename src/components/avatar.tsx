@@ -1,5 +1,5 @@
 import { css } from 'solid-styled-components'
-import src from '../images/avatar.webp'
+import src from '~/images/avatar.webp'
 
 export const Avatar = () => {
   return <img src={src} alt="" class={avatar} />

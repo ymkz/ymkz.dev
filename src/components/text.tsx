@@ -1,5 +1,5 @@
 import { css } from 'solid-styled-components'
-import { font } from '../constants/font'
+import { font } from '~/constants/font'
 
 export const Text = () => {
   return (

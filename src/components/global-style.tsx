@@ -1,6 +1,6 @@
 import { createGlobalStyles } from 'solid-styled-components'
-import { color } from '../constants/color'
-import { font } from '../constants/font'
+import { color } from '~/constants/color'
+import { font } from '~/constants/font'
 
 export const GlobalStyle = () => {
   const Style = createGlobalStyles`

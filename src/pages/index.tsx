@@ -1,7 +1,7 @@
 import { css } from 'solid-styled-components'
-import { Motto } from '../components/motto'
-import { Social } from '../components/social'
-import { Text } from '../components/text'
+import { Motto } from '~/components/motto'
+import { Social } from '~/components/social'
+import { Text } from '~/components/text'
 
 export const IndexPage = () => {
   return (
