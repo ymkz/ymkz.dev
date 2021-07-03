@@ -1,11 +1,11 @@
-import { css } from '@emotion/react'
+import { css } from 'solid-styled-components'
 import { Motto } from '../components/motto'
 import { Social } from '../components/social'
 import { Text } from '../components/text'
 
 export const IndexPage = () => {
   return (
-    <div css={container}>
+    <div class={container}>
       <Motto />
       <Text />
       <Social />

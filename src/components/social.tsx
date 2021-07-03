@@ -1,39 +1,39 @@
-import { css } from '@emotion/react'
+import { css } from 'solid-styled-components'
 import { Avatar } from '../components/avatar'
 import { Icon } from '../components/icon'
 import { color } from '../constants/color'
 
 export const Social = () => {
   return (
-    <footer css={container}>
+    <footer class={container}>
       <Avatar />
-      <div css={icons}>
+      <div class={icons}>
         <a
-          css={link}
+          class={link}
           href="https://github.com/ymkz"
           rel="noreferrer noopener"
           target="_blank"
           aria-label="github icon link"
         >
-          <Icon name="github" width={32} height={32} />
+          <Icon name="github" />
         </a>
         <a
-          css={link}
+          class={link}
           href="https://twitter.com/ymkzly"
           rel="noreferrer noopener"
           target="_blank"
           aria-label="twitter icon link"
         >
-          <Icon name="twitter" width={32} height={32} />
+          <Icon name="twitter" />
         </a>
         <a
-          css={link}
+          class={link}
           href="https://facebook.com/ymkzly"
           rel="noreferrer noopener"
           target="_blank"
           aria-label="facebook icon link"
         >
-          <Icon name="facebook" width={32} height={32} />
+          <Icon name="facebook" />
         </a>
       </div>
     </footer>

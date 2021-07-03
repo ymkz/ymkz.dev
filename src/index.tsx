@@ -1,12 +1,14 @@
-import { StrictMode } from 'react'
-import { render } from 'react-dom'
+import { render } from 'solid-js/web'
 import { GlobalStyle } from './components/global-style'
 import { IndexPage } from './pages/index'
 
-render(
-  <StrictMode>
-    <GlobalStyle />
-    <IndexPage />
-  </StrictMode>,
-  document.querySelector('#root')
-)
+const App = () => {
+  return (
+    <>
+      <GlobalStyle />
+      <IndexPage />
+    </>
+  )
+}
+
+render(() => <App />, document.querySelector('#root')!)
