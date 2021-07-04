@@ -1,0 +1,35 @@
+name: pullrequest
+on: pull_request
+env:
+  CI: true
+  TZ: Asia/Tokyo
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2.2.0
+        with:
+          node-version: '16'
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run codecheck
+  build:
+    needs: check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2.2.0
+        with:
+          node-version: '16'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+  automerge:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: fastify/github-action-merge-dependabot@v2.1.1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
