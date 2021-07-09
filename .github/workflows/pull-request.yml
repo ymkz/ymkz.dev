@@ -1,6 +1,5 @@
 name: pull-request
-on:
-  pull_request:
+on: pull_request
 env:
   CI: true
   TZ: Asia/Tokyo
