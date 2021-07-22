@@ -1,6 +1,6 @@
 import { render } from 'solid-js/web'
-import { GlobalStyle } from './components/global-style'
-import { IndexPage } from './pages/index'
+import { GlobalStyle } from '~/components/global-style'
+import { IndexPage } from '~/pages'
 
 const App = () => {
   return (

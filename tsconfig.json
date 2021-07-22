@@ -6,7 +6,7 @@
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "jsxImportSource": "solid-js",
     "baseUrl": ".",
     "paths": {
