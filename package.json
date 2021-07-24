@@ -23,7 +23,7 @@
     "singleQuote": true
   },
   "dependencies": {
-    "solid-js": "1.0.3",
+    "solid-js": "1.0.4",
     "solid-styled-components": "0.27.1"
   },
   "devDependencies": {
