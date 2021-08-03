@@ -2,7 +2,7 @@ type Props = {
   name: 'twitter' | 'github' | 'facebook' | 'linkedin' | 'logo'
 }
 
-export function Icon(props: Props) {
+export const Icon = (props: Props) => {
   switch (props.name) {
     case 'twitter': {
       return <Twitter />
@@ -22,7 +22,7 @@ export function Icon(props: Props) {
   }
 }
 
-function Twitter() {
+const Twitter = () => {
   return (
     <svg width="32px" height="32px" viewBox="0 0 24 24">
       <path
@@ -33,7 +33,7 @@ function Twitter() {
   )
 }
 
-function GitHub() {
+const GitHub = () => {
   return (
     <svg width="32px" height="32px" viewBox="0 0 24 24">
       <path
@@ -44,7 +44,7 @@ function GitHub() {
   )
 }
 
-function Facebook() {
+const Facebook = () => {
   return (
     <svg width="32px" height="32px" viewBox="0 0 24 24">
       <path
@@ -55,7 +55,7 @@ function Facebook() {
   )
 }
 
-function LinkedIn() {
+const LinkedIn = () => {
   return (
     <svg width="32px" height="32px" viewBox="0 0 24 24">
       <path
