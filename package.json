@@ -8,11 +8,11 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "npm run lint:tsc && npm run lint:eslint && npm run lint:prettier",
+    "lint": "pnpm run lint:tsc && pnpm run lint:eslint && pnpm run lint:prettier",
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier --check .",
     "lint:tsc": "tsc --noEmit",
-    "fmt": "npm run fmt:prettier && npm run fmt:eslint",
+    "fmt": "pnpm run fmt:prettier && pnpm run fmt:eslint",
     "fmt:prettier": "prettier --write .",
     "fmt:eslint": "eslint --fix ."
   },
