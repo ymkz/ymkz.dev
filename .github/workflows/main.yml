@@ -10,21 +10,27 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
+      - uses: pnpm/action-setup@2.0.1
+        with:
+          version: 6.11.5
       - uses: actions/setup-node@v2.3.0
         with:
           node-version: '16'
-          cache: npm
-      - run: npm ci
-      - run: npm run lint
+          cache: pnpm
+      - run: pnpm install
+      - run: pnpm run lint
   build:
     needs: lint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
+      - uses: pnpm/action-setup@2.0.1
+        with:
+          version: 6.11.5
       - uses: actions/setup-node@v2.3.0
         with:
           node-version: '16'
-          cache: npm
-      - run: npm ci
-      - run: npm run build
+          cache: pnpm
+      - run: pnpm install
+      - run: pnpm run build

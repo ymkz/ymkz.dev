@@ -4,20 +4,20 @@
   "private": true,
   "scripts": {
     "prepare": "git config --local core.hooksPath .githooks || echo 'CI'",
-    "reset": "rm -rf node_modules package-lock.json",
+    "reset": "rm -rf node_modules pnpm-lock.yaml",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "lint": "npm run lint:tsc && npm run lint:eslint && npm run lint:prettier",
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier --check .",
     "lint:tsc": "tsc --noEmit",
-    "lint": "npm run lint:tsc && npm run lint:eslint && npm run lint:prettier",
     "fmt": "npm run fmt:prettier && npm run fmt:eslint",
     "fmt:prettier": "prettier --write .",
     "fmt:eslint": "eslint --fix ."
   },
   "lint-staged": {
-    "*.{js,ts,tsx,css,yml,json,html,md}": [
+    "*.{js,ts,tsx,css,yml,yaml,json,html,md}": [
       "prettier --write"
     ]
   },
@@ -41,11 +41,9 @@
     "vite-tsconfig-paths": "3.3.13"
   },
   "engines": {
-    "node": "16.x",
-    "npm": "7.x"
+    "node": "16.x"
   },
   "volta": {
-    "node": "16.4.2",
-    "npm": "7.19.1"
+    "node": "16.6.1"
   }
 }
