@@ -5,12 +5,5 @@ updates:
     schedule:
       interval: 'weekly'
       day: 'saturday'
-      time: '09:00'
-      timezone: 'Asia/Tokyo'
-  - directory: '/'
-    package-ecosystem: 'npm'
-    schedule:
-      interval: 'weekly'
-      day: 'saturday'
-      time: '09:00'
+      time: '10:00'
       timezone: 'Asia/Tokyo'
