@@ -19,6 +19,10 @@
   "lint-staged": {
     "*.{js,ts,tsx,css,yml,yaml,json,html,md}": [
       "prettier --write"
+    ],
+    "*.{ts,tsx}": [
+      "tsc --noEmit",
+      "eslint --fix"
     ]
   },
   "dependencies": {
