@@ -10,16 +10,16 @@ specifiers:
   prettier: 2.3.2
   prettier-plugin-organize-imports: 2.3.3
   prettier-plugin-packagejson: 2.2.11
-  solid-js: 1.1.0
-  solid-styled-components: 0.27.1
+  solid-js: 1.1.1
+  solid-styled-components: 0.27.2
   typescript: 4.3.5
   vite: 2.4.4
   vite-plugin-solid: 2.0.1
   vite-tsconfig-paths: 3.3.13
 
 dependencies:
-  solid-js: 1.1.0
-  solid-styled-components: 0.27.1_solid-js@1.1.0
+  solid-js: 1.1.1
+  solid-styled-components: 0.27.2_solid-js@1.1.1
 
 devDependencies:
   '@types/babel__core': 7.1.15
@@ -1183,8 +1183,8 @@ packages:
     resolution: {integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==}
     dev: true
 
-  /goober/2.0.39_csstype@2.6.17:
-    resolution: {integrity: sha512-ryw0VaZaehKmnjL4ZEJaiUVQc+XFa5dXIAbf2QC3F+WVKRbzaSuJyq7w28bdlwqYctiZ0Ok5QL/Pap5M2pCHQg==}
+  /goober/2.0.41_csstype@2.6.17:
+    resolution: {integrity: sha512-kwjegMT5018zWydhOQlQneCgCtrKJaPsru7TaBWmTYV0nsMeUrM6L6O8JmNYb9UbPMgWcmtf+9p4Y3oJabIH1A==}
     peerDependencies:
       csstype: ^2.6.2
     dependencies:
@@ -1783,8 +1783,8 @@ packages:
     resolution: {integrity: sha512-2jHCXLwp/B7P4kh5tl0ospRaC2F++BU0uWwtfgK/8Zc/MROOyCmmkjHpLAQC2u2NWYVGnIclDIJ2FGDXJ0wcYg==}
     dev: true
 
-  /solid-js/1.1.0:
-    resolution: {integrity: sha512-QcYxp0AnJW3luQKRF/vOhEC5G0ao/f5OqkRuY4JOEmSjWcl4fh8UGiaEOYnri+uJmfGo7KehTKC/+Se40Qh+Lg==}
+  /solid-js/1.1.1:
+    resolution: {integrity: sha512-BtNNMUjBGtkx4viW5q/oqU4DOHa3WRhylN302cVVIeiBUGw6uzAE+NhNF12bAvSYJOCHLyGHpUEIeWklkeGgsg==}
     dev: false
 
   /solid-refresh/0.2.2_solid-js@1.0.7:
@@ -1795,14 +1795,14 @@ packages:
       solid-js: 1.0.7
     dev: true
 
-  /solid-styled-components/0.27.1_solid-js@1.1.0:
-    resolution: {integrity: sha512-DKlLBxiq75af/6vUXyM42Alg+hZ1eK2vffQG1kvZFsxuADR9zfTYUNCDmon54jsRUq4EYfkdI+f4IRb95mez0w==}
+  /solid-styled-components/0.27.2_solid-js@1.1.1:
+    resolution: {integrity: sha512-dnTVRg96uL4TE3xCaJzLdITJDRlx7DdRH8sOOp/Ikm5pPgpzilIlLUB2T6wejoNKKMBNqOq16KY00mRNPtG9sg==}
     peerDependencies:
       solid-js: ^1.0.0
     dependencies:
       csstype: 2.6.17
-      goober: 2.0.39_csstype@2.6.17
-      solid-js: 1.1.0
+      goober: 2.0.41_csstype@2.6.17
+      solid-js: 1.1.1
     dev: false
 
   /sort-object-keys/1.1.3:
