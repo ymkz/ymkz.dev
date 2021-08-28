@@ -14,7 +14,7 @@ specifiers:
   solid-styled-components: 0.27.2
   typescript: 4.4.2
   vite: 2.5.1
-  vite-plugin-solid: 2.0.2
+  vite-plugin-solid: 2.0.3
   vite-tsconfig-paths: 3.3.13
 
 dependencies:
@@ -33,7 +33,7 @@ devDependencies:
   prettier-plugin-packagejson: 2.2.11_prettier@2.3.2
   typescript: 4.4.2
   vite: 2.5.1
-  vite-plugin-solid: 2.0.2
+  vite-plugin-solid: 2.0.3
   vite-tsconfig-paths: 3.3.13_vite@2.5.1
 
 packages:
@@ -1980,8 +1980,8 @@ packages:
     resolution: {integrity: sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA==}
     dev: true
 
-  /vite-plugin-solid/2.0.2:
-    resolution: {integrity: sha512-WnEehzPy8dADKCAb2Po2lSVhasu0Ft9l1b4hp3m7G8nRvIhlF0w/M3vDyA6pr9IMQMkrj9U8TQz+BdVpc+aElg==}
+  /vite-plugin-solid/2.0.3:
+    resolution: {integrity: sha512-NiyYUGema6ODxEGFl9ytqQ0ucQNiHJ3XkzcfmtrBOsIna53F3FnU7n9NEss+RrsogAErgZK7eeSvYpdurgDVSA==}
     dependencies:
       '@babel/core': 7.15.0
       '@babel/preset-typescript': 7.15.0_@babel+core@7.15.0
