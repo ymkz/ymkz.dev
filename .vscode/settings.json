@@ -6,13 +6,14 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.rulers": [80],
-  "emmet.excludeLanguages": ["markdown", "typescript", "typescriptreact"],
+  "emmet.excludeLanguages": ["markdown", "typescript"],
   "search.exclude": {
-    "**/dist": true,
+    "**/build": true,
     "**/node_modules": true,
-    "**/pnpm-lock.yaml": true
+    "**/package-lock.json": true
   },
   "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.tsdk": "node_modules/typescript/lib",
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   }

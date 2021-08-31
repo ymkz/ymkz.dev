@@ -1,53 +1,64 @@
 {
   "name": "ymkz.co",
   "version": "0.0.0",
+  "type": "module",
   "private": true,
   "scripts": {
-    "prepare": "git config --local core.hooksPath .githooks || echo 'CI'",
-    "reset": "rm -rf node_modules pnpm-lock.yaml",
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "lint": "pnpm run lint:tsc && pnpm run lint:eslint && pnpm run lint:prettier",
+    "build": "svelte-kit build",
+    "dev": "svelte-kit dev",
+    "fmt": "npm run fmt:prettier && npm run fmt:eslint",
+    "fmt:eslint": "eslint --fix .",
+    "fmt:prettier": "prettier --write .",
+    "lint": "npm run lint:prettier && npm run lint:eslint && npm run lint:tsc && npm run lint:svelte",
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier --check .",
+    "lint:svelte": "svelte-check",
     "lint:tsc": "tsc --noEmit",
-    "fmt": "pnpm run fmt:prettier && pnpm run fmt:eslint",
-    "fmt:prettier": "prettier --write .",
-    "fmt:eslint": "eslint --fix ."
-  },
-  "lint-staged": {
-    "*.{js,ts,tsx,css,yml,yaml,json,html,md}": [
-      "prettier --write"
-    ],
-    "*.{ts,tsx}": [
-      "tsc --noEmit",
-      "eslint --fix"
-    ]
-  },
-  "dependencies": {
-    "solid-js": "1.1.1",
-    "solid-styled-components": "0.27.2"
+    "preview": "svelte-kit preview"
   },
   "devDependencies": {
-    "@types/babel__core": "7.1.15",
-    "@typescript-eslint/eslint-plugin": "4.29.3",
-    "@typescript-eslint/parser": "4.29.3",
+    "@arkweid/lefthook": "0.7.6",
+    "@sveltejs/adapter-static": "1.0.0-next.17",
+    "@sveltejs/kit": "1.0.0-next.159",
+    "@typescript-eslint/eslint-plugin": "4.30.0",
+    "@typescript-eslint/parser": "4.30.0",
     "eslint": "7.32.0",
     "eslint-config-prettier": "8.3.0",
-    "lint-staged": "11.1.2",
+    "eslint-plugin-svelte3": "3.2.0",
     "prettier": "2.3.2",
-    "prettier-plugin-organize-imports": "2.3.3",
-    "prettier-plugin-packagejson": "2.2.11",
-    "typescript": "4.4.2",
-    "vite": "2.5.1",
-    "vite-plugin-solid": "2.0.3",
-    "vite-tsconfig-paths": "3.3.13"
+    "prettier-plugin-pkg": "0.10.0",
+    "prettier-plugin-svelte": "2.4.0",
+    "svelte": "3.42.4",
+    "svelte-check": "2.2.5",
+    "svelte-preprocess": "4.8.0",
+    "typescript": "4.4.2"
   },
-  "engines": {
-    "node": "16.x"
+  "eslintConfig": {
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "prettier"
+    ],
+    "plugins": [
+      "svelte3",
+      "@typescript-eslint"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "*.svelte"
+        ],
+        "processor": "svelte3/svelte3"
+      }
+    ],
+    "settings": {
+      "svelte3/typescript": true
+    }
   },
-  "volta": {
-    "node": "16.6.1"
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
   }
 }
