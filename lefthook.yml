@@ -8,5 +8,5 @@ pre-commit:
       glob: '*.{ts,tsx}'
       run: 'prettier --write {staged_files} && eslint --fix {staged_files} && npm run lint:tsc && npm run lint:svelte'
     format-other-files:
-      glob: '*.{yml,json,html,md}'
+      glob: '*.{yml,json,css,html,md}'
       run: 'prettier --write {staged_files}'
