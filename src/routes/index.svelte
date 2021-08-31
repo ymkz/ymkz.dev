@@ -1,4 +1,4 @@
-<div class="container">
+<main class="container">
   <div class="motto">
     Catch
     <br />
@@ -60,7 +60,7 @@
       </a>
     </div>
   </div>
-</div>
+</main>
 
 <style>
   .container {
