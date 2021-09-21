@@ -1,18 +1,24 @@
 {
   "compilerOptions": {
-    "moduleResolution": "node",
-    "module": "ESNext",
+    "jsx": "preserve",
     "target": "ESNext",
-    "lib": ["ESNext", "DOM"],
-    "importsNotUsedAsValues": "error",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "noEmit": true,
     "strict": true,
-    "sourceMap": true,
+    "allowJs": true,
     "skipLibCheck": true,
     "noImplicitAny": true,
-    "esModuleInterop": true,
     "isolatedModules": true,
+    "esModuleInterop": true,
     "resolveJsonModule": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"]
+    }
   },
-  "include": ["src/**/*.ts", "src/**/*.svelte"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

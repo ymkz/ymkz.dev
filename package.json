@@ -1,64 +1,40 @@
 {
   "name": "ymkz.co",
   "version": "0.0.0",
-  "type": "module",
   "private": true,
   "scripts": {
-    "build": "svelte-kit build",
-    "dev": "svelte-kit dev",
-    "fmt": "npm run fmt:prettier && npm run fmt:eslint",
-    "fmt:eslint": "eslint --fix .",
+    "build": "next build && next export",
+    "dev": "next dev",
+    "fmt": "npm run fmt:prettier && npm run fmt:next",
+    "fmt:next": "next lint --fix",
     "fmt:prettier": "prettier --write .",
-    "lint": "npm run lint:prettier && npm run lint:eslint && npm run lint:tsc && npm run lint:svelte",
-    "lint:eslint": "eslint .",
+    "lint": "npm run lint:prettier && npm run lint:next && npm run lint:tsc && npm run lint:svelte",
+    "lint:next": "next lint",
     "lint:prettier": "prettier --check .",
-    "lint:svelte": "svelte-check",
-    "lint:tsc": "tsc --noEmit",
-    "preview": "svelte-kit preview"
+    "lint:tsc": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "11.1.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "@arkweid/lefthook": "0.7.6",
-    "@sveltejs/adapter-static": "1.0.0-next.19",
-    "@sveltejs/kit": "1.0.0-next.168",
-    "@typescript-eslint/eslint-plugin": "4.31.1",
-    "@typescript-eslint/parser": "4.31.1",
+    "@types/react": "17.0.22",
     "eslint": "7.32.0",
-    "eslint-config-prettier": "8.3.0",
-    "eslint-plugin-svelte3": "3.2.1",
+    "eslint-config-next": "11.1.2",
     "prettier": "2.4.1",
     "prettier-plugin-pkg": "0.10.0",
-    "prettier-plugin-svelte": "2.4.0",
-    "svelte": "3.42.6",
-    "svelte-check": "2.2.6",
-    "svelte-preprocess": "4.9.4",
     "typescript": "4.4.3"
   },
   "eslintConfig": {
-    "root": true,
-    "parser": "@typescript-eslint/parser",
-    "extends": [
-      "eslint:recommended",
-      "plugin:@typescript-eslint/recommended",
-      "prettier"
-    ],
-    "plugins": [
-      "svelte3",
-      "@typescript-eslint"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "*.svelte"
-        ],
-        "processor": "svelte3/svelte3"
-      }
-    ],
-    "settings": {
-      "svelte3/typescript": true
-    }
+    "extends": "next/core-web-vitals"
   },
   "prettier": {
     "semi": false,
     "singleQuote": true
+  },
+  "volta": {
+    "node": "16.9.1",
+    "npm": "7.24.0"
   }
 }
