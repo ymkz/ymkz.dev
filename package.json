@@ -8,7 +8,7 @@
     "fmt": "npm run fmt:prettier && npm run fmt:next",
     "fmt:next": "next lint --fix",
     "fmt:prettier": "prettier --write .",
-    "lint": "npm run lint:prettier && npm run lint:next && npm run lint:tsc && npm run lint:svelte",
+    "lint": "npm run lint:prettier && npm run lint:next && npm run lint:tsc",
     "lint:next": "next lint",
     "lint:prettier": "prettier --check .",
     "lint:tsc": "tsc --noEmit"
