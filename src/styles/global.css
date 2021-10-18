@@ -6,10 +6,10 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, 'BlinkMacSystemFont', 'Hiragino Kaku Gothic ProN',
-    'Hiragino Sans', Meiryo, sans-serif, 'Segoe UI Emoji';
   background-color: #212121;
   color: #fafafa;
+  font-family: -apple-system, 'BlinkMacSystemFont', 'Hiragino Kaku Gothic ProN',
+    'Hiragino Sans', Meiryo, sans-serif, 'Segoe UI Emoji';
 }
 
 ::selection {
@@ -17,46 +17,46 @@ body {
 }
 
 .container {
-  max-width: 1024px;
-  width: 100%;
-  padding: 48px 24px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 48px;
+  margin: 0 auto;
+  padding: 48px 24px;
+  width: 100%;
+  max-width: 1024px;
   font-family: 'Roboto Mono', monospace;
 }
 
 .motto {
-  font-size: 70px;
   font-weight: 700;
+  font-size: 70px;
 }
 
 .profile {
+  font-weight: 500;
   font-size: 18px;
   line-height: 1.75;
-  font-weight: 500;
 }
 
 .contact {
   display: flex;
-  gap: 72px;
   align-items: center;
+  gap: 72px;
 }
 
 .avatar {
+  border-radius: 50%;
   width: 52px;
   height: 52px;
-  border-radius: 50%;
 }
 
 .social {
   display: flex;
-  gap: 24px;
   align-items: center;
+  gap: 24px;
 }
 
 .link {
-  line-height: 0;
   color: #fafafa;
+  line-height: 0;
 }
