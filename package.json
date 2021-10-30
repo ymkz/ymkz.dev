@@ -2,6 +2,10 @@
   "name": "ymkz.co",
   "version": "0.0.0",
   "private": true,
+  "engines": {
+    "node": "16.x",
+    "npm": "8.x"
+  },
   "scripts": {
     "build": "next build && next export",
     "dev": "next dev",
@@ -37,9 +41,5 @@
   "prettier": {
     "semi": false,
     "singleQuote": true
-  },
-  "volta": {
-    "node": "16.9.1",
-    "npm": "8.1.2"
   }
 }
