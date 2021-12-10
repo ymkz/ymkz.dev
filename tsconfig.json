@@ -8,6 +8,7 @@
     "noEmit": true,
     "strict": true,
     "allowJs": true,
+    "incremental": true,
     "skipLibCheck": true,
     "noImplicitAny": true,
     "isolatedModules": true,
