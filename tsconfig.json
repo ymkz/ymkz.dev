@@ -1,25 +1,29 @@
 {
   "compilerOptions": {
-    "jsx": "preserve",
-    "target": "ESNext",
+    "jsx": "react",
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment",
+    // "jsx": "react-jsx",
+    // "jsxImportSource": "nano-jsx/lib",
+    "target": "ES2021",
     "module": "ESNext",
-    "moduleResolution": "node",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "moduleResolution": "Node",
+    "lib": ["DOM", "ESNext"],
     "noEmit": true,
     "strict": true,
-    "allowJs": true,
     "incremental": true,
     "skipLibCheck": true,
-    "noImplicitAny": true,
     "isolatedModules": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
+    "useDefineForClassFields": true,
+    "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": ["env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "dist"]
 }
