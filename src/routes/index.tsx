@@ -101,5 +101,6 @@ const makeHTML = (body: string) => {
 export const index = (ctx: Context) => {
   const body = renderSSR(<IndexPage />)
   const html = makeHTML(body)
+  ctx.header("cache-control", "public, max-age=604800, immutable")
   return ctx.html(html)
 }

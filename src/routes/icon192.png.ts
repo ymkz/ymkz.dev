@@ -3,5 +3,6 @@ import icon from "~/public/icon192.png"
 
 export const icon192 = (ctx: Context) => {
   ctx.header("content-type", "image/png")
+  ctx.header("cache-control", "public, max-age=604800, immutable")
   return ctx.body(icon.buffer.slice(0))
 }

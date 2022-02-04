@@ -3,5 +3,6 @@ import icon from "~/public/apple-touch-icon.png"
 
 export const appleTouchIcon = (ctx: Context) => {
   ctx.header("content-type", "image/png")
+  ctx.header("cache-control", "public, max-age=604800, immutable")
   return ctx.body(icon.buffer.slice(0))
 }
