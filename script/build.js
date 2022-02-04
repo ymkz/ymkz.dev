@@ -1,8 +1,8 @@
-import { build } from "esbuild"
+const { build } = require("esbuild")
 
 build({
-  entryPoints: ["src/main.ts"],
-  outfile: "dist/main.mjs",
+  entryPoints: ["src/worker.ts"],
+  outfile: "dist/worker.mjs",
   format: "esm",
   bundle: true,
   minify: process.env.NODE_ENV === "production" ? true : false,
@@ -10,10 +10,9 @@ build({
   jsxFragment: "Fragment",
   loader: {
     ".txt": "text",
-    ".ico": "base64",
-    ".png": "base64",
+    ".css": "text",
+    ".ico": "binary",
+    ".png": "binary",
     ".webmanifest": "text",
   },
-}).then(() => {
-  console.log("⚡ Done")
 })

@@ -34,3 +34,4 @@ jobs:
           NODE_ENV: production
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
+          environment: production

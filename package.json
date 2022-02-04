@@ -1,8 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "build": "node scripts/build.mjs",
-    "dev": "miniflare --debug --watch",
+    "build": "node script/build",
+    "deploy": "wrangler publish --env production",
+    "dev": "miniflare --watch",
     "fmt": "prettier --write .",
     "lint": "tsc --noEmit && prettier --check ."
   },
@@ -10,12 +11,12 @@
     "semi": false
   },
   "dependencies": {
-    "hono": "0.2.0",
-    "nano-jsx": "0.0.28"
+    "hono": "0.3.5",
+    "nano-jsx": "0.0.29"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "3.3.1",
-    "esbuild": "0.14.14",
+    "esbuild": "0.14.18",
     "miniflare": "2.2.0",
     "prettier": "2.5.1",
     "prettier-plugin-packagejson": "2.2.15",
