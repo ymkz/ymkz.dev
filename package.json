@@ -11,7 +11,7 @@
     "semi": false
   },
   "dependencies": {
-    "hono": "0.3.5",
+    "hono": "0.3.7",
     "nano-jsx": "0.0.29"
   },
   "devDependencies": {
