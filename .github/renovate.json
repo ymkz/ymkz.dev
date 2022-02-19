@@ -4,6 +4,9 @@
   "schedule": ["after 9pm and before 11pm on friday"],
   "labels": ["dependencies", "renovate"],
   "dependencyDashboard": true,
+  "platformAutomerge": true,
+  "prConcurrentLimit": 5,
+  "prHourlyLimit": 0,
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true
