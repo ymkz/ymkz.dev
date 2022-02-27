@@ -19,8 +19,8 @@ body {
   background-color: #212121;
   color: #fafafa;
   line-height: 1.5;
-  font-family: -apple-system, "BlinkMacSystemFont", "Hiragino Kaku Gothic ProN",
-    "Hiragino Sans", Meiryo, sans-serif, "Segoe UI Emoji";
+  font-family: -apple-system, 'BlinkMacSystemFont', 'Hiragino Kaku Gothic ProN',
+    'Hiragino Sans', Meiryo, sans-serif, 'Segoe UI Emoji';
 }
 img,
 picture,
@@ -64,7 +64,7 @@ h6 {
   padding: 48px 24px;
   width: 100%;
   max-width: 1024px;
-  font-family: "Roboto Mono", monospace;
+  font-family: 'Roboto Mono', monospace;
 }
 
 .motto {

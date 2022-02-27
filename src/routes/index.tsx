@@ -1,5 +1,5 @@
-import { Context } from "hono"
-import { h, renderSSR } from "nano-jsx"
+import { Context } from 'hono'
+import { h, renderSSR } from 'nano-jsx'
 
 const IndexPage = () => {
   return (
@@ -102,8 +102,8 @@ export const index = (ctx: Context) => {
   const body = renderSSR(<IndexPage />)
   const html = makeHTML(body)
   ctx.header(
-    "cache-control",
-    "private, max-age=86400, stale-while-revalidate=604800"
+    'cache-control',
+    'private, max-age=86400, stale-while-revalidate=604800'
   )
   return ctx.html(html)
 }
