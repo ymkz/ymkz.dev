@@ -1,0 +1,25 @@
+name: check
+
+on: push
+
+permissions:
+  contents: read
+
+env:
+  CI: true
+  TZ: Asia/Tokyo
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: echo "::set-output name=VERSION::$(cat .node-version)"
+        id: node-version
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ steps.node-version.outputs.VERSION }}
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build
