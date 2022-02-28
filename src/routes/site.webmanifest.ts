@@ -1,7 +1,7 @@
 import { Context } from 'hono'
 import manifest from '~/public/site.webmanifest'
 
-export const webmanifest = (ctx: Context) => {
+export const webmanifest = (ctx: Context<never>) => {
   ctx.header('content-type', 'application/manifest+json')
   ctx.header(
     'cache-control',
