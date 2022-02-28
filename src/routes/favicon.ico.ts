@@ -1,7 +1,7 @@
 import { Context } from 'hono'
 import icon from '~/public/favicon.ico'
 
-export const favicon = (ctx: Context) => {
+export const favicon = (ctx: Context<never>) => {
   ctx.header('content-type', 'image/x-icon')
   ctx.header(
     'cache-control',

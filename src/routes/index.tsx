@@ -98,7 +98,7 @@ const makeHTML = (body: string) => {
 `
 }
 
-export const index = (ctx: Context) => {
+export const index = (ctx: Context<never>) => {
   const body = renderSSR(<IndexPage />)
   const html = makeHTML(body)
   ctx.header(

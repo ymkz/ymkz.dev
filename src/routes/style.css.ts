@@ -1,7 +1,7 @@
 import { Context } from 'hono'
 import css from '~/public/style.css'
 
-export const style = (ctx: Context) => {
+export const style = (ctx: Context<never>) => {
   ctx.header('content-type', 'text/css')
   ctx.header(
     'cache-control',

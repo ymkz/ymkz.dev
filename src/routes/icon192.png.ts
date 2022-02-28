@@ -1,7 +1,7 @@
 import { Context } from 'hono'
 import icon from '~/public/icon192.png'
 
-export const icon192 = (ctx: Context) => {
+export const icon192 = (ctx: Context<never>) => {
   ctx.header('content-type', 'image/png')
   ctx.header(
     'cache-control',
