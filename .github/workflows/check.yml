@@ -13,7 +13,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - run: echo "::set-output name=VERSION::$(cat .node-version)"
         id: node-version
       - uses: actions/setup-node@v3
