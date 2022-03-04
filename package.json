@@ -17,10 +17,10 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "3.4.0",
-    "esbuild": "0.14.23",
+    "esbuild": "0.14.25",
     "miniflare": "2.3.0",
     "prettier": "2.5.1",
     "prettier-plugin-packagejson": "2.2.15",
-    "typescript": "4.5.5"
+    "typescript": "4.6.2"
   }
 }
