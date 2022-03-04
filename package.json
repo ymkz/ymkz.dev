@@ -12,8 +12,8 @@
     "singleQuote": true
   },
   "dependencies": {
-    "hono": "0.5.0",
-    "nano-jsx": "0.0.29"
+    "hono": "0.5.1",
+    "nano-jsx": "0.0.30"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "3.4.0",
