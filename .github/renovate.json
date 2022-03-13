@@ -2,14 +2,12 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base",
+    ":dependencyDashboard",
     ":timezone(Asia/Tokyo)",
     ":labels(dependencies, renovate)",
-    ":enableVulnerabilityAlertsWithLabel(vulnerabilities)",
-    ":dependencyDashboard",
-    ":prConcurrentLimit10",
-    ":prHourlyLimitNone"
+    ":enableVulnerabilityAlertsWithLabel(vulnerabilities)"
   ],
-  "schedule": ["after 9pm and before 11pm on friday"],
+  "schedule": ["after 7pm and before 12pm on friday"],
   "platformAutomerge": true,
   "lockFileMaintenance": {
     "enabled": true,
