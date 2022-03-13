@@ -12,7 +12,7 @@
     "singleQuote": true
   },
   "dependencies": {
-    "hono": "0.5.1",
+    "hono": "0.5.4",
     "nano-jsx": "0.0.30"
   },
   "devDependencies": {
