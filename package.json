@@ -16,7 +16,7 @@
     "nano-jsx": "0.0.30"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "3.5.0",
+    "@cloudflare/workers-types": "3.5.1",
     "esbuild": "0.14.36",
     "miniflare": "2.4.0",
     "prettier": "2.6.2",
