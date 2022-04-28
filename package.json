@@ -16,11 +16,11 @@
     "nano-jsx": "0.0.30"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "3.7.1",
+    "@cloudflare/workers-types": "3.8.0",
     "esbuild": "0.14.38",
     "miniflare": "2.4.0",
     "prettier": "2.6.2",
     "prettier-plugin-packagejson": "2.2.17",
-    "typescript": "4.6.3"
+    "typescript": "4.6.4"
   }
 }
