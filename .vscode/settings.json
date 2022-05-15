@@ -4,14 +4,10 @@
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "editor.rulers": [80],
   "search.exclude": {
-    "**/dist": true,
     "**/node_modules": true,
-    "**/package-lock.json": true,
-    "**/tsconfig.tsbuildinfo": true
+    "**/package-lock.json": true
   },
-  "typescript.preferences.importModuleSpecifier": "non-relative",
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   }

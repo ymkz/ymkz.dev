@@ -8,6 +8,7 @@
     ":labels(dependencies, renovate)",
     ":enableVulnerabilityAlertsWithLabel(vulnerabilities)"
   ],
+  "ignoreDeps": ["wrangler"],
   "automergeStrategy": "squash",
   "platformAutomerge": true,
   "lockFileMaintenance": {

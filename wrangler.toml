@@ -1,21 +1,2 @@
-compatibility_date = "2022-01-01"
-type = "javascript"
-workers_dev = false
-
-name = "ymkz-local"
-vars = { ENVIRONMENT = "local" }
-
-[env.production]
 name = "ymkz"
-vars = { ENVIRONMENT = "production" }
-
-[build]
-command = "npm run build"
-
-[build.upload]
-format = "modules"
-main = "worker.mjs"
-
-[miniflare]
-host = "localhost"
-port = 3000
+compatibility_date = "2022-05-15"
