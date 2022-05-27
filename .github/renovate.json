@@ -10,6 +10,8 @@
   ],
   "ignoreDeps": ["wrangler"],
   "automergeStrategy": "squash",
+  "prCreation": "not-pending",
+  "stabilityDays": 7,
   "platformAutomerge": true,
   "lockFileMaintenance": {
     "enabled": true,
