@@ -26,6 +26,8 @@ jobs:
         with:
           path: ~/.npm
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-      - if: ${{ steps.npm-cache.outputs.cache-hit != 'true' }}
-        run: npm ci
+      - if: ${{ steps.npm-cache.outputs.cache-hit == false }}
+        continue-on-error: true
+        run: npm list
+      - run: npm ci
       - run: npm run lint
