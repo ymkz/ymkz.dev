@@ -13,6 +13,6 @@
   "devDependencies": {
     "prettier": "2.6.2",
     "prettier-plugin-packagejson": "2.2.18",
-    "wrangler": "0.0.0-9906e1c"
+    "wrangler": "2.0.8"
   }
 }

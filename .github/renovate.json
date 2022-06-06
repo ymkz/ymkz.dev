@@ -8,7 +8,6 @@
     ":labels(dependencies, renovate)",
     ":enableVulnerabilityAlertsWithLabel(vulnerabilities)"
   ],
-  "ignoreDeps": ["wrangler"],
   "automergeStrategy": "squash",
   "prCreation": "not-pending",
   "stabilityDays": 7,
