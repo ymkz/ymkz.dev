@@ -14,20 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: echo "::set-output name=VERSION::$(cat .node-version)"
-        id: node-version
       - uses: actions/setup-node@v3
         with:
-          node-version: ${{ steps.node-version.outputs.VERSION }}
-      - uses: actions/cache@v3
-        id: npm-cache
-        env:
-          cache-name: cache-npm-20220521
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-      - if: ${{ steps.npm-cache.outputs.cache-hit == false }}
-        continue-on-error: true
-        run: npm list
+          node-version-file: '.node-version'
       - run: npm ci
       - run: npm run lint
