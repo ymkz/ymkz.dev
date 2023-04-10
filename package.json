@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "deploy": "wrangler pages publish ./dist",
-    "dev": "wrangler pages dev ./dist --port=3000",
+    "deploy": "wrangler pages publish ./static",
+    "dev": "wrangler pages dev ./static --port=3000",
     "fmt": "prettier --write .",
     "lint": "prettier --check ."
   },
