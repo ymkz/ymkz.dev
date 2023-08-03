@@ -1,6 +1,4 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>ymkz/renovate"],
-  "schedule": ["on saturday"],
-  "automergeSchedule": ["on sunday"]
+  "extends": ["github>ymkz/renovate"]
 }
