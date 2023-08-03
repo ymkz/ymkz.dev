@@ -3,12 +3,8 @@
   "scripts": {
     "deploy": "wrangler pages publish ./static",
     "dev": "wrangler pages dev ./static --port=3000",
-    "fmt": "prettier --write .",
-    "lint": "prettier --check ."
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true
+    "lint": "prettier --check .",
+    "lint:fix": "prettier --write ."
   },
   "devDependencies": {
     "prettier": "3.0.1",
