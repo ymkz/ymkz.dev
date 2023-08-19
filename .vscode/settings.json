@@ -1,12 +1,5 @@
 {
   "editor.codeActionsOnSave": ["source.organizeImports"],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
-  "search.exclude": {
-    "**/node_modules": true,
-    "**/package-lock.json": true
-  },
-  "[toml]": {
-    "editor.defaultFormatter": "tamasfe.even-better-toml"
-  }
+  "editor.formatOnSave": true
 }
