@@ -1,1 +1,1 @@
-# ymkz.co
+# ymkz.dev
