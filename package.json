@@ -1,10 +1,11 @@
 {
+  "name": "ymkz.dev",
   "private": true,
   "scripts": {
-    "deploy": "wrangler pages publish ./static",
     "dev": "wrangler pages dev ./static --port=3000",
     "lint": "prettier --check .",
-    "lint:fix": "prettier --write ."
+    "lint:fix": "prettier --write .",
+    "deploy": "wrangler pages publish ./static"
   },
   "devDependencies": {
     "prettier": "3.0.3",
