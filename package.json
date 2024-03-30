@@ -9,6 +9,6 @@
   },
   "devDependencies": {
     "prettier": "3.2.5",
-    "wrangler": "3.37.0"
+    "wrangler": "3.41.0"
   }
 }
