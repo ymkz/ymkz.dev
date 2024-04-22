@@ -1,11 +1,17 @@
 {
   "name": "ymkz.dev",
+  "version": "1.0.0",
+  "type": "module",
   "private": true,
+  "packageManager": "pnpm@9.0.5",
+  "engines": {
+    "node": "20.12.2"
+  },
   "scripts": {
     "dev": "wrangler pages dev ./public --port=3000",
+    "deploy": "wrangler pages publish ./public",
     "lint": "prettier --check .",
-    "lint:fix": "prettier --write .",
-    "deploy": "wrangler pages publish ./public"
+    "lint:fix": "prettier --write ."
   },
   "devDependencies": {
     "prettier": "3.2.5",

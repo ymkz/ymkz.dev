@@ -1,4 +1,4 @@
-name: check
+name: ci
 
 on: push
 
@@ -8,14 +8,17 @@ permissions:
 env:
   CI: true
   TZ: Asia/Tokyo
+  DO_NOT_TRACK: 1
 
 jobs:
   check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: corepack enable
       - uses: actions/setup-node@v4
         with:
-          node-version-file: '.node-version'
-      - run: npm ci
-      - run: npm run lint
+          node-version-file: .node-version
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run lint
