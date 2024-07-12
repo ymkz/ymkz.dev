@@ -10,11 +10,11 @@
   "scripts": {
     "dev": "wrangler pages dev ./public --port=3000",
     "deploy": "wrangler pages publish ./public",
-    "lint": "prettier --check .",
-    "lint:fix": "prettier --write ."
+    "lint": "biome check",
+    "lint:fix": "biome check --write"
   },
   "devDependencies": {
-    "prettier": "3.3.2",
+    "@biomejs/biome": "1.8.3",
     "wrangler": "3.63.2"
   }
 }
