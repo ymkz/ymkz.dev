@@ -5,7 +5,7 @@
   "private": true,
   "packageManager": "pnpm@9.5.0",
   "engines": {
-    "node": "20.15.1"
+    "node": "20.x"
   },
   "scripts": {
     "dev": "wrangler pages dev ./public --port=3000",
