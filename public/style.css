@@ -1,3 +1,9 @@
+:root {
+	--color-background: #212121;
+	--color-typography: #fafafa;
+	--color-selection: #607d8b;
+}
+
 *,
 *::before,
 *::after {
@@ -10,14 +16,14 @@
 
 html,
 body {
-	height: 100%;
+	min-height: 100dvh;
 }
 
 body {
 	-webkit-font-smoothing: antialiased;
 	margin: 0;
-	background-color: #212121;
-	color: #fafafa;
+	background-color: var(--color-background);
+	color: var(--color-typography);
 	line-height: 1.5;
 	font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 }
@@ -53,7 +59,8 @@ h6 {
 }
 
 ::selection {
-	background-color: #607d8b;
+	background-color: var(--color-selection);
+	color: var(--color-typography);
 }
 
 .container {
@@ -89,6 +96,7 @@ h6 {
 	border-radius: 50%;
 	width: 52px;
 	height: 52px;
+	user-select: none;
 }
 
 .social {
@@ -98,6 +106,10 @@ h6 {
 }
 
 .link {
-	color: #fafafa;
+	color: var(--color-typography);
 	line-height: 0;
+}
+
+.inception {
+	color: var(--color-background);
 }
