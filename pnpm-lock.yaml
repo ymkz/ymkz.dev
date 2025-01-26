@@ -418,6 +418,7 @@ packages:
   wrangler@3.104.0:
     resolution: {integrity: sha512-txxgkKZwPQrX1PDgY+ATWnnx4GSeNxUrnBumudWPRmXG0JdLzCf09R+723slMMT1m+CKQXU1KvuUHc/GxTnTyA==}
     engines: {node: '>=16.17.0'}
+    deprecated: Downgrade to 3.103.2
     hasBin: true
     peerDependencies:
       '@cloudflare/workers-types': ^4.20241230.0
