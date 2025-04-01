@@ -5,15 +5,6 @@
     "enabled": true,
     "useIgnoreFile": true
   },
-  "formatter": {
-    "lineWidth": 120
-  },
-  "javascript": {
-    "formatter": {
-      "quoteStyle": "single",
-      "semicolons": "asNeeded"
-    }
-  },
   "json": {
     "formatter": {
       "indentStyle": "space"
