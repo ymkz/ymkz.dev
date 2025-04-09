@@ -8,13 +8,17 @@
     "node": ">=22.14.0"
   },
   "scripts": {
-    "dev": "wrangler pages dev ./public --port=3000",
-    "deploy": "wrangler pages publish ./public",
+    "dev": "wrangler dev --port=3000",
+    "typecheck": "tsc --noEmit",
     "lint": "biome check",
-    "format": "biome check --write"
+    "format": "biome check --write",
+    "analyze": "knip"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
+    "@cloudflare/workers-types": "4.20250407.0",
+    "knip": "5.47.0",
+    "typescript": "5.8.3",
     "wrangler": "4.6.0"
   }
 }
