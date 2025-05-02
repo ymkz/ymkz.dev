@@ -11,7 +11,6 @@
     "forceConsistentCasingInFileNames": true,
     "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "bundler",
-    "types": ["@cloudflare/workers-types/experimental"]
+    "moduleResolution": "bundler"
   }
 }
