@@ -1,11 +1,9 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "ymkz-dev",
-  "main": "src/index.ts",
   "compatibility_date": "2025-03-21",
   "assets": {
-    "directory": "public",
-    "binding": "ASSETS"
+    "directory": "public"
   },
   "observability": {
     "enabled": true,
