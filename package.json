@@ -19,6 +19,6 @@
     "@cloudflare/workers-types": "4.20250610.0",
     "knip": "5.60.2",
     "typescript": "5.8.3",
-    "wrangler": "4.19.1"
+    "wrangler": "4.19.2"
   }
 }
