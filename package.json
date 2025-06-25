@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@cloudflare/workers-types": "4.20250617.0",
+    "@cloudflare/workers-types": "4.20250618.0",
     "knip": "5.61.1",
     "typescript": "5.8.3",
     "wrangler": "4.20.1"
