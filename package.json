@@ -9,16 +9,16 @@
   },
   "scripts": {
     "dev": "wrangler dev --port=3000",
-    "typecheck": "tsc --noEmit",
     "lint": "biome check",
     "format": "biome check --write",
-    "analyze": "knip"
+    "analyze": "knip",
+    "update": "pnpm update --latest --interactive"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "@cloudflare/workers-types": "4.20250705.0",
+    "@biomejs/biome": "2.1.1",
+    "@cloudflare/workers-types": "4.20250712.0",
     "knip": "5.61.3",
     "typescript": "5.8.3",
-    "wrangler": "4.23.0"
+    "wrangler": "4.24.3"
   }
 }

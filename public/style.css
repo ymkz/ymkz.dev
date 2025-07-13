@@ -25,8 +25,9 @@ body {
 	background-color: var(--color-background);
 	color: var(--color-typography);
 	line-height: 1.5;
-	font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
-		"Hiragino Sans", Meiryo, sans-serif;
+	font-family:
+		"Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+		Meiryo, sans-serif;
 }
 
 img,
