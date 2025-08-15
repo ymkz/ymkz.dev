@@ -15,7 +15,7 @@
     "update": "pnpm update --latest --interactive"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.1.3",
+    "@biomejs/biome": "2.1.4",
     "@cloudflare/workers-types": "4.20250807.0",
     "knip": "5.62.0",
     "typescript": "5.9.2",
