@@ -12,8 +12,8 @@ importers:
         specifier: 2.2.2
         version: 2.2.2
       '@cloudflare/workers-types':
-        specifier: 4.20250821.0
-        version: 4.20250821.0
+        specifier: 4.20250823.0
+        version: 4.20250823.0
       knip:
         specifier: 5.63.0
         version: 5.63.0(@types/node@24.0.13)(typescript@5.9.2)
@@ -21,8 +21,8 @@ importers:
         specifier: 5.9.2
         version: 5.9.2
       wrangler:
-        specifier: 4.31.0
-        version: 4.31.0(@cloudflare/workers-types@4.20250821.0)
+        specifier: 4.32.0
+        version: 4.32.0(@cloudflare/workers-types@4.20250823.0)
 
 packages:
 
@@ -122,8 +122,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@cloudflare/workers-types@4.20250821.0':
-    resolution: {integrity: sha512-dbmorEqYnTMhSWh3lW3uBiufbzjvhrHsBD4SVNvhdhE1EdkkvAqhBzOyKRJxnQX04Afxm/txhdFe66eZrPPPkQ==}
+  '@cloudflare/workers-types@4.20250823.0':
+    resolution: {integrity: sha512-z5pCggF3jG//h083+GEWCyQLW0A5GHq20akG+jN6ChyHQi/yZj1FcQcMhnvbBY4PiGq+SBiEj/LClG/lDPm+jg==}
 
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -131,9 +131,6 @@ packages:
 
   '@emnapi/core@1.4.5':
     resolution: {integrity: sha512-XsLw1dEOpkSX/WucdqUhPWP7hDxSvZiY+fsUC14h+FtQ2Ifni4znbBt8punRX+Uj2JG/uDb8nEHVKvrVlvdZ5Q==}
-
-  '@emnapi/runtime@1.4.4':
-    resolution: {integrity: sha512-hHyapA4A3gPaDCNfiqyZUStTMqIkKRshqPIuDOXv1hcBnD4U3l8cP0T1HMCfGRxQ6V64TGCcoswChANyOAwbQg==}
 
   '@emnapi/runtime@1.4.5':
     resolution: {integrity: sha512-++LApOtY0pEEz1zrd9vy1/zXVaVJJ/EbAF3u0fXIzPJEDtnITsBGbbK0EkM72amhl/R5b+5xx0Y/QhcVOpuulg==}
@@ -676,8 +673,8 @@ packages:
     engines: {node: '>=10.0.0'}
     hasBin: true
 
-  miniflare@4.20250816.0:
-    resolution: {integrity: sha512-HuakGvmsU8aC60wsHP7Su+BgJFly1GmKbmbR/nqIz0Xlk6wcd/pp3vZ7jtbT3unf+aeBOlEO/CzcUb8xFsJLdA==}
+  miniflare@4.20250816.1:
+    resolution: {integrity: sha512-2X8yMy5wWw0dF1pNU4kztzZgp0jWv2KMqAOOb2FeQ/b11yck4aczmYHi7UYD3uyOgtj8WFhwG/KdRWAaATTtRA==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -784,8 +781,8 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
-  wrangler@4.31.0:
-    resolution: {integrity: sha512-blb8NfA4BGscvSzvLm2mEQRuUTmaMCiglkqHiR3EIque78UXG39xxVtFXlKhK32qaVvGI7ejdM//HC9plVPO3w==}
+  wrangler@4.32.0:
+    resolution: {integrity: sha512-q7TRSavBW3Eg3pp4rxqKJwSK+u/ieFOBdNvUsq1P1EMmyj3//tN/iXDokFak+dkW0vDYjsVG3PfOfHxU92OS6w==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     peerDependencies:
@@ -886,7 +883,7 @@ snapshots:
   '@cloudflare/workerd-windows-64@1.20250816.0':
     optional: true
 
-  '@cloudflare/workers-types@4.20250821.0': {}
+  '@cloudflare/workers-types@4.20250823.0': {}
 
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
@@ -895,11 +892,6 @@ snapshots:
   '@emnapi/core@1.4.5':
     dependencies:
       '@emnapi/wasi-threads': 1.0.4
-      tslib: 2.8.1
-    optional: true
-
-  '@emnapi/runtime@1.4.4':
-    dependencies:
       tslib: 2.8.1
     optional: true
 
@@ -1054,7 +1046,7 @@ snapshots:
 
   '@img/sharp-wasm32@0.33.5':
     dependencies:
-      '@emnapi/runtime': 1.4.4
+      '@emnapi/runtime': 1.4.5
     optional: true
 
   '@img/sharp-win32-ia32@0.33.5':
@@ -1321,7 +1313,7 @@ snapshots:
 
   mime@3.0.0: {}
 
-  miniflare@4.20250816.0:
+  miniflare@4.20250816.1:
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       acorn: 8.14.0
@@ -1460,18 +1452,18 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20250816.0
       '@cloudflare/workerd-windows-64': 1.20250816.0
 
-  wrangler@4.31.0(@cloudflare/workers-types@4.20250821.0):
+  wrangler@4.32.0(@cloudflare/workers-types@4.20250823.0):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.4.0
       '@cloudflare/unenv-preset': 2.6.2(unenv@2.0.0-rc.19)(workerd@1.20250816.0)
       blake3-wasm: 2.1.5
       esbuild: 0.25.4
-      miniflare: 4.20250816.0
+      miniflare: 4.20250816.1
       path-to-regexp: 6.3.0
       unenv: 2.0.0-rc.19
       workerd: 1.20250816.0
     optionalDependencies:
-      '@cloudflare/workers-types': 4.20250821.0
+      '@cloudflare/workers-types': 4.20250823.0
       fsevents: 2.3.3
     transitivePeerDependencies:
       - bufferutil
