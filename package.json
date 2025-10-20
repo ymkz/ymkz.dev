@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.18.2",
+  "packageManager": "pnpm@10.18.3",
   "engines": {
     "node": ">=22.14.0"
   },
@@ -15,10 +15,10 @@
     "update": "pnpm update --latest --interactive"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.2.5",
-    "@cloudflare/workers-types": "4.20251008.0",
-    "knip": "5.64.2",
+    "@biomejs/biome": "2.2.6",
+    "@cloudflare/workers-types": "4.20251011.0",
+    "knip": "5.66.0",
     "typescript": "5.9.3",
-    "wrangler": "4.42.2"
+    "wrangler": "4.43.0"
   }
 }
