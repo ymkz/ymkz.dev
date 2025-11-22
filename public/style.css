@@ -107,7 +107,7 @@ h6 {
 .social {
 	display: flex;
 	gap: 12px;
-	align-items: center;
+	align-items: baseline;
 }
 
 .dot {
