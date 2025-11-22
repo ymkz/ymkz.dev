@@ -1,0 +1,7 @@
+useNodeVersion: 24.11.1
+managePackageManagerVersions: true
+catalogMode: strict
+catalog:
+  "@biomejs/biome": 2.3.5
+  knip: 5.69.1
+  wrangler: 4.47.0
