@@ -1,7 +1,8 @@
 :root {
-	--color-background: #212121;
-	--color-typography: #fafafa;
-	--color-selection: #607d8b;
+	--color-background: #eeeeee;
+	--color-typography: #020202;
+	--color-paragraph: #5c5855;
+	--color-accent: #ef6f2e;
 }
 
 *,
@@ -61,8 +62,8 @@ h6 {
 }
 
 ::selection {
-	background-color: var(--color-selection);
-	color: var(--color-typography);
+	background-color: var(--color-accent);
+	color: var(--color-background);
 }
 
 .container {
@@ -73,25 +74,14 @@ h6 {
 	padding: 48px 24px;
 	width: 100%;
 	max-width: 1024px;
-	font-family: "Roboto Mono", monospace;
+	font-family: "Geist Mono", monospace;
 }
 
 .motto {
 	font-weight: 700;
 	font-size: 70px;
 	line-height: 1.25;
-}
-
-.profile {
-	font-weight: 500;
-	font-size: 18px;
-	line-height: 1.75;
-}
-
-.contact {
-	display: flex;
-	align-items: center;
-	gap: 72px;
+	font-family: "Geist", sans-serif;
 }
 
 .avatar {
@@ -101,14 +91,34 @@ h6 {
 	user-select: none;
 }
 
-.social {
+.profile {
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 1.75;
+	color: var(--color-paragraph);
+}
+
+.contact {
 	display: flex;
-	align-items: center;
+	flex-direction: column;
 	gap: 24px;
 }
 
+.social {
+	display: flex;
+	gap: 12px;
+	align-items: center;
+}
+
+.dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background-color: var(--color-accent);
+}
+
 .link {
-	color: var(--color-typography);
+	color: var(--color-paragraph);
 	line-height: 0;
 }
 
