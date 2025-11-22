@@ -1,6 +1,5 @@
 {
   "biome.enabled": true,
-  "prettier.enable": true,
   "typescript.preferences.importModuleSpecifier": "shortest",
   "typescript.tsdk": "./node_modules/typescript/lib",
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -13,10 +12,6 @@
   },
   "[yaml][dockercompose]": {
     "editor.defaultFormatter": "redhat.vscode-yaml",
-    "editor.formatOnSave": true
-  },
-  "[toml]": {
-    "editor.defaultFormatter": "tamasfe.even-better-toml",
     "editor.formatOnSave": true
   },
   "[css][json][jsonc][javascript][typescript][typescriptreact]": {
