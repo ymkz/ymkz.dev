@@ -2,12 +2,5 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "ymkz-dev",
   "compatibility_date": "2025-03-21",
-  "assets": {
-    "directory": "public"
-  },
-  "observability": {
-    "enabled": true,
-    "head_sampling_rate": 1,
-    "logs": { "enabled": true }
-  }
+  "assets": { "directory": "public" }
 }
