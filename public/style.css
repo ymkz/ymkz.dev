@@ -2,7 +2,7 @@
 	--color-background: #eeeeee;
 	--color-typography: #020202;
 	--color-paragraph: #5c5855;
-	--color-accent: #ef6f2e;
+	--color-primary: #ef6f2e;
 }
 
 *,
@@ -62,7 +62,7 @@ h6 {
 }
 
 ::selection {
-	background-color: var(--color-accent);
+	background-color: var(--color-primary);
 	color: var(--color-background);
 }
 
@@ -86,8 +86,8 @@ h6 {
 
 .avatar {
 	border-radius: 50%;
-	width: 52px;
-	height: 52px;
+	width: 78px;
+	height: 78px;
 	user-select: none;
 }
 
@@ -114,7 +114,7 @@ h6 {
 	width: 8px;
 	height: 8px;
 	border-radius: 50%;
-	background-color: var(--color-accent);
+	background-color: var(--color-primary);
 }
 
 .link {
