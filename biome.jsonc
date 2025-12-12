@@ -10,11 +10,13 @@
       "indentStyle": "space"
     }
   },
-  "css": {
+  "html": {
     "formatter": {
       "enabled": true
-    },
-    "linter": {
+    }
+  },
+  "css": {
+    "formatter": {
       "enabled": true
     }
   }

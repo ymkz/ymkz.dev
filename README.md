@@ -2,7 +2,7 @@
 
 ## Tasks
 
-### clean
+- clean
 
 ```sh { name=clean }
 find . -name '.wrangler' -type d -prune -exec rm -rf '{}' +
