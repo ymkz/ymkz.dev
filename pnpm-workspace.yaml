@@ -1,7 +1,7 @@
 catalog:
-  '@biomejs/biome': 2.4.10
+  '@biomejs/biome': 2.4.11
   knip: 5.88.1
-  wrangler: 4.80.0
+  wrangler: 4.81.1
 
 catalogMode: strict
 
