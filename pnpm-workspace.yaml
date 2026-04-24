@@ -1,5 +1,5 @@
 catalog:
-  '@biomejs/biome': 2.4.12
+  "@biomejs/biome": 2.4.12
   knip: 6.6.0
   wrangler: 4.83.0
 
@@ -7,4 +7,4 @@ catalogMode: strict
 
 managePackageManagerVersions: true
 
-useNodeVersion: 24.11.1
+useNodeVersion: 25.9.0
