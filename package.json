@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.34.1",
+  "packageManager": "pnpm@11.5.1",
   "scripts": {
     "dev": "wrangler dev --port=3000",
     "lint": "biome check",
