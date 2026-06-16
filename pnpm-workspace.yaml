@@ -1,5 +1,5 @@
-catalogMode: strict
 managePackageManagerVersions: true
+catalogMode: strict
 allowBuilds:
   esbuild: true
   sharp: true
