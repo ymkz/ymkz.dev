@@ -4,6 +4,13 @@
   "type": "module",
   "private": true,
   "packageManager": "pnpm@11.5.3",
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "25.9.0",
+      "onFail": "download"
+    }
+  },
   "scripts": {
     "dev": "wrangler dev --port=3000",
     "lint": "biome check",
