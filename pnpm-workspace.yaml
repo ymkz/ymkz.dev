@@ -1,15 +1,10 @@
+managePackageManagerVersions: true
+catalogMode: strict
 allowBuilds:
   esbuild: true
   sharp: true
   workerd: true
-
 catalog:
   "@biomejs/biome": 2.4.16
   knip: 6.16.1
   wrangler: 4.100.0
-
-catalogMode: strict
-
-managePackageManagerVersions: true
-
-useNodeVersion: 25.9.0
