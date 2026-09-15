@@ -6,12 +6,5 @@ allowBuilds:
   workerd: true
 catalog:
   "@biomejs/biome": 2.5.12
-  '@pdfme/common': 6.1.12
-  '@pdfme/generator': 6.1.12
-  '@pdfme/jsx': 6.1.12
-  '@pdfme/schemas': 6.1.12
-  '@types/node': 26.5.1
   knip: 6.35.0
-  tsx: 4.23.13
-  typescript: 7.0.2
   wrangler: 4.130.0

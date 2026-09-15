@@ -17,19 +17,11 @@
     "format": "biome check --write",
     "analyze": "knip",
     "update": "pnpm update --latest --interactive",
-    "build": "tsx src/resume/build.tsx",
-    "typecheck": "tsc"
+    "build": "node src/resume/build.mjs"
   },
   "devDependencies": {
     "@biomejs/biome": "catalog:",
-    "@pdfme/common": "catalog:",
-    "@pdfme/generator": "catalog:",
-    "@pdfme/jsx": "catalog:",
-    "@pdfme/schemas": "catalog:",
-    "@types/node": "catalog:",
     "knip": "catalog:",
-    "tsx": "catalog:",
-    "typescript": "catalog:",
     "wrangler": "catalog:"
   }
 }
