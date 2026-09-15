@@ -22,3 +22,5 @@ jobs:
       - run: node --version
       - run: pnpm run lint
       - run: pnpm run analyze
+      - run: pnpm run typecheck
+      - run: pnpm test

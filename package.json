@@ -16,11 +16,22 @@
     "lint": "biome check",
     "format": "biome check --write",
     "analyze": "knip",
-    "update": "pnpm update --latest --interactive"
+    "update": "pnpm update --latest --interactive",
+    "build": "tsx resume/build.tsx",
+    "typecheck": "tsc",
+    "test": "pnpm build && tsx --test resume/build.test.ts"
   },
   "devDependencies": {
     "@biomejs/biome": "catalog:",
+    "@pdfme/common": "catalog:",
+    "@pdfme/generator": "catalog:",
+    "@pdfme/jsx": "catalog:",
+    "@pdfme/pdf-lib": "catalog:",
+    "@pdfme/schemas": "catalog:",
+    "@types/node": "catalog:",
     "knip": "catalog:",
+    "tsx": "catalog:",
+    "typescript": "catalog:",
     "wrangler": "catalog:"
   }
 }
