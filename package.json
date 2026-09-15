@@ -16,7 +16,8 @@
     "lint": "biome check",
     "format": "biome check --write",
     "analyze": "knip",
-    "update": "pnpm update --latest --interactive"
+    "update": "pnpm update --latest --interactive",
+    "build": "node src/resume/build.mjs"
   },
   "devDependencies": {
     "@biomejs/biome": "catalog:",
