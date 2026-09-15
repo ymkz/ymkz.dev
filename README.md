@@ -20,8 +20,11 @@ The existing homepage is served alongside it.
   retrieved on 2026-09-14. It is a local snapshot, not automatically synchronized.
   The pre-employment activity period is “在学中（約3年間）”, as corrected by the
   author; exact start/end dates remain unspecified.
-- The bundled BIZ UDPGothic fonts support Japanese without relying on system fonts
-  or build-time downloads. See `resume/fonts/OFL.txt` for their license.
+- Each build downloads the regular and bold BIZ UDPGothic fonts from a pinned
+  [Google Fonts revision](https://github.com/google/fonts/tree/6ce172f74aa355ea43eb964fa4a91570a4d3064d/ofl/bizudpgothic)
+  and embeds them in the PDFs. Building requires network access; viewing the PDFs
+  does not. Font files are kept in memory, not stored in the repository.
+  The fonts use the [SIL Open Font License](https://github.com/google/fonts/blob/6ce172f74aa355ea43eb964fa4a91570a4d3064d/ofl/bizudpgothic/OFL.txt).
 - `public/resume.pdf` and `public/career.pdf` are generated and ignored by Git. Wrangler's custom build
   runs `pnpm build` before development and deployment, including direct
   `pnpm exec wrangler deploy` invocations. Deploying is a separate action.
