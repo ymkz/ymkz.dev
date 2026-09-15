@@ -9,7 +9,12 @@ import {
 	type TableProps,
 	Text,
 } from "@pdfme/jsx";
-import type { resume } from "./data.ts";
+
+// Source: https://gist.github.com/ymkz/24bc836529955b0941ed9f1d4cbfd2ce
+// Snapshot: 2026-09-14. Builds do not fetch the Gist.
+export const author = "山下和也";
+const selfPR =
+	"運用から始まり、開発、設計やSREまで幅広く業務をこなしてきました。キャリアのなかで長く主担当をしている安全対策では将来を見据えた言語スイッチやデプロイ環境のモダン化を推進しました。また業務システムという役割からCSなど社内のユーザーと綿密にコミュニケーションをとり課題の解決、生産性の向上といった日々の改善に努めています。";
 
 function RuledTable({ bodyStyles, ...props }: TableProps) {
 	return (
@@ -71,13 +76,13 @@ function Paragraph({ children }: { children: PdfJsxChild }) {
 	);
 }
 
-function Paper({ name, children }: { name: string; children: PdfJsxChild }) {
+function Paper({ children }: { children: PdfJsxChild }) {
 	return (
 		<Document size="A4" margin={{ x: 15, top: 15, bottom: 15 }} font="regular">
 			<Footer>
 				<Row>
 					<Text size={8} flex={1}>
-						{name}
+						{author}
 					</Text>
 					<Text size={8} align="right" width={25}>
 						{"{currentPage} / {totalPages}"}
@@ -89,9 +94,9 @@ function Paper({ name, children }: { name: string; children: PdfJsxChild }) {
 	);
 }
 
-export function Resume({ data }: { data: typeof resume }) {
+export function Resume() {
 	return (
-		<Paper name={data.name}>
+		<Paper>
 			<Page>
 				<Stack gap={6}>
 					<Text size={22} font="bold" spacing={5}>
@@ -114,17 +119,17 @@ export function Resume({ data }: { data: typeof resume }) {
 								borderWidth={{ left: 0.2, right: 0.2 }}
 								padding={{ x: 3, top: 2, bottom: 4 }}
 							>
-								{data.name}
+								{author}
 							</Text>
 							<RuledTable
 								head={["項目", "内容"]}
 								showHead={false}
 								columnWeights={[25, 117]}
 								rows={[
-									["生年月日", data.birthday],
-									["現住所", data.location],
-									["Web", data.website],
-									["職種", data.role],
+									["生年月日", "1996/03/20"],
+									["現住所", "東京都北区"],
+									["Web", "https://ymkz.dev"],
+									["職種", "ソフトウェアエンジニア"],
 								]}
 							/>
 						</Stack>
@@ -146,47 +151,64 @@ export function Resume({ data }: { data: typeof resume }) {
 						columnWeights={[18, 12, 150]}
 						rows={[
 							["", "", "学歴"],
-							...data.education.map((item) => [
-								...item.period.split("/"),
-								item.description,
-							]),
-							["", "", "職歴"],
 							[
-								...data.employment.split(" ")[0].split("/"),
-								`${data.company} 入社`,
+								"2014",
+								"04",
+								"島根大学 総合理工学部 数理・情報システム学科 入学",
 							],
-							["", "", `${data.employment}\n${data.role}として勤務`],
+							[
+								"2018",
+								"03",
+								"島根大学 総合理工学部 数理・情報システム学科 卒業",
+							],
+							["2018", "04", "島根大学大学院 自然科学研究科 理工学専攻 入学"],
+							[
+								"2020",
+								"03",
+								"島根大学大学院 自然科学研究科 理工学専攻 修士課程修了（修士（工学））",
+							],
+							["", "", "職歴"],
+							["2020", "04", "LINEヤフー株式会社（旧ヤフー株式会社） 入社"],
+							[
+								"",
+								"",
+								"2020/04 ～ 現在（正社員）\nソフトウェアエンジニアとして勤務",
+							],
 							["", "", "現在に至る（詳細は別紙職務経歴書に記載）"],
 							["", "", "以上"],
 						]}
 					/>
+					<RuledTable head={["免許・資格"]} rows={[["基本情報技術者"]]} />
+					<RuledTable head={["自己PR"]} rows={[[selfPR]]} />
 					<RuledTable
-						head={["免許・資格"]}
-						rows={data.qualifications.map((qualification) => [qualification])}
+						head={["受賞歴"]}
+						rows={[
+							[
+								"2016/08　第4回学生スマートフォンアプリコンテストにてインプリメンテーション賞受賞（BLEを用いたiOSアプリ開発）",
+							],
+						]}
 					/>
-					<RuledTable head={["自己PR"]} rows={[[data.strengths]]} />
-					<RuledTable head={["受賞歴"]} rows={[[data.award]]} />
 				</Stack>
 			</Page>
 		</Paper>
 	);
 }
 
-function CareerTable({ items }: { items: typeof resume.experience }) {
+function CareerTable({ rows }: { rows: string[][] }) {
 	return (
 		<RuledTable
 			head={["期間", "業務内容"]}
 			columnWeights={[35, 145]}
 			fontSize={10.5}
 			bodyStyles={{ padding: { x: 3, y: 3.5 }, lineHeight: 1.55 }}
-			rows={items.map((item) => [item.period, item.description.join("\n")])}
+			rows={rows}
 		/>
 	);
 }
 
-export function CareerHistory({ data }: { data: typeof resume }) {
+export function CareerHistory() {
 	return (
-		<Paper name={data.name}>
+		<Paper>
 			<Page>
 				<Stack gap={6}>
 					<Row alignItems="center">
@@ -194,26 +216,55 @@ export function CareerHistory({ data }: { data: typeof resume }) {
 							職務経歴書
 						</Text>
 						<Text size={11} align="right" width={45}>
-							{data.name}
+							{author}
 						</Text>
 					</Row>
 					<Section title="職務要約">
-						{data.summary.map((paragraph) => (
-							<Paragraph>{paragraph}</Paragraph>
-						))}
+						<Paragraph>
+							約6年間にわたり、LINEヤフー株式会社にてソフトウェアエンジニアとして勤務。Yahoo!ショッピングの運用開発に従事。カート・注文のようなバックエンドシステムからLPを構築・表示するCMSシステムまで幅広く携わる。また安全対策システムの運用開発に従事し、機械化の推進をしたり、SREとして事故対応の訓練の実施などの活動も行った。
+						</Paragraph>
+						<Paragraph>
+							在学時に約3年間、リモートでベンチャー企業のWebサービス開発にフロントエンドエンジニアとして参画。React/Reduxによる新機能の開発や開発環境の刷新、ライブラリの更新、コード品質向上のためのESLint導入などの業務を経験。
+						</Paragraph>
 					</Section>
 					<Section title="活かせる経験・知識・技術">
-						{data.skills.map((skill) => (
-							<Paragraph>{`${skill.label}：${skill.values.join(" / ")}`}</Paragraph>
-						))}
+						<Paragraph>
+							言語・ランタイム：Node.js / TypeScript / Java / HTML/CSS
+						</Paragraph>
+						<Paragraph>
+							フレームワーク：React / Next.js / Hono / Spring Boot
+						</Paragraph>
 					</Section>
 					<Section title="職務経歴">
 						<Text size={12} font="bold">
-							{data.company}
+							LINEヤフー株式会社（旧ヤフー株式会社）
 						</Text>
-						<Paragraph>{`${data.employment} / ${data.role}\n${data.workplace}`}</Paragraph>
+						<Paragraph>
+							{
+								"2020/04 ～ 現在（正社員） / ソフトウェアエンジニア\nハイブリッド勤務（2025/03までフルリモート勤務）"
+							}
+						</Paragraph>
 						{/* Start the second page with the 2023 modernization work. */}
-						<CareerTable items={data.experience.slice(0, 4)} />
+						<CareerTable
+							rows={[
+								[
+									"2020/04 ～",
+									"新卒で入社。ヤフーショッピングのカートシステムの運用チームへ配属。\nカートの運用・安全対策の運用、負荷試験の準備・実施。",
+								],
+								[
+									"2020/12 ～",
+									"SHPカートの刷新・言語スイッチの開発へ参画。\nNode.jsでBFF（GraphQL）の開発。",
+								],
+								[
+									"2022/02 ～",
+									"SHP安全対策システムの基盤移行を担当。物理サーバからPaaSへの移行。",
+								],
+								[
+									"2022/10 ～",
+									"カートチームからSREチームへ異動。組織内のリリース予定を可視化するツールなどの開発を行う。\n引き続き安全対策システムの運用・開発を担当。",
+								],
+							]}
+						/>
 					</Section>
 				</Stack>
 			</Page>
@@ -224,21 +275,42 @@ export function CareerHistory({ data }: { data: typeof resume }) {
 							職務経歴書（続き）
 						</Text>
 						<Text size={11} align="right" width={45}>
-							{data.name}
+							{author}
 						</Text>
 					</Row>
 					<Section title="職務経歴（続き）">
 						<Text size={12} font="bold">
-							{data.company}
+							LINEヤフー株式会社（旧ヤフー株式会社）
 						</Text>
-						<CareerTable items={data.experience.slice(4)} />
+						<CareerTable
+							rows={[
+								[
+									"2023/04 ～",
+									"SHP安全対策システムの刷新・言語スイッチを計画・推進。複数のコンポーネントの刷新開発をリード。",
+								],
+								[
+									"2024/10 ～",
+									"システム基盤・コードベースのモダン化をここまででほぼ完了。安全対策の課題解決のため機械学習を用いた判定システムの導入案件へ主担当として参画。\n大規模障害へ備えるための組織全体での訓練を計画・実施するWGへ参画・活動。",
+								],
+								[
+									"2025/04 ～ 2025/09",
+									"SHP安全対策システムの運用・開発。注文システムのビジネス開発チームに異動。\n事故対策委員としてプロダクションの事故対策や横展開を担当。",
+								],
+								[
+									"2025/10 ～",
+									"プロモーションディビジョンへ異動。引き続き安全対策システムの運用開発は行いつつ、LPシステムの運用改善やお気に入りシステムのビジネス開発に参画。\nコスト削減のためログの整理・見直しやコンポーネントの整理等を実施。",
+								],
+							]}
+						/>
 					</Section>
 					<Section title="就職前の活動">
-						<Paragraph>{data.earlyCareer.period}</Paragraph>
-						<Paragraph>{data.earlyCareer.description}</Paragraph>
+						<Paragraph>在学中（約3年間）</Paragraph>
+						<Paragraph>
+							知人からの紹介でベンチャー企業と業務委託契約を結び、ウェブサービスのフロントエンド開発に参画。React/Reduxを中心としたWebアプリケーション開発を行い、機能開発だけでなくFluxからReduxへのアーキテクチャ移行やESLint整備などを実施。
+						</Paragraph>
 					</Section>
 					<Section title="自己PR">
-						<Paragraph>{data.strengths}</Paragraph>
+						<Paragraph>{selfPR}</Paragraph>
 					</Section>
 				</Stack>
 			</Page>

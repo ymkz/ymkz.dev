@@ -13,8 +13,8 @@ Open `http://localhost:3000/resume.pdf` (one-page resume) or
 `@pdfme/jsx` and `@pdfme/generator`; no browser or external PDF service is needed.
 The existing homepage is served alongside it.
 
-- Edit `resume/data.ts` to update the content, and `resume/document.tsx` to change
-  the A4 layout. The resume uses ruled fields and a blank photo field; the career history
+- Edit `resume/document.tsx` to update the content and A4 layout. The resume uses
+  ruled fields and a blank photo field; the career history
   uses larger text and splits before the 2023 modernization work.
 - The content is based on [this Gist](https://gist.github.com/ymkz/24bc836529955b0941ed9f1d4cbfd2ce),
   retrieved on 2026-09-14. It is a local snapshot, not automatically synchronized.
