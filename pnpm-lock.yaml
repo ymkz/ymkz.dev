@@ -18,9 +18,6 @@ catalogs:
     '@pdfme/jsx':
       specifier: 6.1.12
       version: 6.1.12
-    '@pdfme/pdf-lib':
-      specifier: 6.1.12
-      version: 6.1.12
     '@pdfme/schemas':
       specifier: 6.1.12
       version: 6.1.12
@@ -56,9 +53,6 @@ importers:
       '@pdfme/jsx':
         specifier: 'catalog:'
         version: 6.1.12(@pdfme/common@6.1.12)(@pdfme/schemas@6.1.12(@pdfme/common@6.1.12))
-      '@pdfme/pdf-lib':
-        specifier: 'catalog:'
-        version: 6.1.12
       '@pdfme/schemas':
         specifier: 'catalog:'
         version: 6.1.12(@pdfme/common@6.1.12)

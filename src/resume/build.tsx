@@ -45,7 +45,7 @@ const documents = [
 	},
 ];
 
-await mkdir(new URL("../public/", import.meta.url), { recursive: true });
+await mkdir(new URL("../../public/", import.meta.url), { recursive: true });
 for (const document of documents) {
 	const { template, inputs } = await renderToTemplate(document.content, {
 		font,
@@ -61,7 +61,7 @@ for (const document of documents) {
 			author,
 		},
 	});
-	const output = new URL(`../public/${document.filename}`, import.meta.url);
+	const output = new URL(`../../public/${document.filename}`, import.meta.url);
 	await writeFile(output, pdf);
 	console.log(`Generated ${output.pathname} (${pdf.byteLength} bytes)`);
 }

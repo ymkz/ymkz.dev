@@ -2,6 +2,6 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "ymkz-dev",
   "compatibility_date": "2025-03-21",
-  "build": { "command": "pnpm build", "watch_dir": "resume" },
+  "build": { "command": "pnpm build", "watch_dir": "src/resume" },
   "assets": { "directory": "public" }
 }

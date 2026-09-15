@@ -11,5 +11,5 @@
     "allowImportingTsExtensions": true,
     "types": ["node"]
   },
-  "include": ["resume/**/*.ts", "resume/**/*.tsx"]
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
 }

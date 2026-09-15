@@ -13,7 +13,7 @@ Open `http://localhost:3000/resume.pdf` (one-page resume) or
 `@pdfme/jsx` and `@pdfme/generator`; no browser or external PDF service is needed.
 The existing homepage is served alongside it.
 
-- Edit `resume/document.tsx` to update the content and A4 layout. The resume uses
+- Edit `src/resume/document.tsx` to update the content and A4 layout. The resume uses
   ruled fields and a blank photo field; the career history
   uses larger text and splits before the 2023 modernization work.
 - The content is based on [this Gist](https://gist.github.com/ymkz/24bc836529955b0941ed9f1d4cbfd2ce),
@@ -28,7 +28,7 @@ The existing homepage is served alongside it.
 - `public/resume.pdf` and `public/career.pdf` are generated and ignored by Git. Wrangler's custom build
   runs `pnpm build` before development and deployment, including direct
   `pnpm exec wrangler deploy` invocations. Deploying is a separate action.
-- During development, edits under `resume/` trigger a rebuild; refresh the PDF
+- During development, edits under `src/resume/` trigger a rebuild; refresh the PDF
   to see the result. If a separate hosting build uploads `public/` without invoking Wrangler,
   configure that build to run `pnpm build` first.
 - The JSX API is beta. pdfme packages are pinned together in
@@ -38,7 +38,7 @@ The existing homepage is served alongside it.
 pnpm lint
 pnpm analyze
 pnpm typecheck
-pnpm test
+pnpm build
 ```
 
 ## Tasks

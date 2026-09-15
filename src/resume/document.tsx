@@ -10,8 +10,6 @@ import {
 	Text,
 } from "@pdfme/jsx";
 
-// Source: https://gist.github.com/ymkz/24bc836529955b0941ed9f1d4cbfd2ce
-// Snapshot: 2026-09-14. Builds do not fetch the Gist.
 export const author = "山下和也";
 const selfPR =
 	"運用から始まり、開発、設計やSREまで幅広く業務をこなしてきました。キャリアのなかで長く主担当をしている安全対策では将来を見据えた言語スイッチやデプロイ環境のモダン化を推進しました。また業務システムという役割からCSなど社内のユーザーと綿密にコミュニケーションをとり課題の解決、生産性の向上といった日々の改善に努めています。";
