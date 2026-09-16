@@ -1,7 +1,7 @@
 #let data = json(bytes(sys.inputs.data))
 
 #let paper(title, body) = {
-  set document(title: title + " | " + data.name, author: data.name)
+  set document(title: data.name + "_" + title, author: data.name)
   set text(font: "BIZ UDPGothic", size: 10pt, lang: "ja")
   set par(leading: 0.55em)
   set page(
