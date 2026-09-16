@@ -50,7 +50,7 @@ build image; no global installation is needed. To use external data in CI,
 provide the JSON file before the build and set `RESUME_DATA` to its path.
 
 Wrangler's custom build also runs `pnpm build` for local development and direct
-CLI deployment. Changes under `src/resume/` or `scripts/` trigger a rebuild during development;
+CLI deployment. Changes under `src/resume/` trigger a rebuild during development;
 changes to an external JSON file require a manual rebuild.
 
 ```sh
