@@ -17,7 +17,7 @@ The existing homepage is served alongside them.
 - Edit `src/resume/resume.typ`, `career.typ`, and `common.typ` for the layout.
   The career history starts a new page after the first four work entries;
   longer content can add pages automatically.
-- The build uses Node.js built-ins and the Typst CLI, with no PDF-related npm packages.
+- `scripts/build-resume.mjs` uses Node.js built-ins and the Typst CLI, with no PDF-related npm packages.
   On Linux (including WSL) and macOS, x64/arm64 builds download Typst 0.15.1 from
   its official GitHub release into the ignored `.wrangler/typst/` cache.
   Node.js, network access, and `tar` with xz support are required.
@@ -50,7 +50,7 @@ build image; no global installation is needed. To use external data in CI,
 provide the JSON file before the build and set `RESUME_DATA` to its path.
 
 Wrangler's custom build also runs `pnpm build` for local development and direct
-CLI deployment. Changes under `src/resume/` trigger a rebuild during development;
+CLI deployment. Changes under `src/resume/` or `scripts/` trigger a rebuild during development;
 changes to an external JSON file require a manual rebuild.
 
 ```sh

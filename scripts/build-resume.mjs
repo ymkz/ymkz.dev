@@ -5,7 +5,7 @@ import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const root = fileURLToPath(new URL("../../", import.meta.url));
+const root = fileURLToPath(new URL("../", import.meta.url));
 const version = "0.15.1";
 const arch = { x64: "x86_64", arm64: "aarch64" }[process.arch];
 const platform = {
