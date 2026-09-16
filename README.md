@@ -26,7 +26,8 @@ The existing homepage is served alongside them.
   Font files are temporary and removed after the build; the PDFs embed them and
   can be viewed offline. See the [SIL Open Font License](https://github.com/google/fonts/blob/6ce172f74aa355ea43eb964fa4a91570a4d3064d/ofl/bizudpgothic/OFL.txt).
 - Generated PDFs are ignored by Git. `public/_headers` sets `X-Robots-Tag: noindex`
-  for both PDFs; the files remain publicly accessible.
+  for all static assets, including the homepage and PDFs. They remain publicly
+  accessible; `robots.txt` allows crawling so search engines can read the header.
 
 ### External data
 
