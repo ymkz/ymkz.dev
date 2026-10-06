@@ -5,6 +5,6 @@ allowBuilds:
   sharp: true
   workerd: true
 catalog:
-  "@biomejs/biome": 2.5.14
-  knip: 6.37.0
-  wrangler: 4.136.3
+  "@biomejs/biome": 2.5.15
+  knip: 6.39.0
+  wrangler: 4.147.0
