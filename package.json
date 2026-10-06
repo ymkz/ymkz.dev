@@ -17,10 +17,12 @@
     "format": "biome check --write",
     "analyze": "fallow dead-code --fail-on-issues --no-cache",
     "update": "pnpm update --latest --interactive",
-    "build": "node scripts/build-resume.mjs"
+    "build": "astro build && node scripts/build-resume.mjs"
   },
   "devDependencies": {
     "@biomejs/biome": "catalog:",
+    "@formepdf/html": "catalog:",
+    "astro": "catalog:",
     "fallow": "catalog:",
     "wrangler": "catalog:"
   }

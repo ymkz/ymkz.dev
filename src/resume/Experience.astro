@@ -1,0 +1,16 @@
+---
+const { items } = Astro.props;
+---
+<!-- ponytail: fixed-width rows avoid Forme's CJK table auto-sizing; use native tables when it supports the required column widths. -->
+<div class="experience" role="table" aria-label="職務経歴">
+  <div class="experience-row experience-header" role="row">
+    <div class="experience-period" role="columnheader">期間</div>
+    <div class="experience-description" role="columnheader">業務内容</div>
+  </div>
+  {items.map((item) => (
+    <div class="experience-row" role="row">
+      <div class="experience-period" role="cell">{item.period}</div>
+      <div class="experience-description" role="cell">{item.description.map((line) => <p>{line}</p>)}</div>
+    </div>
+  ))}
+</div>
