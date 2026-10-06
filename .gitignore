@@ -1,2 +1,4 @@
 .wrangler/
 node_modules/
+public/resume.pdf
+public/career.pdf
