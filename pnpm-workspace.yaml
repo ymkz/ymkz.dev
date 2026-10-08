@@ -6,6 +6,5 @@ allowBuilds:
 catalog:
   "@biomejs/biome": 2.5.15
   '@formepdf/html': 0.27.0
-  astro: 7.3.5
   fallow: 3.31.0
   wrangler: 4.147.0

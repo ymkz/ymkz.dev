@@ -1,9 +1,8 @@
 # ymkz.dev
 
-[Astro](https://astro.build/) generates the homepage and Japanese resume pages.
-[Forme](https://docs.formepdf.com/html) converts the generated resume HTML to PDFs
-inside Node.js using its bundled WASM engine. Resume HTML is an intermediate
-build artifact; only the PDFs are kept in `dist/` for publication.
+The homepage is `public/index.html`. [Forme](https://docs.formepdf.com/html)
+generates Japanese resume and career history PDFs in Node.js using its bundled
+WASM engine.
 
 ```sh
 pnpm install --frozen-lockfile
@@ -11,23 +10,22 @@ pnpm build
 pnpm dev
 ```
 
-Open `http://localhost:3000/` for the homepage, and `/resume.pdf` or
-`/career.pdf` for the PDFs.
-Wrangler serves the generated `dist/` directory and rebuilds when files under
-`src/`, `scripts/`, or `public/` change. External data changes need a manual rebuild.
+Open `http://localhost:3000/`, `/resume.pdf`, or `/career.pdf`.
+Wrangler serves `public/` and rebuilds the PDFs when files under `src/resume/`
+or `scripts/` change. External data changes need a manual rebuild.
 
-- Edit `src/pages/index.astro` for the homepage.
 - Edit `src/resume/data.json` for the shared resume content.
-- Edit `src/pages/resume.astro`, `src/pages/career.astro`, and the components under
-  `src/resume/` for the HTML and PDF layout. The supplied data produces a one-page
-  resume and a two-page career history, with a page break after four work entries.
+- Edit `src/resume/templates.mjs` and `src/resume/style.css` for the PDF layout.
+  The supplied data produces a one-page resume and a two-page career history,
+  with a page break after four work entries.
 - `scripts/build-resume.mjs` downloads regular and bold BIZ UDPGothic from a pinned
-  [Google Fonts revision](https://github.com/google/fonts/tree/6ce172f74aa355ea43eb964fa4a91570a4d3064d/ofl/bizudpgothic).
-  Fonts are served from `dist/fonts/` and embedded in PDFs. Network access is
-  required at build time; no browser, external compiler, or system font is needed.
+  [Google Fonts revision](https://github.com/google/fonts/tree/6ce172f74aa355ea43eb964fa4a91570a4d3064d/ofl/bizudpgothic)
+  and embeds them in the PDFs. Network access is required at build time; no
+  browser, external compiler, or system font is needed.
   See the [SIL Open Font License](https://github.com/google/fonts/blob/6ce172f74aa355ea43eb964fa4a91570a4d3064d/ofl/bizudpgothic/OFL.txt).
-- `dist/` is ignored by Git. `public/_headers` applies `X-Robots-Tag: noindex`
-  to all static files. The homepage and PDFs remain publicly accessible.
+- Generated `public/resume.pdf` and `public/career.pdf` are ignored by Git.
+  `public/_headers` applies `X-Robots-Tag: noindex` to all static files.
+  The homepage and PDFs remain publicly accessible.
 
 ## External data
 
@@ -36,7 +34,8 @@ RESUME_DATA=/absolute/path/to/resume.json pnpm build
 ```
 
 Use the same JSON fields as `src/resume/data.json`. Both PDFs use this
-file; the JSON itself is not copied to `dist/`. Astro escapes text from the data.
+file; its text is HTML-escaped before rendering. The JSON is not copied to
+`public/`.
 
 ## Cloudflare Workers
 
@@ -58,9 +57,6 @@ pnpm build
   A row taller than a page needs a different layout; repeating work-history
   headers across additional pages is not implemented.
 - The HTML input API currently omits PDF title/author metadata.
-- Biome checks Astro frontmatter but cannot track its use in templates;
-  unused import/variable rules are disabled only for `.astro` files.
-- Cloudflare's hosted build has not been tested for this trial.
 
 ## Tasks
 

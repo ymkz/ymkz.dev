@@ -4,7 +4,9 @@
   "compatibility_date": "2025-03-21",
   "build": {
     "command": "pnpm build",
-    "watch_dir": ["src", "scripts", "public"]
+    "watch_dir": ["src/resume", "scripts"]
   },
-  "assets": { "directory": "dist" }
+  "assets": {
+    "directory": "public"
+  }
 }

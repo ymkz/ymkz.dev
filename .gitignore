@@ -1,4 +1,4 @@
 .wrangler/
 node_modules/
-dist/
-.astro/
+public/resume.pdf
+public/career.pdf
