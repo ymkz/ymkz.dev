@@ -2,7 +2,8 @@
 
 [Astro](https://astro.build/) generates the homepage and Japanese resume pages.
 [Forme](https://docs.formepdf.com/html) converts the generated resume HTML to PDFs
-inside Node.js using its bundled WASM engine.
+inside Node.js using its bundled WASM engine. Resume HTML is an intermediate
+build artifact; only the PDFs are kept in `dist/` for publication.
 
 ```sh
 pnpm install --frozen-lockfile
@@ -10,8 +11,8 @@ pnpm build
 pnpm dev
 ```
 
-Open `http://localhost:3000/`, `/resume`, or `/career` for the HTML pages,
-and `/resume.pdf` or `/career.pdf` for the PDFs.
+Open `http://localhost:3000/` for the homepage, and `/resume.pdf` or
+`/career.pdf` for the PDFs.
 Wrangler serves the generated `dist/` directory and rebuilds when files under
 `src/`, `scripts/`, or `public/` change. External data changes need a manual rebuild.
 
@@ -26,7 +27,7 @@ Wrangler serves the generated `dist/` directory and rebuilds when files under
   required at build time; no browser, external compiler, or system font is needed.
   See the [SIL Open Font License](https://github.com/google/fonts/blob/6ce172f74aa355ea43eb964fa4a91570a4d3064d/ofl/bizudpgothic/OFL.txt).
 - `dist/` is ignored by Git. `public/_headers` applies `X-Robots-Tag: noindex`
-  to all static files. HTML pages and PDFs remain publicly accessible.
+  to all static files. The homepage and PDFs remain publicly accessible.
 
 ## External data
 
@@ -34,7 +35,7 @@ Wrangler serves the generated `dist/` directory and rebuilds when files under
 RESUME_DATA=/absolute/path/to/resume.json pnpm build
 ```
 
-Use the same JSON fields as `src/resume/data.json`. Both HTML and PDFs use this
+Use the same JSON fields as `src/resume/data.json`. Both PDFs use this
 file; the JSON itself is not copied to `dist/`. Astro escapes text from the data.
 
 ## Cloudflare Workers

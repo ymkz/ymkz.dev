@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, unlink, writeFile } from "node:fs/promises";
 import { renderHtml } from "@formepdf/html";
 
 const output = new URL("../dist/", import.meta.url);
@@ -34,11 +34,13 @@ const fonts = await Promise.all(
 await downloadFontFile("OFL.txt");
 
 for (const name of ["resume", "career"]) {
-	const html = await readFile(new URL(`${name}.html`, output), "utf8");
+	const htmlPath = new URL(`${name}.html`, output);
+	const html = await readFile(htmlPath, "utf8");
 	const { pdf, warnings } = renderHtml(html, { fonts, auditContent: true });
 	if (warnings.length) {
 		throw new Error(`${name}.pdf: ${warnings.join("\n")}`);
 	}
 	await writeFile(new URL(`${name}.pdf`, output), pdf);
+	await unlink(htmlPath);
 	console.log(`Generated ${name}.pdf`);
 }
