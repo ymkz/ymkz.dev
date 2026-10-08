@@ -16,10 +16,12 @@
     "lint": "biome check",
     "format": "biome check --write",
     "analyze": "fallow dead-code --fail-on-issues --no-cache",
-    "update": "pnpm update --latest --interactive"
+    "update": "pnpm update --latest --interactive",
+    "build": "node scripts/build-resume.mjs"
   },
   "devDependencies": {
     "@biomejs/biome": "catalog:",
+    "@formepdf/html": "catalog:",
     "fallow": "catalog:",
     "wrangler": "catalog:"
   }

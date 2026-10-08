@@ -167,6 +167,9 @@ catalogs:
     '@biomejs/biome':
       specifier: 2.5.15
       version: 2.5.15
+    '@formepdf/html':
+      specifier: 0.27.0
+      version: 0.27.0
     fallow:
       specifier: 3.31.0
       version: 3.31.0
@@ -181,6 +184,9 @@ importers:
       '@biomejs/biome':
         specifier: 'catalog:'
         version: 2.5.15
+      '@formepdf/html':
+        specifier: 'catalog:'
+        version: 0.27.0
       fallow:
         specifier: 'catalog:'
         version: 3.31.0
@@ -495,6 +501,11 @@ packages:
     resolution: {integrity: sha512-TubWjDJSNYB3O146k33xcXIhMl7txOKJyMcui+AFTC1jxfUF1awBoNuZT6fPR6/mDV5NV9Bo8SLWG/hJN8igBQ==}
     cpu: [x64]
     os: [win32]
+
+  '@formepdf/html@0.27.0':
+    resolution: {integrity: sha512-CGNX+oZ6yT5/Fe6mJkWE6HXeI7DERvYPnPswLfrDVZ5hbi5+sbhLk1LhXfmHOp2cvaOFTVS8S7i3Jn2FulXCbQ==}
+    engines: {node: '>=18'}
+    hasBin: true
 
   '@img/colour@1.1.0':
     resolution: {integrity: sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ==}
@@ -1209,6 +1220,8 @@ snapshots:
 
   '@fallow-cli/win32-x64-msvc@3.31.0':
     optional: true
+
+  '@formepdf/html@0.27.0': {}
 
   '@img/colour@1.1.0': {}
 
