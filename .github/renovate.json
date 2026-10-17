@@ -1,4 +1,13 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>ymkz/renovate"]
+  "extends": ["github>ymkz/renovate"],
+  "constraints": {
+    "ghActionsLock": "v0.2.0"
+  },
+  "packageRules": [
+    {
+      "matchManagers": ["github-actions"],
+      "pinDigests": false
+    }
+  ]
 }

@@ -16,8 +16,13 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-      - uses: pnpm/setup@fbda4c85fc2e1e08721cd8763afea8f48d60f024 # v3
+      - uses: actions/checkout@v7.0.1
+      - run: |
+          gh extension install github/gh-actions-lock --pin v0.2.0
+          gh actions-lock --verify
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - uses: pnpm/setup@v3.0.0
       - run: pnpm --version
       - run: node --version
       - run: pnpm run lint
