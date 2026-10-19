@@ -5,5 +5,5 @@ allowBuilds:
   workerd: true
 catalog:
   "@biomejs/biome": 2.5.15
-  fallow: 3.32.0
-  wrangler: 4.149.0
+  fallow: 3.33.1
+  wrangler: 4.151.0
