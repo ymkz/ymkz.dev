@@ -22,7 +22,7 @@ jobs:
           gh actions-lock --verify
         env:
           GH_TOKEN: ${{ github.token }}
-      - uses: pnpm/setup@v3.0.0
+      - uses: pnpm/setup@v3.1.1
       - run: pnpm --version
       - run: node --version
       - run: pnpm run lint
