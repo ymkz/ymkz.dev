@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "files": {
-    "includes": ["**", "!pnpm-lock.yaml"]
+    "includes": ["**/*.{json,jsonc,html,css,yml,yaml}", "!pnpm-lock.yaml"]
   },
   "vcs": {
     "clientKind": "git",
