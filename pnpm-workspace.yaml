@@ -4,6 +4,6 @@ allowBuilds:
   sharp: true
   workerd: true
 catalog:
-  "@biomejs/biome": 2.6.5
-  fallow: 3.40.0
-  wrangler: 4.158.0
+  "@biomejs/biome": 2.6.7
+  fallow: 3.42.0
+  wrangler: 4.161.0
